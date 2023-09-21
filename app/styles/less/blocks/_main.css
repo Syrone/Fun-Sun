@@ -1,0 +1,107 @@
+/** (Start) Header Page **/
+.header-page {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.875rem;
+  padding-top: 1.875rem;
+}
+.header-page h1 {
+  margin: 0;
+}
+.header-page > div:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.875rem;
+  flex-shrink: 0;
+}
+.header-page > div:last-child {
+  width: 100%;
+  flex-grow: 1;
+}
+.header-page form {
+  display: table;
+  margin-left: auto;
+  position: relative;
+}
+.header-page .btn-search {
+  height: 100%;
+  padding: 0 0.5rem 0 0.875rem;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.header-page .form-control {
+  max-width: 240px;
+  padding-left: 3rem;
+}
+/** (End) Header Page **/
+/** (Start) Wrapper Table **/
+.wrapper-table {
+  padding-top: 1.5rem;
+}
+.wrapper-table .table-responsive {
+  max-height: 640px;
+  margin-top: 1.5rem;
+}
+.wrapper-table .table {
+  margin-block: 0;
+}
+.table-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.table-filter,
+.table-buttons {
+  padding-top: 1rem;
+}
+.table-action {
+  display: flex;
+  gap: 0.75rem;
+}
+.table-action > * {
+  flex: 1;
+}
+.table-action .dropdown .btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.table-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.wrapper-status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  line-height: 1;
+}
+.status {
+  width: 0.75rem;
+  height: 0.75rem;
+  background-color: var(--gray-color);
+  border: none;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: background-color 0.3s ease-in-out;
+}
+.status.active {
+  background-color: var(--secondary);
+}
+.status.passive {
+  background-color: var(--warning);
+}
+.status.new {
+  background-color: var(--accent);
+}
+/** (End) Wrapper Table **/
