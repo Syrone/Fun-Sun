@@ -12,12 +12,13 @@ document.addEventListener('DOMContentLoaded', () => {
 		var windowHeight = window.innerHeight;
 		if (windowWidth >= 768 && windowHeight >= 768) {
 			var tableElement = document.getElementById('tableFullScreen');
+			var tabletableElementHeight = document.querySelector('.table-responsive')
 			var paginationWrapper = document.querySelector('.wrapper-pagination');
 			var paginationHeight = paginationWrapper.offsetHeight;
 			var tableOffsetTop = tableElement.offsetTop;
 			var tableHeight = windowHeight - (tableOffsetTop + paginationHeight);
 
-			tableElement.style.maxHeight = tableHeight + 'px';
+			tabletableElementHeight.style.maxHeight = tableHeight + 'px';
 		}
 	}
 
@@ -37,23 +38,23 @@ document.addEventListener('DOMContentLoaded', () => {
 	/** (End) Адаптивная высота таблицы **/
 
 	/** (End) Скролл таблицы **/
-	var tableElementWrap = document.querySelector('.table-wrapper')
 	var tableElement = document.getElementById('tableFullScreen');
+	var tabletableElementHeight = document.querySelector('.table-responsive')
 	var scrollThreshold = 2;
 	var isScrollingDown = false;
 
 	function handleScroll() {
-		var scrollTop = tableElement.scrollTop;
+		var scrollTop = tabletableElementHeight.scrollTop;
 		if (scrollTop > scrollThreshold && !isScrollingDown) {
-			tableElementWrap.classList.add('scroll');
+			tableElement.classList.add('scroll');
 			isScrollingDown = true;
 		} else if (scrollTop <= scrollThreshold && isScrollingDown) {
-			tableElementWrap.classList.remove('scroll');
+			tableElement.classList.remove('scroll');
 			isScrollingDown = false;
 		}
 	}
 
-	tableElement.addEventListener('scroll', handleScroll);
+	tabletableElementHeight.addEventListener('scroll', handleScroll);
 	/** (End) Скролл таблицы **/
 
 
