@@ -3,7 +3,7 @@
   padding-block: 0.625rem;
   border-bottom: 1px solid var(--border-color);
 }
-.header .icon-tooltip {
+.header .icon-hint {
   width: 1.875rem;
   height: 1.875rem;
 }

@@ -10,15 +10,18 @@ document.addEventListener('DOMContentLoaded', () => {
 	function calculateTableHeight() {
 		var windowWidth = window.innerWidth;
 		var windowHeight = window.innerHeight;
-		if (windowWidth >= 768 && windowHeight >= 768) {
+		if (windowWidth >= 992 && windowHeight >= 768) {
 			var tableElement = document.getElementById('tableFullScreen');
 			var tabletableElementHeight = document.querySelector('.table-responsive')
 			var paginationWrapper = document.querySelector('.wrapper-pagination');
 			var paginationHeight = paginationWrapper.offsetHeight;
 			var tableOffsetTop = tableElement.offsetTop;
-			var tableHeight = windowHeight - (tableOffsetTop + paginationHeight);
+			var tableHeight = windowHeight - (tableOffsetTop + paginationHeight) - 20;
 
 			tabletableElementHeight.style.maxHeight = tableHeight + 'px';
+		} else {
+			var tabletableElementHeight = document.querySelector('.table-responsive')
+			tabletableElementHeight.style.maxHeight = '';
 		}
 	}
 

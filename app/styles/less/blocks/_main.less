@@ -1,27 +1,14 @@
 /** (Start) Header Page **/
 .header-page {
-	display: flex;
+	display: grid;
 	align-items: center;
-	justify-content: space-between;
+	grid-template-columns: auto auto 1fr;
 	gap: 1.875rem;
-	padding-top: 1.875rem;
+	margin-top: 1.875rem;
 }
 
 .header-page h1 {
 	margin: 0;
-}
-
-.header-page > div:first-child {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	gap: 1.875rem;
-	flex-shrink: 0;
-}
-
-.header-page > div:last-child {
-	width: 100%;
-	flex-grow: 1;
 }
 
 .header-page form {
@@ -39,6 +26,10 @@
 	transform: translateY(-50%);
 }
 
+.header-page .btn-search[type="button"] {
+	display: none;
+}
+
 .header-page .form-control {
 	max-width: 240px;
 	padding-left: 3rem;
@@ -47,11 +38,27 @@
 
 /** (Start) Wrapper Table **/
 .wrapper-table {
+	display: grid;
+	grid-template-columns: 1fr auto;
 	padding-top: 1.5rem;
+}
+
+.wrapper-table > * {
+	min-width: 100%;
+	grid-column: span 2;
+}
+
+.wrapper-pagination {
+	grid-column: auto;
+}
+
+.wrapper-navigation {
+	grid-column: auto;
 }
 
 .wrapper-table .table-responsive {
 	max-height: 636px;
+	border-radius: .625rem;
 }
 
 .wrapper-table .table {
@@ -64,10 +71,11 @@
 	align-items: center;
 	justify-content: space-between;
 	gap: 1rem;
+	margin-bottom: 1rem;
 }
 
-.table-filter,
-.table-buttons {
+
+.table-filter > * + * {
 	padding-top: 1rem;
 }
 
@@ -94,6 +102,10 @@
 	gap: .5rem;
 }
 
+.table-buttons > .btn {
+	flex-shrink: 0;
+}
+
 .wrapper-status {
 	display: flex;
 	justify-content: center;
@@ -102,9 +114,10 @@
 	line-height: 1;
 }
 
-.status {
-	width: .75rem;
-	height: .75rem;
+.indicator {
+	--size: .75rem;
+	width: var(--size);
+	height: var(--size);
 	background-color: var(--gray-color);
 	border: none;
 	border-radius: 50%;
@@ -112,15 +125,15 @@
 	transition: background-color .3s ease-in-out;
 }
 
-.status.active {
+.indicator.active {
 	background-color: var(--secondary);
 }
 
-.status.passive {
+.indicator.passive {
 	background-color: var(--warning);
 }
 
-.status.new {
+.indicator.new {
 	background-color: var(--accent);
 }
 /** (End) Wrapper Table **/

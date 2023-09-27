@@ -33,12 +33,12 @@
 					<img src="./images/dist/icon/logo.svg" alt="logo">
 				</a>
 
-				<button type="button" class="btn btn-tooltip p-0" data-bs-toggle="tooltip" data-bs-placement="right" title="Подсказка">
-					<span class="icon icon-tooltip">
+				<button type="button" class="btn btn-hint p-0" data-bs-toggle="tooltip" data-bs-placement="right" title="Вопрос-ответ">
+					<span class="icon icon-hint">
 						<svg xmlns="http://www.w3.org/2000/svg">
 							<path
 								d="M13.231 15.974v-.614a2.9 2.9 0 0 1 .158-.996c.105-.294.274-.57.507-.83.232-.266.54-.537.92-.814a7.73 7.73 0 0 0 .823-.655 2.05 2.05 0 0 0 .456-.573c.1-.194.15-.413.15-.656 0-.36-.133-.634-.399-.822-.265-.188-.636-.282-1.112-.282-.476 0-.95.075-1.42.224-.464.15-.938.346-1.419.59l-.905-1.818a8.561 8.561 0 0 1 1.801-.748 7.39 7.39 0 0 1 2.125-.29c1.185 0 2.1.285 2.748.855.653.564.98 1.284.98 2.158 0 .465-.075.869-.225 1.212a2.95 2.95 0 0 1-.664.946 9.778 9.778 0 0 1-1.104.913 8.571 8.571 0 0 0-.763.615 1.432 1.432 0 0 0-.365.498 1.67 1.67 0 0 0-.092.59v.497h-2.2Zm-.265 2.839c0-.52.14-.885.423-1.096.288-.21.634-.315 1.038-.315.393 0 .73.105 1.013.315.287.21.431.576.431 1.096 0 .498-.144.858-.431 1.08a1.6 1.6 0 0 1-1.013.331c-.404 0-.75-.11-1.038-.332-.282-.221-.423-.581-.423-1.079Z"
-								opacity="0.3" />
+								/>
 							<rect x="1.3" y=".5" width="27" height="27" rx="13.5"/>
 						</svg>
 					</span>
@@ -172,18 +172,33 @@
 			<div class="container">
 
 				<div class="header-page">
-					<div>
-						<h1 class="h2">Пользователи и отделы</h1>
+					<h1 class="h2">Пользователи</h1>
 
-						<div class="btn-group" role="group" aria-label="">
+					<!-- <div class="btn-group" role="group" aria-label="">
 							<button type="button" class="btn btn-light active">Отделы</button>
 							<button type="button" class="btn btn-light">Пользователи</button>
-						</div>
-					</div>
+						</div> -->
+					<button class="btn btn-primary" type="button">
+						<span class="icon icon-plus">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+								<path d="M15.9999 9.99989H4.00011" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+								<path d="M10 4V15.9998" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+							</svg>
+						</span>
+						Добавить пользователя
+					</button>
 
 					<div>
 						<form>
 							<button class="btn btn-search" type="submit">
+								<span class="icon icon-search">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+										<path fill-rule="evenodd" clip-rule="evenodd"
+											d="M17.31 15.9L20.71 19.29C20.8993 19.4778 21.0058 19.7334 21.0058 20C21.0058 20.2666 20.8993 20.5222 20.71 20.71C20.5222 20.8993 20.2666 21.0058 20 21.0058C19.7334 21.0058 19.4778 20.8993 19.29 20.71L15.9 17.31C14.5025 18.407 12.7767 19.0022 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11C19.0022 12.7767 18.407 14.5025 17.31 15.9ZM11 5C7.68629 5 5 7.68629 5 11C5 14.3137 7.68629 17 11 17C14.3137 17 17 14.3137 17 11C17 7.68629 14.3137 5 11 5Z" />
+									</svg>
+								</span>
+							</button>
+							<button class="btn btn-search" type="button">
 								<span class="icon icon-search">
 									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
 										<path fill-rule="evenodd" clip-rule="evenodd"
@@ -198,7 +213,7 @@
 
 				<div class="wrapper-table">
 
-					<div class="table-header">
+					<!-- <div class="table-header">
 						<h2 class="h3">
 							Сотрудники компании FUN&SUN
 						</h2>
@@ -212,10 +227,10 @@
 							</span>
 							Добавить пользователя
 						</button>
-					</div>
+					</div> -->
 
 					<div class="table-filter">
-						<div class="table-action">
+						<!-- <div class="table-action">
 							<div class="dropdown">
 								<button class="btn dropdown-toggle" type="button" id="dropdownDepartment" data-bs-toggle="dropdown"
 									aria-expanded="false">
@@ -319,15 +334,36 @@
 									<li><a class="dropdown-item" href="#">Something else here</a></li>
 								</ul>
 							</div>
-						</div>
+						</div> -->
 
 						<div class="table-buttons">
+							<button class="btn btn-filter d-lg-none" type="button">
+								<span class="icon icon-filter">
+									<svg viewBox="0 0 21 20" xmlns="http://www.w3.org/2000/svg">
+										<g clip-path="url(#a)">
+											<path d="M19.083 2.5H2.416l6.667 7.883v5.45l3.333 1.667v-7.117L19.083 2.5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+										</g>
+									</svg>
+								</span>
+								Фильтр
+							</button>
 							<button class="btn btn-reset" type="button">
 								Сбросить всё
 							</button>
 
 							<button class="btn btn-delete" type="button">
-								Content
+								Департамент
+								<span class="icon icon-close">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
+										<path d="M12.7119 5.2876L5.28729 12.7122" stroke-width="2" stroke-linecap="round"
+											stroke-linejoin="round" />
+										<path d="M5.28809 5.2876L12.7127 12.7122" stroke-width="2" stroke-linecap="round"
+											stroke-linejoin="round" />
+									</svg>
+								</span>
+							</button>
+							<button class="btn btn-delete" type="button">
+								PR
 								<span class="icon icon-close">
 									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
 										<path d="M12.7119 5.2876L5.28729 12.7122" stroke-width="2" stroke-linecap="round"
@@ -351,7 +387,7 @@
 						</div>
 					</div>
 
-					<div class="table-wrapper" id="tableFullScreen">
+					<div class="table-wrapper table-items" id="tableFullScreen">
 						<div class="table-responsive">
 							<table class="table table-bordered">
 								<thead>
@@ -444,7 +480,8 @@
 										<th scope="col">
 											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableLastVisit"
 												data-bs-toggle="dropdown" aria-expanded="false">
-												Последний визит
+												<span class="desktop">Последний визит</span>
+												<span class="mobile">Посл. визит</span>
 												<span class="icon icon-arrow">
 													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
 														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
@@ -461,7 +498,8 @@
 										<th scope="col">
 											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableLastReport"
 												data-bs-toggle="dropdown" aria-expanded="false">
-												Последний отчёт
+												<span class="desktop">Последний отчёт</span>
+												<span class="mobile">Посл. отчёт</span>
 												<span class="icon icon-arrow">
 													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
 														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
@@ -497,34 +535,41 @@
 								</thead>
 								<tbody>
 									<tr>
-										<th scope="row">
+										<th class="id" scope="row">
+											<span class="suptotal">ID:</span>
 											<span>1</span>
 										</th>
-										<td>
+										<td class="placement">
+											<span class="suptotal">Департамент</span>
 											<span>Content</span>
 										</td>
-										<td>
+										<td class="name">
 											<span>Имя Фамилия Отчество</span>
 										</td>
-										<td>
+										<td class="email">
+											<span class="suptotal">Почта</span>
 											<span>olga.travel@fstravel.com</span>
 										</td>
-										<td>
+										<td class="status">
+											<span class="suptotal">Статус</span>
 											<div class="wrapper-status">
-												<span class="status active"></span>
+												<span class="indicator active"></span>
 												active
 											</div>
 										</td>
-										<td>
+										<td class="date">
+											<span class="suptotal">Последний визит</span>
 											<span>18.01.23</span>
 										</td>
-										<td>
+										<td class="date">
+											<span class="suptotal">Последний отчёт</span>
 											<span>18.01.23</span>
 										</td>
-										<td>
+										<td class="total">
+											<span class="suptotal">Total activities </span>
 											<span>100</span>
 										</td>
-										<td>
+										<td class="more">
 											<button class="btn btn-shape dropdown-toggle" type="button" id="dropdownTotal"
 												data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="16, 16">
 												<span class="icon icon-shape">
@@ -538,639 +583,7 @@
 													</svg>
 												</span>
 											</button>
-											<ul class="dropdown-menu triangle" aria-labelledby="dropdownTotal">
-												<span class="icon icon-triangle">
-													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 8">
-														<path fill-rule="evenodd" clip-rule="evenodd"
-															d="M18 8L10.591 0.653454C9.71231 -0.217818 8.28769 -0.217818 7.40901 0.653454L0 8H18Z" />
-													</svg>
-												</span>
-												<li>
-													<a class="dropdown-item" href="#">
-														<span class="icon icon-block">
-															<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-																<path
-																	d="M15.8333 9.1665H4.16667C3.24619 9.1665 2.5 9.9127 2.5 10.8332V16.6665C2.5 17.587 3.24619 18.3332 4.16667 18.3332H15.8333C16.7538 18.3332 17.5 17.587 17.5 16.6665V10.8332C17.5 9.9127 16.7538 9.1665 15.8333 9.1665Z"
-																	stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
-																<path
-																	d="M5.83301 9.1665V5.83317C5.83301 4.7281 6.27199 3.66829 7.0534 2.88689C7.8348 2.10549 8.89461 1.6665 9.99967 1.6665C11.1047 1.6665 12.1646 2.10549 12.946 2.88689C13.7274 3.66829 14.1663 4.7281 14.1663 5.83317V9.1665"
-																	stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
-															</svg>
-														</span>
-														Заблокировать
-													</a>
-												</li>
-												<li>
-													<a class="dropdown-item" href="#">
-														<span class="icon icon-edit">
-															<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-																<path fill-rule="evenodd" clip-rule="evenodd"
-																	d="M10.9355 3.32017C12.0087 2.24541 13.7492 2.24476 14.8231 3.3187L16.4311 4.92667C17.4959 5.99145 17.507 7.71521 16.4559 8.79358L9.13862 16.3012C8.4331 17.025 7.46544 17.4332 6.455 17.4332L4.63288 17.4331C3.35363 17.433 2.33202 16.3667 2.38582 15.0876L2.46513 13.202C2.50463 12.263 2.89491 11.373 3.55875 10.7081L10.9355 3.32017ZM13.7633 4.38016C13.2751 3.892 12.484 3.8923 11.9962 4.38083L10.9345 5.44417L14.3231 8.83281L15.3825 7.74582C15.8603 7.25565 15.8553 6.47212 15.3713 5.98813L13.7633 4.38016ZM4.61941 11.7688L9.87461 6.50563L13.2761 9.90708L8.06524 15.2534C7.64192 15.6877 7.06133 15.9326 6.45507 15.9326L4.63295 15.9325C4.20653 15.9325 3.86599 15.5771 3.88393 15.1507L3.96324 13.2651C3.98694 12.7017 4.2211 12.1677 4.61941 11.7688ZM17.0958 17.372C17.5099 17.372 17.8455 17.0361 17.8455 16.6217C17.8455 16.2074 17.5099 15.8715 17.0958 15.8715H11.9944C11.5803 15.8715 11.2447 16.2074 11.2447 16.6217C11.2447 17.0361 11.5803 17.372 11.9944 17.372H17.0958Z" />
-															</svg>
-														</span>
-														Редактировать
-													</a>
-												</li>
-											</ul>
-										</td>
-									</tr>
-
-									<tr>
-										<th scope="row">
-											<span>1</span>
-										</th>
-										<td>
-											<span>Content</span>
-										</td>
-										<td>
-											<span>Имя Фамилия Отчество</span>
-										</td>
-										<td>
-											<span>olga.travel@fstravel.com</span>
-										</td>
-										<td>
-											<div class="wrapper-status">
-												<span class="status new"></span>
-												new
-											</div>
-										</td>
-										<td>
-											<span>18.01.23</span>
-										</td>
-										<td>
-											<span>18.01.23</span>
-										</td>
-										<td>
-											<span>100</span>
-										</td>
-										<td>
-											<button class="btn btn-shape dropdown-toggle" type="button" id="dropdownTotal"
-												data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="16, 16">
-												<span class="icon icon-shape">
-													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 16">
-														<path
-															d="M4.00033 8C4.00033 8.92048 3.25413 9.66667 2.33366 9.66667C1.41318 9.66667 0.666992 8.92048 0.666992 8C0.666992 7.07953 1.41318 6.33333 2.33366 6.33333C3.25413 6.33333 4.00033 7.07953 4.00033 8Z" />
-														<path
-															d="M4.00033 2.16667C4.00033 3.08714 3.25413 3.83333 2.33366 3.83333C1.41318 3.83333 0.666992 3.08714 0.666992 2.16667C0.666992 1.24619 1.41318 0.5 2.33366 0.5C3.25413 0.5 4.00033 1.24619 4.00033 2.16667Z" />
-														<path
-															d="M4.00033 13.8333C4.00033 14.7538 3.25413 15.5 2.33366 15.5C1.41318 15.5 0.666992 14.7538 0.666992 13.8333C0.666992 12.9129 1.41318 12.1667 2.33366 12.1667C3.25413 12.1667 4.00033 12.9129 4.00033 13.8333Z" />
-													</svg>
-												</span>
-											</button>
-											<ul class="dropdown-menu triangle" aria-labelledby="dropdownTotal">
-												<span class="icon icon-triangle">
-													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 8">
-														<path fill-rule="evenodd" clip-rule="evenodd"
-															d="M18 8L10.591 0.653454C9.71231 -0.217818 8.28769 -0.217818 7.40901 0.653454L0 8H18Z" />
-													</svg>
-												</span>
-												<li>
-													<a class="dropdown-item" href="#">
-														<span class="icon icon-block">
-															<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-																<path
-																	d="M15.8333 9.1665H4.16667C3.24619 9.1665 2.5 9.9127 2.5 10.8332V16.6665C2.5 17.587 3.24619 18.3332 4.16667 18.3332H15.8333C16.7538 18.3332 17.5 17.587 17.5 16.6665V10.8332C17.5 9.9127 16.7538 9.1665 15.8333 9.1665Z"
-																	stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
-																<path
-																	d="M5.83301 9.1665V5.83317C5.83301 4.7281 6.27199 3.66829 7.0534 2.88689C7.8348 2.10549 8.89461 1.6665 9.99967 1.6665C11.1047 1.6665 12.1646 2.10549 12.946 2.88689C13.7274 3.66829 14.1663 4.7281 14.1663 5.83317V9.1665"
-																	stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
-															</svg>
-														</span>
-														Заблокировать
-													</a>
-												</li>
-												<li>
-													<a class="dropdown-item" href="#">
-														<span class="icon icon-edit">
-															<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-																<path fill-rule="evenodd" clip-rule="evenodd"
-																	d="M10.9355 3.32017C12.0087 2.24541 13.7492 2.24476 14.8231 3.3187L16.4311 4.92667C17.4959 5.99145 17.507 7.71521 16.4559 8.79358L9.13862 16.3012C8.4331 17.025 7.46544 17.4332 6.455 17.4332L4.63288 17.4331C3.35363 17.433 2.33202 16.3667 2.38582 15.0876L2.46513 13.202C2.50463 12.263 2.89491 11.373 3.55875 10.7081L10.9355 3.32017ZM13.7633 4.38016C13.2751 3.892 12.484 3.8923 11.9962 4.38083L10.9345 5.44417L14.3231 8.83281L15.3825 7.74582C15.8603 7.25565 15.8553 6.47212 15.3713 5.98813L13.7633 4.38016ZM4.61941 11.7688L9.87461 6.50563L13.2761 9.90708L8.06524 15.2534C7.64192 15.6877 7.06133 15.9326 6.45507 15.9326L4.63295 15.9325C4.20653 15.9325 3.86599 15.5771 3.88393 15.1507L3.96324 13.2651C3.98694 12.7017 4.2211 12.1677 4.61941 11.7688ZM17.0958 17.372C17.5099 17.372 17.8455 17.0361 17.8455 16.6217C17.8455 16.2074 17.5099 15.8715 17.0958 15.8715H11.9944C11.5803 15.8715 11.2447 16.2074 11.2447 16.6217C11.2447 17.0361 11.5803 17.372 11.9944 17.372H17.0958Z" />
-															</svg>
-														</span>
-														Редактировать
-													</a>
-												</li>
-											</ul>
-										</td>
-									</tr>
-
-									<tr>
-										<th scope="row">
-											<span>1</span>
-										</th>
-										<td>
-											<span>Content</span>
-										</td>
-										<td>
-											<span>Имя Фамилия Отчество</span>
-										</td>
-										<td>
-											<span>olga.travel@fstravel.com</span>
-										</td>
-										<td>
-											<div class="wrapper-status">
-												<span class="status active"></span>
-												active
-											</div>
-										</td>
-										<td>
-											<span>18.01.23</span>
-										</td>
-										<td>
-											<span>18.01.23</span>
-										</td>
-										<td>
-											<span>100</span>
-										</td>
-										<td>
-											<button class="btn btn-shape dropdown-toggle" type="button" id="dropdownTotal"
-												data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="16, 16">
-												<span class="icon icon-shape">
-													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 16">
-														<path
-															d="M4.00033 8C4.00033 8.92048 3.25413 9.66667 2.33366 9.66667C1.41318 9.66667 0.666992 8.92048 0.666992 8C0.666992 7.07953 1.41318 6.33333 2.33366 6.33333C3.25413 6.33333 4.00033 7.07953 4.00033 8Z" />
-														<path
-															d="M4.00033 2.16667C4.00033 3.08714 3.25413 3.83333 2.33366 3.83333C1.41318 3.83333 0.666992 3.08714 0.666992 2.16667C0.666992 1.24619 1.41318 0.5 2.33366 0.5C3.25413 0.5 4.00033 1.24619 4.00033 2.16667Z" />
-														<path
-															d="M4.00033 13.8333C4.00033 14.7538 3.25413 15.5 2.33366 15.5C1.41318 15.5 0.666992 14.7538 0.666992 13.8333C0.666992 12.9129 1.41318 12.1667 2.33366 12.1667C3.25413 12.1667 4.00033 12.9129 4.00033 13.8333Z" />
-													</svg>
-												</span>
-											</button>
-											<ul class="dropdown-menu triangle" aria-labelledby="dropdownTotal">
-												<span class="icon icon-triangle">
-													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 8">
-														<path fill-rule="evenodd" clip-rule="evenodd"
-															d="M18 8L10.591 0.653454C9.71231 -0.217818 8.28769 -0.217818 7.40901 0.653454L0 8H18Z" />
-													</svg>
-												</span>
-												<li>
-													<a class="dropdown-item" href="#">
-														<span class="icon icon-block">
-															<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-																<path
-																	d="M15.8333 9.1665H4.16667C3.24619 9.1665 2.5 9.9127 2.5 10.8332V16.6665C2.5 17.587 3.24619 18.3332 4.16667 18.3332H15.8333C16.7538 18.3332 17.5 17.587 17.5 16.6665V10.8332C17.5 9.9127 16.7538 9.1665 15.8333 9.1665Z"
-																	stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
-																<path
-																	d="M5.83301 9.1665V5.83317C5.83301 4.7281 6.27199 3.66829 7.0534 2.88689C7.8348 2.10549 8.89461 1.6665 9.99967 1.6665C11.1047 1.6665 12.1646 2.10549 12.946 2.88689C13.7274 3.66829 14.1663 4.7281 14.1663 5.83317V9.1665"
-																	stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
-															</svg>
-														</span>
-														Заблокировать
-													</a>
-												</li>
-												<li>
-													<a class="dropdown-item" href="#">
-														<span class="icon icon-edit">
-															<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-																<path fill-rule="evenodd" clip-rule="evenodd"
-																	d="M10.9355 3.32017C12.0087 2.24541 13.7492 2.24476 14.8231 3.3187L16.4311 4.92667C17.4959 5.99145 17.507 7.71521 16.4559 8.79358L9.13862 16.3012C8.4331 17.025 7.46544 17.4332 6.455 17.4332L4.63288 17.4331C3.35363 17.433 2.33202 16.3667 2.38582 15.0876L2.46513 13.202C2.50463 12.263 2.89491 11.373 3.55875 10.7081L10.9355 3.32017ZM13.7633 4.38016C13.2751 3.892 12.484 3.8923 11.9962 4.38083L10.9345 5.44417L14.3231 8.83281L15.3825 7.74582C15.8603 7.25565 15.8553 6.47212 15.3713 5.98813L13.7633 4.38016ZM4.61941 11.7688L9.87461 6.50563L13.2761 9.90708L8.06524 15.2534C7.64192 15.6877 7.06133 15.9326 6.45507 15.9326L4.63295 15.9325C4.20653 15.9325 3.86599 15.5771 3.88393 15.1507L3.96324 13.2651C3.98694 12.7017 4.2211 12.1677 4.61941 11.7688ZM17.0958 17.372C17.5099 17.372 17.8455 17.0361 17.8455 16.6217C17.8455 16.2074 17.5099 15.8715 17.0958 15.8715H11.9944C11.5803 15.8715 11.2447 16.2074 11.2447 16.6217C11.2447 17.0361 11.5803 17.372 11.9944 17.372H17.0958Z" />
-															</svg>
-														</span>
-														Редактировать
-													</a>
-												</li>
-											</ul>
-										</td>
-									</tr>
-
-									<tr>
-										<th scope="row">
-											<span>1</span>
-										</th>
-										<td>
-											<span>Content</span>
-										</td>
-										<td>
-											<span>Имя Фамилия Отчество</span>
-										</td>
-										<td>
-											<span>olga.travel@fstravel.com</span>
-										</td>
-										<td>
-											<div class="wrapper-status">
-												<span class="status active"></span>
-												active
-											</div>
-										</td>
-										<td>
-											<span>18.01.23</span>
-										</td>
-										<td>
-											<span>18.01.23</span>
-										</td>
-										<td>
-											<span>100</span>
-										</td>
-										<td>
-											<button class="btn btn-shape dropdown-toggle" type="button" id="dropdownTotal"
-												data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="16, 16">
-												<span class="icon icon-shape">
-													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 16">
-														<path
-															d="M4.00033 8C4.00033 8.92048 3.25413 9.66667 2.33366 9.66667C1.41318 9.66667 0.666992 8.92048 0.666992 8C0.666992 7.07953 1.41318 6.33333 2.33366 6.33333C3.25413 6.33333 4.00033 7.07953 4.00033 8Z" />
-														<path
-															d="M4.00033 2.16667C4.00033 3.08714 3.25413 3.83333 2.33366 3.83333C1.41318 3.83333 0.666992 3.08714 0.666992 2.16667C0.666992 1.24619 1.41318 0.5 2.33366 0.5C3.25413 0.5 4.00033 1.24619 4.00033 2.16667Z" />
-														<path
-															d="M4.00033 13.8333C4.00033 14.7538 3.25413 15.5 2.33366 15.5C1.41318 15.5 0.666992 14.7538 0.666992 13.8333C0.666992 12.9129 1.41318 12.1667 2.33366 12.1667C3.25413 12.1667 4.00033 12.9129 4.00033 13.8333Z" />
-													</svg>
-												</span>
-											</button>
-											<ul class="dropdown-menu triangle" aria-labelledby="dropdownTotal">
-												<span class="icon icon-triangle">
-													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 8">
-														<path fill-rule="evenodd" clip-rule="evenodd"
-															d="M18 8L10.591 0.653454C9.71231 -0.217818 8.28769 -0.217818 7.40901 0.653454L0 8H18Z" />
-													</svg>
-												</span>
-												<li>
-													<a class="dropdown-item" href="#">
-														<span class="icon icon-block">
-															<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-																<path
-																	d="M15.8333 9.1665H4.16667C3.24619 9.1665 2.5 9.9127 2.5 10.8332V16.6665C2.5 17.587 3.24619 18.3332 4.16667 18.3332H15.8333C16.7538 18.3332 17.5 17.587 17.5 16.6665V10.8332C17.5 9.9127 16.7538 9.1665 15.8333 9.1665Z"
-																	stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
-																<path
-																	d="M5.83301 9.1665V5.83317C5.83301 4.7281 6.27199 3.66829 7.0534 2.88689C7.8348 2.10549 8.89461 1.6665 9.99967 1.6665C11.1047 1.6665 12.1646 2.10549 12.946 2.88689C13.7274 3.66829 14.1663 4.7281 14.1663 5.83317V9.1665"
-																	stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
-															</svg>
-														</span>
-														Заблокировать
-													</a>
-												</li>
-												<li>
-													<a class="dropdown-item" href="#">
-														<span class="icon icon-edit">
-															<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-																<path fill-rule="evenodd" clip-rule="evenodd"
-																	d="M10.9355 3.32017C12.0087 2.24541 13.7492 2.24476 14.8231 3.3187L16.4311 4.92667C17.4959 5.99145 17.507 7.71521 16.4559 8.79358L9.13862 16.3012C8.4331 17.025 7.46544 17.4332 6.455 17.4332L4.63288 17.4331C3.35363 17.433 2.33202 16.3667 2.38582 15.0876L2.46513 13.202C2.50463 12.263 2.89491 11.373 3.55875 10.7081L10.9355 3.32017ZM13.7633 4.38016C13.2751 3.892 12.484 3.8923 11.9962 4.38083L10.9345 5.44417L14.3231 8.83281L15.3825 7.74582C15.8603 7.25565 15.8553 6.47212 15.3713 5.98813L13.7633 4.38016ZM4.61941 11.7688L9.87461 6.50563L13.2761 9.90708L8.06524 15.2534C7.64192 15.6877 7.06133 15.9326 6.45507 15.9326L4.63295 15.9325C4.20653 15.9325 3.86599 15.5771 3.88393 15.1507L3.96324 13.2651C3.98694 12.7017 4.2211 12.1677 4.61941 11.7688ZM17.0958 17.372C17.5099 17.372 17.8455 17.0361 17.8455 16.6217C17.8455 16.2074 17.5099 15.8715 17.0958 15.8715H11.9944C11.5803 15.8715 11.2447 16.2074 11.2447 16.6217C11.2447 17.0361 11.5803 17.372 11.9944 17.372H17.0958Z" />
-															</svg>
-														</span>
-														Редактировать
-													</a>
-												</li>
-											</ul>
-										</td>
-									</tr>
-
-									<tr>
-										<th scope="row">
-											<span>1</span>
-										</th>
-										<td>
-											<span>Content</span>
-										</td>
-										<td>
-											<span>Имя Фамилия Отчество</span>
-										</td>
-										<td>
-											<span>olga.travel@fstravel.com</span>
-										</td>
-										<td>
-											<div class="wrapper-status">
-												<span class="status active"></span>
-												active
-											</div>
-										</td>
-										<td>
-											<span>18.01.23</span>
-										</td>
-										<td>
-											<span>18.01.23</span>
-										</td>
-										<td>
-											<span>100</span>
-										</td>
-										<td>
-											<button class="btn btn-shape dropdown-toggle" type="button" id="dropdownTotal"
-												data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="16, 16">
-												<span class="icon icon-shape">
-													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 16">
-														<path
-															d="M4.00033 8C4.00033 8.92048 3.25413 9.66667 2.33366 9.66667C1.41318 9.66667 0.666992 8.92048 0.666992 8C0.666992 7.07953 1.41318 6.33333 2.33366 6.33333C3.25413 6.33333 4.00033 7.07953 4.00033 8Z" />
-														<path
-															d="M4.00033 2.16667C4.00033 3.08714 3.25413 3.83333 2.33366 3.83333C1.41318 3.83333 0.666992 3.08714 0.666992 2.16667C0.666992 1.24619 1.41318 0.5 2.33366 0.5C3.25413 0.5 4.00033 1.24619 4.00033 2.16667Z" />
-														<path
-															d="M4.00033 13.8333C4.00033 14.7538 3.25413 15.5 2.33366 15.5C1.41318 15.5 0.666992 14.7538 0.666992 13.8333C0.666992 12.9129 1.41318 12.1667 2.33366 12.1667C3.25413 12.1667 4.00033 12.9129 4.00033 13.8333Z" />
-													</svg>
-												</span>
-											</button>
-											<ul class="dropdown-menu triangle" aria-labelledby="dropdownTotal">
-												<span class="icon icon-triangle">
-													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 8">
-														<path fill-rule="evenodd" clip-rule="evenodd"
-															d="M18 8L10.591 0.653454C9.71231 -0.217818 8.28769 -0.217818 7.40901 0.653454L0 8H18Z" />
-													</svg>
-												</span>
-												<li>
-													<a class="dropdown-item" href="#">
-														<span class="icon icon-block">
-															<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-																<path
-																	d="M15.8333 9.1665H4.16667C3.24619 9.1665 2.5 9.9127 2.5 10.8332V16.6665C2.5 17.587 3.24619 18.3332 4.16667 18.3332H15.8333C16.7538 18.3332 17.5 17.587 17.5 16.6665V10.8332C17.5 9.9127 16.7538 9.1665 15.8333 9.1665Z"
-																	stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
-																<path
-																	d="M5.83301 9.1665V5.83317C5.83301 4.7281 6.27199 3.66829 7.0534 2.88689C7.8348 2.10549 8.89461 1.6665 9.99967 1.6665C11.1047 1.6665 12.1646 2.10549 12.946 2.88689C13.7274 3.66829 14.1663 4.7281 14.1663 5.83317V9.1665"
-																	stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
-															</svg>
-														</span>
-														Заблокировать
-													</a>
-												</li>
-												<li>
-													<a class="dropdown-item" href="#">
-														<span class="icon icon-edit">
-															<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-																<path fill-rule="evenodd" clip-rule="evenodd"
-																	d="M10.9355 3.32017C12.0087 2.24541 13.7492 2.24476 14.8231 3.3187L16.4311 4.92667C17.4959 5.99145 17.507 7.71521 16.4559 8.79358L9.13862 16.3012C8.4331 17.025 7.46544 17.4332 6.455 17.4332L4.63288 17.4331C3.35363 17.433 2.33202 16.3667 2.38582 15.0876L2.46513 13.202C2.50463 12.263 2.89491 11.373 3.55875 10.7081L10.9355 3.32017ZM13.7633 4.38016C13.2751 3.892 12.484 3.8923 11.9962 4.38083L10.9345 5.44417L14.3231 8.83281L15.3825 7.74582C15.8603 7.25565 15.8553 6.47212 15.3713 5.98813L13.7633 4.38016ZM4.61941 11.7688L9.87461 6.50563L13.2761 9.90708L8.06524 15.2534C7.64192 15.6877 7.06133 15.9326 6.45507 15.9326L4.63295 15.9325C4.20653 15.9325 3.86599 15.5771 3.88393 15.1507L3.96324 13.2651C3.98694 12.7017 4.2211 12.1677 4.61941 11.7688ZM17.0958 17.372C17.5099 17.372 17.8455 17.0361 17.8455 16.6217C17.8455 16.2074 17.5099 15.8715 17.0958 15.8715H11.9944C11.5803 15.8715 11.2447 16.2074 11.2447 16.6217C11.2447 17.0361 11.5803 17.372 11.9944 17.372H17.0958Z" />
-															</svg>
-														</span>
-														Редактировать
-													</a>
-												</li>
-											</ul>
-										</td>
-									</tr>
-
-									<tr>
-										<th scope="row">
-											<span>1</span>
-										</th>
-										<td>
-											<span>Content</span>
-										</td>
-										<td>
-											<span>Имя Фамилия Отчество</span>
-										</td>
-										<td>
-											<span>olga.travel@fstravel.com</span>
-										</td>
-										<td>
-											<div class="wrapper-status">
-												<span class="status active"></span>
-												active
-											</div>
-										</td>
-										<td>
-											<span>18.01.23</span>
-										</td>
-										<td>
-											<span>18.01.23</span>
-										</td>
-										<td>
-											<span>100</span>
-										</td>
-										<td>
-											<button class="btn btn-shape dropdown-toggle" type="button" id="dropdownTotal"
-												data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="16, 16">
-												<span class="icon icon-shape">
-													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 16">
-														<path
-															d="M4.00033 8C4.00033 8.92048 3.25413 9.66667 2.33366 9.66667C1.41318 9.66667 0.666992 8.92048 0.666992 8C0.666992 7.07953 1.41318 6.33333 2.33366 6.33333C3.25413 6.33333 4.00033 7.07953 4.00033 8Z" />
-														<path
-															d="M4.00033 2.16667C4.00033 3.08714 3.25413 3.83333 2.33366 3.83333C1.41318 3.83333 0.666992 3.08714 0.666992 2.16667C0.666992 1.24619 1.41318 0.5 2.33366 0.5C3.25413 0.5 4.00033 1.24619 4.00033 2.16667Z" />
-														<path
-															d="M4.00033 13.8333C4.00033 14.7538 3.25413 15.5 2.33366 15.5C1.41318 15.5 0.666992 14.7538 0.666992 13.8333C0.666992 12.9129 1.41318 12.1667 2.33366 12.1667C3.25413 12.1667 4.00033 12.9129 4.00033 13.8333Z" />
-													</svg>
-												</span>
-											</button>
-											<ul class="dropdown-menu triangle" aria-labelledby="dropdownTotal">
-												<span class="icon icon-triangle">
-													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 8">
-														<path fill-rule="evenodd" clip-rule="evenodd"
-															d="M18 8L10.591 0.653454C9.71231 -0.217818 8.28769 -0.217818 7.40901 0.653454L0 8H18Z" />
-													</svg>
-												</span>
-												<li>
-													<a class="dropdown-item" href="#">
-														<span class="icon icon-block">
-															<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-																<path
-																	d="M15.8333 9.1665H4.16667C3.24619 9.1665 2.5 9.9127 2.5 10.8332V16.6665C2.5 17.587 3.24619 18.3332 4.16667 18.3332H15.8333C16.7538 18.3332 17.5 17.587 17.5 16.6665V10.8332C17.5 9.9127 16.7538 9.1665 15.8333 9.1665Z"
-																	stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
-																<path
-																	d="M5.83301 9.1665V5.83317C5.83301 4.7281 6.27199 3.66829 7.0534 2.88689C7.8348 2.10549 8.89461 1.6665 9.99967 1.6665C11.1047 1.6665 12.1646 2.10549 12.946 2.88689C13.7274 3.66829 14.1663 4.7281 14.1663 5.83317V9.1665"
-																	stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
-															</svg>
-														</span>
-														Заблокировать
-													</a>
-												</li>
-												<li>
-													<a class="dropdown-item" href="#">
-														<span class="icon icon-edit">
-															<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-																<path fill-rule="evenodd" clip-rule="evenodd"
-																	d="M10.9355 3.32017C12.0087 2.24541 13.7492 2.24476 14.8231 3.3187L16.4311 4.92667C17.4959 5.99145 17.507 7.71521 16.4559 8.79358L9.13862 16.3012C8.4331 17.025 7.46544 17.4332 6.455 17.4332L4.63288 17.4331C3.35363 17.433 2.33202 16.3667 2.38582 15.0876L2.46513 13.202C2.50463 12.263 2.89491 11.373 3.55875 10.7081L10.9355 3.32017ZM13.7633 4.38016C13.2751 3.892 12.484 3.8923 11.9962 4.38083L10.9345 5.44417L14.3231 8.83281L15.3825 7.74582C15.8603 7.25565 15.8553 6.47212 15.3713 5.98813L13.7633 4.38016ZM4.61941 11.7688L9.87461 6.50563L13.2761 9.90708L8.06524 15.2534C7.64192 15.6877 7.06133 15.9326 6.45507 15.9326L4.63295 15.9325C4.20653 15.9325 3.86599 15.5771 3.88393 15.1507L3.96324 13.2651C3.98694 12.7017 4.2211 12.1677 4.61941 11.7688ZM17.0958 17.372C17.5099 17.372 17.8455 17.0361 17.8455 16.6217C17.8455 16.2074 17.5099 15.8715 17.0958 15.8715H11.9944C11.5803 15.8715 11.2447 16.2074 11.2447 16.6217C11.2447 17.0361 11.5803 17.372 11.9944 17.372H17.0958Z" />
-															</svg>
-														</span>
-														Редактировать
-													</a>
-												</li>
-											</ul>
-										</td>
-									</tr>
-
-									<tr>
-										<th scope="row">
-											<span>1</span>
-										</th>
-										<td>
-											<span>Content</span>
-										</td>
-										<td>
-											<span>Имя Фамилия Отчество</span>
-										</td>
-										<td>
-											<span>olga.travel@fstravel.com</span>
-										</td>
-										<td>
-											<div class="wrapper-status">
-												<span class="status active"></span>
-												active
-											</div>
-										</td>
-										<td>
-											<span>18.01.23</span>
-										</td>
-										<td>
-											<span>18.01.23</span>
-										</td>
-										<td>
-											<span>100</span>
-										</td>
-										<td>
-											<button class="btn btn-shape dropdown-toggle" type="button" id="dropdownTotal"
-												data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="16, 16">
-												<span class="icon icon-shape">
-													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 16">
-														<path
-															d="M4.00033 8C4.00033 8.92048 3.25413 9.66667 2.33366 9.66667C1.41318 9.66667 0.666992 8.92048 0.666992 8C0.666992 7.07953 1.41318 6.33333 2.33366 6.33333C3.25413 6.33333 4.00033 7.07953 4.00033 8Z" />
-														<path
-															d="M4.00033 2.16667C4.00033 3.08714 3.25413 3.83333 2.33366 3.83333C1.41318 3.83333 0.666992 3.08714 0.666992 2.16667C0.666992 1.24619 1.41318 0.5 2.33366 0.5C3.25413 0.5 4.00033 1.24619 4.00033 2.16667Z" />
-														<path
-															d="M4.00033 13.8333C4.00033 14.7538 3.25413 15.5 2.33366 15.5C1.41318 15.5 0.666992 14.7538 0.666992 13.8333C0.666992 12.9129 1.41318 12.1667 2.33366 12.1667C3.25413 12.1667 4.00033 12.9129 4.00033 13.8333Z" />
-													</svg>
-												</span>
-											</button>
-											<ul class="dropdown-menu triangle" aria-labelledby="dropdownTotal">
-												<span class="icon icon-triangle">
-													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 8">
-														<path fill-rule="evenodd" clip-rule="evenodd"
-															d="M18 8L10.591 0.653454C9.71231 -0.217818 8.28769 -0.217818 7.40901 0.653454L0 8H18Z" />
-													</svg>
-												</span>
-												<li>
-													<a class="dropdown-item" href="#">
-														<span class="icon icon-block">
-															<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-																<path
-																	d="M15.8333 9.1665H4.16667C3.24619 9.1665 2.5 9.9127 2.5 10.8332V16.6665C2.5 17.587 3.24619 18.3332 4.16667 18.3332H15.8333C16.7538 18.3332 17.5 17.587 17.5 16.6665V10.8332C17.5 9.9127 16.7538 9.1665 15.8333 9.1665Z"
-																	stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
-																<path
-																	d="M5.83301 9.1665V5.83317C5.83301 4.7281 6.27199 3.66829 7.0534 2.88689C7.8348 2.10549 8.89461 1.6665 9.99967 1.6665C11.1047 1.6665 12.1646 2.10549 12.946 2.88689C13.7274 3.66829 14.1663 4.7281 14.1663 5.83317V9.1665"
-																	stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
-															</svg>
-														</span>
-														Заблокировать
-													</a>
-												</li>
-												<li>
-													<a class="dropdown-item" href="#">
-														<span class="icon icon-edit">
-															<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-																<path fill-rule="evenodd" clip-rule="evenodd"
-																	d="M10.9355 3.32017C12.0087 2.24541 13.7492 2.24476 14.8231 3.3187L16.4311 4.92667C17.4959 5.99145 17.507 7.71521 16.4559 8.79358L9.13862 16.3012C8.4331 17.025 7.46544 17.4332 6.455 17.4332L4.63288 17.4331C3.35363 17.433 2.33202 16.3667 2.38582 15.0876L2.46513 13.202C2.50463 12.263 2.89491 11.373 3.55875 10.7081L10.9355 3.32017ZM13.7633 4.38016C13.2751 3.892 12.484 3.8923 11.9962 4.38083L10.9345 5.44417L14.3231 8.83281L15.3825 7.74582C15.8603 7.25565 15.8553 6.47212 15.3713 5.98813L13.7633 4.38016ZM4.61941 11.7688L9.87461 6.50563L13.2761 9.90708L8.06524 15.2534C7.64192 15.6877 7.06133 15.9326 6.45507 15.9326L4.63295 15.9325C4.20653 15.9325 3.86599 15.5771 3.88393 15.1507L3.96324 13.2651C3.98694 12.7017 4.2211 12.1677 4.61941 11.7688ZM17.0958 17.372C17.5099 17.372 17.8455 17.0361 17.8455 16.6217C17.8455 16.2074 17.5099 15.8715 17.0958 15.8715H11.9944C11.5803 15.8715 11.2447 16.2074 11.2447 16.6217C11.2447 17.0361 11.5803 17.372 11.9944 17.372H17.0958Z" />
-															</svg>
-														</span>
-														Редактировать
-													</a>
-												</li>
-											</ul>
-										</td>
-									</tr>
-
-									<tr>
-										<th scope="row">
-											<span>1</span>
-										</th>
-										<td>
-											<span>Content</span>
-										</td>
-										<td>
-											<span>Имя Фамилия Отчество</span>
-										</td>
-										<td>
-											<span>olga.travel@fstravel.com</span>
-										</td>
-										<td>
-											<div class="wrapper-status">
-												<span class="status active"></span>
-												active
-											</div>
-										</td>
-										<td>
-											<span>18.01.23</span>
-										</td>
-										<td>
-											<span>18.01.23</span>
-										</td>
-										<td>
-											<span>100</span>
-										</td>
-										<td>
-											<button class="btn btn-shape dropdown-toggle" type="button" id="dropdownTotal"
-												data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="16, 16">
-												<span class="icon icon-shape">
-													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 16">
-														<path
-															d="M4.00033 8C4.00033 8.92048 3.25413 9.66667 2.33366 9.66667C1.41318 9.66667 0.666992 8.92048 0.666992 8C0.666992 7.07953 1.41318 6.33333 2.33366 6.33333C3.25413 6.33333 4.00033 7.07953 4.00033 8Z" />
-														<path
-															d="M4.00033 2.16667C4.00033 3.08714 3.25413 3.83333 2.33366 3.83333C1.41318 3.83333 0.666992 3.08714 0.666992 2.16667C0.666992 1.24619 1.41318 0.5 2.33366 0.5C3.25413 0.5 4.00033 1.24619 4.00033 2.16667Z" />
-														<path
-															d="M4.00033 13.8333C4.00033 14.7538 3.25413 15.5 2.33366 15.5C1.41318 15.5 0.666992 14.7538 0.666992 13.8333C0.666992 12.9129 1.41318 12.1667 2.33366 12.1667C3.25413 12.1667 4.00033 12.9129 4.00033 13.8333Z" />
-													</svg>
-												</span>
-											</button>
-											<ul class="dropdown-menu triangle" aria-labelledby="dropdownTotal">
-												<span class="icon icon-triangle">
-													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 8">
-														<path fill-rule="evenodd" clip-rule="evenodd"
-															d="M18 8L10.591 0.653454C9.71231 -0.217818 8.28769 -0.217818 7.40901 0.653454L0 8H18Z" />
-													</svg>
-												</span>
-												<li>
-													<a class="dropdown-item" href="#">
-														<span class="icon icon-block">
-															<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-																<path
-																	d="M15.8333 9.1665H4.16667C3.24619 9.1665 2.5 9.9127 2.5 10.8332V16.6665C2.5 17.587 3.24619 18.3332 4.16667 18.3332H15.8333C16.7538 18.3332 17.5 17.587 17.5 16.6665V10.8332C17.5 9.9127 16.7538 9.1665 15.8333 9.1665Z"
-																	stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
-																<path
-																	d="M5.83301 9.1665V5.83317C5.83301 4.7281 6.27199 3.66829 7.0534 2.88689C7.8348 2.10549 8.89461 1.6665 9.99967 1.6665C11.1047 1.6665 12.1646 2.10549 12.946 2.88689C13.7274 3.66829 14.1663 4.7281 14.1663 5.83317V9.1665"
-																	stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
-															</svg>
-														</span>
-														Заблокировать
-													</a>
-												</li>
-												<li>
-													<a class="dropdown-item" href="#">
-														<span class="icon icon-edit">
-															<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-																<path fill-rule="evenodd" clip-rule="evenodd"
-																	d="M10.9355 3.32017C12.0087 2.24541 13.7492 2.24476 14.8231 3.3187L16.4311 4.92667C17.4959 5.99145 17.507 7.71521 16.4559 8.79358L9.13862 16.3012C8.4331 17.025 7.46544 17.4332 6.455 17.4332L4.63288 17.4331C3.35363 17.433 2.33202 16.3667 2.38582 15.0876L2.46513 13.202C2.50463 12.263 2.89491 11.373 3.55875 10.7081L10.9355 3.32017ZM13.7633 4.38016C13.2751 3.892 12.484 3.8923 11.9962 4.38083L10.9345 5.44417L14.3231 8.83281L15.3825 7.74582C15.8603 7.25565 15.8553 6.47212 15.3713 5.98813L13.7633 4.38016ZM4.61941 11.7688L9.87461 6.50563L13.2761 9.90708L8.06524 15.2534C7.64192 15.6877 7.06133 15.9326 6.45507 15.9326L4.63295 15.9325C4.20653 15.9325 3.86599 15.5771 3.88393 15.1507L3.96324 13.2651C3.98694 12.7017 4.2211 12.1677 4.61941 11.7688ZM17.0958 17.372C17.5099 17.372 17.8455 17.0361 17.8455 16.6217C17.8455 16.2074 17.5099 15.8715 17.0958 15.8715H11.9944C11.5803 15.8715 11.2447 16.2074 11.2447 16.6217C11.2447 17.0361 11.5803 17.372 11.9944 17.372H17.0958Z" />
-															</svg>
-														</span>
-														Редактировать
-													</a>
-												</li>
-											</ul>
-										</td>
-									</tr>
-
-									<tr>
-										<th scope="row">
-											<span>1</span>
-										</th>
-										<td>
-											<span>Content</span>
-										</td>
-										<td>
-											<span>Имя Фамилия Отчество</span>
-										</td>
-										<td>
-											<span>olga.travel@fstravel.com</span>
-										</td>
-										<td>
-											<div class="wrapper-status">
-												<span class="status active"></span>
-												active
-											</div>
-										</td>
-										<td>
-											<span>18.01.23</span>
-										</td>
-										<td>
-											<span>18.01.23</span>
-										</td>
-										<td>
-											<span>100</span>
-										</td>
-										<td>
-											<button class="btn btn-shape dropdown-toggle" type="button" id="dropdownTotal"
-												data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="16, 16">
-												<span class="icon icon-shape">
-													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 16">
-														<path
-															d="M4.00033 8C4.00033 8.92048 3.25413 9.66667 2.33366 9.66667C1.41318 9.66667 0.666992 8.92048 0.666992 8C0.666992 7.07953 1.41318 6.33333 2.33366 6.33333C3.25413 6.33333 4.00033 7.07953 4.00033 8Z" />
-														<path
-															d="M4.00033 2.16667C4.00033 3.08714 3.25413 3.83333 2.33366 3.83333C1.41318 3.83333 0.666992 3.08714 0.666992 2.16667C0.666992 1.24619 1.41318 0.5 2.33366 0.5C3.25413 0.5 4.00033 1.24619 4.00033 2.16667Z" />
-														<path
-															d="M4.00033 13.8333C4.00033 14.7538 3.25413 15.5 2.33366 15.5C1.41318 15.5 0.666992 14.7538 0.666992 13.8333C0.666992 12.9129 1.41318 12.1667 2.33366 12.1667C3.25413 12.1667 4.00033 12.9129 4.00033 13.8333Z" />
-													</svg>
-												</span>
-											</button>
-											<ul class="dropdown-menu triangle" aria-labelledby="dropdownTotal">
+											<ul class="dropdown-menu dropdown-menu-end triangle" aria-labelledby="dropdownTotal">
 												<span class="icon icon-triangle">
 													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 8">
 														<path fill-rule="evenodd" clip-rule="evenodd"
@@ -1208,34 +621,41 @@
 									</tr>
 
 									<tr class="passive">
-										<th scope="row">
+										<th class="id" scope="row">
+											<span class="suptotal">ID:</span>
 											<span>1</span>
 										</th>
-										<td>
+										<td class="placement">
+											<span class="suptotal">Департамент</span>
 											<span>Content</span>
 										</td>
-										<td>
+										<td class="name">
 											<span>Имя Фамилия Отчество</span>
 										</td>
-										<td>
+										<td class="email">
+											<span class="suptotal">Почта</span>
 											<span>olga.travel@fstravel.com</span>
 										</td>
-										<td>
+										<td class="status">
+											<span class="suptotal">Статус</span>
 											<div class="wrapper-status">
-												<span class="status passive"></span>
+												<span class="indicator passive"></span>
 												passive
 											</div>
 										</td>
-										<td>
+										<td class="date">
+											<span class="suptotal">Последний визит</span>
 											<span>18.01.23</span>
 										</td>
-										<td>
+										<td class="date">
+											<span class="suptotal">Последний отчёт</span>
 											<span>18.01.23</span>
 										</td>
-										<td>
+										<td class="total">
+											<span class="suptotal">Total activities </span>
 											<span>100</span>
 										</td>
-										<td>
+										<td class="more">
 											<button class="btn btn-shape dropdown-toggle" type="button" id="dropdownTotal"
 												data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="16, 16">
 												<span class="icon icon-shape">
@@ -1249,84 +669,7 @@
 													</svg>
 												</span>
 											</button>
-											<ul class="dropdown-menu triangle" aria-labelledby="dropdownTotal">
-												<span class="icon icon-triangle">
-													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 8">
-														<path fill-rule="evenodd" clip-rule="evenodd"
-															d="M18 8L10.591 0.653454C9.71231 -0.217818 8.28769 -0.217818 7.40901 0.653454L0 8H18Z" />
-													</svg>
-												</span>
-												<li>
-													<a class="dropdown-item" href="#">
-														<span class="icon icon-key">
-															<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-																<path
-																	d="M17.5002 1.6665L15.8336 3.33317M15.8336 3.33317L18.3336 5.83317L15.4169 8.74984L12.9169 6.24984M15.8336 3.33317L12.9169 6.24984M9.4919 9.67484C9.92218 10.0994 10.2642 10.6049 10.4984 11.1622C10.7325 11.7195 10.8541 12.3176 10.8561 12.922C10.8581 13.5265 10.7405 14.1254 10.5102 14.6843C10.2798 15.2431 9.94111 15.7509 9.51368 16.1783C9.08625 16.6057 8.5785 16.9444 8.01965 17.1748C7.4608 17.4052 6.8619 17.5227 6.25742 17.5207C5.65295 17.5187 5.05485 17.3971 4.49755 17.163C3.94026 16.9288 3.43478 16.5868 3.01023 16.1565C2.17534 15.2921 1.71336 14.1343 1.72381 12.9326C1.73425 11.7308 2.21627 10.5813 3.06606 9.7315C3.91585 8.88171 5.0654 8.39969 6.26714 8.38925C7.46888 8.37881 8.62664 8.84078 9.49106 9.67567L9.4919 9.67484ZM9.4919 9.67484L12.9169 6.24984"
-																	stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
-															</svg>
-														</span>
-														Открыть доступ
-													</a>
-												</li>
-												<li>
-													<a class="dropdown-item" href="#">
-														<span class="icon icon-edit">
-															<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-																<path fill-rule="evenodd" clip-rule="evenodd"
-																	d="M10.9355 3.32017C12.0087 2.24541 13.7492 2.24476 14.8231 3.3187L16.4311 4.92667C17.4959 5.99145 17.507 7.71521 16.4559 8.79358L9.13862 16.3012C8.4331 17.025 7.46544 17.4332 6.455 17.4332L4.63288 17.4331C3.35363 17.433 2.33202 16.3667 2.38582 15.0876L2.46513 13.202C2.50463 12.263 2.89491 11.373 3.55875 10.7081L10.9355 3.32017ZM13.7633 4.38016C13.2751 3.892 12.484 3.8923 11.9962 4.38083L10.9345 5.44417L14.3231 8.83281L15.3825 7.74582C15.8603 7.25565 15.8553 6.47212 15.3713 5.98813L13.7633 4.38016ZM4.61941 11.7688L9.87461 6.50563L13.2761 9.90708L8.06524 15.2534C7.64192 15.6877 7.06133 15.9326 6.45507 15.9326L4.63295 15.9325C4.20653 15.9325 3.86599 15.5771 3.88393 15.1507L3.96324 13.2651C3.98694 12.7017 4.2211 12.1677 4.61941 11.7688ZM17.0958 17.372C17.5099 17.372 17.8455 17.0361 17.8455 16.6217C17.8455 16.2074 17.5099 15.8715 17.0958 15.8715H11.9944C11.5803 15.8715 11.2447 16.2074 11.2447 16.6217C11.2447 17.0361 11.5803 17.372 11.9944 17.372H17.0958Z" />
-															</svg>
-														</span>
-														Редактировать
-													</a>
-												</li>
-											</ul>
-										</td>
-										</td>
-									</tr>
-
-									<tr>
-										<th scope="row">
-											<span>1</span>
-										</th>
-										<td>
-											<span>Content</span>
-										</td>
-										<td>
-											<span>Имя Фамилия Отчество</span>
-										</td>
-										<td>
-											<span>olga.travel@fstravel.com</span>
-										</td>
-										<td>
-											<div class="wrapper-status">
-												<span class="status new"></span>
-												new
-											</div>
-										</td>
-										<td>
-											<span>18.01.23</span>
-										</td>
-										<td>
-											<span>18.01.23</span>
-										</td>
-										<td>
-											<span>100</span>
-										</td>
-										<td>
-											<button class="btn btn-shape dropdown-toggle" type="button" id="dropdownTotal"
-												data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="16, 16">
-												<span class="icon icon-shape">
-													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 16">
-														<path
-															d="M4.00033 8C4.00033 8.92048 3.25413 9.66667 2.33366 9.66667C1.41318 9.66667 0.666992 8.92048 0.666992 8C0.666992 7.07953 1.41318 6.33333 2.33366 6.33333C3.25413 6.33333 4.00033 7.07953 4.00033 8Z" />
-														<path
-															d="M4.00033 2.16667C4.00033 3.08714 3.25413 3.83333 2.33366 3.83333C1.41318 3.83333 0.666992 3.08714 0.666992 2.16667C0.666992 1.24619 1.41318 0.5 2.33366 0.5C3.25413 0.5 4.00033 1.24619 4.00033 2.16667Z" />
-														<path
-															d="M4.00033 13.8333C4.00033 14.7538 3.25413 15.5 2.33366 15.5C1.41318 15.5 0.666992 14.7538 0.666992 13.8333C0.666992 12.9129 1.41318 12.1667 2.33366 12.1667C3.25413 12.1667 4.00033 12.9129 4.00033 13.8333Z" />
-													</svg>
-												</span>
-											</button>
-											<ul class="dropdown-menu triangle" aria-labelledby="dropdownTotal">
+											<ul class="dropdown-menu dropdown-menu-end triangle" aria-labelledby="dropdownTotal">
 												<span class="icon icon-triangle">
 													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 8">
 														<path fill-rule="evenodd" clip-rule="evenodd"
@@ -1364,34 +707,41 @@
 									</tr>
 
 									<tr>
-										<th scope="row">
+										<th class="id" scope="row">
+											<span class="suptotal">ID:</span>
 											<span>1</span>
 										</th>
-										<td>
+										<td class="placement">
+											<span class="suptotal">Департамент</span>
 											<span>Content</span>
 										</td>
-										<td>
+										<td class="name">
 											<span>Имя Фамилия Отчество</span>
 										</td>
-										<td>
+										<td class="email">
+											<span class="suptotal">Почта</span>
 											<span>olga.travel@fstravel.com</span>
 										</td>
-										<td>
+										<td class="status">
+											<span class="suptotal">Статус</span>
 											<div class="wrapper-status">
-												<span class="status new"></span>
-												new
+												<span class="indicator active"></span>
+												active
 											</div>
 										</td>
-										<td>
+										<td class="date">
+											<span class="suptotal">Последний визит</span>
 											<span>18.01.23</span>
 										</td>
-										<td>
+										<td class="date">
+											<span class="suptotal">Последний отчёт</span>
 											<span>18.01.23</span>
 										</td>
-										<td>
+										<td class="total">
+											<span class="suptotal">Total activities </span>
 											<span>100</span>
 										</td>
-										<td>
+										<td class="more">
 											<button class="btn btn-shape dropdown-toggle" type="button" id="dropdownTotal"
 												data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="16, 16">
 												<span class="icon icon-shape">
@@ -1405,7 +755,867 @@
 													</svg>
 												</span>
 											</button>
-											<ul class="dropdown-menu triangle" aria-labelledby="dropdownTotal">
+											<ul class="dropdown-menu dropdown-menu-end triangle" aria-labelledby="dropdownTotal">
+												<span class="icon icon-triangle">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 8">
+														<path fill-rule="evenodd" clip-rule="evenodd"
+															d="M18 8L10.591 0.653454C9.71231 -0.217818 8.28769 -0.217818 7.40901 0.653454L0 8H18Z" />
+													</svg>
+												</span>
+												<li>
+													<a class="dropdown-item" href="#">
+														<span class="icon icon-block">
+															<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+																<path
+																	d="M15.8333 9.1665H4.16667C3.24619 9.1665 2.5 9.9127 2.5 10.8332V16.6665C2.5 17.587 3.24619 18.3332 4.16667 18.3332H15.8333C16.7538 18.3332 17.5 17.587 17.5 16.6665V10.8332C17.5 9.9127 16.7538 9.1665 15.8333 9.1665Z"
+																	stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+																<path
+																	d="M5.83301 9.1665V5.83317C5.83301 4.7281 6.27199 3.66829 7.0534 2.88689C7.8348 2.10549 8.89461 1.6665 9.99967 1.6665C11.1047 1.6665 12.1646 2.10549 12.946 2.88689C13.7274 3.66829 14.1663 4.7281 14.1663 5.83317V9.1665"
+																	stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+															</svg>
+														</span>
+														Заблокировать
+													</a>
+												</li>
+												<li>
+													<a class="dropdown-item" href="#">
+														<span class="icon icon-edit">
+															<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+																<path fill-rule="evenodd" clip-rule="evenodd"
+																	d="M10.9355 3.32017C12.0087 2.24541 13.7492 2.24476 14.8231 3.3187L16.4311 4.92667C17.4959 5.99145 17.507 7.71521 16.4559 8.79358L9.13862 16.3012C8.4331 17.025 7.46544 17.4332 6.455 17.4332L4.63288 17.4331C3.35363 17.433 2.33202 16.3667 2.38582 15.0876L2.46513 13.202C2.50463 12.263 2.89491 11.373 3.55875 10.7081L10.9355 3.32017ZM13.7633 4.38016C13.2751 3.892 12.484 3.8923 11.9962 4.38083L10.9345 5.44417L14.3231 8.83281L15.3825 7.74582C15.8603 7.25565 15.8553 6.47212 15.3713 5.98813L13.7633 4.38016ZM4.61941 11.7688L9.87461 6.50563L13.2761 9.90708L8.06524 15.2534C7.64192 15.6877 7.06133 15.9326 6.45507 15.9326L4.63295 15.9325C4.20653 15.9325 3.86599 15.5771 3.88393 15.1507L3.96324 13.2651C3.98694 12.7017 4.2211 12.1677 4.61941 11.7688ZM17.0958 17.372C17.5099 17.372 17.8455 17.0361 17.8455 16.6217C17.8455 16.2074 17.5099 15.8715 17.0958 15.8715H11.9944C11.5803 15.8715 11.2447 16.2074 11.2447 16.6217C11.2447 17.0361 11.5803 17.372 11.9944 17.372H17.0958Z" />
+															</svg>
+														</span>
+														Редактировать
+													</a>
+												</li>
+											</ul>
+										</td>
+									</tr>
+
+									<tr>
+										<th class="id" scope="row">
+											<span class="suptotal">ID:</span>
+											<span>1</span>
+										</th>
+										<td class="placement">
+											<span class="suptotal">Департамент</span>
+											<span>Content</span>
+										</td>
+										<td class="name">
+											<span>Имя Фамилия Отчество</span>
+										</td>
+										<td class="email">
+											<span class="suptotal">Почта</span>
+											<span>olga.travel@fstravel.com</span>
+										</td>
+										<td class="status">
+											<span class="suptotal">Статус</span>
+											<div class="wrapper-status">
+												<span class="indicator active"></span>
+												active
+											</div>
+										</td>
+										<td class="date">
+											<span class="suptotal">Последний визит</span>
+											<span>18.01.23</span>
+										</td>
+										<td class="date">
+											<span class="suptotal">Последний отчёт</span>
+											<span>18.01.23</span>
+										</td>
+										<td class="total">
+											<span class="suptotal">Total activities </span>
+											<span>100</span>
+										</td>
+										<td class="more">
+											<button class="btn btn-shape dropdown-toggle" type="button" id="dropdownTotal"
+												data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="16, 16">
+												<span class="icon icon-shape">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 16">
+														<path
+															d="M4.00033 8C4.00033 8.92048 3.25413 9.66667 2.33366 9.66667C1.41318 9.66667 0.666992 8.92048 0.666992 8C0.666992 7.07953 1.41318 6.33333 2.33366 6.33333C3.25413 6.33333 4.00033 7.07953 4.00033 8Z" />
+														<path
+															d="M4.00033 2.16667C4.00033 3.08714 3.25413 3.83333 2.33366 3.83333C1.41318 3.83333 0.666992 3.08714 0.666992 2.16667C0.666992 1.24619 1.41318 0.5 2.33366 0.5C3.25413 0.5 4.00033 1.24619 4.00033 2.16667Z" />
+														<path
+															d="M4.00033 13.8333C4.00033 14.7538 3.25413 15.5 2.33366 15.5C1.41318 15.5 0.666992 14.7538 0.666992 13.8333C0.666992 12.9129 1.41318 12.1667 2.33366 12.1667C3.25413 12.1667 4.00033 12.9129 4.00033 13.8333Z" />
+													</svg>
+												</span>
+											</button>
+											<ul class="dropdown-menu dropdown-menu-end triangle" aria-labelledby="dropdownTotal">
+												<span class="icon icon-triangle">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 8">
+														<path fill-rule="evenodd" clip-rule="evenodd"
+															d="M18 8L10.591 0.653454C9.71231 -0.217818 8.28769 -0.217818 7.40901 0.653454L0 8H18Z" />
+													</svg>
+												</span>
+												<li>
+													<a class="dropdown-item" href="#">
+														<span class="icon icon-block">
+															<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+																<path
+																	d="M15.8333 9.1665H4.16667C3.24619 9.1665 2.5 9.9127 2.5 10.8332V16.6665C2.5 17.587 3.24619 18.3332 4.16667 18.3332H15.8333C16.7538 18.3332 17.5 17.587 17.5 16.6665V10.8332C17.5 9.9127 16.7538 9.1665 15.8333 9.1665Z"
+																	stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+																<path
+																	d="M5.83301 9.1665V5.83317C5.83301 4.7281 6.27199 3.66829 7.0534 2.88689C7.8348 2.10549 8.89461 1.6665 9.99967 1.6665C11.1047 1.6665 12.1646 2.10549 12.946 2.88689C13.7274 3.66829 14.1663 4.7281 14.1663 5.83317V9.1665"
+																	stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+															</svg>
+														</span>
+														Заблокировать
+													</a>
+												</li>
+												<li>
+													<a class="dropdown-item" href="#">
+														<span class="icon icon-edit">
+															<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+																<path fill-rule="evenodd" clip-rule="evenodd"
+																	d="M10.9355 3.32017C12.0087 2.24541 13.7492 2.24476 14.8231 3.3187L16.4311 4.92667C17.4959 5.99145 17.507 7.71521 16.4559 8.79358L9.13862 16.3012C8.4331 17.025 7.46544 17.4332 6.455 17.4332L4.63288 17.4331C3.35363 17.433 2.33202 16.3667 2.38582 15.0876L2.46513 13.202C2.50463 12.263 2.89491 11.373 3.55875 10.7081L10.9355 3.32017ZM13.7633 4.38016C13.2751 3.892 12.484 3.8923 11.9962 4.38083L10.9345 5.44417L14.3231 8.83281L15.3825 7.74582C15.8603 7.25565 15.8553 6.47212 15.3713 5.98813L13.7633 4.38016ZM4.61941 11.7688L9.87461 6.50563L13.2761 9.90708L8.06524 15.2534C7.64192 15.6877 7.06133 15.9326 6.45507 15.9326L4.63295 15.9325C4.20653 15.9325 3.86599 15.5771 3.88393 15.1507L3.96324 13.2651C3.98694 12.7017 4.2211 12.1677 4.61941 11.7688ZM17.0958 17.372C17.5099 17.372 17.8455 17.0361 17.8455 16.6217C17.8455 16.2074 17.5099 15.8715 17.0958 15.8715H11.9944C11.5803 15.8715 11.2447 16.2074 11.2447 16.6217C11.2447 17.0361 11.5803 17.372 11.9944 17.372H17.0958Z" />
+															</svg>
+														</span>
+														Редактировать
+													</a>
+												</li>
+											</ul>
+										</td>
+									</tr>
+
+									<tr>
+										<th class="id" scope="row">
+											<span class="suptotal">ID:</span>
+											<span>1</span>
+										</th>
+										<td class="placement">
+											<span class="suptotal">Департамент</span>
+											<span>Content</span>
+										</td>
+										<td class="name">
+											<span>Имя Фамилия Отчество</span>
+										</td>
+										<td class="email">
+											<span class="suptotal">Почта</span>
+											<span>olga.travel@fstravel.com</span>
+										</td>
+										<td class="status">
+											<span class="suptotal">Статус</span>
+											<div class="wrapper-status">
+												<span class="indicator active"></span>
+												active
+											</div>
+										</td>
+										<td class="date">
+											<span class="suptotal">Последний визит</span>
+											<span>18.01.23</span>
+										</td>
+										<td class="date">
+											<span class="suptotal">Последний отчёт</span>
+											<span>18.01.23</span>
+										</td>
+										<td class="total">
+											<span class="suptotal">Total activities </span>
+											<span>100</span>
+										</td>
+										<td class="more">
+											<button class="btn btn-shape dropdown-toggle" type="button" id="dropdownTotal"
+												data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="16, 16">
+												<span class="icon icon-shape">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 16">
+														<path
+															d="M4.00033 8C4.00033 8.92048 3.25413 9.66667 2.33366 9.66667C1.41318 9.66667 0.666992 8.92048 0.666992 8C0.666992 7.07953 1.41318 6.33333 2.33366 6.33333C3.25413 6.33333 4.00033 7.07953 4.00033 8Z" />
+														<path
+															d="M4.00033 2.16667C4.00033 3.08714 3.25413 3.83333 2.33366 3.83333C1.41318 3.83333 0.666992 3.08714 0.666992 2.16667C0.666992 1.24619 1.41318 0.5 2.33366 0.5C3.25413 0.5 4.00033 1.24619 4.00033 2.16667Z" />
+														<path
+															d="M4.00033 13.8333C4.00033 14.7538 3.25413 15.5 2.33366 15.5C1.41318 15.5 0.666992 14.7538 0.666992 13.8333C0.666992 12.9129 1.41318 12.1667 2.33366 12.1667C3.25413 12.1667 4.00033 12.9129 4.00033 13.8333Z" />
+													</svg>
+												</span>
+											</button>
+											<ul class="dropdown-menu dropdown-menu-end triangle" aria-labelledby="dropdownTotal">
+												<span class="icon icon-triangle">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 8">
+														<path fill-rule="evenodd" clip-rule="evenodd"
+															d="M18 8L10.591 0.653454C9.71231 -0.217818 8.28769 -0.217818 7.40901 0.653454L0 8H18Z" />
+													</svg>
+												</span>
+												<li>
+													<a class="dropdown-item" href="#">
+														<span class="icon icon-block">
+															<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+																<path
+																	d="M15.8333 9.1665H4.16667C3.24619 9.1665 2.5 9.9127 2.5 10.8332V16.6665C2.5 17.587 3.24619 18.3332 4.16667 18.3332H15.8333C16.7538 18.3332 17.5 17.587 17.5 16.6665V10.8332C17.5 9.9127 16.7538 9.1665 15.8333 9.1665Z"
+																	stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+																<path
+																	d="M5.83301 9.1665V5.83317C5.83301 4.7281 6.27199 3.66829 7.0534 2.88689C7.8348 2.10549 8.89461 1.6665 9.99967 1.6665C11.1047 1.6665 12.1646 2.10549 12.946 2.88689C13.7274 3.66829 14.1663 4.7281 14.1663 5.83317V9.1665"
+																	stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+															</svg>
+														</span>
+														Заблокировать
+													</a>
+												</li>
+												<li>
+													<a class="dropdown-item" href="#">
+														<span class="icon icon-edit">
+															<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+																<path fill-rule="evenodd" clip-rule="evenodd"
+																	d="M10.9355 3.32017C12.0087 2.24541 13.7492 2.24476 14.8231 3.3187L16.4311 4.92667C17.4959 5.99145 17.507 7.71521 16.4559 8.79358L9.13862 16.3012C8.4331 17.025 7.46544 17.4332 6.455 17.4332L4.63288 17.4331C3.35363 17.433 2.33202 16.3667 2.38582 15.0876L2.46513 13.202C2.50463 12.263 2.89491 11.373 3.55875 10.7081L10.9355 3.32017ZM13.7633 4.38016C13.2751 3.892 12.484 3.8923 11.9962 4.38083L10.9345 5.44417L14.3231 8.83281L15.3825 7.74582C15.8603 7.25565 15.8553 6.47212 15.3713 5.98813L13.7633 4.38016ZM4.61941 11.7688L9.87461 6.50563L13.2761 9.90708L8.06524 15.2534C7.64192 15.6877 7.06133 15.9326 6.45507 15.9326L4.63295 15.9325C4.20653 15.9325 3.86599 15.5771 3.88393 15.1507L3.96324 13.2651C3.98694 12.7017 4.2211 12.1677 4.61941 11.7688ZM17.0958 17.372C17.5099 17.372 17.8455 17.0361 17.8455 16.6217C17.8455 16.2074 17.5099 15.8715 17.0958 15.8715H11.9944C11.5803 15.8715 11.2447 16.2074 11.2447 16.6217C11.2447 17.0361 11.5803 17.372 11.9944 17.372H17.0958Z" />
+															</svg>
+														</span>
+														Редактировать
+													</a>
+												</li>
+											</ul>
+										</td>
+									</tr>
+
+									<tr>
+										<th class="id" scope="row">
+											<span class="suptotal">ID:</span>
+											<span>1</span>
+										</th>
+										<td class="placement">
+											<span class="suptotal">Департамент</span>
+											<span>Content</span>
+										</td>
+										<td class="name">
+											<span>Имя Фамилия Отчество</span>
+										</td>
+										<td class="email">
+											<span class="suptotal">Почта</span>
+											<span>olga.travel@fstravel.com</span>
+										</td>
+										<td class="status">
+											<span class="suptotal">Статус</span>
+											<div class="wrapper-status">
+												<span class="indicator active"></span>
+												active
+											</div>
+										</td>
+										<td class="date">
+											<span class="suptotal">Последний визит</span>
+											<span>18.01.23</span>
+										</td>
+										<td class="date">
+											<span class="suptotal">Последний отчёт</span>
+											<span>18.01.23</span>
+										</td>
+										<td class="total">
+											<span class="suptotal">Total activities </span>
+											<span>100</span>
+										</td>
+										<td class="more">
+											<button class="btn btn-shape dropdown-toggle" type="button" id="dropdownTotal"
+												data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="16, 16">
+												<span class="icon icon-shape">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 16">
+														<path
+															d="M4.00033 8C4.00033 8.92048 3.25413 9.66667 2.33366 9.66667C1.41318 9.66667 0.666992 8.92048 0.666992 8C0.666992 7.07953 1.41318 6.33333 2.33366 6.33333C3.25413 6.33333 4.00033 7.07953 4.00033 8Z" />
+														<path
+															d="M4.00033 2.16667C4.00033 3.08714 3.25413 3.83333 2.33366 3.83333C1.41318 3.83333 0.666992 3.08714 0.666992 2.16667C0.666992 1.24619 1.41318 0.5 2.33366 0.5C3.25413 0.5 4.00033 1.24619 4.00033 2.16667Z" />
+														<path
+															d="M4.00033 13.8333C4.00033 14.7538 3.25413 15.5 2.33366 15.5C1.41318 15.5 0.666992 14.7538 0.666992 13.8333C0.666992 12.9129 1.41318 12.1667 2.33366 12.1667C3.25413 12.1667 4.00033 12.9129 4.00033 13.8333Z" />
+													</svg>
+												</span>
+											</button>
+											<ul class="dropdown-menu dropdown-menu-end triangle" aria-labelledby="dropdownTotal">
+												<span class="icon icon-triangle">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 8">
+														<path fill-rule="evenodd" clip-rule="evenodd"
+															d="M18 8L10.591 0.653454C9.71231 -0.217818 8.28769 -0.217818 7.40901 0.653454L0 8H18Z" />
+													</svg>
+												</span>
+												<li>
+													<a class="dropdown-item" href="#">
+														<span class="icon icon-block">
+															<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+																<path
+																	d="M15.8333 9.1665H4.16667C3.24619 9.1665 2.5 9.9127 2.5 10.8332V16.6665C2.5 17.587 3.24619 18.3332 4.16667 18.3332H15.8333C16.7538 18.3332 17.5 17.587 17.5 16.6665V10.8332C17.5 9.9127 16.7538 9.1665 15.8333 9.1665Z"
+																	stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+																<path
+																	d="M5.83301 9.1665V5.83317C5.83301 4.7281 6.27199 3.66829 7.0534 2.88689C7.8348 2.10549 8.89461 1.6665 9.99967 1.6665C11.1047 1.6665 12.1646 2.10549 12.946 2.88689C13.7274 3.66829 14.1663 4.7281 14.1663 5.83317V9.1665"
+																	stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+															</svg>
+														</span>
+														Заблокировать
+													</a>
+												</li>
+												<li>
+													<a class="dropdown-item" href="#">
+														<span class="icon icon-edit">
+															<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+																<path fill-rule="evenodd" clip-rule="evenodd"
+																	d="M10.9355 3.32017C12.0087 2.24541 13.7492 2.24476 14.8231 3.3187L16.4311 4.92667C17.4959 5.99145 17.507 7.71521 16.4559 8.79358L9.13862 16.3012C8.4331 17.025 7.46544 17.4332 6.455 17.4332L4.63288 17.4331C3.35363 17.433 2.33202 16.3667 2.38582 15.0876L2.46513 13.202C2.50463 12.263 2.89491 11.373 3.55875 10.7081L10.9355 3.32017ZM13.7633 4.38016C13.2751 3.892 12.484 3.8923 11.9962 4.38083L10.9345 5.44417L14.3231 8.83281L15.3825 7.74582C15.8603 7.25565 15.8553 6.47212 15.3713 5.98813L13.7633 4.38016ZM4.61941 11.7688L9.87461 6.50563L13.2761 9.90708L8.06524 15.2534C7.64192 15.6877 7.06133 15.9326 6.45507 15.9326L4.63295 15.9325C4.20653 15.9325 3.86599 15.5771 3.88393 15.1507L3.96324 13.2651C3.98694 12.7017 4.2211 12.1677 4.61941 11.7688ZM17.0958 17.372C17.5099 17.372 17.8455 17.0361 17.8455 16.6217C17.8455 16.2074 17.5099 15.8715 17.0958 15.8715H11.9944C11.5803 15.8715 11.2447 16.2074 11.2447 16.6217C11.2447 17.0361 11.5803 17.372 11.9944 17.372H17.0958Z" />
+															</svg>
+														</span>
+														Редактировать
+													</a>
+												</li>
+											</ul>
+										</td>
+									</tr>
+
+									<tr>
+										<th class="id" scope="row">
+											<span class="suptotal">ID:</span>
+											<span>1</span>
+										</th>
+										<td class="placement">
+											<span class="suptotal">Департамент</span>
+											<span>Content</span>
+										</td>
+										<td class="name">
+											<span>Имя Фамилия Отчество</span>
+										</td>
+										<td class="email">
+											<span class="suptotal">Почта</span>
+											<span>olga.travel@fstravel.com</span>
+										</td>
+										<td class="status">
+											<span class="suptotal">Статус</span>
+											<div class="wrapper-status">
+												<span class="indicator active"></span>
+												active
+											</div>
+										</td>
+										<td class="date">
+											<span class="suptotal">Последний визит</span>
+											<span>18.01.23</span>
+										</td>
+										<td class="date">
+											<span class="suptotal">Последний отчёт</span>
+											<span>18.01.23</span>
+										</td>
+										<td class="total">
+											<span class="suptotal">Total activities </span>
+											<span>100</span>
+										</td>
+										<td class="more">
+											<button class="btn btn-shape dropdown-toggle" type="button" id="dropdownTotal"
+												data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="16, 16">
+												<span class="icon icon-shape">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 16">
+														<path
+															d="M4.00033 8C4.00033 8.92048 3.25413 9.66667 2.33366 9.66667C1.41318 9.66667 0.666992 8.92048 0.666992 8C0.666992 7.07953 1.41318 6.33333 2.33366 6.33333C3.25413 6.33333 4.00033 7.07953 4.00033 8Z" />
+														<path
+															d="M4.00033 2.16667C4.00033 3.08714 3.25413 3.83333 2.33366 3.83333C1.41318 3.83333 0.666992 3.08714 0.666992 2.16667C0.666992 1.24619 1.41318 0.5 2.33366 0.5C3.25413 0.5 4.00033 1.24619 4.00033 2.16667Z" />
+														<path
+															d="M4.00033 13.8333C4.00033 14.7538 3.25413 15.5 2.33366 15.5C1.41318 15.5 0.666992 14.7538 0.666992 13.8333C0.666992 12.9129 1.41318 12.1667 2.33366 12.1667C3.25413 12.1667 4.00033 12.9129 4.00033 13.8333Z" />
+													</svg>
+												</span>
+											</button>
+											<ul class="dropdown-menu dropdown-menu-end triangle" aria-labelledby="dropdownTotal">
+												<span class="icon icon-triangle">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 8">
+														<path fill-rule="evenodd" clip-rule="evenodd"
+															d="M18 8L10.591 0.653454C9.71231 -0.217818 8.28769 -0.217818 7.40901 0.653454L0 8H18Z" />
+													</svg>
+												</span>
+												<li>
+													<a class="dropdown-item" href="#">
+														<span class="icon icon-block">
+															<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+																<path
+																	d="M15.8333 9.1665H4.16667C3.24619 9.1665 2.5 9.9127 2.5 10.8332V16.6665C2.5 17.587 3.24619 18.3332 4.16667 18.3332H15.8333C16.7538 18.3332 17.5 17.587 17.5 16.6665V10.8332C17.5 9.9127 16.7538 9.1665 15.8333 9.1665Z"
+																	stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+																<path
+																	d="M5.83301 9.1665V5.83317C5.83301 4.7281 6.27199 3.66829 7.0534 2.88689C7.8348 2.10549 8.89461 1.6665 9.99967 1.6665C11.1047 1.6665 12.1646 2.10549 12.946 2.88689C13.7274 3.66829 14.1663 4.7281 14.1663 5.83317V9.1665"
+																	stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+															</svg>
+														</span>
+														Заблокировать
+													</a>
+												</li>
+												<li>
+													<a class="dropdown-item" href="#">
+														<span class="icon icon-edit">
+															<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+																<path fill-rule="evenodd" clip-rule="evenodd"
+																	d="M10.9355 3.32017C12.0087 2.24541 13.7492 2.24476 14.8231 3.3187L16.4311 4.92667C17.4959 5.99145 17.507 7.71521 16.4559 8.79358L9.13862 16.3012C8.4331 17.025 7.46544 17.4332 6.455 17.4332L4.63288 17.4331C3.35363 17.433 2.33202 16.3667 2.38582 15.0876L2.46513 13.202C2.50463 12.263 2.89491 11.373 3.55875 10.7081L10.9355 3.32017ZM13.7633 4.38016C13.2751 3.892 12.484 3.8923 11.9962 4.38083L10.9345 5.44417L14.3231 8.83281L15.3825 7.74582C15.8603 7.25565 15.8553 6.47212 15.3713 5.98813L13.7633 4.38016ZM4.61941 11.7688L9.87461 6.50563L13.2761 9.90708L8.06524 15.2534C7.64192 15.6877 7.06133 15.9326 6.45507 15.9326L4.63295 15.9325C4.20653 15.9325 3.86599 15.5771 3.88393 15.1507L3.96324 13.2651C3.98694 12.7017 4.2211 12.1677 4.61941 11.7688ZM17.0958 17.372C17.5099 17.372 17.8455 17.0361 17.8455 16.6217C17.8455 16.2074 17.5099 15.8715 17.0958 15.8715H11.9944C11.5803 15.8715 11.2447 16.2074 11.2447 16.6217C11.2447 17.0361 11.5803 17.372 11.9944 17.372H17.0958Z" />
+															</svg>
+														</span>
+														Редактировать
+													</a>
+												</li>
+											</ul>
+										</td>
+									</tr>
+
+									<tr>
+										<th class="id" scope="row">
+											<span class="suptotal">ID:</span>
+											<span>1</span>
+										</th>
+										<td class="placement">
+											<span class="suptotal">Департамент</span>
+											<span>Content</span>
+										</td>
+										<td class="name">
+											<span>Имя Фамилия Отчество</span>
+										</td>
+										<td class="email">
+											<span class="suptotal">Почта</span>
+											<span>olga.travel@fstravel.com</span>
+										</td>
+										<td class="status">
+											<span class="suptotal">Статус</span>
+											<div class="wrapper-status">
+												<span class="indicator active"></span>
+												active
+											</div>
+										</td>
+										<td class="date">
+											<span class="suptotal">Последний визит</span>
+											<span>18.01.23</span>
+										</td>
+										<td class="date">
+											<span class="suptotal">Последний отчёт</span>
+											<span>18.01.23</span>
+										</td>
+										<td class="total">
+											<span class="suptotal">Total activities </span>
+											<span>100</span>
+										</td>
+										<td class="more">
+											<button class="btn btn-shape dropdown-toggle" type="button" id="dropdownTotal"
+												data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="16, 16">
+												<span class="icon icon-shape">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 16">
+														<path
+															d="M4.00033 8C4.00033 8.92048 3.25413 9.66667 2.33366 9.66667C1.41318 9.66667 0.666992 8.92048 0.666992 8C0.666992 7.07953 1.41318 6.33333 2.33366 6.33333C3.25413 6.33333 4.00033 7.07953 4.00033 8Z" />
+														<path
+															d="M4.00033 2.16667C4.00033 3.08714 3.25413 3.83333 2.33366 3.83333C1.41318 3.83333 0.666992 3.08714 0.666992 2.16667C0.666992 1.24619 1.41318 0.5 2.33366 0.5C3.25413 0.5 4.00033 1.24619 4.00033 2.16667Z" />
+														<path
+															d="M4.00033 13.8333C4.00033 14.7538 3.25413 15.5 2.33366 15.5C1.41318 15.5 0.666992 14.7538 0.666992 13.8333C0.666992 12.9129 1.41318 12.1667 2.33366 12.1667C3.25413 12.1667 4.00033 12.9129 4.00033 13.8333Z" />
+													</svg>
+												</span>
+											</button>
+											<ul class="dropdown-menu dropdown-menu-end triangle" aria-labelledby="dropdownTotal">
+												<span class="icon icon-triangle">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 8">
+														<path fill-rule="evenodd" clip-rule="evenodd"
+															d="M18 8L10.591 0.653454C9.71231 -0.217818 8.28769 -0.217818 7.40901 0.653454L0 8H18Z" />
+													</svg>
+												</span>
+												<li>
+													<a class="dropdown-item" href="#">
+														<span class="icon icon-block">
+															<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+																<path
+																	d="M15.8333 9.1665H4.16667C3.24619 9.1665 2.5 9.9127 2.5 10.8332V16.6665C2.5 17.587 3.24619 18.3332 4.16667 18.3332H15.8333C16.7538 18.3332 17.5 17.587 17.5 16.6665V10.8332C17.5 9.9127 16.7538 9.1665 15.8333 9.1665Z"
+																	stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+																<path
+																	d="M5.83301 9.1665V5.83317C5.83301 4.7281 6.27199 3.66829 7.0534 2.88689C7.8348 2.10549 8.89461 1.6665 9.99967 1.6665C11.1047 1.6665 12.1646 2.10549 12.946 2.88689C13.7274 3.66829 14.1663 4.7281 14.1663 5.83317V9.1665"
+																	stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+															</svg>
+														</span>
+														Заблокировать
+													</a>
+												</li>
+												<li>
+													<a class="dropdown-item" href="#">
+														<span class="icon icon-edit">
+															<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+																<path fill-rule="evenodd" clip-rule="evenodd"
+																	d="M10.9355 3.32017C12.0087 2.24541 13.7492 2.24476 14.8231 3.3187L16.4311 4.92667C17.4959 5.99145 17.507 7.71521 16.4559 8.79358L9.13862 16.3012C8.4331 17.025 7.46544 17.4332 6.455 17.4332L4.63288 17.4331C3.35363 17.433 2.33202 16.3667 2.38582 15.0876L2.46513 13.202C2.50463 12.263 2.89491 11.373 3.55875 10.7081L10.9355 3.32017ZM13.7633 4.38016C13.2751 3.892 12.484 3.8923 11.9962 4.38083L10.9345 5.44417L14.3231 8.83281L15.3825 7.74582C15.8603 7.25565 15.8553 6.47212 15.3713 5.98813L13.7633 4.38016ZM4.61941 11.7688L9.87461 6.50563L13.2761 9.90708L8.06524 15.2534C7.64192 15.6877 7.06133 15.9326 6.45507 15.9326L4.63295 15.9325C4.20653 15.9325 3.86599 15.5771 3.88393 15.1507L3.96324 13.2651C3.98694 12.7017 4.2211 12.1677 4.61941 11.7688ZM17.0958 17.372C17.5099 17.372 17.8455 17.0361 17.8455 16.6217C17.8455 16.2074 17.5099 15.8715 17.0958 15.8715H11.9944C11.5803 15.8715 11.2447 16.2074 11.2447 16.6217C11.2447 17.0361 11.5803 17.372 11.9944 17.372H17.0958Z" />
+															</svg>
+														</span>
+														Редактировать
+													</a>
+												</li>
+											</ul>
+										</td>
+									</tr>
+
+									<tr>
+										<th class="id" scope="row">
+											<span class="suptotal">ID:</span>
+											<span>1</span>
+										</th>
+										<td class="placement">
+											<span class="suptotal">Департамент</span>
+											<span>Content</span>
+										</td>
+										<td class="name">
+											<span>Имя Фамилия Отчество</span>
+										</td>
+										<td class="email">
+											<span class="suptotal">Почта</span>
+											<span>olga.travel@fstravel.com</span>
+										</td>
+										<td class="status">
+											<span class="suptotal">Статус</span>
+											<div class="wrapper-status">
+												<span class="indicator active"></span>
+												active
+											</div>
+										</td>
+										<td class="date">
+											<span class="suptotal">Последний визит</span>
+											<span>18.01.23</span>
+										</td>
+										<td class="date">
+											<span class="suptotal">Последний отчёт</span>
+											<span>18.01.23</span>
+										</td>
+										<td class="total">
+											<span class="suptotal">Total activities </span>
+											<span>100</span>
+										</td>
+										<td class="more">
+											<button class="btn btn-shape dropdown-toggle" type="button" id="dropdownTotal"
+												data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="16, 16">
+												<span class="icon icon-shape">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 16">
+														<path
+															d="M4.00033 8C4.00033 8.92048 3.25413 9.66667 2.33366 9.66667C1.41318 9.66667 0.666992 8.92048 0.666992 8C0.666992 7.07953 1.41318 6.33333 2.33366 6.33333C3.25413 6.33333 4.00033 7.07953 4.00033 8Z" />
+														<path
+															d="M4.00033 2.16667C4.00033 3.08714 3.25413 3.83333 2.33366 3.83333C1.41318 3.83333 0.666992 3.08714 0.666992 2.16667C0.666992 1.24619 1.41318 0.5 2.33366 0.5C3.25413 0.5 4.00033 1.24619 4.00033 2.16667Z" />
+														<path
+															d="M4.00033 13.8333C4.00033 14.7538 3.25413 15.5 2.33366 15.5C1.41318 15.5 0.666992 14.7538 0.666992 13.8333C0.666992 12.9129 1.41318 12.1667 2.33366 12.1667C3.25413 12.1667 4.00033 12.9129 4.00033 13.8333Z" />
+													</svg>
+												</span>
+											</button>
+											<ul class="dropdown-menu dropdown-menu-end triangle" aria-labelledby="dropdownTotal">
+												<span class="icon icon-triangle">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 8">
+														<path fill-rule="evenodd" clip-rule="evenodd"
+															d="M18 8L10.591 0.653454C9.71231 -0.217818 8.28769 -0.217818 7.40901 0.653454L0 8H18Z" />
+													</svg>
+												</span>
+												<li>
+													<a class="dropdown-item" href="#">
+														<span class="icon icon-block">
+															<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+																<path
+																	d="M15.8333 9.1665H4.16667C3.24619 9.1665 2.5 9.9127 2.5 10.8332V16.6665C2.5 17.587 3.24619 18.3332 4.16667 18.3332H15.8333C16.7538 18.3332 17.5 17.587 17.5 16.6665V10.8332C17.5 9.9127 16.7538 9.1665 15.8333 9.1665Z"
+																	stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+																<path
+																	d="M5.83301 9.1665V5.83317C5.83301 4.7281 6.27199 3.66829 7.0534 2.88689C7.8348 2.10549 8.89461 1.6665 9.99967 1.6665C11.1047 1.6665 12.1646 2.10549 12.946 2.88689C13.7274 3.66829 14.1663 4.7281 14.1663 5.83317V9.1665"
+																	stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+															</svg>
+														</span>
+														Заблокировать
+													</a>
+												</li>
+												<li>
+													<a class="dropdown-item" href="#">
+														<span class="icon icon-edit">
+															<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+																<path fill-rule="evenodd" clip-rule="evenodd"
+																	d="M10.9355 3.32017C12.0087 2.24541 13.7492 2.24476 14.8231 3.3187L16.4311 4.92667C17.4959 5.99145 17.507 7.71521 16.4559 8.79358L9.13862 16.3012C8.4331 17.025 7.46544 17.4332 6.455 17.4332L4.63288 17.4331C3.35363 17.433 2.33202 16.3667 2.38582 15.0876L2.46513 13.202C2.50463 12.263 2.89491 11.373 3.55875 10.7081L10.9355 3.32017ZM13.7633 4.38016C13.2751 3.892 12.484 3.8923 11.9962 4.38083L10.9345 5.44417L14.3231 8.83281L15.3825 7.74582C15.8603 7.25565 15.8553 6.47212 15.3713 5.98813L13.7633 4.38016ZM4.61941 11.7688L9.87461 6.50563L13.2761 9.90708L8.06524 15.2534C7.64192 15.6877 7.06133 15.9326 6.45507 15.9326L4.63295 15.9325C4.20653 15.9325 3.86599 15.5771 3.88393 15.1507L3.96324 13.2651C3.98694 12.7017 4.2211 12.1677 4.61941 11.7688ZM17.0958 17.372C17.5099 17.372 17.8455 17.0361 17.8455 16.6217C17.8455 16.2074 17.5099 15.8715 17.0958 15.8715H11.9944C11.5803 15.8715 11.2447 16.2074 11.2447 16.6217C11.2447 17.0361 11.5803 17.372 11.9944 17.372H17.0958Z" />
+															</svg>
+														</span>
+														Редактировать
+													</a>
+												</li>
+											</ul>
+										</td>
+									</tr>
+
+									<tr>
+										<th class="id" scope="row">
+											<span class="suptotal">ID:</span>
+											<span>1</span>
+										</th>
+										<td class="placement">
+											<span class="suptotal">Департамент</span>
+											<span>Content</span>
+										</td>
+										<td class="name">
+											<span>Имя Фамилия Отчество</span>
+										</td>
+										<td class="email">
+											<span class="suptotal">Почта</span>
+											<span>olga.travel@fstravel.com</span>
+										</td>
+										<td class="status">
+											<span class="suptotal">Статус</span>
+											<div class="wrapper-status">
+												<span class="indicator active"></span>
+												active
+											</div>
+										</td>
+										<td class="date">
+											<span class="suptotal">Последний визит</span>
+											<span>18.01.23</span>
+										</td>
+										<td class="date">
+											<span class="suptotal">Последний отчёт</span>
+											<span>18.01.23</span>
+										</td>
+										<td class="total">
+											<span class="suptotal">Total activities </span>
+											<span>100</span>
+										</td>
+										<td class="more">
+											<button class="btn btn-shape dropdown-toggle" type="button" id="dropdownTotal"
+												data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="16, 16">
+												<span class="icon icon-shape">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 16">
+														<path
+															d="M4.00033 8C4.00033 8.92048 3.25413 9.66667 2.33366 9.66667C1.41318 9.66667 0.666992 8.92048 0.666992 8C0.666992 7.07953 1.41318 6.33333 2.33366 6.33333C3.25413 6.33333 4.00033 7.07953 4.00033 8Z" />
+														<path
+															d="M4.00033 2.16667C4.00033 3.08714 3.25413 3.83333 2.33366 3.83333C1.41318 3.83333 0.666992 3.08714 0.666992 2.16667C0.666992 1.24619 1.41318 0.5 2.33366 0.5C3.25413 0.5 4.00033 1.24619 4.00033 2.16667Z" />
+														<path
+															d="M4.00033 13.8333C4.00033 14.7538 3.25413 15.5 2.33366 15.5C1.41318 15.5 0.666992 14.7538 0.666992 13.8333C0.666992 12.9129 1.41318 12.1667 2.33366 12.1667C3.25413 12.1667 4.00033 12.9129 4.00033 13.8333Z" />
+													</svg>
+												</span>
+											</button>
+											<ul class="dropdown-menu dropdown-menu-end triangle" aria-labelledby="dropdownTotal">
+												<span class="icon icon-triangle">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 8">
+														<path fill-rule="evenodd" clip-rule="evenodd"
+															d="M18 8L10.591 0.653454C9.71231 -0.217818 8.28769 -0.217818 7.40901 0.653454L0 8H18Z" />
+													</svg>
+												</span>
+												<li>
+													<a class="dropdown-item" href="#">
+														<span class="icon icon-block">
+															<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+																<path
+																	d="M15.8333 9.1665H4.16667C3.24619 9.1665 2.5 9.9127 2.5 10.8332V16.6665C2.5 17.587 3.24619 18.3332 4.16667 18.3332H15.8333C16.7538 18.3332 17.5 17.587 17.5 16.6665V10.8332C17.5 9.9127 16.7538 9.1665 15.8333 9.1665Z"
+																	stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+																<path
+																	d="M5.83301 9.1665V5.83317C5.83301 4.7281 6.27199 3.66829 7.0534 2.88689C7.8348 2.10549 8.89461 1.6665 9.99967 1.6665C11.1047 1.6665 12.1646 2.10549 12.946 2.88689C13.7274 3.66829 14.1663 4.7281 14.1663 5.83317V9.1665"
+																	stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+															</svg>
+														</span>
+														Заблокировать
+													</a>
+												</li>
+												<li>
+													<a class="dropdown-item" href="#">
+														<span class="icon icon-edit">
+															<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+																<path fill-rule="evenodd" clip-rule="evenodd"
+																	d="M10.9355 3.32017C12.0087 2.24541 13.7492 2.24476 14.8231 3.3187L16.4311 4.92667C17.4959 5.99145 17.507 7.71521 16.4559 8.79358L9.13862 16.3012C8.4331 17.025 7.46544 17.4332 6.455 17.4332L4.63288 17.4331C3.35363 17.433 2.33202 16.3667 2.38582 15.0876L2.46513 13.202C2.50463 12.263 2.89491 11.373 3.55875 10.7081L10.9355 3.32017ZM13.7633 4.38016C13.2751 3.892 12.484 3.8923 11.9962 4.38083L10.9345 5.44417L14.3231 8.83281L15.3825 7.74582C15.8603 7.25565 15.8553 6.47212 15.3713 5.98813L13.7633 4.38016ZM4.61941 11.7688L9.87461 6.50563L13.2761 9.90708L8.06524 15.2534C7.64192 15.6877 7.06133 15.9326 6.45507 15.9326L4.63295 15.9325C4.20653 15.9325 3.86599 15.5771 3.88393 15.1507L3.96324 13.2651C3.98694 12.7017 4.2211 12.1677 4.61941 11.7688ZM17.0958 17.372C17.5099 17.372 17.8455 17.0361 17.8455 16.6217C17.8455 16.2074 17.5099 15.8715 17.0958 15.8715H11.9944C11.5803 15.8715 11.2447 16.2074 11.2447 16.6217C11.2447 17.0361 11.5803 17.372 11.9944 17.372H17.0958Z" />
+															</svg>
+														</span>
+														Редактировать
+													</a>
+												</li>
+											</ul>
+										</td>
+									</tr>
+
+									<tr>
+										<th class="id" scope="row">
+											<span class="suptotal">ID:</span>
+											<span>1</span>
+										</th>
+										<td class="placement">
+											<span class="suptotal">Департамент</span>
+											<span>Content</span>
+										</td>
+										<td class="name">
+											<span>Имя Фамилия Отчество</span>
+										</td>
+										<td class="email">
+											<span class="suptotal">Почта</span>
+											<span>olga.travel@fstravel.com</span>
+										</td>
+										<td class="status">
+											<span class="suptotal">Статус</span>
+											<div class="wrapper-status">
+												<span class="indicator active"></span>
+												active
+											</div>
+										</td>
+										<td class="date">
+											<span class="suptotal">Последний визит</span>
+											<span>18.01.23</span>
+										</td>
+										<td class="date">
+											<span class="suptotal">Последний отчёт</span>
+											<span>18.01.23</span>
+										</td>
+										<td class="total">
+											<span class="suptotal">Total activities </span>
+											<span>100</span>
+										</td>
+										<td class="more">
+											<button class="btn btn-shape dropdown-toggle" type="button" id="dropdownTotal"
+												data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="16, 16">
+												<span class="icon icon-shape">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 16">
+														<path
+															d="M4.00033 8C4.00033 8.92048 3.25413 9.66667 2.33366 9.66667C1.41318 9.66667 0.666992 8.92048 0.666992 8C0.666992 7.07953 1.41318 6.33333 2.33366 6.33333C3.25413 6.33333 4.00033 7.07953 4.00033 8Z" />
+														<path
+															d="M4.00033 2.16667C4.00033 3.08714 3.25413 3.83333 2.33366 3.83333C1.41318 3.83333 0.666992 3.08714 0.666992 2.16667C0.666992 1.24619 1.41318 0.5 2.33366 0.5C3.25413 0.5 4.00033 1.24619 4.00033 2.16667Z" />
+														<path
+															d="M4.00033 13.8333C4.00033 14.7538 3.25413 15.5 2.33366 15.5C1.41318 15.5 0.666992 14.7538 0.666992 13.8333C0.666992 12.9129 1.41318 12.1667 2.33366 12.1667C3.25413 12.1667 4.00033 12.9129 4.00033 13.8333Z" />
+													</svg>
+												</span>
+											</button>
+											<ul class="dropdown-menu dropdown-menu-end triangle" aria-labelledby="dropdownTotal">
+												<span class="icon icon-triangle">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 8">
+														<path fill-rule="evenodd" clip-rule="evenodd"
+															d="M18 8L10.591 0.653454C9.71231 -0.217818 8.28769 -0.217818 7.40901 0.653454L0 8H18Z" />
+													</svg>
+												</span>
+												<li>
+													<a class="dropdown-item" href="#">
+														<span class="icon icon-block">
+															<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+																<path
+																	d="M15.8333 9.1665H4.16667C3.24619 9.1665 2.5 9.9127 2.5 10.8332V16.6665C2.5 17.587 3.24619 18.3332 4.16667 18.3332H15.8333C16.7538 18.3332 17.5 17.587 17.5 16.6665V10.8332C17.5 9.9127 16.7538 9.1665 15.8333 9.1665Z"
+																	stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+																<path
+																	d="M5.83301 9.1665V5.83317C5.83301 4.7281 6.27199 3.66829 7.0534 2.88689C7.8348 2.10549 8.89461 1.6665 9.99967 1.6665C11.1047 1.6665 12.1646 2.10549 12.946 2.88689C13.7274 3.66829 14.1663 4.7281 14.1663 5.83317V9.1665"
+																	stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+															</svg>
+														</span>
+														Заблокировать
+													</a>
+												</li>
+												<li>
+													<a class="dropdown-item" href="#">
+														<span class="icon icon-edit">
+															<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+																<path fill-rule="evenodd" clip-rule="evenodd"
+																	d="M10.9355 3.32017C12.0087 2.24541 13.7492 2.24476 14.8231 3.3187L16.4311 4.92667C17.4959 5.99145 17.507 7.71521 16.4559 8.79358L9.13862 16.3012C8.4331 17.025 7.46544 17.4332 6.455 17.4332L4.63288 17.4331C3.35363 17.433 2.33202 16.3667 2.38582 15.0876L2.46513 13.202C2.50463 12.263 2.89491 11.373 3.55875 10.7081L10.9355 3.32017ZM13.7633 4.38016C13.2751 3.892 12.484 3.8923 11.9962 4.38083L10.9345 5.44417L14.3231 8.83281L15.3825 7.74582C15.8603 7.25565 15.8553 6.47212 15.3713 5.98813L13.7633 4.38016ZM4.61941 11.7688L9.87461 6.50563L13.2761 9.90708L8.06524 15.2534C7.64192 15.6877 7.06133 15.9326 6.45507 15.9326L4.63295 15.9325C4.20653 15.9325 3.86599 15.5771 3.88393 15.1507L3.96324 13.2651C3.98694 12.7017 4.2211 12.1677 4.61941 11.7688ZM17.0958 17.372C17.5099 17.372 17.8455 17.0361 17.8455 16.6217C17.8455 16.2074 17.5099 15.8715 17.0958 15.8715H11.9944C11.5803 15.8715 11.2447 16.2074 11.2447 16.6217C11.2447 17.0361 11.5803 17.372 11.9944 17.372H17.0958Z" />
+															</svg>
+														</span>
+														Редактировать
+													</a>
+												</li>
+											</ul>
+										</td>
+									</tr>
+
+									<tr>
+										<th class="id" scope="row">
+											<span class="suptotal">ID:</span>
+											<span>1</span>
+										</th>
+										<td class="placement">
+											<span class="suptotal">Департамент</span>
+											<span>Content</span>
+										</td>
+										<td class="name">
+											<span>Имя Фамилия Отчество</span>
+										</td>
+										<td class="email">
+											<span class="suptotal">Почта</span>
+											<span>olga.travel@fstravel.com</span>
+										</td>
+										<td class="status">
+											<span class="suptotal">Статус</span>
+											<div class="wrapper-status">
+												<span class="indicator new"></span>
+												new
+											</div>
+										</td>
+										<td class="date">
+											<span class="suptotal">Последний визит</span>
+											<span>18.01.23</span>
+										</td>
+										<td class="date">
+											<span class="suptotal">Последний отчёт</span>
+											<span>18.01.23</span>
+										</td>
+										<td class="total">
+											<span class="suptotal">Total activities </span>
+											<span>100</span>
+										</td>
+										<td class="more">
+											<button class="btn btn-shape dropdown-toggle" type="button" id="dropdownTotal"
+												data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="16, 16">
+												<span class="icon icon-shape">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 16">
+														<path
+															d="M4.00033 8C4.00033 8.92048 3.25413 9.66667 2.33366 9.66667C1.41318 9.66667 0.666992 8.92048 0.666992 8C0.666992 7.07953 1.41318 6.33333 2.33366 6.33333C3.25413 6.33333 4.00033 7.07953 4.00033 8Z" />
+														<path
+															d="M4.00033 2.16667C4.00033 3.08714 3.25413 3.83333 2.33366 3.83333C1.41318 3.83333 0.666992 3.08714 0.666992 2.16667C0.666992 1.24619 1.41318 0.5 2.33366 0.5C3.25413 0.5 4.00033 1.24619 4.00033 2.16667Z" />
+														<path
+															d="M4.00033 13.8333C4.00033 14.7538 3.25413 15.5 2.33366 15.5C1.41318 15.5 0.666992 14.7538 0.666992 13.8333C0.666992 12.9129 1.41318 12.1667 2.33366 12.1667C3.25413 12.1667 4.00033 12.9129 4.00033 13.8333Z" />
+													</svg>
+												</span>
+											</button>
+											<ul class="dropdown-menu dropdown-menu-end triangle" aria-labelledby="dropdownTotal">
+												<span class="icon icon-triangle">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 8">
+														<path fill-rule="evenodd" clip-rule="evenodd"
+															d="M18 8L10.591 0.653454C9.71231 -0.217818 8.28769 -0.217818 7.40901 0.653454L0 8H18Z" />
+													</svg>
+												</span>
+												<li>
+													<a class="dropdown-item" href="#">
+														<span class="icon icon-block">
+															<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+																<path
+																	d="M15.8333 9.1665H4.16667C3.24619 9.1665 2.5 9.9127 2.5 10.8332V16.6665C2.5 17.587 3.24619 18.3332 4.16667 18.3332H15.8333C16.7538 18.3332 17.5 17.587 17.5 16.6665V10.8332C17.5 9.9127 16.7538 9.1665 15.8333 9.1665Z"
+																	stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+																<path
+																	d="M5.83301 9.1665V5.83317C5.83301 4.7281 6.27199 3.66829 7.0534 2.88689C7.8348 2.10549 8.89461 1.6665 9.99967 1.6665C11.1047 1.6665 12.1646 2.10549 12.946 2.88689C13.7274 3.66829 14.1663 4.7281 14.1663 5.83317V9.1665"
+																	stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+															</svg>
+														</span>
+														Заблокировать
+													</a>
+												</li>
+												<li>
+													<a class="dropdown-item" href="#">
+														<span class="icon icon-edit">
+															<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+																<path fill-rule="evenodd" clip-rule="evenodd"
+																	d="M10.9355 3.32017C12.0087 2.24541 13.7492 2.24476 14.8231 3.3187L16.4311 4.92667C17.4959 5.99145 17.507 7.71521 16.4559 8.79358L9.13862 16.3012C8.4331 17.025 7.46544 17.4332 6.455 17.4332L4.63288 17.4331C3.35363 17.433 2.33202 16.3667 2.38582 15.0876L2.46513 13.202C2.50463 12.263 2.89491 11.373 3.55875 10.7081L10.9355 3.32017ZM13.7633 4.38016C13.2751 3.892 12.484 3.8923 11.9962 4.38083L10.9345 5.44417L14.3231 8.83281L15.3825 7.74582C15.8603 7.25565 15.8553 6.47212 15.3713 5.98813L13.7633 4.38016ZM4.61941 11.7688L9.87461 6.50563L13.2761 9.90708L8.06524 15.2534C7.64192 15.6877 7.06133 15.9326 6.45507 15.9326L4.63295 15.9325C4.20653 15.9325 3.86599 15.5771 3.88393 15.1507L3.96324 13.2651C3.98694 12.7017 4.2211 12.1677 4.61941 11.7688ZM17.0958 17.372C17.5099 17.372 17.8455 17.0361 17.8455 16.6217C17.8455 16.2074 17.5099 15.8715 17.0958 15.8715H11.9944C11.5803 15.8715 11.2447 16.2074 11.2447 16.6217C11.2447 17.0361 11.5803 17.372 11.9944 17.372H17.0958Z" />
+															</svg>
+														</span>
+														Редактировать
+													</a>
+												</li>
+											</ul>
+										</td>
+									</tr>
+
+									<tr>
+										<th class="id" scope="row">
+											<span class="suptotal">ID:</span>
+											<span>1</span>
+										</th>
+										<td class="placement">
+											<span class="suptotal">Департамент</span>
+											<span>Content</span>
+										</td>
+										<td class="name">
+											<span>Имя Фамилия Отчество</span>
+										</td>
+										<td class="email">
+											<span class="suptotal">Почта</span>
+											<span>olga.travel@fstravel.com</span>
+										</td>
+										<td class="status">
+											<span class="suptotal">Статус</span>
+											<div class="wrapper-status">
+												<span class="indicator new"></span>
+												new
+											</div>
+										</td>
+										<td class="date">
+											<span class="suptotal">Последний визит</span>
+											<span>18.01.23</span>
+										</td>
+										<td class="date">
+											<span class="suptotal">Последний отчёт</span>
+											<span>18.01.23</span>
+										</td>
+										<td class="total">
+											<span class="suptotal">Total activities </span>
+											<span>100</span>
+										</td>
+										<td class="more">
+											<button class="btn btn-shape dropdown-toggle" type="button" id="dropdownTotal"
+												data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="16, 16">
+												<span class="icon icon-shape">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 16">
+														<path
+															d="M4.00033 8C4.00033 8.92048 3.25413 9.66667 2.33366 9.66667C1.41318 9.66667 0.666992 8.92048 0.666992 8C0.666992 7.07953 1.41318 6.33333 2.33366 6.33333C3.25413 6.33333 4.00033 7.07953 4.00033 8Z" />
+														<path
+															d="M4.00033 2.16667C4.00033 3.08714 3.25413 3.83333 2.33366 3.83333C1.41318 3.83333 0.666992 3.08714 0.666992 2.16667C0.666992 1.24619 1.41318 0.5 2.33366 0.5C3.25413 0.5 4.00033 1.24619 4.00033 2.16667Z" />
+														<path
+															d="M4.00033 13.8333C4.00033 14.7538 3.25413 15.5 2.33366 15.5C1.41318 15.5 0.666992 14.7538 0.666992 13.8333C0.666992 12.9129 1.41318 12.1667 2.33366 12.1667C3.25413 12.1667 4.00033 12.9129 4.00033 13.8333Z" />
+													</svg>
+												</span>
+											</button>
+											<ul class="dropdown-menu dropdown-menu-end triangle" aria-labelledby="dropdownTotal">
 												<span class="icon icon-triangle">
 													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 8">
 														<path fill-rule="evenodd" clip-rule="evenodd"
@@ -1446,11 +1656,7 @@
 						</div>
 					</div>
 
-				</div>
-
-				<nav class="wrapper-pagination" aria-label="">
-
-					<div>
+					<nav class="wrapper-pagination" aria-label="">
 						<div class="page-item pagination-title">Показать по:</div>
 
 						<ul class="pagination">
@@ -1459,9 +1665,9 @@
 							<li class="page-item"><a class="page-link" href="#">50</a></li>
 							<li class="page-item"><a class="page-link" href="#">100</a></li>
 						</ul>
-					</div>
-					
-					<div>
+					</nav>
+
+					<nav class="wrapper-navigation" aria-label="">
 						<div class="page-item pagination-counter">12 из 57</div>
 
 						<ul class="pagination">
@@ -1486,8 +1692,9 @@
 								</a>
 							</li>
 						</ul>
-					</div>
-				</nav>
+					</nav>
+				</div>
+
 
 			</div>
 		</section>
