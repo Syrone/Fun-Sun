@@ -112,4 +112,7 @@
 .indicator.new {
   background-color: var(--accent);
 }
+.table-items tbody .suptotal {
+  display: none;
+}
 /** (End) Wrapper Table **/

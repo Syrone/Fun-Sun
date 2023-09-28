@@ -60,5 +60,43 @@ document.addEventListener('DOMContentLoaded', () => {
 	tabletableElementHeight.addEventListener('scroll', handleScroll);
 	/** (End) Скролл таблицы **/
 
+	//** (Start) Backdrop for Header Menu Mobile **/
+	var showBackdropBtn = document.querySelector('.btn-backdrop');
+	var backdrop = null;
+
+	showBackdropBtn.addEventListener('click', function () {
+		if (backdrop) {
+			backdrop.remove();
+			backdrop = null;
+		} else {
+			backdrop = document.createElement('div');
+			backdrop.classList.add('modal-backdrop');
+			document.querySelector('.header').appendChild(backdrop);
+		}
+	});
+
+	document.addEventListener('click', function (event) {
+		var backdrop = document.querySelector(".modal-backdrop");
+
+		// Проверяем, был ли клик по backdrop
+		if (event.target === backdrop) {
+			backdrop.remove();
+			backdrop = null;
+		}
+
+		var navbar = document.getElementById("headerMenu");
+		var target = event.target;
+
+		// Проверяем, является ли кликнутый элемент частью меню
+		var isNavbar = navbar.contains(target);
+
+		// Если кликнули вне меню и меню открыто, закрываем его
+		if (!isNavbar && navbar.classList.contains("show")) {
+			var toggle = document.querySelector("[data-bs-toggle='collapse']");
+			toggle.click();
+		}
+	});
+	//** (End) Backdrop for Header Menu Mobile **/
+
 
 })

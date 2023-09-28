@@ -1,5 +1,15 @@
 // GENERAL PROJECT STYLES
 
+.container,
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl,
+.container-xxl {
+	padding-inline: 1rem;
+}
+
 .page {
 	height: 100%;
 	display: flex;
@@ -123,6 +133,24 @@ h3, .h3 {
 .icon-filter svg {
 	fill: currentColor;
 	stroke: currentColor;
+}
+
+.icon-menu {
+	--size: 1.5rem;
+	width: var(--size);
+	height: var(--size);
+}
+
+.icon-data,
+.icon-calendar,
+.icon-products,
+.icon-tools,
+.icon-navigation,
+.icon-users,
+.icon-mydata {
+	--size: 1.375rem;
+	width: var(--size);
+	height: var(--size);
 }
 //** (End) ICONS **//
 
@@ -298,13 +326,14 @@ h3, .h3 {
 }
 
 .btn-filter {
-	border: 1px solid var(--gray-color);
+	color: var(--accent);
+	border: 1px solid var(--accent);
 	border-radius: .5rem;
 }
 
 .btn-filter:is(:hover, :focus-visible, :active, .active) {
-	color: var(--accent);
-	border-color: var(--accent);
+	color: white;
+	background-color: var(--accent);
 }
 //** (End) Buttons **//
 
@@ -368,22 +397,40 @@ h3, .h3 {
 	padding: .5rem;
 }
 
-.dropdown-item:is(:hover, :focus),
-.dropdown-item.active, .dropdown-item:active {
+.dropdown-item:is(:hover, :focus, :active, .active) {
 	color: var(--text-color--dark);
-	background-color: #F5F8FE;
+	background-color: var(--border-color);
 }
 
-.dropdown-item:is(:hover, :focus, :active) .icon-block svg,
-.dropdown-item.active .icon-block svg,
-.dropdown-item:is(:hover, :focus, :active) .icon-key svg,
-.dropdown-item.active .icon-key svg {
+.dropdown-item:is(:hover, :focus, :active, .active) .icon-block svg,
+.dropdown-item:is(:hover, :focus, :active, .active) .icon-key svg {
 	stroke: var(--accent);
 }
 
-.dropdown-item:is(:hover, :focus, :active) .icon-edit svg,
-.dropdown-item.active .icon-edit svg {
+.dropdown-item:is(:hover, :focus, :active, .active) .icon-edit svg {
 	fill: var(--accent);
+}
+
+
+.dropdown .btn-menu {
+	background-color: transparent;
+	border: none;
+	box-shadow: none;
+	padding: 0.5rem;
+}
+
+.dropdown .btn-menu:is(:hover, :focus, :active, .show) {
+	background-color: transparent;
+}
+
+.dropdown .btn-menu:is(:hover, :focus-visible, :active, .show) .icon {
+	color: var(--accent);
+}
+
+.dropdown .btn-menu .icon {
+	--size: 1.5rem;
+	width: var(--size);
+	height: var(--size);
 }
 //** (End) Dropdowns **//
 
