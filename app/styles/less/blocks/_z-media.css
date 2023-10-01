@@ -224,6 +224,12 @@
   .table-action > * {
     flex: 0 0 calc(100%);
   }
+  .table-buttons {
+    flex-wrap: wrap;
+  }
+  .table-buttons > .table-button {
+    flex-basis: calc(50% - 0.25rem);
+  }
   .table-wrapper {
     margin-block: 0;
   }

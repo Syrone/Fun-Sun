@@ -45,7 +45,7 @@
 									</svg>
 								</span>
 							</button>
-							<input class="form-control" type="search" placeholder="Search" aria-label="Search">
+							<input class="form-control" type="search" placeholder="Поиск" aria-label="Search">
 						</form>
 					</div>
 				</div>
@@ -176,53 +176,1541 @@
 						</div> -->
 
 						<div class="table-buttons">
-							<button class="btn btn-filter d-lg-none" type="button">
-								<span class="icon icon-filter">
-									<svg viewBox="0 0 21 20" xmlns="http://www.w3.org/2000/svg">
-										<g clip-path="url(#a)">
-											<path d="M19.083 2.5H2.416l6.667 7.883v5.45l3.333 1.667v-7.117L19.083 2.5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-										</g>
-									</svg>
-								</span>
-								Фильтр
-							</button>
-							<button class="btn btn-reset" type="button">
+							<div class="dropdown dropdown-filter table-button d-lg-none">
+								<button class="btn btn-filter dropdown-toggle" type="button" id="dropdownFilterButton"
+									data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside" data-bs-offset="0,8"
+									aria-haspopup="true">
+									<span class="icon icon-filter">
+										<svg viewBox="0 0 21 20" xmlns="http://www.w3.org/2000/svg">
+											<g clip-path="url(#a)">
+												<path d="M19.083 2.5H2.416l6.667 7.883v5.45l3.333 1.667v-7.117L19.083 2.5Z" stroke-width="2"
+													stroke-linecap="round" stroke-linejoin="round" />
+											</g>
+										</svg>
+									</span>
+									Фильтр
+								</button>
+								<ul class="dropdown-menu" aria-labelledby="dropdownFilterButton">
+									<li>
+										<div class="dropdown dropdown-nested">
+											<button class="dropdown-item dropdown-toggle" type="button" id="dropdownFilterNested"
+												data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+												Тип
+												<span class="icon icon-arrow">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+														<path d="M6 12L10 8L6 4" stroke-width="1.5" stroke-linecap="round"
+															stroke-linejoin="round" />
+													</svg>
+												</span>
+											</button>
+
+											<div class="dropdown-menu" aria-labelledby="dropdownFilterNested">
+												<ul class="list-group">
+													<li>
+														<button class="dropdown-item dropdown-dissmis" type="button">
+															<span class="icon icon-arrow">
+																<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+																	<path d="M6 12L10 8L6 4" stroke-width="1.5" stroke-linecap="round"
+																		stroke-linejoin="round" />
+																</svg>
+															</span>
+															Фильтр по типу
+														</button>
+													</li>
+													<li>
+														<form>
+															<div class="wrapper-search">
+																<button class="btn btn-search" type="submit">
+																	<span class="icon icon-search">
+																		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+																			<path fill-rule="evenodd" clip-rule="evenodd"
+																				d="M17.31 15.9L20.71 19.29C20.8993 19.4778 21.0058 19.7334 21.0058 20C21.0058 20.2666 20.8993 20.5222 20.71 20.71C20.5222 20.8993 20.2666 21.0058 20 21.0058C19.7334 21.0058 19.4778 20.8993 19.29 20.71L15.9 17.31C14.5025 18.407 12.7767 19.0022 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11C19.0022 12.7767 18.407 14.5025 17.31 15.9ZM11 5C7.68629 5 5 7.68629 5 11C5 14.3137 7.68629 17 11 17C14.3137 17 17 14.3137 17 11C17 7.68629 14.3137 5 11 5Z">
+																			</path>
+																		</svg>
+																	</span>
+																</button>
+																<input class="form-control" type="search" placeholder="Поиск" aria-label="Search">
+															</div>
+
+															<div>
+																<button class="btn btn-collapse" type="button" data-bs-toggle="collapse"
+																	data-bs-target="#collapseItem1" aria-expanded="true" aria-controls="collapseItem1">
+																	<span class="icon icon-arrow">
+																		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+																			<path d="M6 12L10 8L6 4" stroke-width="1.5" stroke-linecap="round"
+																				stroke-linejoin="round" />
+																		</svg>
+																	</span>
+																	Медиа
+																</button>
+																<div class="collapse show" id="collapseItem1">
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck1">
+																		<label class="form-check-label" for="flexCheck1">
+																			Email рассылка
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck2">
+																		<label class="form-check-label" for="flexCheck2">
+																			Рассылка WhatsApp
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck3">
+																		<label class="form-check-label" for="flexCheck3">
+																			Трансляция
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck4">
+																		<label class="form-check-label" for="flexCheck4">
+																			Рассылка в мессенджерах
+																		</label>
+																	</div>
+																</div>
+
+																<button class="btn btn-collapse" type="button" data-bs-toggle="collapse"
+																	data-bs-target="#collapseItem2" aria-expanded="true" aria-controls="collapseItem2">
+																	<span class="icon icon-arrow">
+																		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+																			<path d="M6 12L10 8L6 4" stroke-width="1.5" stroke-linecap="round"
+																				stroke-linejoin="round" />
+																		</svg>
+																	</span>
+																	CEO
+																</button>
+																<div class="collapse show" id="collapseItem2">
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck21">
+																		<label class="form-check-label" for="flexCheck21">
+																			Мероприятия
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck22">
+																		<label class="form-check-label" for="flexCheck22">
+																			Баннеры в подпись
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck23">
+																		<label class="form-check-label" for="flexCheck23">
+																			Посты Телеграмм
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck24">
+																		<label class="form-check-label" for="flexCheck24">
+																			Посты в проф. медиа
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck25">
+																		<label class="form-check-label" for="flexCheck25">
+																			Посты в проф. медиа
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck26">
+																		<label class="form-check-label" for="flexCheck26">
+																			Посты в проф. медиа
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck27">
+																		<label class="form-check-label" for="flexCheck27">
+																			Посты в проф. медиа
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck28">
+																		<label class="form-check-label" for="flexCheck28">
+																			Посты в проф. медиа
+																		</label>
+																	</div>
+																</div>
+															</div>
+														</form>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="dropdown dropdown-nested">
+											<button class="dropdown-item dropdown-toggle" type="button" id="dropdownFilterNested2"
+												data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+												Инструмент
+												<span class="icon icon-arrow">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+														<path d="M6 12L10 8L6 4" stroke-width="1.5" stroke-linecap="round"
+															stroke-linejoin="round" />
+													</svg>
+												</span>
+											</button>
+
+											<div class="dropdown-menu" aria-labelledby="dropdownFilterNested2">
+												<ul class="list-group">
+													<li>
+														<button class="dropdown-item dropdown-dissmis" type="button">
+															<span class="icon icon-arrow">
+																<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+																	<path d="M6 12L10 8L6 4" stroke-width="1.5" stroke-linecap="round"
+																		stroke-linejoin="round" />
+																</svg>
+															</span>
+															Фильтр по инструментам
+														</button>
+													</li>
+													<li>
+														<form>
+															<div class="wrapper-search">
+																<button class="btn btn-search" type="submit">
+																	<span class="icon icon-search">
+																		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+																			<path fill-rule="evenodd" clip-rule="evenodd"
+																				d="M17.31 15.9L20.71 19.29C20.8993 19.4778 21.0058 19.7334 21.0058 20C21.0058 20.2666 20.8993 20.5222 20.71 20.71C20.5222 20.8993 20.2666 21.0058 20 21.0058C19.7334 21.0058 19.4778 20.8993 19.29 20.71L15.9 17.31C14.5025 18.407 12.7767 19.0022 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11C19.0022 12.7767 18.407 14.5025 17.31 15.9ZM11 5C7.68629 5 5 7.68629 5 11C5 14.3137 7.68629 17 11 17C14.3137 17 17 14.3137 17 11C17 7.68629 14.3137 5 11 5Z">
+																			</path>
+																		</svg>
+																	</span>
+																</button>
+																<input class="form-control" type="search" placeholder="Поиск" aria-label="Search">
+															</div>
+
+															<div>
+																<button class="btn btn-collapse" type="button" data-bs-toggle="collapse"
+																	data-bs-target="#collapseItem3" aria-expanded="true" aria-controls="collapseItem3">
+																	<span class="icon icon-arrow">
+																		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+																			<path d="M6 12L10 8L6 4" stroke-width="1.5" stroke-linecap="round"
+																				stroke-linejoin="round" />
+																		</svg>
+																	</span>
+																	Медиа
+																</button>
+																<div class="collapse show" id="collapseItem3">
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck31">
+																		<label class="form-check-label" for="flexCheck31">
+																			Email рассылка
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck32">
+																		<label class="form-check-label" for="flexCheck32">
+																			Рассылка WhatsApp
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck33">
+																		<label class="form-check-label" for="flexCheck33">
+																			Трансляция
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck34">
+																		<label class="form-check-label" for="flexCheck34">
+																			Рассылка в мессенджерах
+																		</label>
+																	</div>
+																</div>
+
+																<button class="btn btn-collapse" type="button" data-bs-toggle="collapse"
+																	data-bs-target="#collapseItem4" aria-expanded="true" aria-controls="collapseItem4">
+																	<span class="icon icon-arrow">
+																		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+																			<path d="M6 12L10 8L6 4" stroke-width="1.5" stroke-linecap="round"
+																				stroke-linejoin="round" />
+																		</svg>
+																	</span>
+																	CEO
+																</button>
+																<div class="collapse show" id="collapseItem4">
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck41">
+																		<label class="form-check-label" for="flexCheck41">
+																			Мероприятия
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck42">
+																		<label class="form-check-label" for="flexCheck42">
+																			Баннеры в подпись
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck43">
+																		<label class="form-check-label" for="flexCheck43">
+																			Посты Телеграмм
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck44">
+																		<label class="form-check-label" for="flexCheck44">
+																			Посты в проф. медиа
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck45">
+																		<label class="form-check-label" for="flexCheck45">
+																			Посты в проф. медиа
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck46">
+																		<label class="form-check-label" for="flexCheck46">
+																			Посты в проф. медиа
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck47">
+																		<label class="form-check-label" for="flexCheck47">
+																			Посты в проф. медиа
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck48">
+																		<label class="form-check-label" for="flexCheck48">
+																			Посты в проф. медиа
+																		</label>
+																	</div>
+																</div>
+															</div>
+														</form>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="dropdown dropdown-nested">
+											<button class="dropdown-item dropdown-toggle" type="button" id="dropdownFilterNested3"
+												data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+												Контрибуция
+												<span class="icon icon-arrow">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+														<path d="M6 12L10 8L6 4" stroke-width="1.5" stroke-linecap="round"
+															stroke-linejoin="round" />
+													</svg>
+												</span>
+											</button>
+
+											<div class="dropdown-menu" aria-labelledby="dropdownFilterNested3">
+												<ul class="list-group">
+													<li>
+														<button class="dropdown-item dropdown-dissmis" type="button">
+															<span class="icon icon-arrow">
+																<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+																	<path d="M6 12L10 8L6 4" stroke-width="1.5" stroke-linecap="round"
+																		stroke-linejoin="round" />
+																</svg>
+															</span>
+															Фильтр по контрибуциям
+														</button>
+													</li>
+													<li>
+														<form>
+															<div class="wrapper-search">
+																<button class="btn btn-search" type="submit">
+																	<span class="icon icon-search">
+																		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+																			<path fill-rule="evenodd" clip-rule="evenodd"
+																				d="M17.31 15.9L20.71 19.29C20.8993 19.4778 21.0058 19.7334 21.0058 20C21.0058 20.2666 20.8993 20.5222 20.71 20.71C20.5222 20.8993 20.2666 21.0058 20 21.0058C19.7334 21.0058 19.4778 20.8993 19.29 20.71L15.9 17.31C14.5025 18.407 12.7767 19.0022 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11C19.0022 12.7767 18.407 14.5025 17.31 15.9ZM11 5C7.68629 5 5 7.68629 5 11C5 14.3137 7.68629 17 11 17C14.3137 17 17 14.3137 17 11C17 7.68629 14.3137 5 11 5Z">
+																			</path>
+																		</svg>
+																	</span>
+																</button>
+																<input class="form-control" type="search" placeholder="Поиск" aria-label="Search">
+															</div>
+
+															<div>
+																<button class="btn btn-collapse" type="button" data-bs-toggle="collapse"
+																	data-bs-target="#collapseItem5" aria-expanded="true" aria-controls="collapseItem5">
+																	<span class="icon icon-arrow">
+																		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+																			<path d="M6 12L10 8L6 4" stroke-width="1.5" stroke-linecap="round"
+																				stroke-linejoin="round" />
+																		</svg>
+																	</span>
+																	Медиа
+																</button>
+																<div class="collapse show" id="collapseItem5">
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck51">
+																		<label class="form-check-label" for="flexCheck51">
+																			Email рассылка
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck52">
+																		<label class="form-check-label" for="flexCheck52">
+																			Рассылка WhatsApp
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck53">
+																		<label class="form-check-label" for="flexCheck53">
+																			Трансляция
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck54">
+																		<label class="form-check-label" for="flexCheck54">
+																			Рассылка в мессенджерах
+																		</label>
+																	</div>
+																</div>
+
+																<button class="btn btn-collapse" type="button" data-bs-toggle="collapse"
+																	data-bs-target="#collapseItem6" aria-expanded="true" aria-controls="collapseItem6">
+																	<span class="icon icon-arrow">
+																		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+																			<path d="M6 12L10 8L6 4" stroke-width="1.5" stroke-linecap="round"
+																				stroke-linejoin="round" />
+																		</svg>
+																	</span>
+																	CEO
+																</button>
+																<div class="collapse show" id="collapseItem6">
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck61">
+																		<label class="form-check-label" for="flexCheck61">
+																			Мероприятия
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck62">
+																		<label class="form-check-label" for="flexCheck62">
+																			Баннеры в подпись
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck63">
+																		<label class="form-check-label" for="flexCheck63">
+																			Посты Телеграмм
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck64">
+																		<label class="form-check-label" for="flexCheck64">
+																			Посты в проф. медиа
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck65">
+																		<label class="form-check-label" for="flexCheck65">
+																			Посты в проф. медиа
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck66">
+																		<label class="form-check-label" for="flexCheck66">
+																			Посты в проф. медиа
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck67">
+																		<label class="form-check-label" for="flexCheck67">
+																			Посты в проф. медиа
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck68">
+																		<label class="form-check-label" for="flexCheck68">
+																			Посты в проф. медиа
+																		</label>
+																	</div>
+																</div>
+															</div>
+														</form>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="dropdown dropdown-nested">
+											<button class="dropdown-item dropdown-toggle" type="button" id="dropdownFilterNested4"
+												data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+												Продукт
+												<span class="icon icon-arrow">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+														<path d="M6 12L10 8L6 4" stroke-width="1.5" stroke-linecap="round"
+															stroke-linejoin="round" />
+													</svg>
+												</span>
+											</button>
+
+											<div class="dropdown-menu" aria-labelledby="dropdownFilterNested4">
+												<ul class="list-group">
+													<li>
+														<button class="dropdown-item dropdown-dissmis" type="button">
+															<span class="icon icon-arrow">
+																<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+																	<path d="M6 12L10 8L6 4" stroke-width="1.5" stroke-linecap="round"
+																		stroke-linejoin="round" />
+																</svg>
+															</span>
+															Фильтр по продуктам
+														</button>
+													</li>
+													<li>
+														<form>
+															<div class="wrapper-search">
+																<button class="btn btn-search" type="submit">
+																	<span class="icon icon-search">
+																		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+																			<path fill-rule="evenodd" clip-rule="evenodd"
+																				d="M17.31 15.9L20.71 19.29C20.8993 19.4778 21.0058 19.7334 21.0058 20C21.0058 20.2666 20.8993 20.5222 20.71 20.71C20.5222 20.8993 20.2666 21.0058 20 21.0058C19.7334 21.0058 19.4778 20.8993 19.29 20.71L15.9 17.31C14.5025 18.407 12.7767 19.0022 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11C19.0022 12.7767 18.407 14.5025 17.31 15.9ZM11 5C7.68629 5 5 7.68629 5 11C5 14.3137 7.68629 17 11 17C14.3137 17 17 14.3137 17 11C17 7.68629 14.3137 5 11 5Z">
+																			</path>
+																		</svg>
+																	</span>
+																</button>
+																<input class="form-control" type="search" placeholder="Поиск" aria-label="Search">
+															</div>
+
+															<div>
+																<button class="btn btn-collapse" type="button" data-bs-toggle="collapse"
+																	data-bs-target="#collapseItem7" aria-expanded="true" aria-controls="collapseItem7">
+																	<span class="icon icon-arrow">
+																		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+																			<path d="M6 12L10 8L6 4" stroke-width="1.5" stroke-linecap="round"
+																				stroke-linejoin="round" />
+																		</svg>
+																	</span>
+																	Медиа
+																</button>
+																<div class="collapse show" id="collapseItem7">
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck71">
+																		<label class="form-check-label" for="flexCheck71">
+																			Email рассылка
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck72">
+																		<label class="form-check-label" for="flexCheck72">
+																			Рассылка WhatsApp
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck73">
+																		<label class="form-check-label" for="flexCheck73">
+																			Трансляция
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck74">
+																		<label class="form-check-label" for="flexCheck74">
+																			Рассылка в мессенджерах
+																		</label>
+																	</div>
+																</div>
+
+																<button class="btn btn-collapse" type="button" data-bs-toggle="collapse"
+																	data-bs-target="#collapseItem8" aria-expanded="true" aria-controls="collapseItem8">
+																	<span class="icon icon-arrow">
+																		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+																			<path d="M6 12L10 8L6 4" stroke-width="1.5" stroke-linecap="round"
+																				stroke-linejoin="round" />
+																		</svg>
+																	</span>
+																	CEO
+																</button>
+																<div class="collapse show" id="collapseItem8">
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck81">
+																		<label class="form-check-label" for="flexCheck81">
+																			Мероприятия
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck82">
+																		<label class="form-check-label" for="flexCheck82">
+																			Баннеры в подпись
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck83">
+																		<label class="form-check-label" for="flexCheck83">
+																			Посты Телеграмм
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck84">
+																		<label class="form-check-label" for="flexCheck84">
+																			Посты в проф. медиа
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck85">
+																		<label class="form-check-label" for="flexCheck85">
+																			Посты в проф. медиа
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck86">
+																		<label class="form-check-label" for="flexCheck86">
+																			Посты в проф. медиа
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck87">
+																		<label class="form-check-label" for="flexCheck87">
+																			Посты в проф. медиа
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck88">
+																		<label class="form-check-label" for="flexCheck88">
+																			Посты в проф. медиа
+																		</label>
+																	</div>
+																</div>
+															</div>
+														</form>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="dropdown dropdown-nested">
+											<button class="dropdown-item dropdown-toggle" type="button" id="dropdownFilterNested5"
+												data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+												Тема
+												<span class="icon icon-arrow">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+														<path d="M6 12L10 8L6 4" stroke-width="1.5" stroke-linecap="round"
+															stroke-linejoin="round" />
+													</svg>
+												</span>
+											</button>
+
+											<div class="dropdown-menu" aria-labelledby="dropdownFilterNested5">
+												<ul class="list-group">
+													<li>
+														<button class="dropdown-item dropdown-dissmis" type="button">
+															<span class="icon icon-arrow">
+																<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+																	<path d="M6 12L10 8L6 4" stroke-width="1.5" stroke-linecap="round"
+																		stroke-linejoin="round" />
+																</svg>
+															</span>
+															Фильтр по темам
+														</button>
+													</li>
+													<li>
+														<form>
+															<div class="wrapper-search">
+																<button class="btn btn-search" type="submit">
+																	<span class="icon icon-search">
+																		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+																			<path fill-rule="evenodd" clip-rule="evenodd"
+																				d="M17.31 15.9L20.71 19.29C20.8993 19.4778 21.0058 19.7334 21.0058 20C21.0058 20.2666 20.8993 20.5222 20.71 20.71C20.5222 20.8993 20.2666 21.0058 20 21.0058C19.7334 21.0058 19.4778 20.8993 19.29 20.71L15.9 17.31C14.5025 18.407 12.7767 19.0022 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11C19.0022 12.7767 18.407 14.5025 17.31 15.9ZM11 5C7.68629 5 5 7.68629 5 11C5 14.3137 7.68629 17 11 17C14.3137 17 17 14.3137 17 11C17 7.68629 14.3137 5 11 5Z">
+																			</path>
+																		</svg>
+																	</span>
+																</button>
+																<input class="form-control" type="search" placeholder="Поиск" aria-label="Search">
+															</div>
+
+															<div>
+																<button class="btn btn-collapse" type="button" data-bs-toggle="collapse"
+																	data-bs-target="#collapseItem9" aria-expanded="true" aria-controls="collapseItem9">
+																	<span class="icon icon-arrow">
+																		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+																			<path d="M6 12L10 8L6 4" stroke-width="1.5" stroke-linecap="round"
+																				stroke-linejoin="round" />
+																		</svg>
+																	</span>
+																	Медиа
+																</button>
+																<div class="collapse show" id="collapseItem9">
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck91">
+																		<label class="form-check-label" for="flexCheck91">
+																			Email рассылка
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck92">
+																		<label class="form-check-label" for="flexCheck92">
+																			Рассылка WhatsApp
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck93">
+																		<label class="form-check-label" for="flexCheck93">
+																			Трансляция
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck94">
+																		<label class="form-check-label" for="flexCheck94">
+																			Рассылка в мессенджерах
+																		</label>
+																	</div>
+																</div>
+
+																<button class="btn btn-collapse" type="button" data-bs-toggle="collapse"
+																	data-bs-target="#collapseItem10" aria-expanded="true" aria-controls="collapseItem10">
+																	<span class="icon icon-arrow">
+																		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+																			<path d="M6 12L10 8L6 4" stroke-width="1.5" stroke-linecap="round"
+																				stroke-linejoin="round" />
+																		</svg>
+																	</span>
+																	CEO
+																</button>
+																<div class="collapse show" id="collapseItem10">
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck101">
+																		<label class="form-check-label" for="flexCheck101">
+																			Мероприятия
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck102">
+																		<label class="form-check-label" for="flexCheck102">
+																			Баннеры в подпись
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck103">
+																		<label class="form-check-label" for="flexCheck103">
+																			Посты Телеграмм
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck104">
+																		<label class="form-check-label" for="flexCheck104">
+																			Посты в проф. медиа
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck105">
+																		<label class="form-check-label" for="flexCheck105">
+																			Посты в проф. медиа
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck106">
+																		<label class="form-check-label" for="flexCheck106">
+																			Посты в проф. медиа
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck107">
+																		<label class="form-check-label" for="flexCheck107">
+																			Посты в проф. медиа
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck108">
+																		<label class="form-check-label" for="flexCheck108">
+																			Посты в проф. медиа
+																		</label>
+																	</div>
+																</div>
+															</div>
+														</form>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="dropdown dropdown-nested">
+											<button class="dropdown-item dropdown-toggle" type="button" id="dropdownFilterNested6"
+												data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+												Страна
+												<span class="icon icon-arrow">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+														<path d="M6 12L10 8L6 4" stroke-width="1.5" stroke-linecap="round"
+															stroke-linejoin="round" />
+													</svg>
+												</span>
+											</button>
+
+											<div class="dropdown-menu" aria-labelledby="dropdownFilterNested6">
+												<ul class="list-group">
+													<li>
+														<button class="dropdown-item dropdown-dissmis" type="button">
+															<span class="icon icon-arrow">
+																<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+																	<path d="M6 12L10 8L6 4" stroke-width="1.5" stroke-linecap="round"
+																		stroke-linejoin="round" />
+																</svg>
+															</span>
+															Фильтр по странам
+														</button>
+													</li>
+													<li>
+														<form>
+															<div class="wrapper-search">
+																<button class="btn btn-search" type="submit">
+																	<span class="icon icon-search">
+																		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+																			<path fill-rule="evenodd" clip-rule="evenodd"
+																				d="M17.31 15.9L20.71 19.29C20.8993 19.4778 21.0058 19.7334 21.0058 20C21.0058 20.2666 20.8993 20.5222 20.71 20.71C20.5222 20.8993 20.2666 21.0058 20 21.0058C19.7334 21.0058 19.4778 20.8993 19.29 20.71L15.9 17.31C14.5025 18.407 12.7767 19.0022 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11C19.0022 12.7767 18.407 14.5025 17.31 15.9ZM11 5C7.68629 5 5 7.68629 5 11C5 14.3137 7.68629 17 11 17C14.3137 17 17 14.3137 17 11C17 7.68629 14.3137 5 11 5Z">
+																			</path>
+																		</svg>
+																	</span>
+																</button>
+																<input class="form-control" type="search" placeholder="Поиск" aria-label="Search">
+															</div>
+
+															<div>
+																<button class="btn btn-collapse" type="button" data-bs-toggle="collapse"
+																	data-bs-target="#collapseItem11" aria-expanded="true" aria-controls="collapseItem11">
+																	<span class="icon icon-arrow">
+																		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+																			<path d="M6 12L10 8L6 4" stroke-width="1.5" stroke-linecap="round"
+																				stroke-linejoin="round" />
+																		</svg>
+																	</span>
+																	Медиа
+																</button>
+																<div class="collapse show" id="collapseItem11">
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck111">
+																		<label class="form-check-label" for="flexCheck111">
+																			Email рассылка
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck112">
+																		<label class="form-check-label" for="flexCheck112">
+																			Рассылка WhatsApp
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck113">
+																		<label class="form-check-label" for="flexCheck113">
+																			Трансляция
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck114">
+																		<label class="form-check-label" for="flexCheck114">
+																			Рассылка в мессенджерах
+																		</label>
+																	</div>
+																</div>
+
+																<button class="btn btn-collapse" type="button" data-bs-toggle="collapse"
+																	data-bs-target="#collapseItem12" aria-expanded="true" aria-controls="collapseItem12">
+																	<span class="icon icon-arrow">
+																		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+																			<path d="M6 12L10 8L6 4" stroke-width="1.5" stroke-linecap="round"
+																				stroke-linejoin="round" />
+																		</svg>
+																	</span>
+																	CEO
+																</button>
+																<div class="collapse show" id="collapseItem12">
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck121">
+																		<label class="form-check-label" for="flexCheck121">
+																			Мероприятия
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck122">
+																		<label class="form-check-label" for="flexCheck122">
+																			Баннеры в подпись
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck123">
+																		<label class="form-check-label" for="flexCheck123">
+																			Посты Телеграмм
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck124">
+																		<label class="form-check-label" for="flexCheck124">
+																			Посты в проф. медиа
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck125">
+																		<label class="form-check-label" for="flexCheck125">
+																			Посты в проф. медиа
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck126">
+																		<label class="form-check-label" for="flexCheck126">
+																			Посты в проф. медиа
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck127">
+																		<label class="form-check-label" for="flexCheck127">
+																			Посты в проф. медиа
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck128">
+																		<label class="form-check-label" for="flexCheck128">
+																			Посты в проф. медиа
+																		</label>
+																	</div>
+																</div>
+															</div>
+														</form>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="dropdown dropdown-nested">
+											<button class="dropdown-item dropdown-toggle" type="button" id="dropdownFilterNested7"
+												data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+												Регион
+												<span class="icon icon-arrow">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+														<path d="M6 12L10 8L6 4" stroke-width="1.5" stroke-linecap="round"
+															stroke-linejoin="round" />
+													</svg>
+												</span>
+											</button>
+
+											<div class="dropdown-menu" aria-labelledby="dropdownFilterNested7">
+												<ul class="list-group">
+													<li>
+														<button class="dropdown-item dropdown-dissmis" type="button">
+															<span class="icon icon-arrow">
+																<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+																	<path d="M6 12L10 8L6 4" stroke-width="1.5" stroke-linecap="round"
+																		stroke-linejoin="round" />
+																</svg>
+															</span>
+															Фильтр по регионам
+														</button>
+													</li>
+													<li>
+														<form>
+															<div class="wrapper-search">
+																<button class="btn btn-search" type="submit">
+																	<span class="icon icon-search">
+																		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+																			<path fill-rule="evenodd" clip-rule="evenodd"
+																				d="M17.31 15.9L20.71 19.29C20.8993 19.4778 21.0058 19.7334 21.0058 20C21.0058 20.2666 20.8993 20.5222 20.71 20.71C20.5222 20.8993 20.2666 21.0058 20 21.0058C19.7334 21.0058 19.4778 20.8993 19.29 20.71L15.9 17.31C14.5025 18.407 12.7767 19.0022 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11C19.0022 12.7767 18.407 14.5025 17.31 15.9ZM11 5C7.68629 5 5 7.68629 5 11C5 14.3137 7.68629 17 11 17C14.3137 17 17 14.3137 17 11C17 7.68629 14.3137 5 11 5Z">
+																			</path>
+																		</svg>
+																	</span>
+																</button>
+																<input class="form-control" type="search" placeholder="Поиск" aria-label="Search">
+															</div>
+
+															<div>
+																<button class="btn btn-collapse" type="button" data-bs-toggle="collapse"
+																	data-bs-target="#collapseItem13" aria-expanded="true" aria-controls="collapseItem13">
+																	<span class="icon icon-arrow">
+																		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+																			<path d="M6 12L10 8L6 4" stroke-width="1.5" stroke-linecap="round"
+																				stroke-linejoin="round" />
+																		</svg>
+																	</span>
+																	Медиа
+																</button>
+																<div class="collapse show" id="collapseItem13">
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck131">
+																		<label class="form-check-label" for="flexCheck131">
+																			Email рассылка
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck132">
+																		<label class="form-check-label" for="flexCheck132">
+																			Рассылка WhatsApp
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck133">
+																		<label class="form-check-label" for="flexCheck133">
+																			Трансляция
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck134">
+																		<label class="form-check-label" for="flexCheck134">
+																			Рассылка в мессенджерах
+																		</label>
+																	</div>
+																</div>
+
+																<button class="btn btn-collapse" type="button" data-bs-toggle="collapse"
+																	data-bs-target="#collapseItem14" aria-expanded="true" aria-controls="collapseItem14">
+																	<span class="icon icon-arrow">
+																		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+																			<path d="M6 12L10 8L6 4" stroke-width="1.5" stroke-linecap="round"
+																				stroke-linejoin="round" />
+																		</svg>
+																	</span>
+																	CEO
+																</button>
+																<div class="collapse show" id="collapseItem14">
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck141">
+																		<label class="form-check-label" for="flexCheck141">
+																			Мероприятия
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck142">
+																		<label class="form-check-label" for="flexCheck142">
+																			Баннеры в подпись
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck143">
+																		<label class="form-check-label" for="flexCheck143">
+																			Посты Телеграмм
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck144">
+																		<label class="form-check-label" for="flexCheck144">
+																			Посты в проф. медиа
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck145">
+																		<label class="form-check-label" for="flexCheck145">
+																			Посты в проф. медиа
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck146">
+																		<label class="form-check-label" for="flexCheck146">
+																			Посты в проф. медиа
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck147">
+																		<label class="form-check-label" for="flexCheck147">
+																			Посты в проф. медиа
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck148">
+																		<label class="form-check-label" for="flexCheck148">
+																			Посты в проф. медиа
+																		</label>
+																	</div>
+																</div>
+															</div>
+														</form>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="dropdown dropdown-nested">
+											<button class="dropdown-item dropdown-toggle" type="button" id="dropdownFilterNested8"
+												data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+												Отель
+												<span class="icon icon-arrow">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+														<path d="M6 12L10 8L6 4" stroke-width="1.5" stroke-linecap="round"
+															stroke-linejoin="round" />
+													</svg>
+												</span>
+											</button>
+
+											<div class="dropdown-menu" aria-labelledby="dropdownFilterNested8">
+												<ul class="list-group">
+													<li>
+														<button class="dropdown-item dropdown-dissmis" type="button">
+															<span class="icon icon-arrow">
+																<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+																	<path d="M6 12L10 8L6 4" stroke-width="1.5" stroke-linecap="round"
+																		stroke-linejoin="round" />
+																</svg>
+															</span>
+															Фильтр по отелям
+														</button>
+													</li>
+													<li>
+														<form>
+															<div class="wrapper-search">
+																<button class="btn btn-search" type="submit">
+																	<span class="icon icon-search">
+																		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+																			<path fill-rule="evenodd" clip-rule="evenodd"
+																				d="M17.31 15.9L20.71 19.29C20.8993 19.4778 21.0058 19.7334 21.0058 20C21.0058 20.2666 20.8993 20.5222 20.71 20.71C20.5222 20.8993 20.2666 21.0058 20 21.0058C19.7334 21.0058 19.4778 20.8993 19.29 20.71L15.9 17.31C14.5025 18.407 12.7767 19.0022 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11C19.0022 12.7767 18.407 14.5025 17.31 15.9ZM11 5C7.68629 5 5 7.68629 5 11C5 14.3137 7.68629 17 11 17C14.3137 17 17 14.3137 17 11C17 7.68629 14.3137 5 11 5Z">
+																			</path>
+																		</svg>
+																	</span>
+																</button>
+																<input class="form-control" type="search" placeholder="Поиск" aria-label="Search">
+															</div>
+
+															<div>
+																<button class="btn btn-collapse" type="button" data-bs-toggle="collapse"
+																	data-bs-target="#collapseItem15" aria-expanded="true" aria-controls="collapseItem15">
+																	<span class="icon icon-arrow">
+																		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+																			<path d="M6 12L10 8L6 4" stroke-width="1.5" stroke-linecap="round"
+																				stroke-linejoin="round" />
+																		</svg>
+																	</span>
+																	Медиа
+																</button>
+																<div class="collapse show" id="collapseItem15">
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck151">
+																		<label class="form-check-label" for="flexCheck151">
+																			Email рассылка
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck152">
+																		<label class="form-check-label" for="flexCheck152">
+																			Рассылка WhatsApp
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck153">
+																		<label class="form-check-label" for="flexCheck153">
+																			Трансляция
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck154">
+																		<label class="form-check-label" for="flexCheck154">
+																			Рассылка в мессенджерах
+																		</label>
+																	</div>
+																</div>
+
+																<button class="btn btn-collapse" type="button" data-bs-toggle="collapse"
+																	data-bs-target="#collapseItem16" aria-expanded="true" aria-controls="collapseItem16">
+																	<span class="icon icon-arrow">
+																		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+																			<path d="M6 12L10 8L6 4" stroke-width="1.5" stroke-linecap="round"
+																				stroke-linejoin="round" />
+																		</svg>
+																	</span>
+																	CEO
+																</button>
+																<div class="collapse show" id="collapseItem16">
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck161">
+																		<label class="form-check-label" for="flexCheck161">
+																			Мероприятия
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck162">
+																		<label class="form-check-label" for="flexCheck162">
+																			Баннеры в подпись
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck163">
+																		<label class="form-check-label" for="flexCheck163">
+																			Посты Телеграмм
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck164">
+																		<label class="form-check-label" for="flexCheck164">
+																			Посты в проф. медиа
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck165">
+																		<label class="form-check-label" for="flexCheck165">
+																			Посты в проф. медиа
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck166">
+																		<label class="form-check-label" for="flexCheck166">
+																			Посты в проф. медиа
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck167">
+																		<label class="form-check-label" for="flexCheck167">
+																			Посты в проф. медиа
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck168">
+																		<label class="form-check-label" for="flexCheck168">
+																			Посты в проф. медиа
+																		</label>
+																	</div>
+																</div>
+															</div>
+														</form>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</li>
+									<li>
+										<button class="dropdown-item" type="button">
+											Дата
+											<span class="icon icon-arrow">
+												<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+													<path d="M6 12L10 8L6 4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+												</svg>
+											</span>
+										</button>
+									</li>
+									<li>
+										<div class="dropdown dropdown-nested">
+											<button class="dropdown-item dropdown-toggle" type="button" id="dropdownFilterNested9"
+												data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+												Город вылета
+												<span class="icon icon-arrow">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+														<path d="M6 12L10 8L6 4" stroke-width="1.5" stroke-linecap="round"
+															stroke-linejoin="round" />
+													</svg>
+												</span>
+											</button>
+
+											<div class="dropdown-menu" aria-labelledby="dropdownFilterNested9">
+												<ul class="list-group">
+													<li>
+														<button class="dropdown-item dropdown-dissmis" type="button">
+															<span class="icon icon-arrow">
+																<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+																	<path d="M6 12L10 8L6 4" stroke-width="1.5" stroke-linecap="round"
+																		stroke-linejoin="round" />
+																</svg>
+															</span>
+															Фильтр по городам
+														</button>
+													</li>
+													<li>
+														<form>
+															<div class="wrapper-search">
+																<button class="btn btn-search" type="submit">
+																	<span class="icon icon-search">
+																		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+																			<path fill-rule="evenodd" clip-rule="evenodd"
+																				d="M17.31 15.9L20.71 19.29C20.8993 19.4778 21.0058 19.7334 21.0058 20C21.0058 20.2666 20.8993 20.5222 20.71 20.71C20.5222 20.8993 20.2666 21.0058 20 21.0058C19.7334 21.0058 19.4778 20.8993 19.29 20.71L15.9 17.31C14.5025 18.407 12.7767 19.0022 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11C19.0022 12.7767 18.407 14.5025 17.31 15.9ZM11 5C7.68629 5 5 7.68629 5 11C5 14.3137 7.68629 17 11 17C14.3137 17 17 14.3137 17 11C17 7.68629 14.3137 5 11 5Z">
+																			</path>
+																		</svg>
+																	</span>
+																</button>
+																<input class="form-control" type="search" placeholder="Поиск" aria-label="Search">
+															</div>
+
+															<div>
+																<button class="btn btn-collapse" type="button" data-bs-toggle="collapse"
+																	data-bs-target="#collapseItem17" aria-expanded="true" aria-controls="collapseItem17">
+																	<span class="icon icon-arrow">
+																		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+																			<path d="M6 12L10 8L6 4" stroke-width="1.5" stroke-linecap="round"
+																				stroke-linejoin="round" />
+																		</svg>
+																	</span>
+																	Медиа
+																</button>
+																<div class="collapse show" id="collapseItem17">
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck171">
+																		<label class="form-check-label" for="flexCheck171">
+																			Email рассылка
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck172">
+																		<label class="form-check-label" for="flexCheck172">
+																			Рассылка WhatsApp
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck173">
+																		<label class="form-check-label" for="flexCheck173">
+																			Трансляция
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck174">
+																		<label class="form-check-label" for="flexCheck174">
+																			Рассылка в мессенджерах
+																		</label>
+																	</div>
+																</div>
+
+																<button class="btn btn-collapse" type="button" data-bs-toggle="collapse"
+																	data-bs-target="#collapseItem18" aria-expanded="true" aria-controls="collapseItem18">
+																	<span class="icon icon-arrow">
+																		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+																			<path d="M6 12L10 8L6 4" stroke-width="1.5" stroke-linecap="round"
+																				stroke-linejoin="round" />
+																		</svg>
+																	</span>
+																	CEO
+																</button>
+																<div class="collapse show" id="collapseItem18">
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck181">
+																		<label class="form-check-label" for="flexCheck181">
+																			Мероприятия
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck182">
+																		<label class="form-check-label" for="flexCheck182">
+																			Баннеры в подпись
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck183">
+																		<label class="form-check-label" for="flexCheck183">
+																			Посты Телеграмм
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck184">
+																		<label class="form-check-label" for="flexCheck184">
+																			Посты в проф. медиа
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck185">
+																		<label class="form-check-label" for="flexCheck185">
+																			Посты в проф. медиа
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck186">
+																		<label class="form-check-label" for="flexCheck186">
+																			Посты в проф. медиа
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck187">
+																		<label class="form-check-label" for="flexCheck187">
+																			Посты в проф. медиа
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck188">
+																		<label class="form-check-label" for="flexCheck188">
+																			Посты в проф. медиа
+																		</label>
+																	</div>
+																</div>
+															</div>
+														</form>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="dropdown dropdown-nested">
+											<button class="dropdown-item dropdown-toggle" type="button" id="dropdownFilterNested10"
+												data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+												Статус
+												<span class="icon icon-arrow">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+														<path d="M6 12L10 8L6 4" stroke-width="1.5" stroke-linecap="round"
+															stroke-linejoin="round" />
+													</svg>
+												</span>
+											</button>
+
+											<div class="dropdown-menu" aria-labelledby="dropdownFilterNested10">
+												<ul class="list-group">
+													<li>
+														<button class="dropdown-item dropdown-dissmis" type="button">
+															<span class="icon icon-arrow">
+																<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+																	<path d="M6 12L10 8L6 4" stroke-width="1.5" stroke-linecap="round"
+																		stroke-linejoin="round" />
+																</svg>
+															</span>
+															Фильтр по статусам
+														</button>
+													</li>
+													<li>
+														<form>
+															<div class="wrapper-search">
+																<button class="btn btn-search" type="submit">
+																	<span class="icon icon-search">
+																		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+																			<path fill-rule="evenodd" clip-rule="evenodd"
+																				d="M17.31 15.9L20.71 19.29C20.8993 19.4778 21.0058 19.7334 21.0058 20C21.0058 20.2666 20.8993 20.5222 20.71 20.71C20.5222 20.8993 20.2666 21.0058 20 21.0058C19.7334 21.0058 19.4778 20.8993 19.29 20.71L15.9 17.31C14.5025 18.407 12.7767 19.0022 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11C19.0022 12.7767 18.407 14.5025 17.31 15.9ZM11 5C7.68629 5 5 7.68629 5 11C5 14.3137 7.68629 17 11 17C14.3137 17 17 14.3137 17 11C17 7.68629 14.3137 5 11 5Z">
+																			</path>
+																		</svg>
+																	</span>
+																</button>
+																<input class="form-control" type="search" placeholder="Поиск" aria-label="Search">
+															</div>
+
+															<div>
+																<button class="btn btn-collapse" type="button" data-bs-toggle="collapse"
+																	data-bs-target="#collapseItem19" aria-expanded="true" aria-controls="collapseItem19">
+																	<span class="icon icon-arrow">
+																		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+																			<path d="M6 12L10 8L6 4" stroke-width="1.5" stroke-linecap="round"
+																				stroke-linejoin="round" />
+																		</svg>
+																	</span>
+																	Медиа
+																</button>
+																<div class="collapse show" id="collapseItem19">
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck191">
+																		<label class="form-check-label" for="flexCheck191">
+																			Email рассылка
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck192">
+																		<label class="form-check-label" for="flexCheck192">
+																			Рассылка WhatsApp
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck193">
+																		<label class="form-check-label" for="flexCheck193">
+																			Трансляция
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck194">
+																		<label class="form-check-label" for="flexCheck194">
+																			Рассылка в мессенджерах
+																		</label>
+																	</div>
+																</div>
+
+																<button class="btn btn-collapse" type="button" data-bs-toggle="collapse"
+																	data-bs-target="#collapseItem20" aria-expanded="true" aria-controls="collapseItem20">
+																	<span class="icon icon-arrow">
+																		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+																			<path d="M6 12L10 8L6 4" stroke-width="1.5" stroke-linecap="round"
+																				stroke-linejoin="round" />
+																		</svg>
+																	</span>
+																	CEO
+																</button>
+																<div class="collapse show" id="collapseItem20">
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck201">
+																		<label class="form-check-label" for="flexCheck201">
+																			Мероприятия
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck202">
+																		<label class="form-check-label" for="flexCheck202">
+																			Баннеры в подпись
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck203">
+																		<label class="form-check-label" for="flexCheck203">
+																			Посты Телеграмм
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck204">
+																		<label class="form-check-label" for="flexCheck204">
+																			Посты в проф. медиа
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck205">
+																		<label class="form-check-label" for="flexCheck205">
+																			Посты в проф. медиа
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck206">
+																		<label class="form-check-label" for="flexCheck206">
+																			Посты в проф. медиа
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck207">
+																		<label class="form-check-label" for="flexCheck207">
+																			Посты в проф. медиа
+																		</label>
+																	</div>
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheck208">
+																		<label class="form-check-label" for="flexCheck208">
+																			Посты в проф. медиа
+																		</label>
+																	</div>
+																</div>
+															</div>
+														</form>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<button class="btn btn-reset table-button" type="button">
 								Сбросить всё
 							</button>
 
-							<button class="btn btn-delete" type="button">
-								Департамент
-								<span class="icon icon-close">
-									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
-										<path d="M12.7119 5.2876L5.28729 12.7122" stroke-width="2" stroke-linecap="round"
-											stroke-linejoin="round" />
-										<path d="M5.28809 5.2876L12.7127 12.7122" stroke-width="2" stroke-linecap="round"
-											stroke-linejoin="round" />
-									</svg>
-								</span>
-							</button>
-							<button class="btn btn-delete" type="button">
-								PR
-								<span class="icon icon-close">
-									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
-										<path d="M12.7119 5.2876L5.28729 12.7122" stroke-width="2" stroke-linecap="round"
-											stroke-linejoin="round" />
-										<path d="M5.28809 5.2876L12.7127 12.7122" stroke-width="2" stroke-linecap="round"
-											stroke-linejoin="round" />
-									</svg>
-								</span>
-							</button>
-							<button class="btn btn-delete" type="button">
-								Distribution
-								<span class="icon icon-close">
-									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
-										<path d="M12.7119 5.2876L5.28729 12.7122" stroke-width="2" stroke-linecap="round"
-											stroke-linejoin="round" />
-										<path d="M5.28809 5.2876L12.7127 12.7122" stroke-width="2" stroke-linecap="round"
-											stroke-linejoin="round" />
-									</svg>
-								</span>
-							</button>
+							<div class="swiper swiper-buttons">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<button class="btn btn-delete" type="button">
+											Департамент
+											<span class="icon icon-close">
+												<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
+													<path d="M12.7119 5.2876L5.28729 12.7122" stroke-width="2" stroke-linecap="round"
+														stroke-linejoin="round" />
+													<path d="M5.28809 5.2876L12.7127 12.7122" stroke-width="2" stroke-linecap="round"
+														stroke-linejoin="round" />
+												</svg>
+											</span>
+										</button>
+									</div>
+									<div class="swiper-slide">
+										<button class="btn btn-delete" type="button">
+											PR
+											<span class="icon icon-close">
+												<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
+													<path d="M12.7119 5.2876L5.28729 12.7122" stroke-width="2" stroke-linecap="round"
+														stroke-linejoin="round" />
+													<path d="M5.28809 5.2876L12.7127 12.7122" stroke-width="2" stroke-linecap="round"
+														stroke-linejoin="round" />
+												</svg>
+											</span>
+										</button>
+									</div>
+									<div class="swiper-slide">
+										<button class="btn btn-delete" type="button">
+											Distribution
+											<span class="icon icon-close">
+												<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
+													<path d="M12.7119 5.2876L5.28729 12.7122" stroke-width="2" stroke-linecap="round"
+														stroke-linejoin="round" />
+													<path d="M5.28809 5.2876L12.7127 12.7122" stroke-width="2" stroke-linecap="round"
+														stroke-linejoin="round" />
+												</svg>
+											</span>
+										</button>
+									</div>
+								</div>
+							</div>
+
 						</div>
 					</div>
 

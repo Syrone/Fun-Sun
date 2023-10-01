@@ -106,5 +106,14 @@
 .header-dropdown .dropdown-item {
 	gap: .375rem;
 	padding: 0.375rem;
+	color: var(--text-color);
+}
+
+.header-dropdown .dropdown-item:is(:hover, :focus-visible, :active, .active) {
+	color: var(--text-color--dark);
+}
+
+.header-dropdown .dropdown-item:is(:hover, :focus-visible, :active, .active) .icon {
+	color: var(--accent);
 }
 /** (End) Header Dropdown Menu **/

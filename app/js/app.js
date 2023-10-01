@@ -98,5 +98,41 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 	//** (End) Backdrop for Header Menu Mobile **/
 
+	//** (Start) Swiper Buttons **//
+	const swiperButtons = new Swiper('.swiper-buttons', {
+		slidesPerView: 'auto',
+		spaceBetween: 8,
+		freeMode: true,
+	});
+	//** (End) Swiper Buttons **//
+
+	//** (Start) Close Buttons Dropdown **//
+	var closeDropdownButtons = document.getElementsByClassName('dropdown-dissmis');
+	for (var i = 0; i < closeDropdownButtons.length; i++) {
+		closeDropdownButtons[i].addEventListener('click', function () {
+			var dropdownMenu = this.parentNode.parentNode.parentNode;
+			var dropdownToggle = dropdownMenu.parentNode.querySelector('.dropdown-toggle');
+			dropdownMenu.classList.remove('show');
+			dropdownToggle.classList.remove('show');
+			dropdownToggle.setAttribute('aria-expanded', 'false');
+		});
+	}
+	//** (End) Close Buttons Dropdown **//
+
+	//** (Start) Checked From Check **//
+	const checkboxes = document.querySelectorAll('.form-check-input');
+	const formChecks = document.querySelectorAll('.form-check');
+
+	checkboxes.forEach(function (checkbox, index) {
+		checkbox.addEventListener('change', function () {
+			if (this.checked) {
+				formChecks[index].classList.add('checked');
+			} else {
+				formChecks[index].classList.remove('checked');
+			}
+		});
+	});
+	//** (End) Checked From Check **//
+
 
 })
