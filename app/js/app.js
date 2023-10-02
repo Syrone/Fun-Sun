@@ -107,6 +107,36 @@ document.addEventListener('DOMContentLoaded', () => {
 	//** (End) Swiper Buttons **//
 
 	//** (Start) Close Buttons Dropdown **//
+	const dropdownFilters = document.querySelectorAll('.dropdown-filter');
+
+	dropdownFilters.forEach(dropdownFilter => {
+		const dropdownNested = dropdownFilter.querySelectorAll('.dropdown-nested');
+
+		dropdownNested.forEach(nested => {
+			const dropdownMenu = nested.querySelector('.dropdown-menu');
+			const observer = new MutationObserver(mutations => {
+				let hasOpenMenu = false;
+
+				dropdownNested.forEach(nested => {
+					const dropdownMenu = nested.querySelector('.dropdown-menu');
+					if (dropdownMenu.classList.contains('show')) {
+						hasOpenMenu = true;
+					}
+				});
+
+				if (hasOpenMenu) {
+					dropdownFilter.classList.add('nested');
+				} else {
+					dropdownFilter.classList.remove('nested');
+				}
+			});
+
+			observer.observe(dropdownMenu, { attributes: true });
+		});
+	});
+	//** (End) Close Buttons Dropdown **//
+
+	//** (Start) Close Buttons Dropdown **//
 	var closeDropdownButtons = document.getElementsByClassName('dropdown-dissmis');
 	for (var i = 0; i < closeDropdownButtons.length; i++) {
 		closeDropdownButtons[i].addEventListener('click', function () {

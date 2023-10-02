@@ -49,6 +49,7 @@
 		width: var(--size);
 		height: var(--size);
 	}
+
 	//** (End) ICONS **//
 
 	/** (Start) Header Page **/
@@ -276,6 +277,40 @@
 	}
 
 	//** (End) Custom Table Items **//
+
+	//** (Start) Dropdowns **//
+	.dropdown-nested .dropdown-menu {
+		height: auto;
+		inset: 0 auto auto 0 !important;
+		box-shadow: var(--box-shadow);
+		border-inline-start: none;
+		border-radius: 0.75rem;
+	}
+
+	.dropdown-nested .dropdown-menu ul {
+		max-height: 470px;
+	}
+
+	.dropdown-nested .dropdown-menu li:first-child {
+		display: block;
+	}
+
+	.dropdown-nested .dropdown-menu li+li {
+		margin-top: .5rem;
+	}
+
+	.dropdown-nested .wrapper-search {
+		display: block;
+	}
+
+	.dropdown-nested .wrapper-search + div {
+		margin-top: 0.875rem;
+	}
+
+	.dropdown-nested .btn-collapse {
+		display: flex;
+	}
+	//** (End) Dropdowns **//
 }
 
 @media (max-width: 576px) {
@@ -304,7 +339,7 @@
 		flex-wrap: wrap;
 	}
 
-	.table-buttons > .table-button {
+	.table-buttons>.table-button {
 		flex-basis: calc(50% - .25rem);
 	}
 
