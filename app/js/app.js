@@ -10,18 +10,20 @@ document.addEventListener('DOMContentLoaded', () => {
 	function calculateTableHeight() {
 		var windowWidth = window.innerWidth;
 		var windowHeight = window.innerHeight;
-		if (windowWidth >= 992 && windowHeight >= 768) {
-			var tableElement = document.getElementById('tableFullScreen');
-			var tabletableElementHeight = document.querySelector('.table-responsive')
-			var paginationWrapper = document.querySelector('.wrapper-pagination');
-			var paginationHeight = paginationWrapper.offsetHeight;
-			var tableOffsetTop = tableElement.offsetTop;
-			var tableHeight = windowHeight - (tableOffsetTop + paginationHeight) - 20;
+		var tableElement = document.getElementById('tableFullScreen');
+		var tabletableElementHeight = document.querySelector('.table-responsive');
+		var paginationWrapper = document.querySelector('.wrapper-pagination');
 
-			tabletableElementHeight.style.maxHeight = tableHeight + 'px';
-		} else {
-			var tabletableElementHeight = document.querySelector('.table-responsive')
-			tabletableElementHeight.style.maxHeight = '';
+		if (tableElement) {
+			if (windowWidth >= 992 && windowHeight >= 768) {
+				var paginationHeight = paginationWrapper.offsetHeight;
+				var tableOffsetTop = tableElement.offsetTop;
+				var tableHeight = windowHeight - (tableOffsetTop + paginationHeight) - 20;
+
+				tabletableElementHeight.style.maxHeight = tableHeight + 'px';
+			} else {
+				tabletableElementHeight.style.maxHeight = '';
+			}
 		}
 	}
 
@@ -33,7 +35,10 @@ document.addEventListener('DOMContentLoaded', () => {
 		calculateTableHeight();
 	}
 
-	window.addEventListener('load', calculateTableHeight);
+	window.addEventListener('load', function () {
+		calculateTableHeight();
+	});
+
 	window.addEventListener('resize', handleResize);
 
 	var observerTableHeight = new MutationObserver(handleMutation);
@@ -57,7 +62,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	}
 
-	tabletableElementHeight.addEventListener('scroll', handleScroll);
+	if (tableElement && tabletableElementHeight) {
+		tabletableElementHeight.addEventListener('scroll', handleScroll);
+	}
 	/** (End) Скролл таблицы **/
 
 	//** (Start) Backdrop for Header Menu Mobile **/
@@ -164,5 +171,37 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 	//** (End) Checked From Check **//
 
+
+	//** (Start) Graph Without Scales **//
+	const canvasTrendingUp = document.getElementById('canvasTrendingUp')
+	const GraphTrendingUp = new Chart(canvasTrendingUp, {
+		type: 'line',
+		data: {
+			labels: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь'],
+			datasets: [{
+				label: 'Продажи',
+				data: [12, 19, 3, 5, 2, 3],
+				backgroundColor: 'rgba(0, 123, 255, 0.5)',
+				borderColor: 'rgba(0, 123, 255, 1)',
+				borderWidth: 1
+			}]
+		},
+		options: {
+			scales: {
+				y: {
+					display: false
+				},
+				x: {
+					display: false
+				}
+			},
+			plugins: {
+				legend: {
+					display: false
+				}
+			}
+		}
+	});
+	//** (End) Graph Without Scales **//
 
 })

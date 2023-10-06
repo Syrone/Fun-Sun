@@ -87,7 +87,7 @@
 
 	/** (Start) Header Page **/
 	.header .navbar-collapse {
-		background-color: #fff;
+		background-color: var(--background);
 		border: 1px solid var(--border-color);
 		border-radius: .75rem 0rem .75rem .75rem;
 		padding: 1.5rem;
@@ -184,7 +184,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0 1rem;
-		background-color: white;
+		background-color: var(--background);
 		border-radius: .5rem;
 		padding: 1rem;
 		position: relative;
@@ -251,21 +251,14 @@
 		grid-template-columns: auto 1fr;
 		align-items: baseline;
 		gap: 1.25rem 1.875rem;
-	}
+		margin-block-end: 1.5rem;
 
-	.header-page>.btn {
-		grid-row: 2;
-		grid-column: span 2;
+		&>*:nth-child(2) {
+			grid-row: 2;
+			grid-column: span 2;
+		}
 	}
-
 	/** (End) Header Page **/
-
-	/** (Start) Wrapper Table **/
-	.wrapper-table {
-		padding-top: 1.25rem;
-	}
-
-	/** (End) Wrapper Table **/
 
 	//** (Start) Custom Table Items **//
 	.table-items .table-responsive {
@@ -303,7 +296,7 @@
 		display: block;
 	}
 
-	.dropdown-nested .wrapper-search + div {
+	.dropdown-nested .wrapper-search+div {
 		margin-top: 0.875rem;
 	}
 
@@ -311,6 +304,17 @@
 		display: flex;
 	}
 	//** (End) Dropdowns **//
+
+	/** (Start) Wrapper MyData **/
+	.wrapper-mydata {
+		padding: 1rem;
+		form {
+			& > .row {
+				row-gap: 1.625rem;
+			}
+		}
+	}
+	/** (End) Wrapper MyData **/
 }
 
 @media (max-width: 576px) {

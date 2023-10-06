@@ -4,7 +4,7 @@
 	align-items: center;
 	grid-template-columns: auto auto 1fr;
 	gap: 1.875rem;
-	margin-top: 1.875rem;
+	margin-block: 2rem;
 }
 
 .header-page h1 {
@@ -29,7 +29,6 @@
 .wrapper-table {
 	display: grid;
 	grid-template-columns: 1fr auto;
-	padding-top: 1.5rem;
 }
 
 .wrapper-table > * {
@@ -130,3 +129,60 @@
 	display: none;
 }
 /** (End) Wrapper Table **/
+
+/** (Start) Wrapper MyData **/
+.wrapper-mydata {
+	margin-block-end: 2rem;
+	padding: 1.5rem;
+	background-color: var(--background);
+	border-radius: var(--border-radius);
+	box-shadow: var(--box-shadow-2);
+	
+	form {
+		& > .row {
+			row-gap: 2.25rem;
+		}
+	}
+}
+/** (End) Wrapper MyData **/
+
+/** (Start) Wrapper Graph **/
+.wrapper-graph {
+	.graph {
+		padding: 1.875rem;
+		background-color: var(--background);
+		border-radius: var(--border-radius);
+		box-shadow: var(--box-shadow-3);
+
+		&-main {
+			&-info {
+				.icon-trending {
+					--size: 2rem;
+					padding: .375rem;
+					border-radius: 50%;
+
+					&.is-up {
+						color: var(--secondary);
+						background-color: var(--secondary--light);
+					}
+
+					&.is-down {
+						color: var(--warning);
+						background-color: var(--warning--light);
+
+						svg {
+							transform: rotateX(180deg);
+						}
+					}
+				}
+			}
+		}
+
+		&-canvas {
+			width: 100%;
+			height: 100%;
+			display: block;
+		}
+	}
+}
+/** (End) Wrapper Graph **/
