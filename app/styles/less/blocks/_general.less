@@ -270,9 +270,6 @@ form .btn-search {
 	}
 }
 
-.form-control,
-.form-control::placeholder {}
-
 .form-check {
 	display: flex;
 	align-items: center;
@@ -285,42 +282,41 @@ form .btn-search {
 	padding: .5rem;
 	transition: background-color .25s ease-in-out;
 	cursor: pointer;
-}
 
-.form-check.checked {
-	background-color: #E4EAFD;
-}
+	&.checked {
+		background-color: #E4EAFD;
+	}
 
-.form-check:is(:hover, :focus, :active) {
-	background-color: #F2F5FE;
-}
+	&:is(:hover, :focus, :active) {
+		background-color: #F2F5FE;
 
-.form-check:is(:hover, :focus, :active) .form-check-input {
-	border-color: var(--accent);
-}
+		.form-check-input {
+			border-color: var(--accent);
+		}
+	}
 
-.form-check .form-check-input {
-	width: 1.125rem;
-	height: 1.125rem;
-	flex-shrink: 0;
-	margin: 0;
-	border-radius: .3rem;
-	cursor: pointer;
-	transition: border-color .25s ease-in-out;
-}
+	.form-check-input {
+		width: 1.125rem;
+		height: 1.125rem;
+		flex-shrink: 0;
+		margin: 0;
+		border-radius: .3rem;
+		cursor: pointer;
+		transition: border-color .25s ease-in-out;
 
-.form-check .form-check-input:is(:hover, :focus, :active) {
-	border-color: var(--accent);
-	box-shadow: none;
-	filter: none;
-}
+		&:is(:hover, :focus, :active) {
+			border-color: var(--accent);
+			box-shadow: none;
+			filter: none;
+		}
+	}
 
-.form-check .form-check-label {
-	width: 100%;
-	display: block;
-	cursor: pointer;
+	.form-check-label {
+		width: 100%;
+		display: block;
+		cursor: pointer;
+	}
 }
-
 //** (End) Form **//
 
 //** (Start) Buttons **//
@@ -1061,5 +1057,23 @@ form .btn-search {
 .swiper-buttons .swiper-slide {
 	width: max-content;
 }
-
 //** (End) Swiper Buttons **//
+
+//** (Start) Badge **//
+.badge {
+	font-size: 1.125rem;
+	font-weight: 600;
+	border-radius: .5rem;
+	padding: .625rem;
+
+	&.bg-primary {
+		color: var(--accent);
+		background-color: var(--accent--light) !important;
+	}
+
+	&.bg-danger {
+		color: var(--warning);
+		background-color: var(--warning--light) !important;
+	}
+}
+//** (End) Badge **//

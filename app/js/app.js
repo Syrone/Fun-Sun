@@ -171,25 +171,68 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 	//** (End) Checked From Check **//
 
+	// Получаем значение переменной цвета из CSS
+	const rootStyles = getComputedStyle(document.documentElement);
+	const colors = {
+		accent: rootStyles.getPropertyValue('--accent'),
+		secondary: rootStyles.getPropertyValue('--secondary')
+	};
 
 	//** (Start) Graph Without Scales **//
 	const canvasTrendingUp = document.getElementById('canvasTrendingUp')
+	const canvasTrendingDown = document.getElementById('canvasTrendingDown')
+
 	const GraphTrendingUp = new Chart(canvasTrendingUp, {
 		type: 'line',
 		data: {
-			labels: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь'],
+			labels: ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница'],
 			datasets: [{
 				label: 'Продажи',
-				data: [12, 19, 3, 5, 2, 3],
-				backgroundColor: 'rgba(0, 123, 255, 0.5)',
-				borderColor: 'rgba(0, 123, 255, 1)',
-				borderWidth: 1
+				data: [25, 5, 20, 0, 30],
+				backgroundColor: 'rgba(0, 0, 0, 0)',
+				borderColor: colors.secondary,
+				tension: .45,
+				borderWidth: 2,
+				pointStyle: false,
 			}]
 		},
 		options: {
+			responsive: false,
 			scales: {
 				y: {
+					display: false,
+				},
+				x: {
 					display: false
+				}
+			},
+			plugins: {
+				legend: {
+					display: false
+				}
+			}
+		}
+	});
+
+	const GraphTrendingDown = new Chart(canvasTrendingDown, {
+		type: 'line',
+		data: {
+			labels: ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница'],
+			datasets: [{
+				label: 'Продажи',
+				data: [0, 30, 20, 25, 22],
+				backgroundColor: 'rgba(0, 0, 0, 0)',
+				borderColor: colors.accent,
+				tension: .5,
+				borderWidth: 2,
+				pointStyle: false,
+			}]
+		},
+		options: {
+			responsive: false,
+			scales: {
+				y: {
+					display: false,
 				},
 				x: {
 					display: false

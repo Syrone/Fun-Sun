@@ -242,6 +242,17 @@
 	}
 
 	//** (End) Custom Table Items **//
+
+	/** (Start) Wrapper Graph **/
+	.wrapper-graph {
+
+		.graph,
+		.graph--info {
+			padding: 1.5rem;
+		}
+	}
+
+	/** (End) Wrapper Graph **/
 }
 
 @media (max-width: 768px) {
@@ -258,6 +269,7 @@
 			grid-column: span 2;
 		}
 	}
+
 	/** (End) Header Page **/
 
 	//** (Start) Custom Table Items **//
@@ -303,17 +315,20 @@
 	.dropdown-nested .btn-collapse {
 		display: flex;
 	}
+
 	//** (End) Dropdowns **//
 
 	/** (Start) Wrapper MyData **/
 	.wrapper-mydata {
 		padding: 1rem;
+
 		form {
-			& > .row {
+			&>.row {
 				row-gap: 1.625rem;
 			}
 		}
 	}
+
 	/** (End) Wrapper MyData **/
 }
 
@@ -380,4 +395,41 @@
 	}
 
 	//** (End) Custom Table Items **//
+
+	/** (Start) Wrapper Graph **/
+	.wrapper-graph {
+		.graph {
+
+			&--info {
+				flex-direction: column;
+				align-items: flex-start;
+				gap: .75rem;
+			}
+
+			&-header {
+				margin-bottom: 1rem;
+			}
+
+			&-main {
+				position: relative;
+
+				&-end {
+					width: 100px;
+					height: 70px;
+					position: absolute;
+					top: 0;
+					right: 0;
+				}
+			}
+
+			&-canvas {
+				width: 100px !important;
+				height: 70px !important;
+				aspect-ratio: auto 100 / 70;
+			}
+		}
+
+	}
+
+	/** (End) Wrapper Graph **/
 }

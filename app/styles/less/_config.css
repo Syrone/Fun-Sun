@@ -31,6 +31,7 @@
 :root {
   /*Colors*/
   --accent: #4872F2;
+  --accent--light: #EDF1FE;
   --secondary: #49C8C0;
   --secondary--light: #E8F8F7;
   --third: #FFE100;
@@ -62,6 +63,7 @@
   --font-size--lg: 1.5rem;
   --font-size--xl: 1.75rem;
   --font-size--xxl: 2rem;
+  --font-size--tl: 2.5rem;
   --line-height: 1.5;
 }
 ::placeholder {

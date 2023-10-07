@@ -69,8 +69,8 @@
 				</div>
 
 				<div class="wrapper-graph">
-					<div class="row">
-						<div class="col-4">
+					<div class="row g-3">
+						<div class="col-xxl-4 col-lg-6">
 							<div class="graph">
 								<div class="graph-header">
 									<h3>Всего инструментов заполненно отделом</h3>
@@ -95,26 +95,61 @@
 										</div>
 									</div>
 									<div class="graph-main-end">
-										<canvas class="graph-canvas" id="canvasTrendingUp"></canvas>
+										<canvas class="graph-canvas" width="130" height="100" id="canvasTrendingUp"></canvas>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="col-4">
+						<div class="col-xxl-4 col-lg-6">
 							<div class="graph">
+								<div class="graph-header">
+									<h3>Мои заполненные инструменты</h3>
+								</div>
+								<div class="graph-main">
+									<div class="graph-main-start">
+										<div class="graph-main-title">
+											<h4>18</h4>
+										</div>
 
-							</div>
-						</div>
-						<div class="col-4">
-							<div class="row">
-								<div class="col">
-									<div class="graph">
-
+										<div class="graph-main-info">
+											<span class="icon icon-trending is-down">
+												<svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+													<path
+														d="M17.5 5.833a.65.65 0 0 0 0-.175.531.531 0 0 0-.042-.141.916.916 0 0 0-.075-.117.626.626 0 0 0-.116-.142l-.1-.058a.575.575 0 0 0-.159-.083h-.166A.584.584 0 0 0 16.667 5H12.5a.833.833 0 0 0 0 1.667h2.358l-3.333 3.925-3.6-2.142a.833.833 0 0 0-1.067.183l-4.166 5A.833.833 0 1 0 3.975 14.7l3.708-4.45 3.559 2.133a.833.833 0 0 0 1.058-.175l3.533-4.125V10a.833.833 0 0 0 1.667 0V5.833Z" />
+												</svg>
+											</span>
+											<div>
+												<span class="total">-1.5%</span>
+												на этой неделе
+											</div>
+										</div>
+									</div>
+									<div class="graph-main-end">
+										<canvas class="graph-canvas" width="130" height="100" id="canvasTrendingDown"></canvas>
 									</div>
 								</div>
-								<div class="col">
-									<div class="graph">
-
+							</div>
+						</div>
+						<div class="col-xxl-4 wrapper-graph--info">
+							<div class="row g-3">
+								<div class="col-xxl-12 col-lg-6">
+									<div class="graph graph--info">
+										<div class="graph-header">
+											<h3>Последнее заполнение отчета</h3>
+										</div>
+										<div class="graph-value">
+											<span class="badge bg-primary">15.01.23</span>
+										</div>
+									</div>
+								</div>
+								<div class="col-xxl-12 col-lg-6">
+									<div class="graph graph--info">
+										<div class="graph-header">
+											<h3>Просроченные инструменты</h3>
+										</div>
+										<div class="graph-value">
+											<span class="badge bg-danger">5</span>
+										</div>
 									</div>
 								</div>
 							</div>
