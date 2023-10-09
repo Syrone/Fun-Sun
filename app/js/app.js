@@ -182,69 +182,73 @@ document.addEventListener('DOMContentLoaded', () => {
 	const canvasTrendingUp = document.getElementById('canvasTrendingUp')
 	const canvasTrendingDown = document.getElementById('canvasTrendingDown')
 
-	const GraphTrendingUp = new Chart(canvasTrendingUp, {
-		type: 'line',
-		data: {
-			labels: ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница'],
-			datasets: [{
-				label: 'Продажи',
-				data: [25, 5, 20, 0, 30],
-				backgroundColor: 'rgba(0, 0, 0, 0)',
-				borderColor: colors.secondary,
-				tension: .45,
-				borderWidth: 2,
-				pointStyle: false,
-			}]
-		},
-		options: {
-			responsive: false,
-			scales: {
-				y: {
-					display: false,
-				},
-				x: {
-					display: false
-				}
+	if (canvasTrendingUp) {
+		const GraphTrendingUp = new Chart(canvasTrendingUp, {
+			type: 'line',
+			data: {
+				labels: ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница'],
+				datasets: [{
+					label: 'Продажи',
+					data: [25, 5, 20, 0, 30],
+					backgroundColor: 'rgba(0, 0, 0, 0)',
+					borderColor: colors.secondary,
+					tension: .45,
+					borderWidth: 2,
+					pointStyle: false,
+				}]
 			},
-			plugins: {
-				legend: {
-					display: false
+			options: {
+				responsive: false,
+				scales: {
+					y: {
+						display: false,
+					},
+					x: {
+						display: false
+					}
+				},
+				plugins: {
+					legend: {
+						display: false
+					}
 				}
 			}
-		}
-	});
+		});
+	}
 
-	const GraphTrendingDown = new Chart(canvasTrendingDown, {
-		type: 'line',
-		data: {
-			labels: ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница'],
-			datasets: [{
-				label: 'Продажи',
-				data: [0, 30, 20, 25, 22],
-				backgroundColor: 'rgba(0, 0, 0, 0)',
-				borderColor: colors.accent,
-				tension: .5,
-				borderWidth: 2,
-				pointStyle: false,
-			}]
-		},
-		options: {
-			responsive: false,
-			scales: {
-				y: {
-					display: false,
-				},
-				x: {
-					display: false
-				}
+	if (canvasTrendingDown) {
+		const GraphTrendingDown = new Chart(canvasTrendingDown, {
+			type: 'line',
+			data: {
+				labels: ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница'],
+				datasets: [{
+					label: 'Продажи',
+					data: [0, 30, 20, 25, 22],
+					backgroundColor: 'rgba(0, 0, 0, 0)',
+					borderColor: colors.accent,
+					tension: .5,
+					borderWidth: 2,
+					pointStyle: false,
+				}]
 			},
-			plugins: {
-				legend: {
-					display: false
+			options: {
+				responsive: false,
+				scales: {
+					y: {
+						display: false,
+					},
+					x: {
+						display: false
+					}
+				},
+				plugins: {
+					legend: {
+						display: false
+					}
 				}
 			}
-		}
-	});
+		});
+	}
 	//** (End) Graph Without Scales **//
 
 })

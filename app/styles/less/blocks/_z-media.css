@@ -191,16 +191,36 @@
   /** (End) Wrapper Graph **/
 }
 @media (max-width: 768px) {
+  .btn-group--custom {
+    max-width: 100%;
+    margin: 0;
+    gap: 0.75rem;
+  }
+  .table thead .wrapper-search .form-control,
+  .table thead .wrapper-search .btn[type="submit"] {
+    display: none;
+  }
+  .table thead .wrapper-search .btn[type="button"] {
+    position: static;
+    transform: unset;
+    padding: 0 0.875rem;
+    margin-inline-start: auto;
+    visibility: visible;
+    opacity: 1;
+  }
   /** (Start) Header Page **/
   .header-page {
-    grid-template-columns: auto 1fr;
     align-items: baseline;
     gap: 1.25rem 1.875rem;
     margin-block-end: 1.5rem;
   }
-  .header-page > *:nth-child(2) {
+  .header-page > .btn,
+  .header-page > .btn-group--custom {
     grid-row: 2;
     grid-column: span 2;
+  }
+  .header-page.is-three {
+    grid-template-columns: auto 1fr;
   }
   /** (End) Header Page **/
   .table-items .table-responsive {
@@ -244,6 +264,9 @@
   /** (End) Wrapper MyData **/
 }
 @media (max-width: 576px) {
+  .btn-group--custom {
+    flex-direction: column;
+  }
   /** (Start) Header Page **/
   .header-page {
     flex-direction: column;
@@ -253,6 +276,9 @@
   }
   /** (End) Header Page **/
   /** (Start) Wrapper Table **/
+  .wrapper-table.without-filter .wrapper-pagination {
+    grid-row: 1;
+  }
   .table-action {
     flex-wrap: wrap;
   }

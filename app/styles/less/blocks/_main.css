@@ -2,9 +2,14 @@
 .header-page {
   display: grid;
   align-items: center;
-  grid-template-columns: auto auto 1fr;
   gap: 1.875rem;
   margin-block: 2rem;
+}
+.header-page.is-two {
+  grid-template-columns: auto 1fr;
+}
+.header-page.is-three {
+  grid-template-columns: auto auto 1fr;
 }
 .header-page h1 {
   margin: 0;
@@ -29,18 +34,25 @@
   min-width: 100%;
   grid-column: span 2;
 }
-.wrapper-pagination {
-  grid-column: auto;
-}
-.wrapper-navigation {
-  grid-column: auto;
-}
 .wrapper-table .table-responsive {
   max-height: 636px;
   border-radius: 0.625rem;
 }
 .wrapper-table .table {
   margin-block: 0;
+}
+.wrapper-table .btn-shape {
+  margin-inline-start: auto;
+  margin-inline-end: 0;
+}
+.wrapper-table.without-filter thead .wrapper-search {
+  padding-inline-end: 0.625rem;
+}
+.wrapper-pagination {
+  grid-column: auto;
+}
+.wrapper-navigation {
+  grid-column: auto;
 }
 .table-header {
   display: flex;
