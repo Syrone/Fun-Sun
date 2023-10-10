@@ -333,6 +333,7 @@ form,
 
 	&>label {
 		height: max-content;
+		font-size: var(--font-size--sm);
 		color: var(--text-form);
 		border: none;
 		padding-inline: .875rem;
@@ -556,6 +557,19 @@ form,
 	&:is(:hover, :focus-visible, :active) {
 		color: var(--text-color);
 		border-color: var(--gray-color--dark);
+	}
+}
+
+.btn-close {
+	width: 1.5rem;
+	height: 1.5rem;
+	padding: 0;
+	margin: 0;
+	opacity: 0.25;
+	transition: opacity .25s ease-in-out;
+
+	&:focus {
+		box-shadow: none;
 	}
 }
 
@@ -1239,3 +1253,80 @@ form,
 }
 
 //** (End) Badge **//
+
+//** (Start) Modal **//
+.modal {
+
+	&-backdrop {
+		background: rgba(72, 114, 242, 0.20);
+		
+		&.show {
+			opacity: 1;
+		}
+	}
+
+	&-content {
+		min-height: 260px;
+		color: var(--text-color--dark);
+		background-color: var(--background);
+		border: none;
+		border-radius: 1rem;
+	}
+
+	&-header,
+	&-body,
+	&-footer {
+		padding-inline: 2rem;
+	}
+
+	&-content,
+	&-header,
+	&-footer {
+		border: none;
+	}
+
+	&-header {
+		padding-block: 2rem .625rem;
+
+		.btn-close {
+			padding: 0;
+			margin: 0;
+			position: absolute;
+			top: 1.25rem;
+			right: 1.25rem;
+		}
+	}
+
+	&-title {
+		font-size: var(--font-size--lg);
+		font-weight: 700;
+		line-height: 1.5;
+	}
+
+	&-body {
+		padding-block: .625rem;
+	}
+
+	&-footer {
+		gap: 1rem;
+		padding-block-end: 2rem;
+
+		& > * {
+			margin-inline: 0;
+		}
+	}
+
+	.btn {
+		font-weight: 700;
+		line-height: 1.5;
+		padding: .75rem 1.5rem;
+		border-radius: .5rem;
+
+		&-outline {
+			&-light {
+				color: var(--text-color);
+			}
+		}
+	}
+}
+//** (End) Modal **//
