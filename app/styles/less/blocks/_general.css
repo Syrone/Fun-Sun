@@ -48,6 +48,9 @@ h3,
 .bg-primary {
   background-color: var(--accent) !important;
 }
+.text-primary {
+  color: var(--accent) !important;
+}
 .icon {
   --size: 1rem;
   width: var(--size);
@@ -73,7 +76,8 @@ h3,
 .icon-edit,
 .icon-key,
 .icon-plus,
-.icon-filter {
+.icon-filter,
+.icon-trash {
   --size: 1.25rem;
 }
 .icon-data,
@@ -107,7 +111,8 @@ h3,
   fill: none;
   stroke: var(--text-color);
 }
-.icon-edit svg {
+.icon-edit svg,
+.icon-trash svg {
   fill: var(--text-color);
 }
 .icon-triangle {
@@ -143,6 +148,14 @@ h3,
 .icon-csv .letter,
 .icon-xlsx .letter {
   fill: var(--accent);
+}
+.icon-check {
+  --size: 1.5rem;
+  background-color: var(--accent);
+  border-radius: 50%;
+}
+.icon-check svg {
+  fill: none;
 }
 form {
   position: relative;
@@ -329,7 +342,12 @@ form .btn-search,
   border-radius: 0.5rem;
   padding-block: 0.125rem;
 }
-.btn-primary:is(:hover, :focus, :active, .active) {
+.btn-primary:focus {
+  color: var(--text-light);
+  background-color: var(--accent);
+  border-color: var(--accent);
+}
+.btn-primary:is(:hover, :focus-visible, :active, .active) {
   color: var(--text-color--dark);
   background-color: var(--third);
   border-color: var(--third);
@@ -350,7 +368,7 @@ form .btn-search,
   border-radius: 0.5rem;
 }
 .btn-group--custom {
-  max-width: 400px;
+  max-width: max-content;
   margin-inline-start: auto;
   gap: 1.5rem;
   background-color: var(--background);
@@ -614,7 +632,8 @@ form .btn-search,
 .dropdown-item:is(:hover, :focus, :active, .active) .icon-key svg {
   stroke: var(--accent);
 }
-.dropdown-item:is(:hover, :focus, :active, .active) .icon-edit svg {
+.dropdown-item:is(:hover, :focus, :active, .active) .icon-edit svg,
+.dropdown-item:is(:hover, :focus, :active, .active) .icon-trash svg {
   fill: var(--accent);
 }
 .dropdown .btn-menu {
@@ -784,6 +803,7 @@ form .btn-search,
 }
 .table {
   --bs-table-bg: #FFF;
+  --bs-table-bg--secondaty: var(--table);
   color: var(--text-color);
   background-color: #F2F5FE;
   border-collapse: separate;
@@ -866,6 +886,106 @@ form .btn-search,
 }
 .table-inputs tbody .form-check:is(:hover, :focus, :active, .checked) {
   background-color: var(--background);
+}
+.table-collapse .mobile {
+  display: none;
+}
+.table-collapse .table {
+  text-align: left;
+}
+.table-collapse .table:not(.nested) {
+  --bs-table-bg: var(--table);
+}
+.table-collapse .table.nested {
+  margin-block: -0.375rem;
+}
+.table-collapse thead tr {
+  position: relative;
+}
+.table-collapse thead th {
+  padding-block: 1rem;
+  position: relative;
+}
+.table-collapse thead th:first-child {
+  padding-inline-start: 1rem;
+}
+.table-collapse thead th:last-child {
+  padding-inline-end: 1rem;
+}
+.table-collapse thead .wrapper-search {
+  width: 100%;
+  max-width: 320px;
+  position: absolute;
+  top: 50%;
+  right: 2rem;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+.table-collapse tbody tr > * {
+  padding-block: 0.875rem;
+}
+.table-collapse tbody tr > *:first-child {
+  padding-inline-start: 1rem;
+}
+.table-collapse tbody tr .table-collapse-content {
+  padding: 0;
+}
+.table-collapse tbody th,
+.table-collapse tbody td {
+  font-weight: 600;
+  color: var(--text-color--dark);
+}
+.table-collapse tbody th > span,
+.table-collapse tbody td > span {
+  max-width: unset;
+  margin: 0;
+}
+.table-collapse th,
+.table-collapse td {
+  font-weight: 600;
+}
+.table-collapse th > span,
+.table-collapse td > span {
+  margin: 0;
+}
+.table-collapse-content .table {
+  border-radius: 0;
+}
+.table-collapse-content tbody tr > *:first-child {
+  padding-inline-start: 2rem;
+}
+.table-collapse .name {
+  width: 100%;
+  cursor: pointer;
+}
+.table-collapse .name:not(.collapsed) .btn-collapse .icon {
+  transform: rotate(0);
+}
+.table-collapse .type {
+  min-width: 60px;
+  text-align: center;
+}
+.table-collapse .type .icon-check {
+  margin: auto;
+}
+.table-collapse .btn-collapse {
+  max-width: max-content;
+  min-height: unset;
+  font: inherit;
+  font-weight: 600;
+  color: inherit;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+.table-collapse .btn-collapse .icon {
+  --size: 1.5rem;
+  color: var(--accent);
+  transform: rotateX(-180deg);
+  transition: transform 0.25s ease-in-out;
+}
+.table-collapse .btn-collapse .icon svg path {
+  stroke-width: 2px;
 }
 .wrapper-pagination,
 .wrapper-navigation {
@@ -959,11 +1079,15 @@ form .btn-search,
   color: var(--warning);
   background-color: var(--warning--light) !important;
 }
+.badge.bg-secondary {
+  color: var(--text-color);
+  background-color: var(--background--secondary) !important;
+}
 .modal-backdrop {
-  background: rgba(72, 114, 242, 0.2);
+  background-color: var(--accent);
 }
 .modal-backdrop.show {
-  opacity: 1;
+  opacity: 0.2;
 }
 .modal-content {
   min-height: 260px;
@@ -1015,4 +1139,36 @@ form .btn-search,
 }
 .modal .btn-outline-light {
   color: var(--text-color);
+}
+.nav-tabs {
+  min-height: 50px;
+  gap: 2.5rem;
+  background-color: #f4f6f8;
+  border: none;
+  border-radius: 0.5rem;
+  padding-inline: 1.5rem;
+}
+.nav-tabs .nav-link {
+  height: 100%;
+  font-size: var(--font-size);
+  font-weight: 600;
+  line-height: 1.375rem;
+  color: var(--text-color);
+  background-color: transparent;
+  border: none;
+  border-block-end: 2px solid transparent;
+  padding: 0.75rem 0;
+}
+.nav-tabs .nav-link.active {
+  color: var(--text-color--dark);
+  background-color: transparent;
+  border: none;
+  border-block-end: 2px solid var(--accent);
+}
+.nav-tabs .nav-link .badge {
+  font-size: var(--font-size--tiny);
+  font-weight: 700;
+  line-height: 1.25rem;
+  margin-inline-end: 0.5rem;
+  padding: 0.125rem 0.5rem;
 }

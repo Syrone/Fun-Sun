@@ -48,6 +48,17 @@
 .wrapper-table.without-filter thead .wrapper-search {
   padding-inline-end: 0.625rem;
 }
+.wrapper-table .tab-content > .active {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+.wrapper-table .tab-pane > * {
+  grid-column: span 2;
+}
+.wrapper-table .tab-pane .wrapper-pagination,
+.wrapper-table .tab-pane .wrapper-navigation {
+  grid-column: auto;
+}
 .wrapper-pagination {
   grid-column: auto;
 }

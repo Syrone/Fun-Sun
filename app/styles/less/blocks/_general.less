@@ -57,15 +57,19 @@ h3,
 .h3 {
 	font-size: var(--font-size--lg);
 }
-
 //** (End) Titles **//
 
 //** (Start) Backgrounds **//
 .bg-primary {
 	background-color: var(--accent) !important;
 }
-
 //** (End) Backgrounds **//
+
+//** (Start) Text **//
+.text-primary {
+	color: var(--accent) !important;
+}
+//** (End) Text **//
 
 //** (Start) ICONS **//
 
@@ -96,7 +100,8 @@ h3,
 	&-edit,
 	&-key,
 	&-plus,
-	&-filter {
+	&-filter,
+	&-trash {
 		--size: 1.25rem;
 	}
 
@@ -147,7 +152,8 @@ h3,
 		}
 	}
 
-	&-edit {
+	&-edit,
+	&-trash {
 		svg {
 			fill: var(--text-color);
 		}
@@ -195,6 +201,16 @@ h3,
 			fill: var(--accent);
 		}
 	}
+
+	&-check {
+		--size: 1.5rem;
+		background-color: var(--accent);
+		border-radius: 50%;
+
+		svg {
+			fill: none;
+		}
+	}
 }
 
 //** (End) ICONS **//
@@ -239,9 +255,10 @@ form,
 
 			&:is(:hover, :focus-visible, :active) {
 				opacity: 1;
+
 				.btn-search {
 					.icon-search {
-		
+
 						svg {
 							opacity: 1;
 						}
@@ -444,7 +461,13 @@ form,
 	border-radius: .5rem;
 	padding-block: .125rem;
 
-	&:is(:hover, :focus, :active, .active) {
+	&:focus {
+		color: var(--text-light);
+		background-color: var(--accent);
+		border-color: var(--accent);
+	}
+
+	&:is(:hover, :focus-visible, :active, .active) {
 		color: var(--text-color--dark);
 		background-color: var(--third);
 		border-color: var(--third);
@@ -476,7 +499,7 @@ form,
 	border-radius: .5rem;
 
 	&--custom {
-		max-width: 400px;
+		max-width: max-content;
 		margin-inline-start: auto;
 		gap: 1.5rem;
 		background-color: var(--background);
@@ -800,22 +823,28 @@ form,
 	color: var(--text-color--dark);
 	border-radius: .5rem;
 	padding: .5rem;
-}
 
-.dropdown-item:is(:hover, :focus, :active, .active) {
-	color: var(--text-color--dark);
-	background-color: var(--border-color);
-}
+	&:is(:hover, :focus, :active, .active) {
+		color: var(--text-color--dark);
+		background-color: var(--border-color);
 
-.dropdown-item:is(:hover, :focus, :active, .active) .icon-block svg,
-.dropdown-item:is(:hover, :focus, :active, .active) .icon-key svg {
-	stroke: var(--accent);
-}
+		.icon-block,
+		.icon-key {
 
-.dropdown-item:is(:hover, :focus, :active, .active) .icon-edit svg {
-	fill: var(--accent);
-}
+			svg {
+				stroke: var(--accent);
+			}
+		}
 
+		.icon-edit,
+		.icon-trash {
+
+			svg {
+				fill: var(--accent);
+			}
+		}
+	}
+}
 
 .dropdown .btn-menu {
 	background-color: transparent;
@@ -1024,6 +1053,7 @@ form,
 
 .table {
 	--bs-table-bg: #FFF;
+	--bs-table-bg--secondaty: var(--table);
 	color: var(--text-color);
 	background-color: #F2F5FE;
 	border-collapse: separate;
@@ -1125,8 +1155,164 @@ form,
 			}
 		}
 	}
-}
 
+	&-collapse {
+
+		.mobile {
+			display: none;
+		}
+
+		.table {
+			text-align: left;
+
+			&:not(.nested) {
+				--bs-table-bg: var(--table);
+			}
+
+			&.nested {
+				margin-block: -.375rem;
+			}
+		}
+
+		thead {
+
+			tr {
+				position: relative;
+			}
+
+			th {
+				padding-block: 1rem;
+				position: relative;
+
+				&:first-child {
+					padding-inline-start: 1rem;
+				}
+
+				&:last-child {
+					padding-inline-end: 1rem;
+				}
+			}
+
+			.wrapper-search {
+				width: 100%;
+				max-width: 320px;
+				position: absolute;
+				top: 50%;
+				right: 2rem;
+				transform: translateY(-50%);
+				z-index: 10;
+			}
+		}
+
+		tbody {
+
+			tr {
+				&>* {
+					padding-block: .875rem;
+
+					&:first-child {
+						padding-inline-start: 1rem;
+					}
+				}
+
+
+				.table-collapse-content {
+					padding: 0;
+				}
+			}
+
+			th,
+			td {
+				font-weight: 600;
+				color: var(--text-color--dark);
+
+				&>span {
+					max-width: unset;
+					margin: 0;
+				}
+			}
+		}
+
+		th,
+		td {
+			font-weight: 600;
+
+			&>span {
+				margin: 0;
+			}
+		}
+
+		&-content {
+
+			.table {
+				border-radius: 0;
+			}
+
+			tbody {
+
+				tr {
+
+					& > * {
+						
+						&:first-child {
+							padding-inline-start: 2rem;
+						}
+					}
+				}
+			}
+		}
+
+		.name {
+			width: 100%;
+			cursor: pointer;
+
+			&:not(.collapsed) {
+
+				.btn-collapse {
+
+					.icon {
+						transform: rotate(0);
+					}
+				}
+			}
+		}
+
+		.type {
+			min-width: 60px;
+			text-align: center;
+
+			.icon-check {
+				margin: auto;
+			}
+		}
+
+		.btn-collapse {
+			max-width: max-content;
+			min-height: unset;
+			font: inherit;
+			font-weight: 600;
+			color: inherit;
+			background-color: transparent;
+			border: none;
+			padding: 0;
+
+			.icon {
+				--size: 1.5rem;
+				color: var(--accent);
+
+				transform: rotateX(-180deg);
+				transition: transform .25s ease-in-out;
+
+				svg {
+
+					path {
+						stroke-width: 2px;
+					}
+				}
+			}
+		}
+	}
+}
 //** (End) Table **//
 
 //** (Start) Pagination **//
@@ -1250,6 +1436,11 @@ form,
 		color: var(--warning);
 		background-color: var(--warning--light) !important;
 	}
+
+	&.bg-secondary {
+		color: var(--text-color);
+		background-color: var(--background--secondary) !important;
+	}
 }
 
 //** (End) Badge **//
@@ -1258,10 +1449,10 @@ form,
 .modal {
 
 	&-backdrop {
-		background: rgba(72, 114, 242, 0.20);
-		
+		background-color: var(--accent);
+
 		&.show {
-			opacity: 1;
+			opacity: .2;
 		}
 	}
 
@@ -1311,7 +1502,7 @@ form,
 		gap: 1rem;
 		padding-block-end: 2rem;
 
-		& > * {
+		&>* {
 			margin-inline: 0;
 		}
 	}
@@ -1329,4 +1520,50 @@ form,
 		}
 	}
 }
+
 //** (End) Modal **//
+
+//** (Start) Tabs **//
+.nav {
+
+	&-tabs {
+		min-height: 50px;
+		gap: 2.5rem;
+		background-color: #f4f6f8;
+		border: none;
+		border-radius: .5rem;
+		padding-inline: 1.5rem;
+
+		.nav {
+
+			&-link {
+				height: 100%;
+				font-size: var(--font-size);
+				font-weight: 600;
+				line-height: 1.375rem;
+				color: var(--text-color);
+				background-color: transparent;
+				border: none;
+				border-block-end: 2px solid transparent;
+				padding: .75rem 0;
+
+				&.active {
+					color: var(--text-color--dark);
+					background-color: transparent;
+					border: none;
+					border-block-end: 2px solid var(--accent);
+				}
+
+				.badge {
+					font-size: var(--font-size--tiny);
+					font-weight: 700;
+					line-height: 1.25rem;
+					margin-inline-end: .5rem;
+					padding: .125rem .5rem;
+				}
+			}
+		}
+	}
+}
+
+//** (End) Tabs **//

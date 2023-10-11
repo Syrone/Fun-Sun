@@ -167,12 +167,6 @@
     padding-block: 0 0.75rem;
     border-block-end: 1px solid var(--gray-color);
   }
-  .table-items .wrapper-status {
-    justify-content: start;
-  }
-  .table-items .wrapper-status .indicator {
-    --size: 0.625rem;
-  }
   .table-items tbody .date {
     flex-basis: calc(50% - 0.5rem);
   }
@@ -182,6 +176,16 @@
     position: absolute;
     top: 1rem;
     right: 1rem;
+  }
+  .table-items .wrapper-status {
+    justify-content: start;
+  }
+  .table-items .wrapper-status .indicator {
+    --size: 0.625rem;
+  }
+  .table-collapse {
+    margin-inline: -1rem;
+    padding: 0.875rem;
   }
   /** (Start) Wrapper Graph **/
   .wrapper-graph .graph,
@@ -196,6 +200,9 @@
     margin: 0;
     gap: 0.75rem;
   }
+  .table thead .wrapper-search {
+    max-width: max-content;
+  }
   .table thead .wrapper-search .form-control,
   .table thead .wrapper-search .btn[type="submit"] {
     display: none;
@@ -207,6 +214,41 @@
     margin-inline-start: auto;
     visibility: visible;
     opacity: 1;
+  }
+  .table-collapse-content tbody tr > *:first-child {
+    padding-inline-start: 1rem;
+  }
+  .table-collapse-content .type {
+    display: none;
+  }
+  .table-collapse .type {
+    padding: 0.625rem 0.125rem;
+  }
+  .table-collapse .type > span {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  .modal-header,
+  .modal-body,
+  .modal-footer {
+    padding-inline: 1.5rem;
+  }
+  .modal-header {
+    padding-block-start: 1.5rem;
+  }
+  .modal-title {
+    font-size: calc(var(--font-size--sm) + 0.125rem);
+    line-height: 2;
+  }
+  .modal-footer {
+    padding-block-end: 1.5rem;
+  }
+  .modal-footer > * {
+    flex-basis: calc(50% - 0.5rem);
+  }
+  .modal-footer .btn {
+    padding-inline: 1rem;
   }
   /** (Start) Header Page **/
   .header-page {
@@ -264,8 +306,28 @@
   /** (End) Wrapper MyData **/
 }
 @media (max-width: 576px) {
+  .table-collapse .mobile {
+    display: inline-block;
+  }
+  .table-collapse thead th {
+    position: static;
+  }
+  .table-collapse thead .type > span {
+    opacity: 0;
+  }
+  .table-collapse thead .wrapper-search {
+    right: 1rem;
+  }
+  .table-collapse thead .wrapper-search .btn[type="button"] {
+    padding-inline: 0.5rem;
+  }
   .btn-group--custom {
     flex-direction: column;
+  }
+  .nav-tabs {
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding-inline: 0.625rem;
   }
   /** (Start) Header Page **/
   .header-page {
@@ -277,6 +339,13 @@
   /** (End) Header Page **/
   /** (Start) Wrapper Table **/
   .wrapper-table.without-filter .wrapper-pagination {
+    grid-row: 1;
+  }
+  .wrapper-table .tab-pane .wrapper-pagination,
+  .wrapper-table .tab-pane .wrapper-navigation {
+    grid-column: span 2;
+  }
+  .wrapper-table .tab-pane .wrapper-pagination {
     grid-row: 1;
   }
   .table-action {

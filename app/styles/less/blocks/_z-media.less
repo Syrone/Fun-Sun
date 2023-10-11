@@ -128,120 +128,125 @@
 
 	/** (End) Wrapper Table **/
 
-	//** (Start) Custom Table Items **//
+	//** (Start) Table **//
 	.table-items {
 		padding: .875rem;
 		margin-inline: -1rem;
+
+		&.scroll {
+			padding-top: 1rem;
+		}
+
+		.table-responsive {
+			max-height: 794px;
+			padding-top: .125rem;
+		}
+
+		.table {
+			text-align: left;
+			border-collapse: collapse;
+		}
+
+		thead {
+			display: none;
+		}
+
+		td:first-child,
+		th:first-child,
+		td:last-child,
+		th:last-child {
+			border-radius: 0;
+		}
+
+		tbody {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: .375rem;
+
+			th,
+			td {
+				display: block;
+				font-size: calc(var(--font-size) + 1px);
+				font-weight: 600;
+				color: var(--text-color--dark);
+				padding: 0;
+
+				&>span {
+					max-width: unset;
+					margin: 0;
+				}
+			}
+
+			tr {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0 1rem;
+				background-color: var(--background);
+				border-radius: .5rem;
+				padding: 1rem;
+				position: relative;
+
+				&>* {
+					width: 100%;
+					padding-top: .75rem;
+					border-radius: none;
+					background-color: transparent;
+				}
+			}
+
+			.suptotal {
+				display: block;
+				font-size: var(--font-size);
+				font-weight: 400;
+				line-height: 1.7;
+				color: var(--text-color);
+			}
+
+			.name {
+				padding-block: 0;
+				order: -1;
+			}
+
+			.id {
+				display: flex;
+				align-items: center;
+				gap: .25rem;
+				font-size: var(--font-size);
+				font-weight: 400;
+				color: var(--text-color--light);
+				padding-block: 0 .75rem;
+				border-block-end: 1px solid var(--gray-color);
+			}
+
+			.date {
+				flex-basis: calc(50% - .5rem);
+			}
+
+			.more {
+				width: auto;
+				padding: 0;
+				position: absolute;
+				top: 1rem;
+				right: 1rem;
+			}
+
+		}
+
+		.wrapper-status {
+			justify-content: start;
+
+			.indicator {
+				--size: .625rem;
+			}
+		}
 	}
 
-	.table-items.scroll {
-		padding-top: 1rem;
+	.table-collapse {
+		margin-inline: -1rem;
+		padding: .875rem;
 	}
 
-	.table-items .table-responsive {
-		max-height: 794px;
-		padding-top: .125rem;
-	}
-
-	.table-items .table {
-		text-align: left;
-		border-collapse: collapse;
-	}
-
-	.table-items thead {
-		display: none;
-	}
-
-	.table-items td:first-child,
-	.table-items th:first-child,
-	.table-items td:last-child,
-	.table-items th:last-child {
-		border-radius: 0;
-	}
-
-	.table-items tbody {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		gap: .375rem;
-	}
-
-	.table-items tbody th,
-	.table-items tbody td {
-		display: block;
-		font-size: calc(var(--font-size) + 1px);
-		font-weight: 600;
-		color: var(--text-color--dark);
-		padding: 0;
-	}
-
-	.table-items tbody th>span,
-	.table-items tbody td>span {
-		max-width: unset;
-		margin: 0;
-	}
-
-	.table-items tbody tr {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0 1rem;
-		background-color: var(--background);
-		border-radius: .5rem;
-		padding: 1rem;
-		position: relative;
-	}
-
-	.table-items tbody tr>* {
-		width: 100%;
-		padding-top: .75rem;
-		border-radius: none;
-		background-color: transparent;
-	}
-
-	.table-items tbody .suptotal {
-		display: block;
-		font-size: var(--font-size);
-		font-weight: 400;
-		line-height: 1.7;
-		color: var(--text-color);
-	}
-
-	.table-items tbody .name {
-		padding-block: 0;
-		order: -1;
-	}
-
-	.table-items tbody .id {
-		display: flex;
-		align-items: center;
-		gap: .25rem;
-		font-size: var(--font-size);
-		font-weight: 400;
-		color: var(--text-color--light);
-		padding-block: 0 .75rem;
-		border-block-end: 1px solid var(--gray-color);
-	}
-
-	.table-items .wrapper-status {
-		justify-content: start;
-	}
-
-	.table-items .wrapper-status .indicator {
-		--size: .625rem;
-	}
-
-	.table-items tbody .date {
-		flex-basis: calc(50% - .5rem);
-	}
-
-	.table-items tbody .more {
-		width: auto;
-		padding: 0;
-		position: absolute;
-		top: 1rem;
-		right: 1rem;
-	}
-
-	//** (End) Custom Table Items **//
+	//** (End) Table **//
 
 	/** (Start) Wrapper Graph **/
 	.wrapper-graph {
@@ -273,6 +278,8 @@
 	.table {
 		thead {
 			.wrapper-search {
+				max-width: max-content;
+
 				.form-control,
 				.btn[type="submit"] {
 					display: none;
@@ -288,8 +295,77 @@
 				}
 			}
 		}
+
+		&-collapse {
+
+			&-content {
+
+				tbody {
+
+					tr {
+
+						&>* {
+
+							&:first-child {
+								padding-inline-start: 1rem;
+							}
+						}
+					}
+				}
+
+				.type {
+					display: none;
+				}
+			}
+
+			.type {
+				padding: .625rem .125rem;
+
+				&>span {
+					display: flex;
+					justify-content: center;
+					gap: .5rem;
+				}
+			}
+
+		}
+
 	}
+
 	//** (End) Table **//
+
+	//** (Start) Modal **//
+	.modal {
+
+		&-header,
+		&-body,
+		&-footer {
+			padding-inline: 1.5rem;
+		}
+
+		&-header {
+			padding-block-start: 1.5rem;
+		}
+
+		&-title {
+			font-size: calc(var(--font-size--sm) + .125rem);
+			line-height: 2;
+		}
+
+		&-footer {
+			padding-block-end: 1.5rem;
+
+			&>* {
+				flex-basis: calc(50% - .5rem);
+			}
+
+			.btn {
+				padding-inline: 1rem;
+			}
+		}
+	}
+
+	//** (End) Modal **//
 
 	/** (Start) Header Page **/
 	.header-page {
@@ -307,6 +383,7 @@
 			grid-template-columns: auto 1fr;
 		}
 	}
+
 	/** (End) Header Page **/
 
 	//** (Start) Custom Table Items **//
@@ -365,11 +442,43 @@
 			}
 		}
 	}
+
 	/** (End) Wrapper MyData **/
 
 }
 
 @media (max-width: 576px) {
+
+	//** (Start) Table **//
+	.table-collapse {
+		.mobile {
+			display: inline-block;
+		}
+
+		thead {
+
+			th {
+				position: static;
+			}
+
+			.type {
+
+				&>span {
+					opacity: 0;
+				}
+			}
+
+			.wrapper-search {
+				right: 1rem;
+
+				.btn[type="button"] {
+					padding-inline: .5rem;
+				}
+			}
+		}
+	}
+
+	//** (End) Table **//
 
 	//** (Start) Buttons **//
 	.btn-group {
@@ -378,7 +487,20 @@
 			flex-direction: column;
 		}
 	}
+
 	//** (End) Buttons **//
+
+	//** (Start) Tabs **//
+	.nav {
+
+		&-tabs {
+			justify-content: space-between;
+			gap: .5rem;
+			padding-inline: .625rem;
+		}
+	}
+
+	//** (End) Tabs **//
 
 	/** (Start) Header Page **/
 	.header-page {
@@ -397,6 +519,21 @@
 		&.without-filter {
 			.wrapper-pagination {
 				grid-row: 1;
+			}
+		}
+
+		.tab {
+
+			&-pane {
+
+				.wrapper-pagination,
+				.wrapper-navigation {
+					grid-column: span 2;
+				}
+
+				.wrapper-pagination {
+					grid-row: 1;
+				}
 			}
 		}
 	}
@@ -484,5 +621,6 @@
 			}
 		}
 	}
+
 	/** (End) Wrapper Graph **/
 }
