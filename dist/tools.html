@@ -280,22 +280,23 @@
 						<div class="table-tabs">
 							<ul class="nav nav-tabs" id="myTab" role="tablist">
 								<li class="nav-item" role="presentation">
-									<button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
-										type="button" role="tab" aria-controls="home" aria-selected="true">
+									<button class="nav-link nav-link-table active" id="allTarget-tab" data-bs-toggle="tab"
+										data-bs-target="#allTarget" type="button" role="tab" aria-controls="Всё" aria-selected="true">
 										<span class="badge bg-secondary">24</span>
 										Все
 									</button>
 								</li>
 								<li class="nav-item" role="presentation">
-									<button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button"
-										role="tab" aria-controls="profile" aria-selected="false">
+									<button class="nav-link nav-link-table" id="newTarget-tab" data-bs-toggle="tab"
+										data-bs-target="#newTarget" type="button" role="tab" aria-controls="Новые" aria-selected="false">
 										<span class="badge bg-primary">4</span>
 										Новые
 									</button>
 								</li>
 								<li class="nav-item" role="presentation">
-									<button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button"
-										role="tab" aria-controls="contact" aria-selected="false">
+									<button class="nav-link nav-link-table" id="canceledTarget-tab" data-bs-toggle="tab"
+										data-bs-target="#canceledTarget" type="button" role="tab" aria-controls="Отклонённые"
+										aria-selected="false">
 										<span class="badge bg-danger">2</span>
 										Отклонённые
 									</button>
@@ -305,9 +306,10 @@
 					</div>
 
 					<div class="tab-content" id="myTabContent">
-						<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-							<div class="table-wrapper table-collapse" id="tableFullScreen">
-								<div class="table-responsive">
+						<div class="tab-pane tab-pane-table fade show active" id="allTarget" role="tabpanel"
+							aria-labelledby="allTarget-tab">
+							<div class="table-wrapper table-collapse">
+								<div class="table-responsive tab-table-fullscreen">
 									<table class="table table-bordered">
 										<thead>
 											<tr>
@@ -1141,11 +1143,465 @@
 								</ul>
 							</nav>
 						</div>
-						<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-							<div class="table-wrapper table-collapse" id="tableFullScreen">
-								<div class="table-responsive">
-									<table>
-										2
+						<div class="tab-pane tab-pane-table fade" id="newTarget" role="tabpanel" aria-labelledby="newTarget-tab">
+							<div class="table-wrapper table-collapse">
+								<div class="table-responsive tab-table-fullscreen">
+									<table class="table">
+										<thead>
+											<tr>
+												<th scope="col">
+													<span>Инструментарий</span>
+													<div class="wrapper-search bg-primary">
+														<button class="btn btn-search" type="submit">
+															<span class="icon icon-search">
+																<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+																	<path fill-rule="evenodd" clip-rule="evenodd"
+																		d="M17.31 15.9L20.71 19.29C20.8993 19.4778 21.0058 19.7334 21.0058 20C21.0058 20.2666 20.8993 20.5222 20.71 20.71C20.5222 20.8993 20.2666 21.0058 20 21.0058C19.7334 21.0058 19.4778 20.8993 19.29 20.71L15.9 17.31C14.5025 18.407 12.7767 19.0022 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11C19.0022 12.7767 18.407 14.5025 17.31 15.9ZM11 5C7.68629 5 5 7.68629 5 11C5 14.3137 7.68629 17 11 17C14.3137 17 17 14.3137 17 11C17 7.68629 14.3137 5 11 5Z">
+																	</path>
+																</svg>
+															</span>
+														</button>
+														<button class="btn btn-search" type="button">
+															<span class="icon icon-search">
+																<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+																	<path fill-rule="evenodd" clip-rule="evenodd"
+																		d="M17.31 15.9L20.71 19.29C20.8993 19.4778 21.0058 19.7334 21.0058 20C21.0058 20.2666 20.8993 20.5222 20.71 20.71C20.5222 20.8993 20.2666 21.0058 20 21.0058C19.7334 21.0058 19.4778 20.8993 19.29 20.71L15.9 17.31C14.5025 18.407 12.7767 19.0022 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11C19.0022 12.7767 18.407 14.5025 17.31 15.9ZM11 5C7.68629 5 5 7.68629 5 11C5 14.3137 7.68629 17 11 17C14.3137 17 17 14.3137 17 11C17 7.68629 14.3137 5 11 5Z">
+																	</path>
+																</svg>
+															</span>
+														</button>
+														<input class="form-control" type="search" placeholder="Поиск по инструментам"
+															aria-label="Search">
+													</div>
+												</th>
+												<th scope="col"></th>
+											</tr>
+										</thead>
+
+
+										<tbody>
+											<tr>
+												<th class="name" scope="row" data-bs-toggle="collapse" data-bs-target="#collapseTable3"
+													aria-expanded="true" aria-controls="collapseTable">
+													<button class="btn btn-collapse">
+														Медиа
+														<span class="icon icon-arrow">
+															<svg viewBox="0 0 12 20" xmlns="http://www.w3.org/2000/svg">
+																<path d="M10.5 12.286 6 7.786l-4.5 4.5" />
+															</svg>
+														</span>
+													</button>
+												</th>
+												<td class="more">
+													<button class="btn btn-shape dropdown-toggle" type="button" id="dropdownTotal"
+														data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="16, 16">
+														<span class="icon icon-shape">
+															<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 16">
+																<path
+																	d="M4.00033 8C4.00033 8.92048 3.25413 9.66667 2.33366 9.66667C1.41318 9.66667 0.666992 8.92048 0.666992 8C0.666992 7.07953 1.41318 6.33333 2.33366 6.33333C3.25413 6.33333 4.00033 7.07953 4.00033 8Z" />
+																<path
+																	d="M4.00033 2.16667C4.00033 3.08714 3.25413 3.83333 2.33366 3.83333C1.41318 3.83333 0.666992 3.08714 0.666992 2.16667C0.666992 1.24619 1.41318 0.5 2.33366 0.5C3.25413 0.5 4.00033 1.24619 4.00033 2.16667Z" />
+																<path
+																	d="M4.00033 13.8333C4.00033 14.7538 3.25413 15.5 2.33366 15.5C1.41318 15.5 0.666992 14.7538 0.666992 13.8333C0.666992 12.9129 1.41318 12.1667 2.33366 12.1667C3.25413 12.1667 4.00033 12.9129 4.00033 13.8333Z" />
+															</svg>
+														</span>
+													</button>
+													<ul class="dropdown-menu dropdown-menu-end triangle" aria-labelledby="dropdownTotal">
+														<span class="icon icon-triangle">
+															<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 8">
+																<path fill-rule="evenodd" clip-rule="evenodd"
+																	d="M18 8L10.591 0.653454C9.71231 -0.217818 8.28769 -0.217818 7.40901 0.653454L0 8H18Z" />
+															</svg>
+														</span>
+														<li>
+															<button class="dropdown-item" type="button">
+																<span class="icon icon-block">
+																	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+																		<path
+																			d="M15.8333 9.1665H4.16667C3.24619 9.1665 2.5 9.9127 2.5 10.8332V16.6665C2.5 17.587 3.24619 18.3332 4.16667 18.3332H15.8333C16.7538 18.3332 17.5 17.587 17.5 16.6665V10.8332C17.5 9.9127 16.7538 9.1665 15.8333 9.1665Z"
+																			stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+																		<path
+																			d="M5.83301 9.1665V5.83317C5.83301 4.7281 6.27199 3.66829 7.0534 2.88689C7.8348 2.10549 8.89461 1.6665 9.99967 1.6665C11.1047 1.6665 12.1646 2.10549 12.946 2.88689C13.7274 3.66829 14.1663 4.7281 14.1663 5.83317V9.1665"
+																			stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+																	</svg>
+																</span>
+																Заблокировать
+															</button>
+														</li>
+														<li>
+															<button class="dropdown-item" type="button" data-bs-toggle="modal"
+																data-bs-target="#changedTownModal">
+																<span class="icon icon-edit">
+																	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+																		<path fill-rule="evenodd" clip-rule="evenodd"
+																			d="M10.9355 3.32017C12.0087 2.24541 13.7492 2.24476 14.8231 3.3187L16.4311 4.92667C17.4959 5.99145 17.507 7.71521 16.4559 8.79358L9.13862 16.3012C8.4331 17.025 7.46544 17.4332 6.455 17.4332L4.63288 17.4331C3.35363 17.433 2.33202 16.3667 2.38582 15.0876L2.46513 13.202C2.50463 12.263 2.89491 11.373 3.55875 10.7081L10.9355 3.32017ZM13.7633 4.38016C13.2751 3.892 12.484 3.8923 11.9962 4.38083L10.9345 5.44417L14.3231 8.83281L15.3825 7.74582C15.8603 7.25565 15.8553 6.47212 15.3713 5.98813L13.7633 4.38016ZM4.61941 11.7688L9.87461 6.50563L13.2761 9.90708L8.06524 15.2534C7.64192 15.6877 7.06133 15.9326 6.45507 15.9326L4.63295 15.9325C4.20653 15.9325 3.86599 15.5771 3.88393 15.1507L3.96324 13.2651C3.98694 12.7017 4.2211 12.1677 4.61941 11.7688ZM17.0958 17.372C17.5099 17.372 17.8455 17.0361 17.8455 16.6217C17.8455 16.2074 17.5099 15.8715 17.0958 15.8715H11.9944C11.5803 15.8715 11.2447 16.2074 11.2447 16.6217C11.2447 17.0361 11.5803 17.372 11.9944 17.372H17.0958Z" />
+																	</svg>
+																</span>
+																Редактировать
+															</button>
+														</li>
+													</ul>
+												</td>
+											</tr>
+
+											<tr class="table-collapse-nested">
+												<td colspan="12" class="table-collapse-content">
+													<div class="collapse show" id="collapseTable3">
+														<div class="table-collapse-card">
+															<div class="card">
+																<div class="card-header">
+																	<h4>
+																		Юлия Самойлова
+																		<span>Operational Marketing</span>
+																	</h4>
+
+																	<time>28 Января 2023</timе>
+																</div>
+																<div class="card-body">
+																	<h5 class="card-title">
+																		Категория
+																		<span>Медиа</span>
+																	</h5>
+																	<h5 class="card-title">
+																		Для
+																		<span>B2B</span>
+																	</h5>
+																	<h5 class="card-title">
+																		Название инструмента
+																		<span>Рассылка в таком-то месенджере</span>
+																	</h5>
+																	<div class="card-text">
+																		Описание
+																		<span>Мы хотим сделать рассылку в таком то месенджере, так-как там много нашей
+																			целевой аудитории и мы хотели бы сделать это и то...</span>
+																		<button type="button" class="btn btn-link">Развернуть</button>
+																	</div>
+																</div>
+																<div class="card-footer">
+																	<button type="button" class="btn btn-outline-light btn-square btn-lg">
+																		<span class="icon icon-edit">
+																			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+																				<path fill-rule="evenodd" clip-rule="evenodd"
+																					d="M10.9355 3.32017C12.0087 2.24541 13.7492 2.24476 14.8231 3.3187L16.4311 4.92667C17.4959 5.99145 17.507 7.71521 16.4559 8.79358L9.13862 16.3012C8.4331 17.025 7.46544 17.4332 6.455 17.4332L4.63288 17.4331C3.35363 17.433 2.33202 16.3667 2.38582 15.0876L2.46513 13.202C2.50463 12.263 2.89491 11.373 3.55875 10.7081L10.9355 3.32017ZM13.7633 4.38016C13.2751 3.892 12.484 3.8923 11.9962 4.38083L10.9345 5.44417L14.3231 8.83281L15.3825 7.74582C15.8603 7.25565 15.8553 6.47212 15.3713 5.98813L13.7633 4.38016ZM4.61941 11.7688L9.87461 6.50563L13.2761 9.90708L8.06524 15.2534C7.64192 15.6877 7.06133 15.9326 6.45507 15.9326L4.63295 15.9325C4.20653 15.9325 3.86599 15.5771 3.88393 15.1507L3.96324 13.2651C3.98694 12.7017 4.2211 12.1677 4.61941 11.7688ZM17.0958 17.372C17.5099 17.372 17.8455 17.0361 17.8455 16.6217C17.8455 16.2074 17.5099 15.8715 17.0958 15.8715H11.9944C11.5803 15.8715 11.2447 16.2074 11.2447 16.6217C11.2447 17.0361 11.5803 17.372 11.9944 17.372H17.0958Z" />
+																			</svg>
+																		</span>
+																	</button>
+																	<button type="button" class="btn btn-outline-light btn-lg">
+																		Отклонить
+																	</button>
+																	<button type="button" class="btn btn-primary btn-lg">
+																		Согласовать
+																	</button>
+																</div>
+															</div>
+															<div class="card">
+																<div class="card-header">
+																	<h4>
+																		Юлия Самойлова
+																		<span>Operational Marketing</span>
+																	</h4>
+
+																	<time>28 Января 2023</timе>
+																</div>
+																<div class="card-body">
+																	<h5 class="card-title">
+																		Категория
+																		<span>Медиа</span>
+																	</h5>
+																	<h5 class="card-title">
+																		Для
+																		<span>B2B</span>
+																	</h5>
+																	<h5 class="card-title">
+																		Название инструмента
+																		<span>Рассылка в таком-то месенджере</span>
+																	</h5>
+																	<div class="card-text">
+																		Описание
+																		<span>Мы хотим сделать рассылку в таком то месенджере, так-как там много нашей
+																			целевой аудитории и мы хотели бы сделать это и то...</span>
+																		<button type="button" class="btn btn-link">Развернуть</button>
+																	</div>
+																</div>
+																<div class="card-footer">
+																	<button type="button" class="btn btn-outline-light btn-square btn-lg">
+																		<span class="icon icon-edit">
+																			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+																				<path fill-rule="evenodd" clip-rule="evenodd"
+																					d="M10.9355 3.32017C12.0087 2.24541 13.7492 2.24476 14.8231 3.3187L16.4311 4.92667C17.4959 5.99145 17.507 7.71521 16.4559 8.79358L9.13862 16.3012C8.4331 17.025 7.46544 17.4332 6.455 17.4332L4.63288 17.4331C3.35363 17.433 2.33202 16.3667 2.38582 15.0876L2.46513 13.202C2.50463 12.263 2.89491 11.373 3.55875 10.7081L10.9355 3.32017ZM13.7633 4.38016C13.2751 3.892 12.484 3.8923 11.9962 4.38083L10.9345 5.44417L14.3231 8.83281L15.3825 7.74582C15.8603 7.25565 15.8553 6.47212 15.3713 5.98813L13.7633 4.38016ZM4.61941 11.7688L9.87461 6.50563L13.2761 9.90708L8.06524 15.2534C7.64192 15.6877 7.06133 15.9326 6.45507 15.9326L4.63295 15.9325C4.20653 15.9325 3.86599 15.5771 3.88393 15.1507L3.96324 13.2651C3.98694 12.7017 4.2211 12.1677 4.61941 11.7688ZM17.0958 17.372C17.5099 17.372 17.8455 17.0361 17.8455 16.6217C17.8455 16.2074 17.5099 15.8715 17.0958 15.8715H11.9944C11.5803 15.8715 11.2447 16.2074 11.2447 16.6217C11.2447 17.0361 11.5803 17.372 11.9944 17.372H17.0958Z" />
+																			</svg>
+																		</span>
+																	</button>
+																	<button type="button" class="btn btn-outline-light btn-lg">
+																		Отклонить
+																	</button>
+																	<button type="button" class="btn btn-primary btn-lg">
+																		Согласовать
+																	</button>
+																</div>
+															</div>
+															<div class="card">
+																<div class="card-header">
+																	<h4>
+																		Юлия Самойлова
+																		<span>Operational Marketing</span>
+																	</h4>
+
+																	<time>28 Января 2023</timе>
+																</div>
+																<div class="card-body">
+																	<h5 class="card-title">
+																		Категория
+																		<span>Медиа</span>
+																	</h5>
+																	<h5 class="card-title">
+																		Для
+																		<span>B2B</span>
+																	</h5>
+																	<h5 class="card-title">
+																		Название инструмента
+																		<span>Рассылка в таком-то месенджере</span>
+																	</h5>
+																	<div class="card-text">
+																		Описание
+																		<span>Мы хотим сделать рассылку в таком то месенджере, так-как там много нашей
+																			целевой аудитории и мы хотели бы сделать это и то...</span>
+																		<button type="button" class="btn btn-link">Развернуть</button>
+																	</div>
+																</div>
+																<div class="card-footer">
+																	<button type="button" class="btn btn-outline-light btn-square btn-lg">
+																		<span class="icon icon-edit">
+																			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+																				<path fill-rule="evenodd" clip-rule="evenodd"
+																					d="M10.9355 3.32017C12.0087 2.24541 13.7492 2.24476 14.8231 3.3187L16.4311 4.92667C17.4959 5.99145 17.507 7.71521 16.4559 8.79358L9.13862 16.3012C8.4331 17.025 7.46544 17.4332 6.455 17.4332L4.63288 17.4331C3.35363 17.433 2.33202 16.3667 2.38582 15.0876L2.46513 13.202C2.50463 12.263 2.89491 11.373 3.55875 10.7081L10.9355 3.32017ZM13.7633 4.38016C13.2751 3.892 12.484 3.8923 11.9962 4.38083L10.9345 5.44417L14.3231 8.83281L15.3825 7.74582C15.8603 7.25565 15.8553 6.47212 15.3713 5.98813L13.7633 4.38016ZM4.61941 11.7688L9.87461 6.50563L13.2761 9.90708L8.06524 15.2534C7.64192 15.6877 7.06133 15.9326 6.45507 15.9326L4.63295 15.9325C4.20653 15.9325 3.86599 15.5771 3.88393 15.1507L3.96324 13.2651C3.98694 12.7017 4.2211 12.1677 4.61941 11.7688ZM17.0958 17.372C17.5099 17.372 17.8455 17.0361 17.8455 16.6217C17.8455 16.2074 17.5099 15.8715 17.0958 15.8715H11.9944C11.5803 15.8715 11.2447 16.2074 11.2447 16.6217C11.2447 17.0361 11.5803 17.372 11.9944 17.372H17.0958Z" />
+																			</svg>
+																		</span>
+																	</button>
+																	<button type="button" class="btn btn-outline-light btn-lg">
+																		Отклонить
+																	</button>
+																	<button type="button" class="btn btn-primary btn-lg">
+																		Согласовать
+																	</button>
+																</div>
+															</div>
+														</div>
+													</div>
+												</td>
+											</tr>
+
+											<tr>
+												<th class="name" scope="row" data-bs-toggle="collapse" data-bs-target="#collapseTable4"
+													aria-expanded="true" aria-controls="collapseTable">
+													<button class="btn btn-collapse">
+														СММ
+														<span class="icon icon-arrow">
+															<svg viewBox="0 0 12 20" xmlns="http://www.w3.org/2000/svg">
+																<path d="M10.5 12.286 6 7.786l-4.5 4.5" />
+															</svg>
+														</span>
+													</button>
+												</th>
+												<td class="more">
+													<button class="btn btn-shape dropdown-toggle" type="button" id="dropdownTotal"
+														data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="16, 16">
+														<span class="icon icon-shape">
+															<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 16">
+																<path
+																	d="M4.00033 8C4.00033 8.92048 3.25413 9.66667 2.33366 9.66667C1.41318 9.66667 0.666992 8.92048 0.666992 8C0.666992 7.07953 1.41318 6.33333 2.33366 6.33333C3.25413 6.33333 4.00033 7.07953 4.00033 8Z" />
+																<path
+																	d="M4.00033 2.16667C4.00033 3.08714 3.25413 3.83333 2.33366 3.83333C1.41318 3.83333 0.666992 3.08714 0.666992 2.16667C0.666992 1.24619 1.41318 0.5 2.33366 0.5C3.25413 0.5 4.00033 1.24619 4.00033 2.16667Z" />
+																<path
+																	d="M4.00033 13.8333C4.00033 14.7538 3.25413 15.5 2.33366 15.5C1.41318 15.5 0.666992 14.7538 0.666992 13.8333C0.666992 12.9129 1.41318 12.1667 2.33366 12.1667C3.25413 12.1667 4.00033 12.9129 4.00033 13.8333Z" />
+															</svg>
+														</span>
+													</button>
+													<ul class="dropdown-menu dropdown-menu-end triangle" aria-labelledby="dropdownTotal">
+														<span class="icon icon-triangle">
+															<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 8">
+																<path fill-rule="evenodd" clip-rule="evenodd"
+																	d="M18 8L10.591 0.653454C9.71231 -0.217818 8.28769 -0.217818 7.40901 0.653454L0 8H18Z" />
+															</svg>
+														</span>
+														<li>
+															<button class="dropdown-item" type="button">
+																<span class="icon icon-block">
+																	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+																		<path
+																			d="M15.8333 9.1665H4.16667C3.24619 9.1665 2.5 9.9127 2.5 10.8332V16.6665C2.5 17.587 3.24619 18.3332 4.16667 18.3332H15.8333C16.7538 18.3332 17.5 17.587 17.5 16.6665V10.8332C17.5 9.9127 16.7538 9.1665 15.8333 9.1665Z"
+																			stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+																		<path
+																			d="M5.83301 9.1665V5.83317C5.83301 4.7281 6.27199 3.66829 7.0534 2.88689C7.8348 2.10549 8.89461 1.6665 9.99967 1.6665C11.1047 1.6665 12.1646 2.10549 12.946 2.88689C13.7274 3.66829 14.1663 4.7281 14.1663 5.83317V9.1665"
+																			stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+																	</svg>
+																</span>
+																Заблокировать
+															</button>
+														</li>
+														<li>
+															<button class="dropdown-item" type="button" data-bs-toggle="modal"
+																data-bs-target="#changedTownModal">
+																<span class="icon icon-edit">
+																	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+																		<path fill-rule="evenodd" clip-rule="evenodd"
+																			d="M10.9355 3.32017C12.0087 2.24541 13.7492 2.24476 14.8231 3.3187L16.4311 4.92667C17.4959 5.99145 17.507 7.71521 16.4559 8.79358L9.13862 16.3012C8.4331 17.025 7.46544 17.4332 6.455 17.4332L4.63288 17.4331C3.35363 17.433 2.33202 16.3667 2.38582 15.0876L2.46513 13.202C2.50463 12.263 2.89491 11.373 3.55875 10.7081L10.9355 3.32017ZM13.7633 4.38016C13.2751 3.892 12.484 3.8923 11.9962 4.38083L10.9345 5.44417L14.3231 8.83281L15.3825 7.74582C15.8603 7.25565 15.8553 6.47212 15.3713 5.98813L13.7633 4.38016ZM4.61941 11.7688L9.87461 6.50563L13.2761 9.90708L8.06524 15.2534C7.64192 15.6877 7.06133 15.9326 6.45507 15.9326L4.63295 15.9325C4.20653 15.9325 3.86599 15.5771 3.88393 15.1507L3.96324 13.2651C3.98694 12.7017 4.2211 12.1677 4.61941 11.7688ZM17.0958 17.372C17.5099 17.372 17.8455 17.0361 17.8455 16.6217C17.8455 16.2074 17.5099 15.8715 17.0958 15.8715H11.9944C11.5803 15.8715 11.2447 16.2074 11.2447 16.6217C11.2447 17.0361 11.5803 17.372 11.9944 17.372H17.0958Z" />
+																	</svg>
+																</span>
+																Редактировать
+															</button>
+														</li>
+													</ul>
+												</td>
+											</tr>
+
+											<tr class="table-collapse-nested">
+												<td colspan="12" class="table-collapse-content">
+													<div class="collapse show" id="collapseTable4">
+														<div class="table-collapse-card">
+															<div class="card">
+																<div class="card-header">
+																	<h4>
+																		Юлия Самойлова
+																		<span>Operational Marketing</span>
+																	</h4>
+
+																	<time>28 Января 2023</timе>
+																</div>
+																<div class="card-body">
+																	<h5 class="card-title">
+																		Категория
+																		<span>Медиа</span>
+																	</h5>
+																	<h5 class="card-title">
+																		Для
+																		<span>B2B</span>
+																	</h5>
+																	<h5 class="card-title">
+																		Название инструмента
+																		<span>Рассылка в таком-то месенджере</span>
+																	</h5>
+																	<div class="card-text">
+																		Описание
+																		<span>Мы хотим сделать рассылку в таком то месенджере, так-как там много нашей
+																			целевой аудитории и мы хотели бы сделать это и то...</span>
+																		<button type="button" class="btn btn-link">Развернуть</button>
+																	</div>
+																</div>
+																<div class="card-footer">
+																	<button type="button" class="btn btn-outline-light btn-square btn-lg">
+																		<span class="icon icon-edit">
+																			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+																				<path fill-rule="evenodd" clip-rule="evenodd"
+																					d="M10.9355 3.32017C12.0087 2.24541 13.7492 2.24476 14.8231 3.3187L16.4311 4.92667C17.4959 5.99145 17.507 7.71521 16.4559 8.79358L9.13862 16.3012C8.4331 17.025 7.46544 17.4332 6.455 17.4332L4.63288 17.4331C3.35363 17.433 2.33202 16.3667 2.38582 15.0876L2.46513 13.202C2.50463 12.263 2.89491 11.373 3.55875 10.7081L10.9355 3.32017ZM13.7633 4.38016C13.2751 3.892 12.484 3.8923 11.9962 4.38083L10.9345 5.44417L14.3231 8.83281L15.3825 7.74582C15.8603 7.25565 15.8553 6.47212 15.3713 5.98813L13.7633 4.38016ZM4.61941 11.7688L9.87461 6.50563L13.2761 9.90708L8.06524 15.2534C7.64192 15.6877 7.06133 15.9326 6.45507 15.9326L4.63295 15.9325C4.20653 15.9325 3.86599 15.5771 3.88393 15.1507L3.96324 13.2651C3.98694 12.7017 4.2211 12.1677 4.61941 11.7688ZM17.0958 17.372C17.5099 17.372 17.8455 17.0361 17.8455 16.6217C17.8455 16.2074 17.5099 15.8715 17.0958 15.8715H11.9944C11.5803 15.8715 11.2447 16.2074 11.2447 16.6217C11.2447 17.0361 11.5803 17.372 11.9944 17.372H17.0958Z" />
+																			</svg>
+																		</span>
+																	</button>
+																	<button type="button" class="btn btn-outline-light btn-lg">
+																		Отклонить
+																	</button>
+																	<button type="button" class="btn btn-primary btn-lg">
+																		Согласовать
+																	</button>
+																</div>
+															</div>
+															<div class="card">
+																<div class="card-header">
+																	<h4>
+																		Юлия Самойлова
+																		<span>Operational Marketing</span>
+																	</h4>
+
+																	<time>28 Января 2023</timе>
+																</div>
+																<div class="card-body">
+																	<h5 class="card-title">
+																		Категория
+																		<span>Медиа</span>
+																	</h5>
+																	<h5 class="card-title">
+																		Для
+																		<span>B2B</span>
+																	</h5>
+																	<h5 class="card-title">
+																		Название инструмента
+																		<span>Рассылка в таком-то месенджере</span>
+																	</h5>
+																	<div class="card-text">
+																		Описание
+																		<span>Мы хотим сделать рассылку в таком то месенджере, так-как там много нашей
+																			целевой аудитории и мы хотели бы сделать это и то...</span>
+																		<button type="button" class="btn btn-link">Развернуть</button>
+																	</div>
+																</div>
+																<div class="card-footer">
+																	<button type="button" class="btn btn-outline-light btn-square btn-lg">
+																		<span class="icon icon-edit">
+																			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+																				<path fill-rule="evenodd" clip-rule="evenodd"
+																					d="M10.9355 3.32017C12.0087 2.24541 13.7492 2.24476 14.8231 3.3187L16.4311 4.92667C17.4959 5.99145 17.507 7.71521 16.4559 8.79358L9.13862 16.3012C8.4331 17.025 7.46544 17.4332 6.455 17.4332L4.63288 17.4331C3.35363 17.433 2.33202 16.3667 2.38582 15.0876L2.46513 13.202C2.50463 12.263 2.89491 11.373 3.55875 10.7081L10.9355 3.32017ZM13.7633 4.38016C13.2751 3.892 12.484 3.8923 11.9962 4.38083L10.9345 5.44417L14.3231 8.83281L15.3825 7.74582C15.8603 7.25565 15.8553 6.47212 15.3713 5.98813L13.7633 4.38016ZM4.61941 11.7688L9.87461 6.50563L13.2761 9.90708L8.06524 15.2534C7.64192 15.6877 7.06133 15.9326 6.45507 15.9326L4.63295 15.9325C4.20653 15.9325 3.86599 15.5771 3.88393 15.1507L3.96324 13.2651C3.98694 12.7017 4.2211 12.1677 4.61941 11.7688ZM17.0958 17.372C17.5099 17.372 17.8455 17.0361 17.8455 16.6217C17.8455 16.2074 17.5099 15.8715 17.0958 15.8715H11.9944C11.5803 15.8715 11.2447 16.2074 11.2447 16.6217C11.2447 17.0361 11.5803 17.372 11.9944 17.372H17.0958Z" />
+																			</svg>
+																		</span>
+																	</button>
+																	<button type="button" class="btn btn-outline-light btn-lg">
+																		Отклонить
+																	</button>
+																	<button type="button" class="btn btn-primary btn-lg">
+																		Согласовать
+																	</button>
+																</div>
+															</div>
+															<div class="card">
+																<div class="card-header">
+																	<h4>
+																		Юлия Самойлова
+																		<span>Operational Marketing</span>
+																	</h4>
+
+																	<time>28 Января 2023</timе>
+																</div>
+																<div class="card-body">
+																	<h5 class="card-title">
+																		Категория
+																		<span>Медиа</span>
+																	</h5>
+																	<h5 class="card-title">
+																		Для
+																		<span>B2B</span>
+																	</h5>
+																	<h5 class="card-title">
+																		Название инструмента
+																		<span>Рассылка в таком-то месенджере</span>
+																	</h5>
+																	<div class="card-text">
+																		Описание
+																		<span>Мы хотим сделать рассылку в таком то месенджере, так-как там много нашей
+																			целевой аудитории и мы хотели бы сделать это и то...</span>
+																		<button type="button" class="btn btn-link">Развернуть</button>
+																	</div>
+																</div>
+																<div class="card-footer">
+																	<button type="button" class="btn btn-outline-light btn-square btn-lg">
+																		<span class="icon icon-edit">
+																			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+																				<path fill-rule="evenodd" clip-rule="evenodd"
+																					d="M10.9355 3.32017C12.0087 2.24541 13.7492 2.24476 14.8231 3.3187L16.4311 4.92667C17.4959 5.99145 17.507 7.71521 16.4559 8.79358L9.13862 16.3012C8.4331 17.025 7.46544 17.4332 6.455 17.4332L4.63288 17.4331C3.35363 17.433 2.33202 16.3667 2.38582 15.0876L2.46513 13.202C2.50463 12.263 2.89491 11.373 3.55875 10.7081L10.9355 3.32017ZM13.7633 4.38016C13.2751 3.892 12.484 3.8923 11.9962 4.38083L10.9345 5.44417L14.3231 8.83281L15.3825 7.74582C15.8603 7.25565 15.8553 6.47212 15.3713 5.98813L13.7633 4.38016ZM4.61941 11.7688L9.87461 6.50563L13.2761 9.90708L8.06524 15.2534C7.64192 15.6877 7.06133 15.9326 6.45507 15.9326L4.63295 15.9325C4.20653 15.9325 3.86599 15.5771 3.88393 15.1507L3.96324 13.2651C3.98694 12.7017 4.2211 12.1677 4.61941 11.7688ZM17.0958 17.372C17.5099 17.372 17.8455 17.0361 17.8455 16.6217C17.8455 16.2074 17.5099 15.8715 17.0958 15.8715H11.9944C11.5803 15.8715 11.2447 16.2074 11.2447 16.6217C11.2447 17.0361 11.5803 17.372 11.9944 17.372H17.0958Z" />
+																			</svg>
+																		</span>
+																	</button>
+																	<button type="button" class="btn btn-outline-light btn-lg">
+																		Отклонить
+																	</button>
+																	<button type="button" class="btn btn-primary btn-lg">
+																		Согласовать
+																	</button>
+																</div>
+															</div>
+														</div>
+													</div>
+												</td>
+											</tr>
+										</tbody>
 									</table>
 								</div>
 							</div>
@@ -1188,9 +1644,10 @@
 								</ul>
 							</nav>
 						</div>
-						<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-							<div class="table-wrapper table-collapse" id="tableFullScreen">
-								<div class="table-responsive">
+						<div class="tab-pane tab-pane-table fade" id="canceledTarget" role="tabpanel"
+							aria-labelledby="canceledTarget-tab">
+							<div class="table-wrapper table-collapse">
+								<div class="table-responsive tab-table-fullscreen">
 									<table>
 										3
 									</table>
@@ -1265,8 +1722,8 @@
 				</div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Отмена</button>
-        <button type="submit" class="btn btn-primary">Сохранить</button>
+        <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
+        <button type="submit" class="btn btn-primary btn-lg">Сохранить</button>
       </div>
     </form>
   </div>
@@ -1288,8 +1745,8 @@
 				</div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Отмена</button>
-        <button type="submit" class="btn btn-primary">Сохранить</button>
+        <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
+        <button type="submit" class="btn btn-primary btn-lg">Сохранить</button>
       </div>
     </form>
   </div>

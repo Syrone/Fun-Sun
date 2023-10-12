@@ -1,4 +1,5 @@
 @media (min-width: 1400px) {
+  /** (Start) GENERAL STYLES **/
   .container,
   .container-lg,
   .container-md,
@@ -7,11 +8,27 @@
   .container-xxl {
     max-width: 1380px;
   }
+  /** (End) GENERAL STYLES **/
 }
 @media (max-width: 1400px) {
+  /** (Start) GENERAL STYLES **/
   .container {
     max-width: 100%;
   }
+  /** (End) GENERAL STYLES **/
+  /** (Start) Card **/
+  .card-footer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .card-footer > *:not(.btn-square) {
+    grid-row: 2;
+    padding-inline: 0.25rem;
+  }
+  .card-footer > .btn-square {
+    grid-column: 2;
+    margin-inline-start: auto;
+  }
+  /** (End) Card **/
   /** (Start) Header Menu **/
   .header .navbar-collapse {
     flex: 100%;
@@ -55,6 +72,11 @@
   }
 }
 @media (max-width: 992px) {
+  /** (Start) Table **/
+  .table-collapse-card {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  /** (End) Table **/
   /** (Start) Header Page **/
   .header .navbar-collapse {
     background-color: var(--background);
@@ -92,9 +114,6 @@
   .table-items {
     padding: 0.875rem;
     margin-inline: -1rem;
-  }
-  .table-items.scroll {
-    padding-top: 1rem;
   }
   .table-items .table-responsive {
     max-height: 794px;
@@ -200,6 +219,9 @@
     margin: 0;
     gap: 0.75rem;
   }
+  .btn-lg {
+    padding-inline: 1rem;
+  }
   .table thead .wrapper-search {
     max-width: max-content;
   }
@@ -229,6 +251,19 @@
     justify-content: center;
     gap: 0.5rem;
   }
+  /** (Start) Card **/
+  .card-footer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .card-footer > *:not(.btn-square) {
+    grid-row: auto;
+  }
+  .card-footer > .btn-square {
+    max-width: 100%;
+    grid-column: auto;
+    margin-inline-start: unset;
+  }
+  /** (End) Card **/
   .modal-header,
   .modal-body,
   .modal-footer {
@@ -246,9 +281,6 @@
   }
   .modal-footer > * {
     flex-basis: calc(50% - 0.5rem);
-  }
-  .modal-footer .btn {
-    padding-inline: 1rem;
   }
   /** (Start) Header Page **/
   .header-page {
@@ -320,6 +352,9 @@
   }
   .table-collapse thead .wrapper-search .btn[type="button"] {
     padding-inline: 0.5rem;
+  }
+  .table-collapse-card {
+    grid-template-columns: repeat(1, 1fr);
   }
   .btn-group--custom {
     flex-direction: column;

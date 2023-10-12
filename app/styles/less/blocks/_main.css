@@ -35,7 +35,7 @@
   grid-column: span 2;
 }
 .wrapper-table .table-responsive {
-  max-height: 636px;
+  max-height: 600px;
   border-radius: 0.625rem;
 }
 .wrapper-table .table {
@@ -50,7 +50,7 @@
 }
 .wrapper-table .tab-content > .active {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 1fr auto;
 }
 .wrapper-table .tab-pane > * {
   grid-column: span 2;

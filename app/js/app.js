@@ -7,69 +7,121 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 	/** (Start) Адаптивная высота таблицы **/
+	const tableElements = document.querySelectorAll('.table-fullscreen');
+	const tabTableElements = document.querySelectorAll('.tab-table-fullscreen');
+	const navLinksTable = document.querySelectorAll('.nav-link-table');
+
 	function calculateTableHeight() {
-		var windowWidth = window.innerWidth;
-		var windowHeight = window.innerHeight;
-		var tableElement = document.getElementById('tableFullScreen');
-		var tabletableElementHeight = document.querySelector('.table-responsive');
-		var paginationWrapper = document.querySelector('.wrapper-pagination');
+		const windowWidth = window.innerWidth;
+		const windowHeight = window.innerHeight;
 
-		if (tableElement) {
+		const calculateHeight = (tableElement) => {
+			const tableOffsetTop = tableElement.getBoundingClientRect().top;
+			const wrapPagination = document.querySelector('.wrapper-pagination');
+			const paginationHeight = wrapPagination.offsetHeight + 10;
+			const tableHeight = windowHeight - tableOffsetTop - paginationHeight;
+
 			if (windowWidth >= 992 && windowHeight >= 768) {
-				var paginationHeight = paginationWrapper.offsetHeight;
-				var tableOffsetTop = tableElement.offsetTop;
-				var tableHeight = windowHeight - (tableOffsetTop + paginationHeight) - 20;
-
-				tabletableElementHeight.style.maxHeight = tableHeight + 'px';
+				tableElement.style.maxHeight = tableHeight + 'px';
 			} else {
-				tabletableElementHeight.style.maxHeight = '';
+				tableElement.style.maxHeight = '';
 			}
+		};
+
+		tableElements.forEach(tableElement => {
+			calculateHeight(tableElement);
+		});
+
+		const tabTableElements = document.querySelectorAll('.tab-pane-table');
+
+		if (tabTableElements.length > 0) {
+			tabTableElements.forEach(tabTableElement => {
+				const tableElement = tabTableElement.querySelector('.tab-table-fullscreen');
+				const wrapPagination = tabTableElement.querySelector('.wrapper-pagination');
+				const paginationHeight = wrapPagination.offsetHeight + 10;
+				const tableOffsetTop = tableElement.getBoundingClientRect().top;
+				const tableHeight = windowHeight - tableOffsetTop - paginationHeight;
+
+				if (windowWidth >= 992 && windowHeight >= 768) {
+					tableElement.style.maxHeight = tableHeight + 'px';
+				} else {
+					tableElement.style.maxHeight = '';
+				}
+			});
 		}
 	}
 
-	function handleResize() {
-		calculateTableHeight();
-	}
+	function handleScroll(event) {
+		const tableElement = event.target;
+		const scrollTop = tableElement.scrollTop;
+		const scrollThreshold = 2;
+		let isScrollingDown
 
-	function handleMutation(mutationsList, observerTableHeight) {
-		calculateTableHeight();
-	}
-
-	window.addEventListener('load', function () {
-		calculateTableHeight();
-	});
-
-	window.addEventListener('resize', handleResize);
-
-	var observerTableHeight = new MutationObserver(handleMutation);
-	observerTableHeight.observe(document.body, { subtree: true, childList: true });
-	/** (End) Адаптивная высота таблицы **/
-
-	/** (End) Скролл таблицы **/
-	var tableElement = document.getElementById('tableFullScreen');
-	var tabletableElementHeight = document.querySelector('.table-responsive')
-	var scrollThreshold = 2;
-	var isScrollingDown = false;
-
-	function handleScroll() {
-		var scrollTop = tabletableElementHeight.scrollTop;
 		if (scrollTop > scrollThreshold && !isScrollingDown) {
 			tableElement.classList.add('scroll');
 			isScrollingDown = true;
 		} else if (scrollTop <= scrollThreshold && isScrollingDown) {
 			tableElement.classList.remove('scroll');
 			isScrollingDown = false;
+		} else if (scrollTop === 0) {
+			tableElement.classList.remove('scroll');
+			isScrollingDown = false;
+		}
+
+		calculateTableHeight();
+	}
+
+	function handleResize() {
+		if (window.innerWidth >= 992) {
+			tableElements.forEach(function (tableElement) {
+				tableElement.addEventListener('scroll', handleScroll);
+			});
+		} else {
+			tableElements.forEach(function (tableElement) {
+				tableElement.removeEventListener('scroll', handleScroll);
+			});
 		}
 	}
 
-	if (tableElement && tabletableElementHeight) {
-		tabletableElementHeight.addEventListener('scroll', handleScroll);
+	window.addEventListener('load', function () {
+		calculateTableHeight();
+		handleResize();
+	});
+
+	window.addEventListener('resize', function () {
+		calculateTableHeight();
+		handleResize();
+	});
+
+	function handleMutation(mutationsList, observerTableHeight) {
+		calculateTableHeight();
 	}
-	/** (End) Скролл таблицы **/
+
+	const observerTableHeight = new MutationObserver(handleMutation);
+	observerTableHeight.observe(document.body, { subtree: true, childList: true });
+
+	tabTableElements.forEach(function (tabTableElement) {
+		tabTableElement.addEventListener('scroll', handleScroll);
+	});
+
+	navLinksTable.forEach(function (navLinkTable) {
+		navLinkTable.addEventListener('hidden.bs.tab', function () {
+			navLinkTable.addEventListener('transitionend', function () {
+				calculateTableHeight();
+			});
+		});
+
+		navLinkTable.addEventListener('shown.bs.tab', function () {
+			navLinkTable.addEventListener('transitionend', function () {
+				calculateTableHeight();
+			});
+		});
+	});
+	/** (End) Адаптивная высота таблицы **/
 
 	//** (Start) Backdrop for Header Menu Mobile **/
-	var showBackdropBtn = document.querySelector('.btn-backdrop');
-	var backdrop = null;
+	const showBackdropBtn = document.querySelector('.btn-backdrop');
+	let backdrop = null;
 
 	showBackdropBtn.addEventListener('click', function () {
 		if (backdrop) {
@@ -83,23 +135,24 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 
 	document.addEventListener('click', function (event) {
-		var backdrop = document.querySelector(".modal-backdrop");
+		const backdropModal = document.querySelector(".modal-backdrop");
+		let backdrop = null;
 
 		// Проверяем, был ли клик по backdrop
-		if (event.target === backdrop) {
-			backdrop.remove();
+		if (event.target === backdropModal) {
+			backdropModal.remove();
 			backdrop = null;
 		}
 
-		var navbar = document.getElementById("headerMenu");
-		var target = event.target;
+		const navbar = document.getElementById("headerMenu");
+		const target = event.target;
 
 		// Проверяем, является ли кликнутый элемент частью меню
-		var isNavbar = navbar.contains(target);
+		const isNavbar = navbar.contains(target);
 
 		// Если кликнули вне меню и меню открыто, закрываем его
 		if (!isNavbar && navbar.classList.contains("show")) {
-			var toggle = document.querySelector("[data-bs-toggle='collapse']");
+			const toggle = document.querySelector("[data-bs-toggle='collapse']");
 			toggle.click();
 		}
 	});
@@ -144,11 +197,11 @@ document.addEventListener('DOMContentLoaded', () => {
 	//** (End) Close Buttons Dropdown **//
 
 	//** (Start) Close Buttons Dropdown **//
-	var closeDropdownButtons = document.getElementsByClassName('dropdown-dissmis');
-	for (var i = 0; i < closeDropdownButtons.length; i++) {
+	const closeDropdownButtons = document.getElementsByClassName('dropdown-dissmis');
+	for (let i = 0; i < closeDropdownButtons.length; i++) {
 		closeDropdownButtons[i].addEventListener('click', function () {
-			var dropdownMenu = this.parentNode.parentNode.parentNode;
-			var dropdownToggle = dropdownMenu.parentNode.querySelector('.dropdown-toggle');
+			const dropdownMenu = this.parentNode.parentNode.parentNode;
+			const dropdownToggle = dropdownMenu.parentNode.querySelector('.dropdown-toggle');
 			dropdownMenu.classList.remove('show');
 			dropdownToggle.classList.remove('show');
 			dropdownToggle.setAttribute('aria-expanded', 'false');
