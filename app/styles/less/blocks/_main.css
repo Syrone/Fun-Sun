@@ -37,6 +37,7 @@
 .wrapper-table .table-responsive {
   max-height: 600px;
   border-radius: 0.625rem;
+  scrollbar-gutter: stable;
 }
 .wrapper-table .table {
   margin-block: 0;

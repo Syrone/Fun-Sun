@@ -359,6 +359,18 @@
   .btn-group--custom {
     flex-direction: column;
   }
+  .modal-dialog {
+    margin: 1rem;
+  }
+  .modal-footer {
+    padding-block-start: 1.375rem;
+  }
+  .modal .desktop {
+    display: none;
+  }
+  .modal .mobile {
+    display: block;
+  }
   .nav-tabs {
     justify-content: space-between;
     gap: 0.5rem;

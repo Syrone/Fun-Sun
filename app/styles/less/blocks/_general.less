@@ -314,6 +314,7 @@ form,
 
 			&~label {
 				font-size: .75rem;
+				color: var(--text-form);
 				padding: 0 .25rem;
 				background-color: var(--background);
 				transform: scale(.85) translateY(-0.5rem) translateX(0.875rem);
@@ -326,6 +327,7 @@ form,
 
 			&~label {
 				font-size: .75rem;
+				color: var(--text-form);
 				padding: 0 .25rem;
 				background-color: var(--background);
 				transform: scale(.85) translateY(-0.5rem) translateX(0.875rem);
@@ -341,6 +343,7 @@ form,
 
 		&~label {
 			font-size: .75rem;
+			color: var(--text-form);
 			padding: 0 .25rem;
 			background-color: var(--background);
 			transform: scale(.85) translateY(-0.5rem) translateX(0.875rem);
@@ -351,7 +354,7 @@ form,
 	&>label {
 		height: max-content;
 		font-size: var(--font-size--sm);
-		color: var(--text-form);
+		color: var(--text-color);
 		border: none;
 		padding-inline: .875rem;
 		transition: font-size 0.25s ease-in-out, padding 0.25s ease-in-out, background 0.25s ease-in-out, transform 0.25s ease-in-out;
@@ -361,7 +364,7 @@ form,
 .form-control,
 .form-control::placeholder,
 .form-select {
-	color: var(--text-form);
+	color: var(--text-color);
 }
 
 .form-control,
@@ -369,14 +372,34 @@ form,
 	min-height: 2.5rem;
 	border-color: var(--border-color--dark);
 	border-radius: .5rem;
+	padding: 1rem .875rem;
 
 	&[type="search"] {
-		padding-left: 3rem;
+		padding: .375rem .75rem .375rem 3rem;
 	}
 
 	&:focus {
 		border-color: var(--accent);
 		box-shadow: none;
+	}
+
+	option {
+
+		&:disabled {
+			color: var(--text-color);
+		}
+	}
+}
+
+textarea {
+
+	&.form-control {
+		max-height: 10rem;
+		min-height: 3.625rem;
+
+		&:is(:focus) {
+			border-color: var(--accent);
+		}
 	}
 }
 
@@ -425,6 +448,18 @@ form,
 		width: 100%;
 		display: block;
 		cursor: pointer;
+	}
+
+	&-input {
+
+		&:checked {
+			background-color: var(--accent);
+			border-color: var(--accent);
+
+			&[type="radio"] {
+				background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
+			}
+		}
 	}
 }
 
@@ -1173,6 +1208,7 @@ form,
 		}
 
 		tbody {
+
 			.form-check {
 				margin-block: -.45rem;
 
@@ -1225,7 +1261,7 @@ form,
 				max-width: 320px;
 				position: absolute;
 				top: 50%;
-				right: 2rem;
+				right: 0;
 				transform: translateY(-50%);
 				z-index: 10;
 			}
@@ -1575,6 +1611,7 @@ form,
 
 //** (Start) Modal **//
 .modal {
+	scrollbar-gutter: stable;
 
 	&-backdrop {
 		background-color: var(--accent);
@@ -1623,16 +1660,28 @@ form,
 	}
 
 	&-body {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
 		padding-block: .625rem;
+
+		.wrapper-check {
+			display: flex;
+			gap: 1rem;
+		}
 	}
 
 	&-footer {
 		gap: 1rem;
-		padding-block-end: 2rem;
+		padding-block: 2rem;
 
 		&>* {
 			margin-inline: 0;
 		}
+	}
+
+	.mobile {
+		display: none;
 	}
 }
 

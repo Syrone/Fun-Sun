@@ -407,10 +407,10 @@
 </footer>
 
 	<div class="modal fade" id="addedTownModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-dialog-centered">
     <form class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="addedTownModal">Добавить город</h5>
+        <h5 class="modal-title" id="addedTownTitle">Добавить город</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
 
 				</button>
@@ -430,10 +430,10 @@
 </div>
 
 <div class="modal fade" id="changedTownModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-dialog-centered">
     <form class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="changedTownModal">Изменить город</h5>
+        <h5 class="modal-title" id="changedTownTitle">Изменить город</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
 
 				</button>
@@ -447,6 +447,195 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
         <button type="submit" class="btn btn-primary btn-lg">Сохранить</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="modal fade" id="canceledToolsModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <form class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="canceledToolsTitle">Отклонение инструмента</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+
+				</button>
+      </div>
+      <div class="modal-body">
+        <textarea class="form-control" placeholder="Причина отклонения" rows="1"></textarea>
+
+        <div class="wrapper-check">
+          <div class="form-check">
+            <input class="form-check-input is-radio" type="radio" value="" name="canceledCheck" id="canceledTools1">
+            <label class="form-check-label" for="canceledTools1">
+              B2B
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input is-radio" type="radio" value="" name="canceledCheck" id="canceledTools2">
+            <label class="form-check-label" for="canceledTools2">
+              B2C
+            </label>
+          </div>
+        </div>
+
+        <select class="form-select" aria-label="Default select example">
+          <option selected disabled>Выбрать категорию</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+
+        <select class="form-select" aria-label="Default select example">
+          <option selected disabled>Вариант замены предложенного инструмента</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
+        <button type="submit" class="btn btn-primary btn-lg">Отправить</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="modal fade" id="addedCategoryModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <form class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addedCategoryTitle">Добавление категории</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+
+				</button>
+      </div>
+      <div class="modal-body">
+
+        <div class="wrapper-check">
+          <div class="form-check">
+            <input class="form-check-input is-radio" type="radio" value="" name="canceledCheck" id="addedCategory1">
+            <label class="form-check-label" for="addedCategory1">
+              B2B
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input is-radio" type="radio" value="" name="canceledCheck" id="addedCategory2">
+            <label class="form-check-label" for="addedCategory2">
+              B2C
+            </label>
+          </div>
+        </div>
+
+        <div class="form-floating">
+					<input type="text" class="form-control" id="floatingInput1" placeholder="Название города">
+					<label for="floatingInput1">Название категории</label>
+				</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
+        <button type="submit" class="btn btn-primary btn-lg">
+          <span class="desktop">Добавить категорию</span>
+          <span class="mobile">Добавить</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="modal fade" id="addedToolsModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <form class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addedToolsTitle">Добавление инструмента</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+
+				</button>
+      </div>
+      <div class="modal-body">
+
+        <div class="wrapper-check">
+          <div class="form-check">
+            <input class="form-check-input is-radio" type="radio" value="" name="canceledCheck" id="addedTools1">
+            <label class="form-check-label" for="addedTools1">
+              B2B
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input is-radio" type="radio" value="" name="canceledCheck" id="addedTools2">
+            <label class="form-check-label" for="addedTools2">
+              B2C
+            </label>
+          </div>
+        </div>
+
+        <div class="form-floating">
+					<input type="text" class="form-control" id="floatingInput1" placeholder="Название города">
+					<label for="floatingInput1">Название категории</label>
+				</div>
+
+        <select class="form-select" aria-label="Default select example">
+          <option selected disabled>Категория</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
+        <button type="submit" class="btn btn-primary btn-lg">
+          <span class="desktop">Добавить инструмент</span>
+          <span class="mobile">Добавить</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="modal fade" id="editedToolsModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <form class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editedToolsTitle">Редактирование  инструмента</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+
+				</button>
+      </div>
+      <div class="modal-body">
+
+        <div class="wrapper-check">
+          <div class="form-check">
+            <input class="form-check-input is-radio" type="radio" value="" name="canceledCheck" id="editedTools1">
+            <label class="form-check-label" for="editedTools1">
+              B2B
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input is-radio" type="radio" value="" name="canceledCheck" id="editedTools2">
+            <label class="form-check-label" for="editedTools2">
+              B2C
+            </label>
+          </div>
+        </div>
+
+        <div class="form-floating">
+					<input type="text" class="form-control" id="floatingInput1" placeholder="Название города">
+					<label for="floatingInput1">Название категории</label>
+				</div>
+
+        <select class="form-select" aria-label="Default select example">
+          <option selected disabled>Категория</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
+        <button type="submit" class="btn btn-primary btn-lg">
+          <span class="desktop">Добавить инструмент</span>
+          <span class="mobile">Добавить</span>
+        </button>
       </div>
     </form>
   </div>

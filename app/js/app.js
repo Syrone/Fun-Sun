@@ -214,13 +214,15 @@ document.addEventListener('DOMContentLoaded', () => {
 	const formChecks = document.querySelectorAll('.form-check');
 
 	checkboxes.forEach(function (checkbox, index) {
-		checkbox.addEventListener('change', function () {
-			if (this.checked) {
-				formChecks[index].classList.add('checked');
-			} else {
-				formChecks[index].classList.remove('checked');
-			}
-		});
+		if (!checkbox.classList.contains('is-radio')) {
+			checkbox.addEventListener('change', function () {
+				if (this.checked) {
+					formChecks[index].classList.add('checked');
+				} else {
+					formChecks[index].classList.remove('checked');
+				}
+			});
+		}
 	});
 	//** (End) Checked From Check **//
 
@@ -303,5 +305,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	}
 	//** (End) Graph Without Scales **//
+
+	// const modal123 = new bootstrap.Modal(document.getElementById('editedToolsModal'));
+	// modal123.show();
 
 })
