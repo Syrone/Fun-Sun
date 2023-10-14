@@ -329,6 +329,10 @@
 
 		&-collapse {
 
+			.mobile {
+				display: inline-block;
+			}
+
 			&-content {
 
 				tbody {
@@ -497,9 +501,28 @@
 @media (max-width: 576px) {
 
 	//** (Start) Table **//
+	.table-items {
+
+		.table-responsive {
+			max-height: 1134px;
+		}
+
+		tbody {
+			grid-template-columns: repeat(1, 1fr);
+			gap: .75rem;
+		}
+	}
+	
 	.table-collapse {
-		.mobile {
-			display: inline-block;
+
+		.table {
+
+			&.nested {
+	
+				.name {
+					padding-inline-end: .5rem;
+				}
+			}
 		}
 
 		thead {
@@ -528,7 +551,6 @@
 			grid-template-columns: repeat(1, 1fr);
 		}
 	}
-
 	//** (End) Table **//
 
 	//** (Start) Buttons **//
@@ -644,20 +666,7 @@
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 	}
-
 	/** (End) Wrapper Table **/
-
-	//** (Start) Custom Table Items **//
-	.table-items .table-responsive {
-		max-height: 1134px;
-	}
-
-	.table-items tbody {
-		grid-template-columns: repeat(1, 1fr);
-		gap: .75rem;
-	}
-
-	//** (End) Custom Table Items **//
 
 	/** (Start) Wrapper Graph **/
 	.wrapper-graph {

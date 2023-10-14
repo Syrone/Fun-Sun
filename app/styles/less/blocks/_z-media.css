@@ -237,6 +237,9 @@
     visibility: visible;
     opacity: 1;
   }
+  .table-collapse .mobile {
+    display: inline-block;
+  }
   .table-collapse-content tbody tr > *:first-child {
     padding-inline-start: 1rem;
   }
@@ -338,8 +341,15 @@
   /** (End) Wrapper MyData **/
 }
 @media (max-width: 576px) {
-  .table-collapse .mobile {
-    display: inline-block;
+  .table-items .table-responsive {
+    max-height: 1134px;
+  }
+  .table-items tbody {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0.75rem;
+  }
+  .table-collapse .table.nested .name {
+    padding-inline-end: 0.5rem;
   }
   .table-collapse thead th {
     position: static;
@@ -424,13 +434,6 @@
     grid-template-columns: repeat(4, 1fr);
   }
   /** (End) Wrapper Table **/
-  .table-items .table-responsive {
-    max-height: 1134px;
-  }
-  .table-items tbody {
-    grid-template-columns: repeat(1, 1fr);
-    gap: 0.75rem;
-  }
   /** (Start) Wrapper Graph **/
   .wrapper-graph .graph--info {
     flex-direction: column;

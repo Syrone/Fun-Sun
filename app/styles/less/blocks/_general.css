@@ -77,7 +77,8 @@ h3,
 .icon-key,
 .icon-plus,
 .icon-filter,
-.icon-trash {
+.icon-trash,
+.icon-check-circle {
   --size: 1.25rem;
 }
 .icon-data,
@@ -107,7 +108,8 @@ h3,
   stroke: var(--text-color--light);
 }
 .icon-block svg,
-.icon-key svg {
+.icon-key svg,
+.icon-check-circle svg {
   fill: none;
   stroke: var(--text-color);
 }
@@ -668,7 +670,8 @@ textarea.form-control:is(:focus) {
   background-color: var(--border-color);
 }
 .dropdown-item:is(:hover, :focus, :active, .active) .icon-block svg,
-.dropdown-item:is(:hover, :focus, :active, .active) .icon-key svg {
+.dropdown-item:is(:hover, :focus, :active, .active) .icon-key svg,
+.dropdown-item:is(:hover, :focus, :active, .active) .icon-check-circle svg {
   stroke: var(--accent);
 }
 .dropdown-item:is(:hover, :focus, :active, .active) .icon-edit svg,
@@ -836,6 +839,8 @@ textarea.form-control:is(:focus) {
 }
 .table-responsive {
   padding-inline: 0.2rem 0.125rem;
+  position: relative;
+  z-index: 1010;
 }
 .table-fullscreen,
 .tab-table-fullscreen {
@@ -862,7 +867,7 @@ textarea.form-control:is(:focus) {
   position: sticky;
   top: 0;
   left: 0;
-  z-index: 10;
+  z-index: 1010;
 }
 .table thead th {
   font-size: var(--font-size--tiny);
@@ -944,6 +949,10 @@ textarea.form-control:is(:focus) {
 .table-collapse .table.nested {
   margin-block: -0.375rem;
 }
+.table-collapse .table.nested .name {
+  padding-inline-end: 1.5rem;
+  cursor: default;
+}
 .table-collapse thead tr {
   position: relative;
 }
@@ -1006,12 +1015,26 @@ textarea.form-control:is(:focus) {
 .table-collapse .name:not(.collapsed) .btn-collapse .icon {
   transform: rotate(0);
 }
+.table-collapse .name .subtitle {
+  display: block;
+  font-size: var(--font-size);
+  font-weight: 400;
+  color: var(--text-color);
+}
 .table-collapse .type {
   min-width: 60px;
   text-align: center;
 }
 .table-collapse .type .icon-check {
   margin: auto;
+}
+.table-collapse .btn-group--custom {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.625rem;
+}
+.table-collapse .btn-group--custom .btn {
+  padding: 0.375rem 1.25rem;
 }
 .table-collapse .btn-collapse {
   max-width: max-content;

@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				const paginationHeight = wrapPagination.offsetHeight + 10;
 				const tableOffsetTop = tableElement.getBoundingClientRect().top;
 				const tableHeight = windowHeight - tableOffsetTop - paginationHeight;
-
+				
 				if (windowWidth >= 992 && windowHeight >= 768) {
 					tableElement.style.maxHeight = tableHeight + 'px';
 				} else {
@@ -93,22 +93,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		handleResize();
 	});
 
-	function handleMutation(mutationsList, observerTableHeight) {
-		calculateTableHeight();
-	}
-
-	const observerTableHeight = new MutationObserver(handleMutation);
-	observerTableHeight.observe(document.body, { subtree: true, childList: true });
-
-	tabTableElements.forEach(function (tabTableElement) {
-		tabTableElement.addEventListener('scroll', handleScroll);
-	});
-
 	navLinksTable.forEach(function (navLinkTable) {
 		navLinkTable.addEventListener('hidden.bs.tab', function () {
-			navLinkTable.addEventListener('transitionend', function () {
-				calculateTableHeight();
-			});
+			calculateTableHeight();
 		});
 
 		navLinkTable.addEventListener('shown.bs.tab', function () {
@@ -116,6 +103,15 @@ document.addEventListener('DOMContentLoaded', () => {
 				calculateTableHeight();
 			});
 		});
+	});
+
+	const observerTabTableHeight = new MutationObserver(function (mutationsList, observer) {
+		calculateTableHeight();
+	});
+
+	tabTableElements.forEach(function (tabTableElement) {
+		tabTableElement.addEventListener('scroll', handleScroll);
+		observerTabTableHeight.observe(tabTableElement, { childList: true, subtree: true });
 	});
 	/** (End) Адаптивная высота таблицы **/
 

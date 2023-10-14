@@ -101,7 +101,8 @@ h3,
 	&-key,
 	&-plus,
 	&-filter,
-	&-trash {
+	&-trash,
+	&-check-circle {
 		--size: 1.25rem;
 	}
 
@@ -145,7 +146,8 @@ h3,
 	}
 
 	&-block,
-	&-key {
+	&-key,
+	&-check-circle {
 		svg {
 			fill: none;
 			stroke: var(--text-color)
@@ -885,7 +887,8 @@ textarea {
 		background-color: var(--border-color);
 
 		.icon-block,
-		.icon-key {
+		.icon-key,
+		.icon-check-circle {
 
 			svg {
 				stroke: var(--accent);
@@ -1101,6 +1104,8 @@ textarea {
 
 .table-responsive {
 	padding-inline: 0.2rem 0.125rem;
+	position: relative;
+	z-index: 1010;
 }
 
 .table-fullscreen,
@@ -1129,7 +1134,7 @@ textarea {
 		position: sticky;
 		top: 0;
 		left: 0;
-		z-index: 10;
+		z-index: 1010;
 
 		th {
 			font-size: var(--font-size--tiny);
@@ -1234,6 +1239,11 @@ textarea {
 
 			&.nested {
 				margin-block: -.375rem;
+
+				.name {
+					padding-inline-end: 1.5rem;
+					cursor: default;
+				}
 			}
 		}
 
@@ -1338,6 +1348,13 @@ textarea {
 					}
 				}
 			}
+
+			.subtitle {
+				display: block;
+				font-size: var(--font-size);
+				font-weight: 400;
+				color: var(--text-color);
+			}
 		}
 
 		.type {
@@ -1346,6 +1363,16 @@ textarea {
 
 			.icon-check {
 				margin: auto;
+			}
+		}
+
+		.btn-group--custom {
+			flex-direction: row;
+			align-items: center;
+			gap: .625rem;
+
+			.btn {
+				padding: .375rem 1.25rem;
 			}
 		}
 
