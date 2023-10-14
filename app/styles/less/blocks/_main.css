@@ -72,7 +72,10 @@
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  margin-bottom: 1rem;
+}
+.table-header h2 {
+  line-height: 2.25rem;
+  margin: 0;
 }
 .table-filter > * + * {
   padding-top: 1rem;

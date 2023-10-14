@@ -53,6 +53,24 @@
 	}
 
 	/** (End) Header Menu **/
+
+	/** (Start) Header Page **/
+	.header-page {
+
+		h1 {
+			font-size: var(--font-size--xl);
+		}
+	}
+	/** (End) Header Page **/
+
+	/** (Start) Wrapper Table **/
+	.table-header {
+
+		h2 {
+			font-size: var(--font-size--md);
+		}
+	}
+	/** (End) Wrapper Table **/
 }
 
 @media (max-width: 1200px) {
@@ -153,6 +171,16 @@
 
 	.table-action>* {
 		flex: 0 0 calc(50% - .75rem);
+	}
+
+	.table-header {
+		flex-direction: column;
+		align-items: flex-start;
+
+		.btn-group {
+			width: 100%;
+			max-width: unset;
+		}
 	}
 
 	/** (End) Wrapper Table **/
@@ -326,47 +354,56 @@
 				}
 			}
 		}
+	}
 
-		&-collapse {
+	.table-collapse {
 
-			.mobile {
-				display: inline-block;
-			}
+		.mobile {
+			display: inline-block;
+		}
 
-			&-content {
+		&-content {
 
-				tbody {
+			tbody {
 
-					tr {
+				tr {
 
-						&>* {
+					&>* {
 
-							&:first-child {
-								padding-inline-start: 1rem;
-							}
+						&:first-child {
+							padding-inline-start: 1rem;
 						}
 					}
-				}
-
-				.type {
-					display: none;
 				}
 			}
 
 			.type {
-				padding: .625rem .125rem;
-
-				&>span {
-					display: flex;
-					justify-content: center;
-					gap: .5rem;
-				}
+				display: none;
 			}
+		}
 
+		.type {
+			padding: .625rem .125rem;
+
+			&>span {
+				display: flex;
+				justify-content: center;
+				gap: .5rem;
+			}
 		}
 
 	}
 
+	.table-items {
+
+		.table-responsive {
+			max-height: 744px;
+		}
+
+		tbody {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
 	//** (End) Table **//
 
 	/** (Start) Card **/
@@ -424,8 +461,13 @@
 		gap: 1.25rem 1.875rem;
 		margin-block-end: 1.5rem;
 
+		h1 {
+			font-size: 1.25rem;
+		}
+
 		&>.btn,
-		&>.btn-group--custom {
+		&>.btn-group,
+		&>.swiper {
 			grid-row: 2;
 			grid-column: span 2;
 		}
@@ -436,17 +478,6 @@
 	}
 
 	/** (End) Header Page **/
-
-	//** (Start) Custom Table Items **//
-	.table-items .table-responsive {
-		max-height: 744px;
-	}
-
-	.table-items tbody {
-		grid-template-columns: repeat(2, 1fr);
-	}
-
-	//** (End) Custom Table Items **//
 
 	//** (Start) Dropdowns **//
 	.dropdown-nested .dropdown-menu {

@@ -38,10 +38,10 @@ document.addEventListener('DOMContentLoaded', () => {
 			tabTableElements.forEach(tabTableElement => {
 				const tableElement = tabTableElement.querySelector('.tab-table-fullscreen');
 				const wrapPagination = tabTableElement.querySelector('.wrapper-pagination');
-				const paginationHeight = wrapPagination.offsetHeight + 10;
+				const paginationHeight = wrapPagination ? wrapPagination.offsetHeight + 10 : 0;
 				const tableOffsetTop = tableElement.getBoundingClientRect().top;
 				const tableHeight = windowHeight - tableOffsetTop - paginationHeight;
-				
+
 				if (windowWidth >= 992 && windowHeight >= 768) {
 					tableElement.style.maxHeight = tableHeight + 'px';
 				} else {
@@ -159,6 +159,24 @@ document.addEventListener('DOMContentLoaded', () => {
 		slidesPerView: 'auto',
 		spaceBetween: 8,
 		freeMode: true,
+	});
+
+	const swiperButtonsTab = new Swiper('.swiper-buttons-tab', {
+		slidesPerView: 'auto',
+		spaceBetween: 8,
+		freeMode: true,
+	});
+
+	const slideElementsTab = document.querySelectorAll('.swiper-buttons-tab .swiper-slide');
+
+	slideElementsTab.forEach((slideElement, index) => {
+		slideElement.addEventListener('click', () => {
+			swiperButtonsTab.slideTo(index); // устанавливаем активный слайд по индексу
+			swiperButtonsTab.slides.forEach((slide) => {
+				slide.classList.remove('swiper-slide-active'); // удаляем класс "swiper-slide-active" у всех слайдов
+			});
+			slideElement.classList.add('swiper-slide-active'); // добавляем класс "swiper-slide-active" к выбранному слайду
+		});
 	});
 	//** (End) Swiper Buttons **//
 

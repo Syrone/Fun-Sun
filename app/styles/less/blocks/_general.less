@@ -57,18 +57,21 @@ h3,
 .h3 {
 	font-size: var(--font-size--lg);
 }
+
 //** (End) Titles **//
 
 //** (Start) Backgrounds **//
 .bg-primary {
 	background-color: var(--accent) !important;
 }
+
 //** (End) Backgrounds **//
 
 //** (Start) Text **//
 .text-primary {
 	color: var(--accent) !important;
 }
+
 //** (End) Text **//
 
 //** (Start) ICONS **//
@@ -491,7 +494,7 @@ textarea {
 
 .btn-square {
 	max-width: max-content;
-	
+
 	&.btn-lg {
 		min-width: 3rem;
 		min-height: 3rem;
@@ -1325,8 +1328,8 @@ textarea {
 
 				tr {
 
-					& > * {
-						
+					&>* {
+
 						&:first-child {
 							padding-inline-start: 2rem;
 						}
@@ -1410,6 +1413,7 @@ textarea {
 
 	}
 }
+
 //** (End) Table **//
 
 //** (Start) Card **//
@@ -1419,7 +1423,7 @@ textarea {
 	border-radius: .5rem;
 	padding: 1rem;
 
-	& > * {
+	&>* {
 		background-color: var(--background);
 		border-color: var(--gray-color);
 		padding: 0;
@@ -1457,10 +1461,10 @@ textarea {
 	&-body {
 		padding-block: .75rem;
 
-		& > * {
+		&>* {
 			margin-block-end: 0;
 
-			& + * {
+			&+* {
 				margin-block-start: .75rem;
 			}
 		}
@@ -1504,6 +1508,7 @@ textarea {
 		padding-block-start: .75rem;
 	}
 }
+
 //** (End) Card **//
 
 //** (Start) Pagination **//
@@ -1603,10 +1608,51 @@ textarea {
 //** (Start) Swiper Buttons **//
 .swiper-buttons {
 	width: 100%;
+
+	.swiper-slide {
+		width: max-content;
+
+		&:last-child {
+			margin-inline-end: 0 !important;
+		}
+	}
 }
 
-.swiper-buttons .swiper-slide {
-	width: max-content;
+.swiper-buttons-tab {
+
+	.swiper-wrapper {
+		width: max-content;
+		min-height: unset;
+		gap: 0;
+		margin-inline: 0;
+		padding-inline: 0;
+		background-color: var(--gray-color--light);
+		border-radius: .5rem;
+	}
+
+	.swiper-slide {
+
+		.btn {
+			border: 1px solid transparent;
+			margin: 0;
+			padding: .5rem 1.5rem;
+
+			&:is(:hover, :focus-visible, :active, .active) {
+				background-color: #e4e8f5;
+				border: 1px solid var(--accent);
+				color: var(--accent);
+			}
+		}
+
+		&-active {
+
+			.btn {
+				background-color: #e4e8f5;
+				border: 1px solid var(--accent);
+				color: var(--accent);
+			}
+		}
+	}
 }
 
 //** (End) Swiper Buttons **//
