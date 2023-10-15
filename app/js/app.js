@@ -1,10 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-	const tooltipHeaderList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+	const tooltipHeaderList = [].slice.call(document.querySelectorAll('[data-bs-tooltip="tooltip"]'))
 	const tooltipHeader = tooltipHeaderList.map(function (tooltipTriggerEl) {
 		return new bootstrap.Tooltip(tooltipTriggerEl)
 	})
 
+	const tooltipHeaderListLight = [].slice.call(document.querySelectorAll('[data-bs-tooltip="tooltip-light"]'))
+	const tooltipHeaderLight = tooltipHeaderListLight.map(function (tooltipTriggerEl) {
+		return new bootstrap.Tooltip(tooltipTriggerEl, {
+			customClass: 'tooltip-light'
+		});
+	})
 
 	/** (Start) Адаптивная высота таблицы **/
 	const tableElements = document.querySelectorAll('.table-fullscreen');
@@ -18,8 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		const calculateHeight = (tableElement) => {
 			const tableOffsetTop = tableElement.getBoundingClientRect().top;
 			const wrapPagination = document.querySelector('.wrapper-pagination');
-			const paginationHeight = wrapPagination.offsetHeight + 10;
-			const tableHeight = windowHeight - tableOffsetTop - paginationHeight;
+			const paginationHeight = wrapPagination ? wrapPagination.offsetHeight : 0;
+			const tableHeight = windowHeight - tableOffsetTop - paginationHeight - 10;
 
 			if (windowWidth >= 992 && windowHeight >= 768) {
 				tableElement.style.maxHeight = tableHeight + 'px';
@@ -38,9 +44,9 @@ document.addEventListener('DOMContentLoaded', () => {
 			tabTableElements.forEach(tabTableElement => {
 				const tableElement = tabTableElement.querySelector('.tab-table-fullscreen');
 				const wrapPagination = tabTableElement.querySelector('.wrapper-pagination');
-				const paginationHeight = wrapPagination ? wrapPagination.offsetHeight + 10 : 0;
+				const paginationHeight = wrapPagination ? wrapPagination.offsetHeight : 0;
 				const tableOffsetTop = tableElement.getBoundingClientRect().top;
-				const tableHeight = windowHeight - tableOffsetTop - paginationHeight;
+				const tableHeight = windowHeight - tableOffsetTop - paginationHeight - 10;
 
 				if (windowWidth >= 992 && windowHeight >= 768) {
 					tableElement.style.maxHeight = tableHeight + 'px';
@@ -165,18 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		slidesPerView: 'auto',
 		spaceBetween: 8,
 		freeMode: true,
-	});
-
-	const slideElementsTab = document.querySelectorAll('.swiper-buttons-tab .swiper-slide');
-
-	slideElementsTab.forEach((slideElement, index) => {
-		slideElement.addEventListener('click', () => {
-			swiperButtonsTab.slideTo(index); // устанавливаем активный слайд по индексу
-			swiperButtonsTab.slides.forEach((slide) => {
-				slide.classList.remove('swiper-slide-active'); // удаляем класс "swiper-slide-active" у всех слайдов
-			});
-			slideElement.classList.add('swiper-slide-active'); // добавляем класс "swiper-slide-active" к выбранному слайду
-		});
+		slideToClickedSlide: true,
 	});
 	//** (End) Swiper Buttons **//
 
@@ -320,7 +315,30 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 	//** (End) Graph Without Scales **//
 
-	// const modal123 = new bootstrap.Modal(document.getElementById('editedToolsModal'));
+	//** (Start) For Tables Collapse **//
+	const collapseWrappers = document.querySelectorAll('.table-collapse-nested');
+
+	collapseWrappers.forEach((wrapper) => {
+		const collapseElement = wrapper.querySelector('.collapse');
+
+		if (collapseElement.classList.contains('show')) {
+			wrapper.classList.add('is-active');
+		}
+
+		collapseElement.addEventListener('show.bs.collapse', (event) => {
+			event.stopPropagation();
+			wrapper.classList.add('is-active');
+		});
+
+		collapseElement.addEventListener('hidden.bs.collapse', (event) => {
+			event.stopPropagation();
+			wrapper.classList.remove('is-active');
+		});
+	});
+	//** (End) For Tables Collapse **//
+
+	// const modal123 = new bootstrap.Modal(document.getElementById('bindHotelModal'));
 	// modal123.show();
+
 
 })

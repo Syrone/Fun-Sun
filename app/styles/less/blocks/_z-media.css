@@ -82,9 +82,16 @@
   }
 }
 @media (max-width: 992px) {
+  .btn-group--custom {
+    max-width: 100%;
+    margin: 0;
+  }
   /** (Start) Table **/
   .table-collapse-card {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .table-collapse .search {
+    min-width: 260px;
   }
   /** (End) Table **/
   /** (Start) Header Page **/
@@ -111,6 +118,15 @@
     padding: 0.375rem 0.875rem;
     position: static;
     transform: unset;
+  }
+  .header-page > .btn,
+  .header-page > .btn-group,
+  .header-page > .swiper {
+    grid-row: 2;
+    grid-column: span 2;
+  }
+  .header-page.is-three {
+    grid-template-columns: auto 1fr;
   }
   /** (End) Header Page **/
   /** (Start) Wrapper Table **/
@@ -233,8 +249,6 @@
 }
 @media (max-width: 768px) {
   .btn-group--custom {
-    max-width: 100%;
-    margin: 0;
     gap: 0.75rem;
   }
   .btn-lg {
@@ -255,8 +269,32 @@
     visibility: visible;
     opacity: 1;
   }
+  .table .search {
+    min-width: unset;
+  }
+  .table .search .wrapper-search {
+    width: max-content;
+    padding-inline-end: 0;
+    position: static;
+    transform: unset;
+  }
+  .table .search .wrapper-search .form-control,
+  .table .search .wrapper-search .btn[type="submit"] {
+    display: none;
+  }
+  .table .search .wrapper-search .btn[type="button"] {
+    position: static;
+    transform: unset;
+    padding: 0 0.875rem;
+    margin-inline-start: auto;
+    visibility: visible;
+    opacity: 1;
+  }
   .table-collapse .mobile {
     display: inline-block;
+  }
+  .table-collapse-nested.is-twice tbody tr > :first-child {
+    padding-inline-start: 3.5rem;
   }
   .table-collapse-content tbody tr > *:first-child {
     padding-inline-start: 1rem;
@@ -271,6 +309,12 @@
     display: flex;
     justify-content: center;
     gap: 0.5rem;
+  }
+  .table-collapse-card.is-two {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .table-collapse-card .item {
+    padding-inline-start: 3rem;
   }
   .table-items .table-responsive {
     max-height: 744px;
@@ -309,6 +353,12 @@
   .modal-footer > * {
     flex-basis: calc(50% - 0.5rem);
   }
+  .modal-footer.is-overflow {
+    flex-direction: column-reverse;
+  }
+  .modal-footer.is-overflow > * {
+    width: 100%;
+  }
   /** (Start) Header Page **/
   .header-page {
     align-items: baseline;
@@ -317,15 +367,6 @@
   }
   .header-page h1 {
     font-size: 1.25rem;
-  }
-  .header-page > .btn,
-  .header-page > .btn-group,
-  .header-page > .swiper {
-    grid-row: 2;
-    grid-column: span 2;
-  }
-  .header-page.is-three {
-    grid-template-columns: auto 1fr;
   }
   /** (End) Header Page **/
   .dropdown-nested .dropdown-menu {

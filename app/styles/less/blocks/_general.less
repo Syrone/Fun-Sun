@@ -105,7 +105,9 @@ h3,
 	&-plus,
 	&-filter,
 	&-trash,
-	&-check-circle {
+	&-check-circle,
+	&-plus-circle,
+	&-link {
 		--size: 1.25rem;
 	}
 
@@ -150,7 +152,9 @@ h3,
 
 	&-block,
 	&-key,
-	&-check-circle {
+	&-check-circle,
+	&-plus-circle,
+	&-link {
 		svg {
 			fill: none;
 			stroke: var(--text-color)
@@ -214,6 +218,16 @@ h3,
 
 		svg {
 			fill: none;
+		}
+	}
+	
+	
+	&-plus-circle {
+
+		rect {
+			width: var(--size);
+			height: var(--size);
+			fill: var(--background);
 		}
 	}
 }
@@ -288,6 +302,43 @@ form,
 					svg {
 						fill: var(--background);
 						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+
+	&.bg-outline-primary {
+		--opacity: 1;
+
+		.form-control {
+			color: var(--accent);
+			background-color: transparent;
+			border-color: var(--accent-20);
+
+			&::placeholder {
+				color: var(--accent);
+			}
+
+			&:is(:hover, :focus-visible, :active) {
+				border-color: var(--accent);
+			}
+		}
+
+		.btn-search {
+			.icon-search {
+
+				svg {
+					fill: var(--accent);
+					opacity: var(--opacity);
+				}
+			}
+
+			&:is(:hover, :focus, :active, .active) {
+				.icon-search {
+
+					svg {
+						fill: var(--accent);
 					}
 				}
 			}
@@ -494,11 +545,18 @@ textarea {
 
 .btn-square {
 	max-width: max-content;
+	border-radius: .5rem;
 
 	&.btn-lg {
 		min-width: 3rem;
 		min-height: 3rem;
 		padding: .25rem;
+	}
+
+	&.btn-sm {
+		min-height: 2.125rem;
+
+		padding: .375rem;
 	}
 }
 
@@ -577,6 +635,15 @@ textarea {
 	}
 }
 
+.btn-lighter {
+	background-color: var(--background);
+	border-radius: .5rem;
+
+	.icon {
+		color: var(--accent);
+	}
+}
+
 .btn-outline {
 
 	&-light {
@@ -645,8 +712,20 @@ textarea {
 	}
 }
 
-.btn-shape::after {
-	all: unset;
+.btn-shape {
+
+	&::after {
+		all: unset;
+	}
+
+	&.btn-primary {
+		color: var(--accent);
+		background-color: transparent;
+
+		&:is(:hover, :focus-visible, :active, .show) {
+			color: var(--text-color);
+		}
+	}
 }
 
 .btn-shape,
@@ -862,6 +941,7 @@ textarea {
 	border-radius: .75rem;
 	box-shadow: var(--box-shadow);
 	padding: .5rem;
+	z-index: 1020;
 }
 
 .dropdown-menu.triangle>.icon-triangle {
@@ -891,7 +971,9 @@ textarea {
 
 		.icon-block,
 		.icon-key,
-		.icon-check-circle {
+		.icon-check-circle,
+		.icon-plus-circle,
+		.icon-link {
 
 			svg {
 				stroke: var(--accent);
@@ -1265,7 +1347,19 @@ textarea {
 				}
 
 				&:last-child {
-					padding-inline-end: 1rem;
+					padding-inline-end: .5rem;
+
+					&:not(.more) {
+						padding-inline-end: 1rem;
+					}
+				}
+
+				.btn-shape {
+					color: var(--text-light);
+
+					&:is(:hover, :focus-visible, :active, .show) {
+						color: var(--text-color--dark);
+					}
 				}
 			}
 
@@ -1318,6 +1412,31 @@ textarea {
 			}
 		}
 
+		&-nested {
+			display: none;
+
+			&.is-active {
+				display: table-row;
+			}
+
+			&.is-twice {
+
+				.table-collapse-content {
+					padding-inline-start: 0;
+				}
+
+				tbody {
+
+					tr {
+
+						& > :first-child {
+							padding-inline-start: 5.5rem;
+						}
+					}
+				}
+			}
+		}
+
 		&-content {
 
 			.table {
@@ -1336,11 +1455,20 @@ textarea {
 					}
 				}
 			}
+
+			.button {
+
+				.btn-square {
+					color: var(--accent);
+					background-color: var(--bs-table-bg--secondaty);
+				}
+			}
 		}
 
 		.name {
 			width: 100%;
 			cursor: pointer;
+			position: relative;
 
 			&:not(.collapsed) {
 
@@ -1360,12 +1488,31 @@ textarea {
 			}
 		}
 
+		.search {
+			min-width: 320px;
+			padding: .25rem 0;
+			
+			.wrapper-search {
+				width: 100%;
+				max-width: 320px;
+				padding-inline-end: 2rem;
+			}
+		}
+
 		.type {
 			min-width: 60px;
 			text-align: center;
 
 			.icon-check {
 				margin: auto;
+			}
+		}
+
+		.button {
+			margin-inline: auto;
+
+			.btn-square {
+				margin: -.3125rem auto;
 			}
 		}
 
@@ -1403,12 +1550,43 @@ textarea {
 					}
 				}
 			}
+
+			.subtitle {
+				display: block;
+			}
 		}
 
 		&-card {
 			display: grid;
 			grid-template-columns: repeat(3, 1fr);
 			background-color: var(--gray-color--light);
+
+			&.is-two {
+				grid-template-columns: repeat(2, 1fr);
+				gap: .375rem;
+			}
+
+			.item {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				background-color: var(--background);
+				border-radius: .5rem;
+				padding: .5rem .5rem .5rem 2rem;
+
+				&>span {
+					font-size: var(--font-size);
+					font-weight: 600;
+					line-height: 1.5;
+					color: var(--text-color--dark);
+
+					.subtitle {
+						display: block;
+						font-weight: 400;
+						color: var(--text-color);
+					}
+				}
+			}
 		}
 
 	}
@@ -1603,6 +1781,39 @@ textarea {
 	border-block-end-color: var(--table);
 }
 
+
+.tooltip-light {
+	--_background: var(--background);
+	
+	&.show {
+		opacity: 1;
+	}
+
+	.tooltip-inner {
+		font-size: var(--font-size);
+		line-height: 1.6;
+		background-color: var(--_background);
+	}
+
+	&.bs-tooltip {
+
+		&-top .tooltip-arrow::before {
+			border-block-start-color: var(--_background);
+		}
+
+		&-start .tooltip-arrow::before {
+			border-inline-start-color: var(--_background);
+		}
+
+		&-bottom .tooltip-arrow::before {
+			border-block-end-color: var(--_background);
+		}
+
+		&-end .tooltip-arrow::before {
+			border-inline-end-color: var(--_background);
+		}
+	}
+}
 //** (End) Tooltip **//
 
 //** (Start) Swiper Buttons **//
@@ -1638,15 +1849,6 @@ textarea {
 			padding: .5rem 1.5rem;
 
 			&:is(:hover, :focus-visible, :active, .active) {
-				background-color: #e4e8f5;
-				border: 1px solid var(--accent);
-				color: var(--accent);
-			}
-		}
-
-		&-active {
-
-			.btn {
 				background-color: #e4e8f5;
 				border: 1px solid var(--accent);
 				color: var(--accent);
@@ -1749,7 +1951,7 @@ textarea {
 		padding-block: 2rem;
 
 		&>* {
-			margin-inline: 0;
+			margin: 0;
 		}
 	}
 
@@ -1758,6 +1960,37 @@ textarea {
 	}
 }
 
+.modal-collapse {
+
+	.modal {
+
+		&-content {
+			max-height: 600px;
+			overflow-x: hidden;
+			overflow-x: auto;
+			padding-inline-end: .25rem;
+		}
+
+		&-header,
+		&-body,
+		&-footer {
+			padding-inline: .75rem;
+		}
+
+		&-header {
+			padding-block-start: 1rem;
+
+			h5 {
+				font-size: calc(var(--font-size--sm) + .125rem);
+				line-height: 1.2;
+			}
+		}
+
+		&-footer {
+			padding-block-end: 1rem;
+		}
+	}
+}
 //** (End) Modal **//
 
 //** (Start) Tabs **//

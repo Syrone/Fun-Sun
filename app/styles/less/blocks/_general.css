@@ -78,7 +78,9 @@ h3,
 .icon-plus,
 .icon-filter,
 .icon-trash,
-.icon-check-circle {
+.icon-check-circle,
+.icon-plus-circle,
+.icon-link {
   --size: 1.25rem;
 }
 .icon-data,
@@ -109,7 +111,9 @@ h3,
 }
 .icon-block svg,
 .icon-key svg,
-.icon-check-circle svg {
+.icon-check-circle svg,
+.icon-plus-circle svg,
+.icon-link svg {
   fill: none;
   stroke: var(--text-color);
 }
@@ -159,6 +163,11 @@ h3,
 .icon-check svg {
   fill: none;
 }
+.icon-plus-circle rect {
+  width: var(--size);
+  height: var(--size);
+  fill: var(--background);
+}
 form {
   position: relative;
 }
@@ -204,6 +213,27 @@ form .btn-search,
 .wrapper-search.bg-primary .btn-search:is(:hover, :focus, :active, .active) .icon-search svg {
   fill: var(--background);
   opacity: 1;
+}
+.wrapper-search.bg-outline-primary {
+  --opacity: 1;
+}
+.wrapper-search.bg-outline-primary .form-control {
+  color: var(--accent);
+  background-color: transparent;
+  border-color: var(--accent-20);
+}
+.wrapper-search.bg-outline-primary .form-control::placeholder {
+  color: var(--accent);
+}
+.wrapper-search.bg-outline-primary .form-control:is(:hover, :focus-visible, :active) {
+  border-color: var(--accent);
+}
+.wrapper-search.bg-outline-primary .btn-search .icon-search svg {
+  fill: var(--accent);
+  opacity: var(--opacity);
+}
+.wrapper-search.bg-outline-primary .btn-search:is(:hover, :focus, :active, .active) .icon-search svg {
+  fill: var(--accent);
 }
 .wrapper-search .btn[type="button"] {
   visibility: hidden;
@@ -359,11 +389,16 @@ textarea.form-control:is(:focus) {
 }
 .btn-square {
   max-width: max-content;
+  border-radius: 0.5rem;
 }
 .btn-square.btn-lg {
   min-width: 3rem;
   min-height: 3rem;
   padding: 0.25rem;
+}
+.btn-square.btn-sm {
+  min-height: 2.125rem;
+  padding: 0.375rem;
 }
 .btn-primary {
   font-weight: 600;
@@ -423,6 +458,13 @@ textarea.form-control:is(:focus) {
   background-color: #E4E8F5;
   border: 1px solid var(--accent);
 }
+.btn-lighter {
+  background-color: var(--background);
+  border-radius: 0.5rem;
+}
+.btn-lighter .icon {
+  color: var(--accent);
+}
 .btn-outline-light {
   color: var(--text-color);
   border-color: var(--gray-color);
@@ -478,6 +520,13 @@ textarea.form-control:is(:focus) {
 }
 .btn-shape::after {
   all: unset;
+}
+.btn-shape.btn-primary {
+  color: var(--accent);
+  background-color: transparent;
+}
+.btn-shape.btn-primary:is(:hover, :focus-visible, :active, .show) {
+  color: var(--text-color);
 }
 .btn-shape,
 .btn-shape:is(:hover, :focus) {
@@ -645,6 +694,7 @@ textarea.form-control:is(:focus) {
   border-radius: 0.75rem;
   box-shadow: var(--box-shadow);
   padding: 0.5rem;
+  z-index: 1020;
 }
 .dropdown-menu.triangle > .icon-triangle {
   position: absolute;
@@ -671,7 +721,9 @@ textarea.form-control:is(:focus) {
 }
 .dropdown-item:is(:hover, :focus, :active, .active) .icon-block svg,
 .dropdown-item:is(:hover, :focus, :active, .active) .icon-key svg,
-.dropdown-item:is(:hover, :focus, :active, .active) .icon-check-circle svg {
+.dropdown-item:is(:hover, :focus, :active, .active) .icon-check-circle svg,
+.dropdown-item:is(:hover, :focus, :active, .active) .icon-plus-circle svg,
+.dropdown-item:is(:hover, :focus, :active, .active) .icon-link svg {
   stroke: var(--accent);
 }
 .dropdown-item:is(:hover, :focus, :active, .active) .icon-edit svg,
@@ -964,7 +1016,16 @@ textarea.form-control:is(:focus) {
   padding-inline-start: 1rem;
 }
 .table-collapse thead th:last-child {
+  padding-inline-end: 0.5rem;
+}
+.table-collapse thead th:last-child:not(.more) {
   padding-inline-end: 1rem;
+}
+.table-collapse thead th .btn-shape {
+  color: var(--text-light);
+}
+.table-collapse thead th .btn-shape:is(:hover, :focus-visible, :active, .show) {
+  color: var(--text-color--dark);
 }
 .table-collapse thead .wrapper-search {
   width: 100%;
@@ -1002,15 +1063,32 @@ textarea.form-control:is(:focus) {
 .table-collapse td > span {
   margin: 0;
 }
+.table-collapse-nested {
+  display: none;
+}
+.table-collapse-nested.is-active {
+  display: table-row;
+}
+.table-collapse-nested.is-twice .table-collapse-content {
+  padding-inline-start: 0;
+}
+.table-collapse-nested.is-twice tbody tr > :first-child {
+  padding-inline-start: 5.5rem;
+}
 .table-collapse-content .table {
   border-radius: 0;
 }
 .table-collapse-content tbody tr > *:first-child {
   padding-inline-start: 2rem;
 }
+.table-collapse-content .button .btn-square {
+  color: var(--accent);
+  background-color: var(--bs-table-bg--secondaty);
+}
 .table-collapse .name {
   width: 100%;
   cursor: pointer;
+  position: relative;
 }
 .table-collapse .name:not(.collapsed) .btn-collapse .icon {
   transform: rotate(0);
@@ -1021,12 +1099,27 @@ textarea.form-control:is(:focus) {
   font-weight: 400;
   color: var(--text-color);
 }
+.table-collapse .search {
+  min-width: 320px;
+  padding: 0.25rem 0;
+}
+.table-collapse .search .wrapper-search {
+  width: 100%;
+  max-width: 320px;
+  padding-inline-end: 2rem;
+}
 .table-collapse .type {
   min-width: 60px;
   text-align: center;
 }
 .table-collapse .type .icon-check {
   margin: auto;
+}
+.table-collapse .button {
+  margin-inline: auto;
+}
+.table-collapse .button .btn-square {
+  margin: -0.3125rem auto;
 }
 .table-collapse .btn-group--custom {
   flex-direction: row;
@@ -1055,10 +1148,36 @@ textarea.form-control:is(:focus) {
 .table-collapse .btn-collapse .icon svg path {
   stroke-width: 2px;
 }
+.table-collapse .btn-collapse .subtitle {
+  display: block;
+}
 .table-collapse-card {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   background-color: var(--gray-color--light);
+}
+.table-collapse-card.is-two {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.375rem;
+}
+.table-collapse-card .item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--background);
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.5rem 0.5rem 2rem;
+}
+.table-collapse-card .item > span {
+  font-size: var(--font-size);
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--text-color--dark);
+}
+.table-collapse-card .item > span .subtitle {
+  display: block;
+  font-weight: 400;
+  color: var(--text-color);
 }
 .card {
   background-color: var(--background);
@@ -1203,6 +1322,29 @@ textarea.form-control:is(:focus) {
 .bs-tooltip-bottom .tooltip-arrow::before {
   border-block-end-color: var(--table);
 }
+.tooltip-light {
+  --_background: var(--background);
+}
+.tooltip-light.show {
+  opacity: 1;
+}
+.tooltip-light .tooltip-inner {
+  font-size: var(--font-size);
+  line-height: 1.6;
+  background-color: var(--_background);
+}
+.tooltip-light.bs-tooltip-top .tooltip-arrow::before {
+  border-block-start-color: var(--_background);
+}
+.tooltip-light.bs-tooltip-start .tooltip-arrow::before {
+  border-inline-start-color: var(--_background);
+}
+.tooltip-light.bs-tooltip-bottom .tooltip-arrow::before {
+  border-block-end-color: var(--_background);
+}
+.tooltip-light.bs-tooltip-end .tooltip-arrow::before {
+  border-inline-end-color: var(--_background);
+}
 .swiper-buttons {
   width: 100%;
 }
@@ -1227,11 +1369,6 @@ textarea.form-control:is(:focus) {
   padding: 0.5rem 1.5rem;
 }
 .swiper-buttons-tab .swiper-slide .btn:is(:hover, :focus-visible, :active, .active) {
-  background-color: #e4e8f5;
-  border: 1px solid var(--accent);
-  color: var(--accent);
-}
-.swiper-buttons-tab .swiper-slide-active .btn {
   background-color: #e4e8f5;
   border: 1px solid var(--accent);
   color: var(--accent);
@@ -1310,10 +1447,31 @@ textarea.form-control:is(:focus) {
   padding-block: 2rem;
 }
 .modal-footer > * {
-  margin-inline: 0;
+  margin: 0;
 }
 .modal .mobile {
   display: none;
+}
+.modal-collapse .modal-content {
+  max-height: 600px;
+  overflow-x: hidden;
+  overflow-x: auto;
+  padding-inline-end: 0.25rem;
+}
+.modal-collapse .modal-header,
+.modal-collapse .modal-body,
+.modal-collapse .modal-footer {
+  padding-inline: 0.75rem;
+}
+.modal-collapse .modal-header {
+  padding-block-start: 1rem;
+}
+.modal-collapse .modal-header h5 {
+  font-size: calc(var(--font-size--sm) + 0.125rem);
+  line-height: 1.2;
+}
+.modal-collapse .modal-footer {
+  padding-block-end: 1rem;
 }
 .nav-tabs {
   min-height: 50px;

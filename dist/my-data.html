@@ -34,7 +34,7 @@
 					<img src="./images/dist/icon/logo.svg" alt="logo">
 				</a>
 
-				<button type="button" class="btn btn-hint p-0" data-bs-toggle="tooltip" data-bs-placement="right"
+				<button type="button" class="btn btn-hint p-0" data-bs-tooltip="tooltip" data-bs-placement="right"
 					title="Вопрос-ответ">
 					<span class="icon icon-hint">
 						<svg xmlns="http://www.w3.org/2000/svg">
@@ -413,13 +413,13 @@
         <h5 class="modal-title" id="addedTownTitle">Добавить город</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
 
-				</button>
+        </button>
       </div>
       <div class="modal-body">
         <div class="form-floating">
-					<input type="text" class="form-control" id="floatingInput1" placeholder="Название города">
-					<label for="floatingInput1">Название города</label>
-				</div>
+          <input type="text" class="form-control" id="floatingInput1" placeholder="Название города">
+          <label for="floatingInput1">Название города</label>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
@@ -436,17 +436,113 @@
         <h5 class="modal-title" id="changedTownTitle">Изменить город</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
 
-				</button>
+        </button>
       </div>
       <div class="modal-body">
         <div class="form-floating">
-					<input type="text" class="form-control" id="floatingInput1" value="Москва" placeholder="Название города">
-					<label for="floatingInput1">Название города</label>
-				</div>
+          <input type="text" class="form-control" id="floatingInput1" value="Москва" placeholder="Название города">
+          <label for="floatingInput1">Название города</label>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
         <button type="submit" class="btn btn-primary btn-lg">Сохранить</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="modal fade" id="addedToolsModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <form class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addedToolsTitle">Добавление инструмента</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <div class="wrapper-check">
+          <div class="form-check">
+            <input class="form-check-input is-radio" type="radio" value="" name="canceledCheck" id="addedTools1">
+            <label class="form-check-label" for="addedTools1">
+              B2B
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input is-radio" type="radio" value="" name="canceledCheck" id="addedTools2">
+            <label class="form-check-label" for="addedTools2">
+              B2C
+            </label>
+          </div>
+        </div>
+
+        <div class="form-floating">
+          <input type="text" class="form-control" id="floatingInput1" placeholder="Название города">
+          <label for="floatingInput1">Название категории</label>
+        </div>
+
+        <select class="form-select" aria-label="Default select example">
+          <option selected disabled>Категория</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+      </div>
+      <div class="modal-footer is-overflow">
+        <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
+        <button type="submit" class="btn btn-primary btn-lg">
+          Добавить инструмент
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="modal fade" id="editedToolsModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <form class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editedToolsTitle">Редактирование инструмента</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <div class="wrapper-check">
+          <div class="form-check">
+            <input class="form-check-input is-radio" type="radio" value="" name="canceledCheck" id="editedTools1">
+            <label class="form-check-label" for="editedTools1">
+              B2B
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input is-radio" type="radio" value="" name="canceledCheck" id="editedTools2">
+            <label class="form-check-label" for="editedTools2">
+              B2C
+            </label>
+          </div>
+        </div>
+
+        <div class="form-floating">
+          <input type="text" class="form-control" id="floatingInput1" placeholder="Название города">
+          <label for="floatingInput1">Название категории</label>
+        </div>
+
+        <select class="form-select" aria-label="Default select example">
+          <option selected disabled>Категория</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+      </div>
+      <div class="modal-footer is-overflow">
+        <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
+        <button type="submit" class="btn btn-primary btn-lg">
+          Добавить категорию
+        </button>
       </div>
     </form>
   </div>
@@ -459,7 +555,7 @@
         <h5 class="modal-title" id="canceledToolsTitle">Отклонение инструмента</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
 
-				</button>
+        </button>
       </div>
       <div class="modal-body">
         <textarea class="form-control" placeholder="Причина отклонения" rows="1"></textarea>
@@ -508,7 +604,7 @@
         <h5 class="modal-title" id="addedCategoryTitle">Добавление категории</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
 
-				</button>
+        </button>
       </div>
       <div class="modal-body">
 
@@ -528,113 +624,178 @@
         </div>
 
         <div class="form-floating">
-					<input type="text" class="form-control" id="floatingInput1" placeholder="Название города">
-					<label for="floatingInput1">Название категории</label>
-				</div>
+          <input type="text" class="form-control" id="floatingInput1" placeholder="Название города">
+          <label for="floatingInput1">Название категории</label>
+        </div>
       </div>
-      <div class="modal-footer">
+      <div class="modal-footer is-overflow">
         <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
         <button type="submit" class="btn btn-primary btn-lg">
-          <span class="desktop">Добавить категорию</span>
-          <span class="mobile">Добавить</span>
+          Добавить категорию
         </button>
       </div>
     </form>
   </div>
 </div>
 
-<div class="modal fade" id="addedToolsModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
+<div class="modal fade" id="addedProductModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <form class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="addedToolsTitle">Добавление инструмента</h5>
+        <h5 class="modal-title" id="addedProductTitle">Добавление продукта</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
 
-				</button>
+        </button>
       </div>
       <div class="modal-body">
 
         <div class="wrapper-check">
           <div class="form-check">
-            <input class="form-check-input is-radio" type="radio" value="" name="canceledCheck" id="addedTools1">
-            <label class="form-check-label" for="addedTools1">
+            <input class="form-check-input is-radio" type="radio" value="" name="canceledCheck" id="addedProduct1">
+            <label class="form-check-label" for="addedProduct1">
               B2B
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input is-radio" type="radio" value="" name="canceledCheck" id="addedTools2">
-            <label class="form-check-label" for="addedTools2">
+            <input class="form-check-input is-radio" type="radio" value="" name="canceledCheck" id="addedProduct2">
+            <label class="form-check-label" for="addedProduct2">
               B2C
             </label>
           </div>
         </div>
 
-        <div class="form-floating">
-					<input type="text" class="form-control" id="floatingInput1" placeholder="Название города">
-					<label for="floatingInput1">Название категории</label>
-				</div>
+        <input type="text" class="form-control" placeholder="Название продукта продвижения">
 
         <select class="form-select" aria-label="Default select example">
-          <option selected disabled>Категория</option>
+          <option selected disabled>Выбрать категорию</option>
           <option value="1">One</option>
           <option value="2">Two</option>
           <option value="3">Three</option>
         </select>
+
+        <textarea class="form-control" placeholder="Описание" rows="1"></textarea>
       </div>
-      <div class="modal-footer">
+      <div class="modal-footer is-overflow">
         <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
         <button type="submit" class="btn btn-primary btn-lg">
-          <span class="desktop">Добавить инструмент</span>
-          <span class="mobile">Добавить</span>
+          Добавить новый продукт
         </button>
       </div>
     </form>
   </div>
 </div>
 
-<div class="modal fade" id="editedToolsModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
+<div class="modal fade" id="addedHotelModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <form class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="editedToolsTitle">Редактирование  инструмента</h5>
+        <h5 class="modal-title" id="addedHotelTitle">Добавление отеля</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
 
-				</button>
+        </button>
       </div>
       <div class="modal-body">
 
-        <div class="wrapper-check">
-          <div class="form-check">
-            <input class="form-check-input is-radio" type="radio" value="" name="canceledCheck" id="editedTools1">
-            <label class="form-check-label" for="editedTools1">
-              B2B
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input is-radio" type="radio" value="" name="canceledCheck" id="editedTools2">
-            <label class="form-check-label" for="editedTools2">
-              B2C
-            </label>
-          </div>
-        </div>
-
-        <div class="form-floating">
-					<input type="text" class="form-control" id="floatingInput1" placeholder="Название города">
-					<label for="floatingInput1">Название категории</label>
-				</div>
+        <input type="text" class="form-control" placeholder="Наименование отеля">
 
         <select class="form-select" aria-label="Default select example">
-          <option selected disabled>Категория</option>
+          <option selected disabled>Выберите регион</option>
           <option value="1">One</option>
           <option value="2">Two</option>
           <option value="3">Three</option>
         </select>
+
+        <select class="form-select" aria-label="Default select example">
+          <option selected disabled>Выберить страну</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+
       </div>
-      <div class="modal-footer">
+      <div class="modal-footer is-overflow">
         <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
         <button type="submit" class="btn btn-primary btn-lg">
-          <span class="desktop">Добавить инструмент</span>
-          <span class="mobile">Добавить</span>
+          Добавить новый отель
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="modal fade" id="addedRegionModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <form class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addedRegionTitle">Добавление региона</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <input type="text" class="form-control" placeholder="Наименование региона">
+
+        <select class="form-select" aria-label="Default select example">
+          <option selected disabled>Выбрать страну</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+
+      </div>
+      <div class="modal-footer is-overflow">
+        <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
+        <button type="submit" class="btn btn-primary btn-lg">
+          Добавить новый регион
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="modal fade" id="addedCountryModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <form class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addedCountryTitle">Добавление страны</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <input type="text" class="form-control" placeholder="Название страны">
+
+      </div>
+      <div class="modal-footer is-overflow">
+        <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
+        <button type="submit" class="btn btn-primary btn-lg">
+          Добавить новую страну
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="modal modal-collapse fade" id="bindHotelModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <form class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="bindHotelTitle">Привязать отель</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+
+        </button>
+      </div>
+      <div class="modal-body">
+
+        
+
+      </div>
+      <div class="modal-footer is-overflow">
+        <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
+        <button type="submit" class="btn btn-primary btn-lg">
+          Привязать отель
         </button>
       </div>
     </form>
