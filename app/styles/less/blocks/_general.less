@@ -850,6 +850,19 @@ textarea {
 	}
 }
 
+.btn-collapse-nested {
+	color: var(--text-color--dark);
+	background-color: var(--background);
+	margin-block-start: .375rem;
+	border-color: var(--accent);
+	padding-inline-start: 1.5rem;
+
+	&:is(:hover, :focus-visible, :active) {
+		color: var(--accent);
+		background-color: var(--background);
+	}
+}
+
 .btn-link {
 	min-height: unset;
 	font-size: calc(var(--font-size) + .0625rem);
@@ -1594,6 +1607,16 @@ textarea {
 
 //** (End) Table **//
 
+//** (Start) Collapse **//
+.collapse-nested {
+	margin-block-start: .375rem;
+
+	.form-check {
+		padding-inline-start: 2rem;
+	}
+}
+//** (End) Collapse **//
+
 //** (Start) Card **//
 .card {
 	background-color: var(--background);
@@ -1965,10 +1988,14 @@ textarea {
 	.modal {
 
 		&-content {
-			max-height: 600px;
-			overflow-x: hidden;
-			overflow-x: auto;
-			padding-inline-end: .25rem;
+
+			&-wrapper {
+				max-height: 600px;
+				overflow-x: hidden;
+				overflow-y: auto;
+				margin-block: 1rem;
+				margin-inline-end: .25rem;
+			}
 		}
 
 		&-header,
@@ -1978,16 +2005,32 @@ textarea {
 		}
 
 		&-header {
-			padding-block-start: 1rem;
+			padding-block-start: 0;
 
 			h5 {
 				font-size: calc(var(--font-size--sm) + .125rem);
 				line-height: 1.2;
 			}
+
+			.btn-close {
+				position: static;
+			}
+		}
+
+		&-body {
+			gap: .75rem;
+
+			.collapse {
+				margin-block-start: .375rem;
+			}
+
+			.form-check {
+				padding-inline-start: 2rem;
+			}
 		}
 
 		&-footer {
-			padding-block-end: 1rem;
+			padding-block-end: 0;
 		}
 	}
 }

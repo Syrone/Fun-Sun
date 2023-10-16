@@ -337,7 +337,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 	//** (End) For Tables Collapse **//
 
-	// const modal123 = new bootstrap.Modal(document.getElementById('bindHotelModal'));
+	// const modal123 = new bootstrap.Modal(document.getElementById('bindCountryModal'));
 	// modal123.show();
 
 
