@@ -99,8 +99,24 @@
   align-items: center;
   gap: 0.75rem 0.5rem;
 }
-.table-buttons > .btn {
+.table-buttons > .btn,
+.table-buttons time {
   flex-shrink: 0;
+}
+.table-buttons time {
+  display: block;
+  font-size: calc(var(--font-size--sm) + 0.125rem);
+  color: var(--text-color);
+  margin-inline-start: auto;
+}
+.table-buttons time > span {
+  display: inline-block;
+  font-size: var(--font-size--tiny);
+  color: var(--text-color--light);
+  margin-inline-end: 0.375rem;
+}
+.table-buttons .swiper-buttons {
+  margin-inline-start: 1rem;
 }
 .wrapper-status {
   display: flex;
@@ -248,3 +264,148 @@
   color: var(--text-color--dark);
 }
 /** (End) Wrapper Graph **/
+/** (Start) Custom Counter **/
+.item-counter {
+  --counter-color: #A9B9C7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.item-counter > * {
+  flex-shrink: 0;
+}
+.item-counter input {
+  width: 1.625rem;
+  height: 1.25rem;
+  background-color: transparent;
+  border: none;
+  padding: 0 0.25rem;
+  text-align: center;
+}
+.item-counter > .btn {
+  min-height: unset;
+  color: var(--counter-color);
+  border: 1px solid transparent;
+  padding: 0 0.25rem;
+}
+.item-counter > .btn .icon {
+  --size: 0.875rem;
+}
+.item-counter > .btn:is(:hover) {
+  color: var(--text-color);
+}
+.item-counter > .btn:is(:focus-visible, :active, .active) {
+  color: var(--accent);
+}
+/** (End) Custom Counter **/
+/** (Start) Vanilla Calendar **/
+[data-calendar-theme=light].vanilla-calendar button:focus-visible {
+  border-radius: 50%;
+  outline-color: var(--accent);
+}
+[data-calendar-theme=light] .vanilla-calendar__content,
+[data-calendar-theme=light] .vanilla-calendar-month,
+[data-calendar-theme=light] .vanilla-calendar-year {
+  color: var(--text-color--dark);
+}
+[data-calendar-theme=light] .vanilla-calendar-arrow::before {
+  background-color: var(--text-color);
+}
+[data-calendar-theme=light] .vanilla-calendar-arrow:is(:hover, :focus-visible, :active)::before {
+  background-color: var(--text-color--dark);
+}
+[data-calendar-theme=light] .vanilla-calendar-week__day {
+  color: var(--text-color);
+}
+[data-calendar-theme=light] .vanilla-calendar-day__btn {
+  min-width: 2.25rem;
+  min-height: 2.25rem;
+  font-size: var(--font-size);
+  color: var(--text-color--dark);
+  border-radius: 50%;
+}
+[data-calendar-theme=light] .vanilla-calendar-day__btn_prev,
+[data-calendar-theme=light] .vanilla-calendar-day__btn_next {
+  display: none;
+}
+[data-calendar-theme=light] .vanilla-calendar-day__btn_today {
+  font-weight: 400;
+  color: var(--text-color--dark);
+  background-color: var(--background);
+  border: 1px solid var(--text-color--light);
+}
+[data-calendar-theme=light] .vanilla-calendar-day__btn_today:hover {
+  color: var(--accent);
+}
+[data-calendar-theme=light] .vanilla-calendar-day__btn_selected {
+  color: var(--text-light);
+  background-color: var(--accent);
+}
+[data-calendar-theme=light] .vanilla-calendar-day__btn_selected:hover {
+  background-color: var(--accent);
+  border-radius: 50%;
+}
+[data-calendar-theme=light] .vanilla-calendar-day__btn_selected:focus-visible {
+  outline-color: var(--accent);
+}
+.vanilla-calendar {
+  box-shadow: var(--box-shadow-4);
+  border-radius: 1rem;
+  padding-block-end: 0.5rem;
+}
+.vanilla-calendar-month,
+.vanilla-calendar-year {
+  font-size: var(--font-size--sm);
+  font-weight: 600;
+}
+.vanilla-calendar-header {
+  padding-inline: 0;
+}
+.vanilla-calendar-header__content {
+  flex-grow: unset;
+  color: var(--text-color--dark);
+  padding: 0;
+}
+.vanilla-calendar-header__content > :first-child {
+  padding-inline-start: 0;
+}
+.vanilla-calendar-header__bottom {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.vanilla-calendar-header__navigation {
+  display: flex;
+  align-items: center;
+}
+.vanilla-calendar-arrow {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.vanilla-calendar-arrow::before {
+  margin: 0.5rem;
+}
+.vanilla-calendar-week__day {
+  font-weight: 400;
+}
+.vanilla-calendar-days {
+  gap: 0.125rem;
+}
+.vanilla-calendar-buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-block-start: 0.5rem;
+}
+.vanilla-calendar-buttons .btn {
+  font-size: var(--font-size);
+  font-weight: 700;
+  line-height: 1.5rem;
+  padding: 0.375rem 0.5rem;
+}
+.vanilla-calendar-buttons__close {
+  color: var(--text-color--light);
+}
+.vanilla-calendar-buttons__save {
+  color: var(--accent);
+}
+/** (End) Vanilla Calendar **/

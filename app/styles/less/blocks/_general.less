@@ -129,7 +129,8 @@ h3,
 
 	&-arrow,
 	&-plus,
-	&-close {
+	&-close,
+	&-calendar {
 		svg {
 			fill: none;
 			stroke: currentColor;
@@ -220,8 +221,8 @@ h3,
 			fill: none;
 		}
 	}
-	
-	
+
+
 	&-plus-circle {
 
 		rect {
@@ -751,8 +752,7 @@ textarea {
 	border-radius: 1.25rem;
 
 	.icon {
-		width: .875rem;
-		height: .875rem;
+		--size: .875rem;
 	}
 
 	&:is(:hover, :focus-visible, :active, .show) {
@@ -766,6 +766,17 @@ textarea {
 
 	&::after {
 		all: unset;
+	}
+}
+
+.btn-calendar {
+	
+	&>time {
+		width: 100%;
+	}
+
+	.icon {
+		--size: 1.125rem;
 	}
 }
 
@@ -1202,8 +1213,6 @@ textarea {
 
 .table-responsive {
 	padding-inline: 0.2rem 0.125rem;
-	position: relative;
-	z-index: 1010;
 }
 
 .table-fullscreen,
@@ -1232,7 +1241,7 @@ textarea {
 		position: sticky;
 		top: 0;
 		left: 0;
-		z-index: 1010;
+		z-index: 1040;
 
 		th {
 			font-size: var(--font-size--tiny);
@@ -1251,6 +1260,10 @@ textarea {
 
 	tbody {
 
+		tr {
+			border-width: 0;
+		}
+
 		th,
 		td {
 			line-height: 1.4;
@@ -1258,6 +1271,49 @@ textarea {
 
 		th {
 			font-weight: 400;
+		}
+
+		.cell-button {
+			padding: 0;
+
+			&:is(.is-active) {
+				background-color: var(--gray-color--light);
+			}
+ 
+			&:first-child {
+
+				&>.btn {
+					border-inline-start: none;
+					border-top-left-radius: .5rem;
+					border-bottom-left-radius: .5rem;
+				}
+			}
+			
+			&:last-child {
+
+				&>.btn {
+					border-inline-end: none;
+					border-top-right-radius: .5rem;
+					border-bottom-right-radius: .5rem;
+				}
+			}
+
+			&>.btn {
+				width: 100%;
+				height: 100%;
+				max-height: 100%;
+				min-height: 44px;
+				color: var(--text-color);
+				background-color: transparent;
+				border: none;
+				border-radius: 0;
+				padding: .875rem .5rem;
+
+				&:is(:hover, :focus-visible, :active, .show) {
+					color: var(--accent);
+					background-color: transparent;
+				}
+			}
 		}
 	}
 
@@ -1442,7 +1498,7 @@ textarea {
 
 					tr {
 
-						& > :first-child {
+						&> :first-child {
 							padding-inline-start: 5.5rem;
 						}
 					}
@@ -1504,7 +1560,7 @@ textarea {
 		.search {
 			min-width: 320px;
 			padding: .25rem 0;
-			
+
 			.wrapper-search {
 				width: 100%;
 				max-width: 320px;
@@ -1605,6 +1661,16 @@ textarea {
 	}
 }
 
+.table-items-v2 {
+
+	tbody {
+
+		.id {
+			display: none;
+		}
+	}
+}
+
 //** (End) Table **//
 
 //** (Start) Collapse **//
@@ -1615,6 +1681,7 @@ textarea {
 		padding-inline-start: 2rem;
 	}
 }
+
 //** (End) Collapse **//
 
 //** (Start) Card **//
@@ -1807,7 +1874,7 @@ textarea {
 
 .tooltip-light {
 	--_background: var(--background);
-	
+
 	&.show {
 		opacity: 1;
 	}
@@ -1837,6 +1904,7 @@ textarea {
 		}
 	}
 }
+
 //** (End) Tooltip **//
 
 //** (Start) Swiper Buttons **//
@@ -2034,6 +2102,7 @@ textarea {
 		}
 	}
 }
+
 //** (End) Modal **//
 
 //** (Start) Tabs **//

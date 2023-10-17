@@ -1,252 +1,9 @@
-
-<!DOCTYPE html>
-<html>
-
-<head>
-
-	<meta charset="utf-8">
-	<!-- <base href="/"> -->
-
-	<title>Fun&Sun Mediaplan</title>
-	<meta name="description" content="">
-
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<link rel="icon" href="images/favicon.png">
-	<meta property="og:image" content="images/dist/preview.jpg">
-	
-	<link rel="stylesheet" href="libs/bootstrap/bootstrap.min.css">
-	<link rel="stylesheet" href="libs/swiperjs/swiper-bundle.min.css">
-	<link rel="stylesheet" href="libs/vanilla-calendar/vanilla-calendar.min.css">
-	<link rel="stylesheet" href="libs/vanilla-calendar/light.min.css">
-	<link rel="stylesheet" href="libs/vanilla-calendar/dark.min.css">
-	<link rel="stylesheet" href="css/app.min.css">
-
-</head>
-
-<body>
+<!--#set var="title" value="Fun&Sun Mediaplan" -->
+<!--#include virtual="/parts/head.html" -->
 
 <div class="page">
 
-	<header class="header header-admin">
-
-	<nav class="navbar navbar-expand-lg navbar-light" aria-label="header menu">
-		<div class="container">
-			<div class="header-logo">
-				<a class="navbar-brand" href="#">
-					<img src="./images/dist/icon/logo.svg" alt="logo">
-				</a>
-
-				<button type="button" class="btn btn-hint p-0" data-bs-tooltip="tooltip" data-bs-placement="right"
-					title="Вопрос-ответ">
-					<span class="icon icon-hint">
-						<svg xmlns="http://www.w3.org/2000/svg">
-							<path
-								d="M13.231 15.974v-.614a2.9 2.9 0 0 1 .158-.996c.105-.294.274-.57.507-.83.232-.266.54-.537.92-.814a7.73 7.73 0 0 0 .823-.655 2.05 2.05 0 0 0 .456-.573c.1-.194.15-.413.15-.656 0-.36-.133-.634-.399-.822-.265-.188-.636-.282-1.112-.282-.476 0-.95.075-1.42.224-.464.15-.938.346-1.419.59l-.905-1.818a8.561 8.561 0 0 1 1.801-.748 7.39 7.39 0 0 1 2.125-.29c1.185 0 2.1.285 2.748.855.653.564.98 1.284.98 2.158 0 .465-.075.869-.225 1.212a2.95 2.95 0 0 1-.664.946 9.778 9.778 0 0 1-1.104.913 8.571 8.571 0 0 0-.763.615 1.432 1.432 0 0 0-.365.498 1.67 1.67 0 0 0-.092.59v.497h-2.2Zm-.265 2.839c0-.52.14-.885.423-1.096.288-.21.634-.315 1.038-.315.393 0 .73.105 1.013.315.287.21.431.576.431 1.096 0 .498-.144.858-.431 1.08a1.6 1.6 0 0 1-1.013.331c-.404 0-.75-.11-1.038-.332-.282-.221-.423-.581-.423-1.079Z" />
-							<rect x="1.3" y=".5" width="27" height="27" rx="13.5" />
-						</svg>
-					</span>
-				</button>
-			</div>
-
-			<button class="navbar-toggler btn-menu btn-backdrop collapsed" type="button" data-bs-toggle="collapse"
-				data-bs-target="#headerMenu" aria-controls="headerMenu" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="icon icon-menu">
-					<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-						<path
-							d="M5 12a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm2-.06c0-.52.42-.94.94-.94h12.12c.52 0 .94.42.94.94v.12c0 .52-.42.94-.94.94H7.94a.94.94 0 0 1-.94-.94v-.12Zm-4 5c0-.52.42-.94.94-.94h16.12c.52 0 .94.42.94.94v.12c0 .52-.42.94-.94.94H3.94a.94.94 0 0 1-.94-.94v-.12Zm0-10c0-.52.42-.94.94-.94h16.12c.52 0 .94.42.94.94v.12c0 .52-.42.94-.94.94H3.94A.94.94 0 0 1 3 7.06v-.12Z" />
-					</svg>
-				</span>
-
-				<span class="icon icon-close">
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-						<path d="M18 6L6 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-						<path d="M6 6L18 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-					</svg>
-				</span>
-			</button>
-
-			<div class="navbar-collapse collapse" id="headerMenu">
-				<ul class="navbar-nav me-auto">
-					<li class="nav-item">
-						<a class="nav-link" href="./index.html">
-							<span class="icon icon-analytics">
-								<svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
-									<path
-										d="M19.214 5.547c-.046.905-.907 1.245-1.575.632a51.314 51.314 0 0 1-1.1-1.043 591.42 591.42 0 0 0-4.3 3.954 1.157 1.157 0 0 1-1.66-.106 105.639 105.639 0 0 0-2.482-2.887 40.644 40.644 0 0 0-4.536 3.88 1.146 1.146 0 1 1-1.62-1.62C3.671 6.625 5.572 5 7.61 3.633l.003-.002a1.146 1.146 0 0 1 1.447.143c.887.887 1.689 1.863 2.5 2.82a588.86 588.86 0 0 1 3.357-3.082c-.37-.381-.676-.707-.93-.983-.613-.668-.272-1.53.634-1.575 1.155-.058 2.342-.093 3.483.12.515.097.892.474.988.988.213 1.142.18 2.329.12 3.485Z" />
-									<path
-										d="M2.392 21.069c-.766-.02-1.347-.48-1.41-1.245a24.274 24.274 0 0 1-.065-1.949c0-.861.027-1.49.065-1.949.063-.764.643-1.226 1.41-1.245a53.456 53.456 0 0 1 2.55 0c.766.02 1.347.48 1.41 1.245.038.458.065 1.088.065 1.949s-.027 1.49-.065 1.949c-.063.764-.644 1.225-1.41 1.245-.336.009-.755.014-1.275.014-.52 0-.94-.005-1.275-.014Zm14.883-.005c-.893-.035-1.52-.663-1.577-1.555-.06-.925-.114-2.428-.114-4.842 0-2.415.054-3.917.114-4.842.057-.893.684-1.52 1.577-1.556a26.93 26.93 0 0 1 1.059-.019c.413 0 .763.007 1.058.019.893.035 1.52.663 1.578 1.556.06.925.114 2.427.114 4.842 0 2.414-.054 3.917-.114 4.842-.058.892-.685 1.52-1.578 1.555-.295.012-.645.02-1.058.02-.414 0-.764-.008-1.059-.02Zm-7.396.004c-.856-.026-1.48-.588-1.542-1.442-.048-.672-.087-1.665-.087-3.126 0-1.46.039-2.454.087-3.126.062-.854.686-1.416 1.542-1.442.308-.01.678-.015 1.121-.015.444 0 .814.006 1.122.015.856.026 1.48.588 1.541 1.442.049.672.087 1.665.087 3.126 0 1.46-.038 2.454-.087 3.126-.061.854-.685 1.416-1.541 1.442-.308.01-.678.015-1.122.015-.443 0-.813-.006-1.121-.015Z"
-										opacity=".32" />
-								</svg>
-							</span>
-							Аналитика
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="./data.html">
-							<span class="icon icon-data">
-								<svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
-									<path opacity=".32" fill-rule="evenodd" clip-rule="evenodd"
-										d="M19.169 7.542c-1.32.332-2.878.354-4.224-.058a1.851 1.851 0 0 1-1.205-1.18c-.478-1.403-.596-3.12-.245-4.441A99.591 99.591 0 0 0 11 1.833c-3.194 0-5.097.126-6.176.242-.799.087-1.415.628-1.565 1.417C3.027 4.722 2.75 7.02 2.75 11s.277 6.279.51 7.508c.15.79.765 1.33 1.564 1.417 1.079.116 2.982.242 6.176.242s5.097-.126 6.176-.242c.799-.086 1.415-.627 1.565-1.417.232-1.23.509-3.527.509-7.508 0-1.334-.031-2.48-.081-3.458Z" />
-									<path
-										d="M19.17 7.541c-1.32.332-2.879.354-4.225-.057a1.851 1.851 0 0 1-1.204-1.18c-.479-1.403-.597-3.12-.245-4.442 0 0 1.122.43 3.184 2.492 2.063 2.063 2.49 3.187 2.49 3.187Z" />
-								</svg>
-							</span>
-							Сводные данные
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="./frequency.html">
-							<span class="icon icon-calendar">
-								<svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
-									<path fill-rule="evenodd" clip-rule="evenodd"
-										d="M2.107 7.104a5.272 5.272 0 0 1 5.226-4.583h7.334a5.272 5.272 0 0 1 5.226 4.583H2.107Zm13.018-5.958a.687.687 0 0 0-.688.688v2.75a.688.688 0 0 0 1.376 0v-2.75a.687.687 0 0 0-.688-.688Zm-8.25 0a.688.688 0 0 0-.688.688v2.75a.688.688 0 0 0 1.375 0v-2.75a.687.687 0 0 0-.687-.688Z" />
-									<path opacity=".3" fill-rule="evenodd" clip-rule="evenodd"
-										d="M2.063 8.48v6.645a5.27 5.27 0 0 0 5.27 5.271h7.334a5.27 5.27 0 0 0 5.27-5.27V8.478H2.063Zm3.895 3.666a.688.688 0 0 1 0-1.375h.917a.687.687 0 1 1 0 1.375h-.917Zm3.896-.687c0 .38.308.687.688.687h.916a.687.687 0 1 0 0-1.375h-.916a.688.688 0 0 0-.688.688Zm4.584 0c0 .38.307.687.687.687h.917a.687.687 0 1 0 0-1.375h-.917a.687.687 0 0 0-.688.688ZM5.27 15.125c0 .38.308.688.687.688h.917a.687.687 0 1 0 0-1.375h-.917a.688.688 0 0 0-.687.687Zm4.583 0c0 .38.308.688.688.688h.916a.687.687 0 1 0 0-1.375h-.916a.688.688 0 0 0-.688.687Zm4.584 0c0 .38.307.688.687.688h.917a.687.687 0 1 0 0-1.375h-.917a.687.687 0 0 0-.688.687Z" />
-								</svg>
-							</span>
-							Периодичность
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="./products.html">
-							<span class="icon icon-products">
-								<svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
-									<path
-										d="M13.402 1.775a4.9 4.9 0 0 0-4.803 0L3.064 4.884c-1.337.75-1.337 2.683 0 3.434l5.533 3.108a4.9 4.9 0 0 0 4.803 0l5.534-3.108c1.337-.751 1.337-2.683 0-3.434l-5.533-3.11Z" />
-									<path opacity=".3"
-										d="M2.727 14.059c-.987.861-.875 2.514.338 3.196l5.533 3.108a4.9 4.9 0 0 0 4.803 0l5.534-3.108c1.213-.682 1.325-2.335.338-3.196l-5.198 2.92a6.275 6.275 0 0 1-6.15 0l-5.198-2.92Z" />
-									<path opacity=".3"
-										d="M2.727 9.625c-.987.862-.875 2.515.338 3.196l5.533 3.109a4.9 4.9 0 0 0 4.803 0l5.534-3.11c1.213-.68 1.325-2.333.338-3.195l-5.198 2.92a6.275 6.275 0 0 1-6.15 0l-5.198-2.92Z" />
-								</svg>
-							</span>
-							Продукты
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="./tools.html">
-							<span class="icon icon-tools">
-								<svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
-									<path opacity=".32"
-										d="M19.416 15.556c-.26.6-.879.944-1.533.944H13.58a2.83 2.83 0 0 0-.545-2.845 83.18 83.18 0 0 0 .449-5.162c.042-.731-.854-.976-1.177-.32a82.148 82.148 0 0 0-2.148 4.698 2.775 2.775 0 0 0-1.816 1.94 2.83 2.83 0 0 0 .075 1.689H4.117c-.655 0-1.273-.343-1.533-.944a9.167 9.167 0 1 1 16.832 0Z" />
-									<path
-										d="M13.485 8.493c.042-.731-.854-.976-1.176-.32a82.05 82.05 0 0 0-2.148 4.698 2.774 2.774 0 0 0-1.817 1.94c-.393 1.492.478 3.026 1.944 3.426 1.467.4 2.975-.486 3.368-1.978a2.83 2.83 0 0 0-.62-2.604c.224-1.822.364-3.688.449-5.162Z" />
-								</svg>
-							</span>
-							Инструменты
-						</a>
-					</li>
-					<li class="nav-item d-xxl-block d-lg-none">
-						<a class="nav-link" href="./departure.html">
-							<span class="icon icon-navigation">
-								<svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
-									<path opacity=".3"
-										d="M19.244 4.21a1.767 1.767 0 0 0-.445-1.842L8.174 12.992c.135.134.253.285.347.452l2.838 4.99c.764 1.345 2.76 1.15 3.25-.318L19.243 4.21Z" />
-									<path
-										d="M16.962 1.928a1.767 1.767 0 0 1 1.842.445L8.179 12.998a2.063 2.063 0 0 0-.452-.348l-4.99-2.837c-1.344-.765-1.149-2.76.319-3.25L16.96 1.928Z" />
-								</svg>
-							</span>
-							Города вылета
-						</a>
-					</li>
-					<li class="nav-item active d-xxl-block d-lg-none">
-						<a class="nav-link" href="./users.html">
-							<span class="icon icon-users">
-								<svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
-									<path fill-rule="evenodd" clip-rule="evenodd"
-										d="m18.615 17.343.15.02.25.035c1.092.154 2.069-.678 2.069-1.761v-.827c0-.775-.496-1.466-1.239-1.726a11.48 11.48 0 0 0-2.638-.588 3.651 3.651 0 0 1 1.512 2.958v1.027c0 .298-.036.586-.104.862Zm-3.782-5.947c.372.154.78.238 1.209.238 1.724 0 3.122-1.373 3.122-3.067 0-1.694-1.398-3.067-3.122-3.067-.051 0-.102.001-.152.004.313.667.488 1.413.488 2.2a5.167 5.167 0 0 1-1.545 3.692ZM3.735 17.343l-.15.02-.25.035c-1.092.154-2.069-.678-2.069-1.761v-.827c0-.775.496-1.466 1.238-1.726a11.481 11.481 0 0 1 2.639-.588 3.651 3.651 0 0 0-1.512 2.958v1.027c0 .298.036.586.104.862Zm3.782-5.947a3.16 3.16 0 0 1-1.21.238c-1.724 0-3.122-1.373-3.122-3.067 0-1.694 1.398-3.067 3.123-3.067.05 0 .102.001.152.004a5.163 5.163 0 0 0-.489 2.2c0 1.445.592 2.752 1.546 3.692Z" />
-									<path opacity=".3" fill-rule="evenodd" clip-rule="evenodd"
-										d="M6.557 13.312a13.79 13.79 0 0 1 9.277 0 2.276 2.276 0 0 1 1.51 2.143v1.026a2.21 2.21 0 0 1-2.522 2.188l-.306-.044a23.482 23.482 0 0 0-6.641 0l-.306.044a2.21 2.21 0 0 1-2.522-2.188v-1.026c0-.962.604-1.82 1.51-2.143Zm8.446-5.608a3.808 3.808 0 1 0-7.616 0 3.808 3.808 0 0 0 7.616 0Z" />
-								</svg>
-							</span>
-							Пользователи
-						</a>
-					</li>
-					<li class="nav-item d-xxl-block d-lg-none">
-						<a class="nav-link" href="./my-data.html">
-							<span class="icon icon-mydata">
-								<svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
-									<path opacity=".32"
-										d="M2.09 18.02c.082.787.598 1.41 1.372 1.574 1.221.26 3.524.573 7.538.573 4.013 0 6.316-.313 7.538-.573.773-.164 1.29-.787 1.37-1.575.121-1.166.258-3.31.258-7.019 0-3.71-.137-5.852-.257-7.02-.081-.786-.598-1.41-1.371-1.574-1.222-.26-3.525-.573-7.538-.573-4.014 0-6.317.313-7.538.573-.774.165-1.29.788-1.371 1.575-.12 1.167-.258 3.31-.258 7.02 0 3.709.137 5.851.258 7.019Z" />
-									<path
-										d="M12.776 12.701A3.819 3.819 0 0 0 11 5.5a3.82 3.82 0 0 0-1.777 7.201c-1.626.62-2.868 2.066-3.253 3.848-.053.246.083.5.331.544.892.162 2.368.324 4.7.324 2.333 0 3.809-.163 4.7-.324.248-.045.383-.297.33-.543-.384-1.782-1.627-3.229-3.254-3.849Z" />
-								</svg>
-							</span>
-							Мои данные
-						</a>
-					</li>
-				</ul>
-
-				<div class="dropdown header-dropdown d-xxl-none d-lg-block d-none">
-					<button class="btn btn-menu dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
-						aria-expanded="false">
-						<span class="icon icon-menu">
-							<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-								<path
-									d="M5 12a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm2-.06c0-.52.42-.94.94-.94h12.12c.52 0 .94.42.94.94v.12c0 .52-.42.94-.94.94H7.94a.94.94 0 0 1-.94-.94v-.12Zm-4 5c0-.52.42-.94.94-.94h16.12c.52 0 .94.42.94.94v.12c0 .52-.42.94-.94.94H3.94a.94.94 0 0 1-.94-.94v-.12Zm0-10c0-.52.42-.94.94-.94h16.12c.52 0 .94.42.94.94v.12c0 .52-.42.94-.94.94H3.94A.94.94 0 0 1 3 7.06v-.12Z" />
-							</svg>
-						</span>
-
-						<span class="icon icon-close">
-							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-								<path d="M18 6L6 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-								<path d="M6 6L18 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-							</svg>
-						</span>
-					</button>
-					<ul class="dropdown-menu dropdown-menu-end triangle" aria-labelledby="dropdownMenuButton">
-						<span class="icon icon-triangle">
-							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 8">
-								<path fill-rule="evenodd" clip-rule="evenodd"
-									d="M18 8L10.591 0.653454C9.71231 -0.217818 8.28769 -0.217818 7.40901 0.653454L0 8H18Z"></path>
-							</svg>
-						</span>
-						<li>
-							<a class="dropdown-item" href="./my-data.html">
-								<span class="icon icon-mydata">
-									<svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
-										<path opacity=".32"
-											d="M2.09 18.02c.082.787.598 1.41 1.372 1.574 1.221.26 3.524.573 7.538.573 4.013 0 6.316-.313 7.538-.573.773-.164 1.29-.787 1.37-1.575.121-1.166.258-3.31.258-7.019 0-3.71-.137-5.852-.257-7.02-.081-.786-.598-1.41-1.371-1.574-1.222-.26-3.525-.573-7.538-.573-4.014 0-6.317.313-7.538.573-.774.165-1.29.788-1.371 1.575-.12 1.167-.258 3.31-.258 7.02 0 3.709.137 5.851.258 7.019Z" />
-										<path
-											d="M12.776 12.701A3.819 3.819 0 0 0 11 5.5a3.82 3.82 0 0 0-1.777 7.201c-1.626.62-2.868 2.066-3.253 3.848-.053.246.083.5.331.544.892.162 2.368.324 4.7.324 2.333 0 3.809-.163 4.7-.324.248-.045.383-.297.33-.543-.384-1.782-1.627-3.229-3.254-3.849Z" />
-									</svg>
-								</span>
-								Мои данные
-							</a>
-						</li>
-						<li>
-							<a class="dropdown-item" href="./departure.html">
-								<span class="icon icon-navigation">
-									<svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
-										<path opacity=".3"
-											d="M19.244 4.21a1.767 1.767 0 0 0-.445-1.842L8.174 12.992c.135.134.253.285.347.452l2.838 4.99c.764 1.345 2.76 1.15 3.25-.318L19.243 4.21Z" />
-										<path
-											d="M16.962 1.928a1.767 1.767 0 0 1 1.842.445L8.179 12.998a2.063 2.063 0 0 0-.452-.348l-4.99-2.837c-1.344-.765-1.149-2.76.319-3.25L16.96 1.928Z" />
-									</svg>
-								</span>
-								Города вылета
-							</a>
-						</li>
-						<li>
-							<a class="dropdown-item" href="./users.html">
-								<span class="icon icon-users">
-									<svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
-										<path fill-rule="evenodd" clip-rule="evenodd"
-											d="m18.615 17.343.15.02.25.035c1.092.154 2.069-.678 2.069-1.761v-.827c0-.775-.496-1.466-1.239-1.726a11.48 11.48 0 0 0-2.638-.588 3.651 3.651 0 0 1 1.512 2.958v1.027c0 .298-.036.586-.104.862Zm-3.782-5.947c.372.154.78.238 1.209.238 1.724 0 3.122-1.373 3.122-3.067 0-1.694-1.398-3.067-3.122-3.067-.051 0-.102.001-.152.004.313.667.488 1.413.488 2.2a5.167 5.167 0 0 1-1.545 3.692ZM3.735 17.343l-.15.02-.25.035c-1.092.154-2.069-.678-2.069-1.761v-.827c0-.775.496-1.466 1.238-1.726a11.481 11.481 0 0 1 2.639-.588 3.651 3.651 0 0 0-1.512 2.958v1.027c0 .298.036.586.104.862Zm3.782-5.947a3.16 3.16 0 0 1-1.21.238c-1.724 0-3.122-1.373-3.122-3.067 0-1.694 1.398-3.067 3.123-3.067.05 0 .102.001.152.004a5.163 5.163 0 0 0-.489 2.2c0 1.445.592 2.752 1.546 3.692Z" />
-										<path opacity=".3" fill-rule="evenodd" clip-rule="evenodd"
-											d="M6.557 13.312a13.79 13.79 0 0 1 9.277 0 2.276 2.276 0 0 1 1.51 2.143v1.026a2.21 2.21 0 0 1-2.522 2.188l-.306-.044a23.482 23.482 0 0 0-6.641 0l-.306.044a2.21 2.21 0 0 1-2.522-2.188v-1.026c0-.962.604-1.82 1.51-2.143Zm8.446-5.608a3.808 3.808 0 1 0-7.616 0 3.808 3.808 0 0 0 7.616 0Z" />
-									</svg>
-								</span>
-								Пользователи
-							</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</nav>
-
-</header>
+	<!--#include virtual="/parts/header-admin.html" -->
 
 	<main class="main">
 
@@ -254,12 +11,8 @@
 			<div class="container">
 
 				<div class="header-page is-three">
-					<h1 class="h2">Пользователи</h1>
+					<h1 class="h2">Матрица периодичности</h1>
 
-					<!-- <div class="btn-group" role="group" aria-label="">
-							<button type="button" class="btn btn-light active">Отделы</button>
-							<button type="button" class="btn btn-light">Пользователи</button>
-						</div> -->
 					<button class="btn btn-primary" type="button">
 						<span class="icon icon-plus">
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -267,7 +20,7 @@
 								<path d="M10 4V15.9998" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
 							</svg>
 						</span>
-						Добавить пользователя
+						Новая запись
 					</button>
 
 					<div>
@@ -295,128 +48,7 @@
 
 				<div class="wrapper-table">
 
-					<!-- <div class="table-header">
-						<h2 class="h3">
-							Сотрудники компании FUN&SUN
-						</h2>
-
-						<button class="btn btn-primary" type="button">
-							<span class="icon icon-plus">
-								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-									<path d="M15.9999 9.99989H4.00011" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-									<path d="M10 4V15.9998" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-								</svg>
-							</span>
-							Добавить пользователя
-						</button>
-					</div> -->
-
 					<div class="table-filter">
-						<!-- <div class="table-action">
-							<div class="dropdown">
-								<button class="btn dropdown-toggle" type="button" id="dropdownDepartment" data-bs-toggle="dropdown"
-									aria-expanded="false">
-									Отдел
-									<span class="icon icon-arrow">
-										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
-											<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke="#9FAFBD" stroke-width="1.5"
-												stroke-linecap="round" stroke-linejoin="round" />
-										</svg>
-									</span>
-								</button>
-								<ul class="dropdown-menu" aria-labelledby="dropdownDepartment">
-									<li><a class="dropdown-item" href="#">Action</a></li>
-									<li><a class="dropdown-item" href="#">Another action</a></li>
-									<li><a class="dropdown-item" href="#">Something else here</a></li>
-								</ul>
-							</div>
-
-							<div class="dropdown">
-								<button class="btn dropdown-toggle" type="button" id="dropdownUser" data-bs-toggle="dropdown"
-									aria-expanded="false">
-									Пользователь
-									<span class="icon icon-arrow">
-										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
-											<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke="#9FAFBD" stroke-width="1.5"
-												stroke-linecap="round" stroke-linejoin="round" />
-										</svg>
-									</span>
-								</button>
-								<ul class="dropdown-menu" aria-labelledby="dropdownUser">
-									<li><a class="dropdown-item" href="#">Action</a></li>
-									<li><a class="dropdown-item" href="#">Another action</a></li>
-									<li><a class="dropdown-item" href="#">Something else here</a></li>
-								</ul>
-							</div>
-
-							<div class="dropdown">
-								<button class="btn dropdown-toggle" type="button" id="dropdownStatus" data-bs-toggle="dropdown"
-									aria-expanded="false">
-									Статус
-									<span class="icon icon-arrow">
-										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
-											<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke="#9FAFBD" stroke-width="1.5"
-												stroke-linecap="round" stroke-linejoin="round" />
-										</svg>
-									</span>
-								</button>
-								<ul class="dropdown-menu" aria-labelledby="dropdownStatus">
-									<li><a class="dropdown-item" href="#">Action</a></li>
-									<li><a class="dropdown-item" href="#">Another action</a></li>
-									<li><a class="dropdown-item" href="#">Something else here</a></li>
-								</ul>
-							</div>
-
-							<div class="dropdown">
-								<button class="btn dropdown-toggle" type="button" id="dropdownVisitInterval" data-bs-toggle="dropdown"
-									aria-expanded="false">
-									Интервал визита
-									<span class="icon icon-date">
-										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 20">
-											<path
-												d="M16.6331 3.3335H4.96647C4.046 3.3335 3.2998 4.07969 3.2998 5.00016V16.6668C3.2998 17.5873 4.046 18.3335 4.96647 18.3335H16.6331C17.5536 18.3335 18.2998 17.5873 18.2998 16.6668V5.00016C18.2998 4.07969 17.5536 3.3335 16.6331 3.3335Z"
-												stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-											<path d="M14.1328 1.6665V4.99984" stroke-width="1.5" stroke-linecap="round"
-												stroke-linejoin="round" />
-											<path d="M7.4668 1.6665V4.99984" stroke-width="1.5" stroke-linecap="round"
-												stroke-linejoin="round" />
-											<path d="M3.2998 8.3335H18.2998" stroke-width="1.5" stroke-linecap="round"
-												stroke-linejoin="round" />
-										</svg>
-									</span>
-								</button>
-								<ul class="dropdown-menu" aria-labelledby="dropdownVisitInterval">
-									<li><a class="dropdown-item" href="#">Action</a></li>
-									<li><a class="dropdown-item" href="#">Another action</a></li>
-									<li><a class="dropdown-item" href="#">Something else here</a></li>
-								</ul>
-							</div>
-
-							<div class="dropdown">
-								<button class="btn dropdown-toggle" type="button" id="dropdownReportInterval" data-bs-toggle="dropdown"
-									aria-expanded="false">
-									Интервал отчёта
-									<span class="icon icon-date">
-										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 20">
-											<path
-												d="M16.6331 3.3335H4.96647C4.046 3.3335 3.2998 4.07969 3.2998 5.00016V16.6668C3.2998 17.5873 4.046 18.3335 4.96647 18.3335H16.6331C17.5536 18.3335 18.2998 17.5873 18.2998 16.6668V5.00016C18.2998 4.07969 17.5536 3.3335 16.6331 3.3335Z"
-												stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-											<path d="M14.1328 1.6665V4.99984" stroke-width="1.5" stroke-linecap="round"
-												stroke-linejoin="round" />
-											<path d="M7.4668 1.6665V4.99984" stroke-width="1.5" stroke-linecap="round"
-												stroke-linejoin="round" />
-											<path d="M3.2998 8.3335H18.2998" stroke-width="1.5" stroke-linecap="round"
-												stroke-linejoin="round" />
-										</svg>
-									</span>
-								</button>
-								<ul class="dropdown-menu" aria-labelledby="dropdownReportInterval">
-									<li><a class="dropdown-item" href="#">Action</a></li>
-									<li><a class="dropdown-item" href="#">Another action</a></li>
-									<li><a class="dropdown-item" href="#">Something else here</a></li>
-								</ul>
-							</div>
-						</div> -->
 
 						<div class="table-buttons">
 							<div class="dropdown dropdown-filter table-button d-lg-none">
@@ -1914,7 +1546,7 @@
 								<div class="swiper-wrapper">
 									<div class="swiper-slide">
 										<button class="btn btn-delete" type="button">
-											Департамент
+											Страна тура
 											<span class="icon icon-close">
 												<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
 													<path d="M12.7119 5.2876L5.28729 12.7122" stroke-width="2" stroke-linecap="round"
@@ -1927,7 +1559,7 @@
 									</div>
 									<div class="swiper-slide">
 										<button class="btn btn-delete" type="button">
-											PR
+											Сербия
 											<span class="icon icon-close">
 												<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
 													<path d="M12.7119 5.2876L5.28729 12.7122" stroke-width="2" stroke-linecap="round"
@@ -1940,7 +1572,20 @@
 									</div>
 									<div class="swiper-slide">
 										<button class="btn btn-delete" type="button">
-											Distribution
+											Абхазия
+											<span class="icon icon-close">
+												<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
+													<path d="M12.7119 5.2876L5.28729 12.7122" stroke-width="2" stroke-linecap="round"
+														stroke-linejoin="round" />
+													<path d="M5.28809 5.2876L12.7127 12.7122" stroke-width="2" stroke-linecap="round"
+														stroke-linejoin="round" />
+												</svg>
+											</span>
+										</button>
+									</div>
+									<div class="swiper-slide">
+										<button class="btn btn-delete" type="button">
+											Армения
 											<span class="icon icon-close">
 												<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
 													<path d="M12.7119 5.2876L5.28729 12.7122" stroke-width="2" stroke-linecap="round"
@@ -1954,10 +1599,14 @@
 								</div>
 							</div>
 
+							<time>
+								<span>Сегодня</span>
+								25.01.23
+							</time>
 						</div>
 					</div>
 
-					<div class="table-wrapper table-items">
+					<div class="table-wrapper table-items table-items-v2">
 						<div class="table-responsive table-fullscreen">
 							<table class="table table-bordered">
 								<thead>
@@ -1965,7 +1614,7 @@
 										<th scope="col">
 											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableID"
 												data-bs-toggle="dropdown" aria-expanded="false">
-												ID
+												Страна тура
 												<span class="icon icon-arrow">
 													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
 														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
@@ -1983,7 +1632,7 @@
 											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableDepartment"
 												data-bs-auto-close="outside" data-bs-toggle="dropdown" aria-expanded="false"
 												data-bs-offset="0,16">
-												Департамент
+												Регион
 												<span class="icon icon-arrow">
 													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
 														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
@@ -2118,7 +1767,7 @@
 										<th scope="col">
 											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableUsers"
 												data-bs-toggle="dropdown" aria-expanded="false">
-												Пользователь
+												Макс. периодичность
 												<span class="icon icon-arrow">
 													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
 														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
@@ -2135,7 +1784,7 @@
 										<th scope="col">
 											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableEmail"
 												data-bs-toggle="dropdown" aria-expanded="false">
-												Почта
+												Дата
 												<span class="icon icon-arrow">
 													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
 														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
@@ -2149,115 +1798,89 @@
 												<li><a class="dropdown-item" href="#">Something else here</a></li>
 											</ul>
 										</th>
-										<th scope="col">
-											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableStatus"
-												data-bs-toggle="dropdown" aria-expanded="false">
-												Статус
-												<span class="icon icon-arrow">
-													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
-														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
-															stroke-linejoin="round" />
-													</svg>
-												</span>
-											</button>
-											<ul class="dropdown-menu" aria-labelledby="dropdownTableStatus">
-												<li><a class="dropdown-item" href="#">Action</a></li>
-												<li><a class="dropdown-item" href="#">Another action</a></li>
-												<li><a class="dropdown-item" href="#">Something else here</a></li>
-											</ul>
-										</th>
-										<th scope="col">
-											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableLastVisit"
-												data-bs-toggle="dropdown" aria-expanded="false">
-												<span class="desktop">Последний визит</span>
-												<span class="mobile">Посл. визит</span>
-												<span class="icon icon-arrow">
-													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
-														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
-															stroke-linejoin="round" />
-													</svg>
-												</span>
-											</button>
-											<ul class="dropdown-menu" aria-labelledby="dropdownTableLastVisit">
-												<li><a class="dropdown-item" href="#">Action</a></li>
-												<li><a class="dropdown-item" href="#">Another action</a></li>
-												<li><a class="dropdown-item" href="#">Something else here</a></li>
-											</ul>
-										</th>
-										<th scope="col">
-											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableLastReport"
-												data-bs-toggle="dropdown" aria-expanded="false">
-												<span class="desktop">Последний отчёт</span>
-												<span class="mobile">Посл. отчёт</span>
-												<span class="icon icon-arrow">
-													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
-														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
-															stroke-linejoin="round" />
-													</svg>
-												</span>
-											</button>
-											<ul class="dropdown-menu" aria-labelledby="dropdownTableLastReport">
-												<li><a class="dropdown-item" href="#">Action</a></li>
-												<li><a class="dropdown-item" href="#">Another action</a></li>
-												<li><a class="dropdown-item" href="#">Something else here</a></li>
-											</ul>
-										</th>
-										<th scope="col">
-											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTotal"
-												data-bs-toggle="dropdown" aria-expanded="false">
-												Total activities
-												<span class="icon icon-arrow">
-													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
-														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
-															stroke-linejoin="round" />
-													</svg>
-												</span>
-											</button>
-											<ul class="dropdown-menu" aria-labelledby="dropdownTotal">
-												<li><a class="dropdown-item" href="#">Action</a></li>
-												<li><a class="dropdown-item" href="#">Another action</a></li>
-												<li><a class="dropdown-item" href="#">Something else here</a></li>
-											</ul>
-										</th>
 										<th scope="col"></th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
 										<th class="id" scope="row">
-											<span class="suptotal">ID:</span>
-											<span>1</span>
+											356А5
 										</th>
-										<td class="placement">
-											<span class="suptotal">Департамент</span>
-											<span>Content</span>
+										<td class="cell-button">
+											<span class="suptotal">Страна тура</span>
+											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTable10"
+												data-bs-toggle="dropdown" aria-expanded="false">
+												Сербия
+												<span class="icon icon-arrow">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
+														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
+															stroke-linejoin="round" />
+													</svg>
+												</span>
+											</button>
+											<ul class="dropdown-menu" aria-labelledby="dropdownTable10">
+												<li><a class="dropdown-item" href="#">Action</a></li>
+												<li><a class="dropdown-item" href="#">Another action</a></li>
+												<li><a class="dropdown-item" href="#">Something else here</a></li>
+											</ul>
 										</td>
-										<td class="name">
-											<span>Имя Фамилия Отчество</span>
+										<td class="cell-button">
+											<span class="suptotal">Регион</span>
+											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTable11"
+												data-bs-toggle="dropdown" aria-expanded="false">
+												Total
+												<span class="icon icon-arrow">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
+														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
+															stroke-linejoin="round" />
+													</svg>
+												</span>
+											</button>
+											<ul class="dropdown-menu" aria-labelledby="dropdownTable11">
+												<li><a class="dropdown-item" href="#">Action</a></li>
+												<li><a class="dropdown-item" href="#">Another action</a></li>
+												<li><a class="dropdown-item" href="#">Something else here</a></li>
+											</ul>
 										</td>
-										<td class="email">
-											<span class="suptotal">Почта</span>
-											<span>olga.travel@fstravel.com</span>
-										</td>
-										<td class="status">
-											<span class="suptotal">Статус</span>
-											<div class="wrapper-status">
-												<span class="indicator active"></span>
-												active
+										<td class="counter">
+											<span class="suptotal">Макс. периодичность</span>
+											<div class="item-counter">
+												<button class="btn decrement">
+													<span class="icon icon-decrement">
+														<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
+															<path
+																d="M11.958 7.58317H3.79134C3.46918 7.58317 3.20801 7.322 3.20801 6.99984C3.20801 6.67767 3.46918 6.4165 3.79134 6.4165H11.958C12.2802 6.4165 12.5413 6.67767 12.5413 6.99984C12.5413 7.322 12.2802 7.58317 11.958 7.58317Z"/>
+														</svg>
+													</span>
+												</button>
+												<input type="text" value="7">
+												<button class="btn increment">
+													<span class="icon icon-increment">
+														<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
+															<path d="M11.958 6.41683H8.45801V2.91683C8.45801 2.59466 8.19684 2.3335 7.87467 2.3335C7.55251 2.3335 7.29134 2.59466 7.29134 2.91683V6.41683H3.79134C3.46918 6.41683 3.20801 6.678 3.20801 7.00016C3.20801 7.32233 3.46918 7.5835 3.79134 7.5835H7.29134V11.0835C7.29134 11.4057 7.55251 11.6668 7.87467 11.6668C8.19684 11.6668 8.45801 11.4057 8.45801 11.0835V7.5835H11.958C12.2802 7.5835 12.5413 7.32233 12.5413 7.00016C12.5413 6.678 12.2802 6.41683 11.958 6.41683Z"/>
+														</svg>
+													</span>
+												</button>
 											</div>
 										</td>
-										<td class="date">
-											<span class="suptotal">Последний визит</span>
-											<span>18.01.23</span>
+										<td class="cell-button">
+											<span class="suptotal">Дата</span>
+											<button class="btn btn-calendar">
+												<time>
+													<span class="first">18.01.23</span>
+													<span class="second"></span>
+												</time>
+												<span class="icon icon-calendar">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
+														<path d="M14.25 3H3.75C2.92157 3 2.25 3.67157 2.25 4.5V15C2.25 15.8284 2.92157 16.5 3.75 16.5H14.25C15.0784 16.5 15.75 15.8284 15.75 15V4.5C15.75 3.67157 15.0784 3 14.25 3Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+														<path d="M12 1.5V4.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+														<path d="M6 1.5V4.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+														<path d="M2.25 7.5H15.75" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+													</svg>
+												</span>
+											</button>
 										</td>
-										<td class="date">
-											<span class="suptotal">Последний отчёт</span>
-											<span>18.01.23</span>
-										</td>
-										<td class="total">
-											<span class="suptotal">Total activities </span>
-											<span>100</span>
-										</td>
+
 										<td class="more">
 											<button class="btn btn-shape dropdown-toggle" type="button" id="dropdownTotal"
 												data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="16, 16">
@@ -2308,128 +1931,85 @@
 											</ul>
 										</td>
 									</tr>
-
-									<tr class="passive">
-										<th class="id" scope="row">
-											<span class="suptotal">ID:</span>
-											<span>1</span>
-										</th>
-										<td class="placement">
-											<span class="suptotal">Департамент</span>
-											<span>Content</span>
-										</td>
-										<td class="name">
-											<span>Имя Фамилия Отчество</span>
-										</td>
-										<td class="email">
-											<span class="suptotal">Почта</span>
-											<span>olga.travel@fstravel.com</span>
-										</td>
-										<td class="status">
-											<span class="suptotal">Статус</span>
-											<div class="wrapper-status">
-												<span class="indicator passive"></span>
-												passive
-											</div>
-										</td>
-										<td class="date">
-											<span class="suptotal">Последний визит</span>
-											<span>18.01.23</span>
-										</td>
-										<td class="date">
-											<span class="suptotal">Последний отчёт</span>
-											<span>18.01.23</span>
-										</td>
-										<td class="total">
-											<span class="suptotal">Total activities </span>
-											<span>100</span>
-										</td>
-										<td class="more">
-											<button class="btn btn-shape dropdown-toggle" type="button" id="dropdownTotal"
-												data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="16, 16">
-												<span class="icon icon-shape">
-													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 16">
-														<path
-															d="M4.00033 8C4.00033 8.92048 3.25413 9.66667 2.33366 9.66667C1.41318 9.66667 0.666992 8.92048 0.666992 8C0.666992 7.07953 1.41318 6.33333 2.33366 6.33333C3.25413 6.33333 4.00033 7.07953 4.00033 8Z" />
-														<path
-															d="M4.00033 2.16667C4.00033 3.08714 3.25413 3.83333 2.33366 3.83333C1.41318 3.83333 0.666992 3.08714 0.666992 2.16667C0.666992 1.24619 1.41318 0.5 2.33366 0.5C3.25413 0.5 4.00033 1.24619 4.00033 2.16667Z" />
-														<path
-															d="M4.00033 13.8333C4.00033 14.7538 3.25413 15.5 2.33366 15.5C1.41318 15.5 0.666992 14.7538 0.666992 13.8333C0.666992 12.9129 1.41318 12.1667 2.33366 12.1667C3.25413 12.1667 4.00033 12.9129 4.00033 13.8333Z" />
-													</svg>
-												</span>
-											</button>
-											<ul class="dropdown-menu dropdown-menu-end triangle" aria-labelledby="dropdownTotal">
-												<span class="icon icon-triangle">
-													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 8">
-														<path fill-rule="evenodd" clip-rule="evenodd"
-															d="M18 8L10.591 0.653454C9.71231 -0.217818 8.28769 -0.217818 7.40901 0.653454L0 8H18Z" />
-													</svg>
-												</span>
-												<li>
-													<a class="dropdown-item" href="#">
-														<span class="icon icon-block">
-															<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-																<path
-																	d="M15.8333 9.1665H4.16667C3.24619 9.1665 2.5 9.9127 2.5 10.8332V16.6665C2.5 17.587 3.24619 18.3332 4.16667 18.3332H15.8333C16.7538 18.3332 17.5 17.587 17.5 16.6665V10.8332C17.5 9.9127 16.7538 9.1665 15.8333 9.1665Z"
-																	stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
-																<path
-																	d="M5.83301 9.1665V5.83317C5.83301 4.7281 6.27199 3.66829 7.0534 2.88689C7.8348 2.10549 8.89461 1.6665 9.99967 1.6665C11.1047 1.6665 12.1646 2.10549 12.946 2.88689C13.7274 3.66829 14.1663 4.7281 14.1663 5.83317V9.1665"
-																	stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
-															</svg>
-														</span>
-														Заблокировать
-													</a>
-												</li>
-												<li>
-													<a class="dropdown-item" href="#">
-														<span class="icon icon-edit">
-															<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-																<path fill-rule="evenodd" clip-rule="evenodd"
-																	d="M10.9355 3.32017C12.0087 2.24541 13.7492 2.24476 14.8231 3.3187L16.4311 4.92667C17.4959 5.99145 17.507 7.71521 16.4559 8.79358L9.13862 16.3012C8.4331 17.025 7.46544 17.4332 6.455 17.4332L4.63288 17.4331C3.35363 17.433 2.33202 16.3667 2.38582 15.0876L2.46513 13.202C2.50463 12.263 2.89491 11.373 3.55875 10.7081L10.9355 3.32017ZM13.7633 4.38016C13.2751 3.892 12.484 3.8923 11.9962 4.38083L10.9345 5.44417L14.3231 8.83281L15.3825 7.74582C15.8603 7.25565 15.8553 6.47212 15.3713 5.98813L13.7633 4.38016ZM4.61941 11.7688L9.87461 6.50563L13.2761 9.90708L8.06524 15.2534C7.64192 15.6877 7.06133 15.9326 6.45507 15.9326L4.63295 15.9325C4.20653 15.9325 3.86599 15.5771 3.88393 15.1507L3.96324 13.2651C3.98694 12.7017 4.2211 12.1677 4.61941 11.7688ZM17.0958 17.372C17.5099 17.372 17.8455 17.0361 17.8455 16.6217C17.8455 16.2074 17.5099 15.8715 17.0958 15.8715H11.9944C11.5803 15.8715 11.2447 16.2074 11.2447 16.6217C11.2447 17.0361 11.5803 17.372 11.9944 17.372H17.0958Z" />
-															</svg>
-														</span>
-														Редактировать
-													</a>
-												</li>
-											</ul>
-										</td>
-									</tr>
-
 									<tr>
 										<th class="id" scope="row">
-											<span class="suptotal">ID:</span>
-											<span>1</span>
+											356А5
 										</th>
-										<td class="placement">
-											<span class="suptotal">Департамент</span>
-											<span>Content</span>
+										<th class="cell-button" scope="row">
+											<span class="suptotal">Страна тура</span>
+											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTable12"
+												data-bs-toggle="dropdown" aria-expanded="false">
+												Абхазия
+												<span class="icon icon-arrow">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
+														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
+															stroke-linejoin="round" />
+													</svg>
+												</span>
+											</button>
+											<ul class="dropdown-menu" aria-labelledby="dropdownTable12">
+												<li><a class="dropdown-item" href="#">Action</a></li>
+												<li><a class="dropdown-item" href="#">Another action</a></li>
+												<li><a class="dropdown-item" href="#">Something else here</a></li>
+											</ul>
+										</th>
+										<td class="cell-button">
+											<span class="suptotal">Регион</span>
+											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTable13"
+												data-bs-toggle="dropdown" aria-expanded="false">
+												Total
+												<span class="icon icon-arrow">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
+														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
+															stroke-linejoin="round" />
+													</svg>
+												</span>
+											</button>
+											<ul class="dropdown-menu" aria-labelledby="dropdownTable13">
+												<li><a class="dropdown-item" href="#">Action</a></li>
+												<li><a class="dropdown-item" href="#">Another action</a></li>
+												<li><a class="dropdown-item" href="#">Something else here</a></li>
+											</ul>
 										</td>
-										<td class="name">
-											<span>Имя Фамилия Отчество</span>
-										</td>
-										<td class="email">
-											<span class="suptotal">Почта</span>
-											<span>olga.travel@fstravel.com</span>
-										</td>
-										<td class="status">
-											<span class="suptotal">Статус</span>
-											<div class="wrapper-status">
-												<span class="indicator active"></span>
-												active
+										<td class="counter">
+											<span class="suptotal">Макс. периодичность</span>
+											<div class="item-counter">
+												<button class="btn decrement">
+													<span class="icon icon-decrement">
+														<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
+															<path
+																d="M11.958 7.58317H3.79134C3.46918 7.58317 3.20801 7.322 3.20801 6.99984C3.20801 6.67767 3.46918 6.4165 3.79134 6.4165H11.958C12.2802 6.4165 12.5413 6.67767 12.5413 6.99984C12.5413 7.322 12.2802 7.58317 11.958 7.58317Z"/>
+														</svg>
+													</span>
+												</button>
+												<input type="text" value="7">
+												<button class="btn increment">
+													<span class="icon icon-increment">
+														<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
+															<path d="M11.958 6.41683H8.45801V2.91683C8.45801 2.59466 8.19684 2.3335 7.87467 2.3335C7.55251 2.3335 7.29134 2.59466 7.29134 2.91683V6.41683H3.79134C3.46918 6.41683 3.20801 6.678 3.20801 7.00016C3.20801 7.32233 3.46918 7.5835 3.79134 7.5835H7.29134V11.0835C7.29134 11.4057 7.55251 11.6668 7.87467 11.6668C8.19684 11.6668 8.45801 11.4057 8.45801 11.0835V7.5835H11.958C12.2802 7.5835 12.5413 7.32233 12.5413 7.00016C12.5413 6.678 12.2802 6.41683 11.958 6.41683Z"/>
+														</svg>
+													</span>
+												</button>
 											</div>
 										</td>
-										<td class="date">
-											<span class="suptotal">Последний визит</span>
-											<span>18.01.23</span>
+										<td class="cell-button">
+											<span class="suptotal">Дата</span>
+											<button class="btn btn-calendar">
+												<time>
+													<span class="first">18.01.23</span>
+													<span class="second"></span>
+												</time>
+												<span class="icon icon-calendar">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
+														<path d="M14.25 3H3.75C2.92157 3 2.25 3.67157 2.25 4.5V15C2.25 15.8284 2.92157 16.5 3.75 16.5H14.25C15.0784 16.5 15.75 15.8284 15.75 15V4.5C15.75 3.67157 15.0784 3 14.25 3Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+														<path d="M12 1.5V4.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+														<path d="M6 1.5V4.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+														<path d="M2.25 7.5H15.75" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+													</svg>
+												</span>
+											</button>
 										</td>
-										<td class="date">
-											<span class="suptotal">Последний отчёт</span>
-											<span>18.01.23</span>
-										</td>
-										<td class="total">
-											<span class="suptotal">Total activities </span>
-											<span>100</span>
-										</td>
+
 										<td class="more">
 											<button class="btn btn-shape dropdown-toggle" type="button" id="dropdownTotal"
 												data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="16, 16">
@@ -2480,42 +2060,85 @@
 											</ul>
 										</td>
 									</tr>
-
 									<tr>
 										<th class="id" scope="row">
-											<span class="suptotal">ID:</span>
-											<span>1</span>
+											356А5
 										</th>
-										<td class="placement">
-											<span class="suptotal">Департамент</span>
-											<span>Content</span>
+										<th class="cell-button" scope="row">
+											<span class="suptotal">Страна тура</span>
+											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTable14"
+												data-bs-toggle="dropdown" aria-expanded="false">
+												Азербайджан
+												<span class="icon icon-arrow">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
+														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
+															stroke-linejoin="round" />
+													</svg>
+												</span>
+											</button>
+											<ul class="dropdown-menu" aria-labelledby="dropdownTable14">
+												<li><a class="dropdown-item" href="#">Action</a></li>
+												<li><a class="dropdown-item" href="#">Another action</a></li>
+												<li><a class="dropdown-item" href="#">Something else here</a></li>
+											</ul>
+										</th>
+										<td class="cell-button">
+											<span class="suptotal">Регион</span>
+											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTable15"
+												data-bs-toggle="dropdown" aria-expanded="false">
+												Total
+												<span class="icon icon-arrow">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
+														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
+															stroke-linejoin="round" />
+													</svg>
+												</span>
+											</button>
+											<ul class="dropdown-menu" aria-labelledby="dropdownTable15">
+												<li><a class="dropdown-item" href="#">Action</a></li>
+												<li><a class="dropdown-item" href="#">Another action</a></li>
+												<li><a class="dropdown-item" href="#">Something else here</a></li>
+											</ul>
 										</td>
-										<td class="name">
-											<span>Имя Фамилия Отчество</span>
-										</td>
-										<td class="email">
-											<span class="suptotal">Почта</span>
-											<span>olga.travel@fstravel.com</span>
-										</td>
-										<td class="status">
-											<span class="suptotal">Статус</span>
-											<div class="wrapper-status">
-												<span class="indicator active"></span>
-												active
+										<td class="counter">
+											<span class="suptotal">Макс. периодичность</span>
+											<div class="item-counter">
+												<button class="btn decrement">
+													<span class="icon icon-decrement">
+														<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
+															<path
+																d="M11.958 7.58317H3.79134C3.46918 7.58317 3.20801 7.322 3.20801 6.99984C3.20801 6.67767 3.46918 6.4165 3.79134 6.4165H11.958C12.2802 6.4165 12.5413 6.67767 12.5413 6.99984C12.5413 7.322 12.2802 7.58317 11.958 7.58317Z"/>
+														</svg>
+													</span>
+												</button>
+												<input type="text" value="7">
+												<button class="btn increment">
+													<span class="icon icon-increment">
+														<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
+															<path d="M11.958 6.41683H8.45801V2.91683C8.45801 2.59466 8.19684 2.3335 7.87467 2.3335C7.55251 2.3335 7.29134 2.59466 7.29134 2.91683V6.41683H3.79134C3.46918 6.41683 3.20801 6.678 3.20801 7.00016C3.20801 7.32233 3.46918 7.5835 3.79134 7.5835H7.29134V11.0835C7.29134 11.4057 7.55251 11.6668 7.87467 11.6668C8.19684 11.6668 8.45801 11.4057 8.45801 11.0835V7.5835H11.958C12.2802 7.5835 12.5413 7.32233 12.5413 7.00016C12.5413 6.678 12.2802 6.41683 11.958 6.41683Z"/>
+														</svg>
+													</span>
+												</button>
 											</div>
 										</td>
-										<td class="date">
-											<span class="suptotal">Последний визит</span>
-											<span>18.01.23</span>
+										<td class="cell-button">
+											<span class="suptotal">Дата</span>
+											<button class="btn btn-calendar">
+												<time>
+													<span class="first">18.01.23</span>
+													<span class="second"></span>
+												</time>
+												<span class="icon icon-calendar">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
+														<path d="M14.25 3H3.75C2.92157 3 2.25 3.67157 2.25 4.5V15C2.25 15.8284 2.92157 16.5 3.75 16.5H14.25C15.0784 16.5 15.75 15.8284 15.75 15V4.5C15.75 3.67157 15.0784 3 14.25 3Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+														<path d="M12 1.5V4.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+														<path d="M6 1.5V4.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+														<path d="M2.25 7.5H15.75" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+													</svg>
+												</span>
+											</button>
 										</td>
-										<td class="date">
-											<span class="suptotal">Последний отчёт</span>
-											<span>18.01.23</span>
-										</td>
-										<td class="total">
-											<span class="suptotal">Total activities </span>
-											<span>100</span>
-										</td>
+
 										<td class="more">
 											<button class="btn btn-shape dropdown-toggle" type="button" id="dropdownTotal"
 												data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="16, 16">
@@ -2566,42 +2189,85 @@
 											</ul>
 										</td>
 									</tr>
-
 									<tr>
 										<th class="id" scope="row">
-											<span class="suptotal">ID:</span>
-											<span>1</span>
+											356А5
 										</th>
-										<td class="placement">
-											<span class="suptotal">Департамент</span>
-											<span>Content</span>
+										<th class="cell-button" scope="row">
+											<span class="suptotal">Страна тура</span>
+											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTable16"
+												data-bs-toggle="dropdown" aria-expanded="false">
+												Армения
+												<span class="icon icon-arrow">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
+														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
+															stroke-linejoin="round" />
+													</svg>
+												</span>
+											</button>
+											<ul class="dropdown-menu" aria-labelledby="dropdownTable16">
+												<li><a class="dropdown-item" href="#">Action</a></li>
+												<li><a class="dropdown-item" href="#">Another action</a></li>
+												<li><a class="dropdown-item" href="#">Something else here</a></li>
+											</ul>
+										</th>
+										<td class="cell-button">
+											<span class="suptotal">Регион</span>
+											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTable17"
+												data-bs-toggle="dropdown" aria-expanded="false">
+												Total
+												<span class="icon icon-arrow">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
+														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
+															stroke-linejoin="round" />
+													</svg>
+												</span>
+											</button>
+											<ul class="dropdown-menu" aria-labelledby="dropdownTable17">
+												<li><a class="dropdown-item" href="#">Action</a></li>
+												<li><a class="dropdown-item" href="#">Another action</a></li>
+												<li><a class="dropdown-item" href="#">Something else here</a></li>
+											</ul>
 										</td>
-										<td class="name">
-											<span>Имя Фамилия Отчество</span>
-										</td>
-										<td class="email">
-											<span class="suptotal">Почта</span>
-											<span>olga.travel@fstravel.com</span>
-										</td>
-										<td class="status">
-											<span class="suptotal">Статус</span>
-											<div class="wrapper-status">
-												<span class="indicator active"></span>
-												active
+										<td class="counter">
+											<span class="suptotal">Макс. периодичность</span>
+											<div class="item-counter">
+												<button class="btn decrement">
+													<span class="icon icon-decrement">
+														<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
+															<path
+																d="M11.958 7.58317H3.79134C3.46918 7.58317 3.20801 7.322 3.20801 6.99984C3.20801 6.67767 3.46918 6.4165 3.79134 6.4165H11.958C12.2802 6.4165 12.5413 6.67767 12.5413 6.99984C12.5413 7.322 12.2802 7.58317 11.958 7.58317Z"/>
+														</svg>
+													</span>
+												</button>
+												<input type="text" value="7">
+												<button class="btn increment">
+													<span class="icon icon-increment">
+														<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
+															<path d="M11.958 6.41683H8.45801V2.91683C8.45801 2.59466 8.19684 2.3335 7.87467 2.3335C7.55251 2.3335 7.29134 2.59466 7.29134 2.91683V6.41683H3.79134C3.46918 6.41683 3.20801 6.678 3.20801 7.00016C3.20801 7.32233 3.46918 7.5835 3.79134 7.5835H7.29134V11.0835C7.29134 11.4057 7.55251 11.6668 7.87467 11.6668C8.19684 11.6668 8.45801 11.4057 8.45801 11.0835V7.5835H11.958C12.2802 7.5835 12.5413 7.32233 12.5413 7.00016C12.5413 6.678 12.2802 6.41683 11.958 6.41683Z"/>
+														</svg>
+													</span>
+												</button>
 											</div>
 										</td>
-										<td class="date">
-											<span class="suptotal">Последний визит</span>
-											<span>18.01.23</span>
+										<td class="cell-button">
+											<span class="suptotal">Дата</span>
+											<button class="btn btn-calendar">
+												<time>
+													<span class="first">18.01.23</span>
+													<span class="second"></span>
+												</time>
+												<span class="icon icon-calendar">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
+														<path d="M14.25 3H3.75C2.92157 3 2.25 3.67157 2.25 4.5V15C2.25 15.8284 2.92157 16.5 3.75 16.5H14.25C15.0784 16.5 15.75 15.8284 15.75 15V4.5C15.75 3.67157 15.0784 3 14.25 3Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+														<path d="M12 1.5V4.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+														<path d="M6 1.5V4.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+														<path d="M2.25 7.5H15.75" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+													</svg>
+												</span>
+											</button>
 										</td>
-										<td class="date">
-											<span class="suptotal">Последний отчёт</span>
-											<span>18.01.23</span>
-										</td>
-										<td class="total">
-											<span class="suptotal">Total activities </span>
-											<span>100</span>
-										</td>
+
 										<td class="more">
 											<button class="btn btn-shape dropdown-toggle" type="button" id="dropdownTotal"
 												data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="16, 16">
@@ -2652,42 +2318,85 @@
 											</ul>
 										</td>
 									</tr>
-
 									<tr>
 										<th class="id" scope="row">
-											<span class="suptotal">ID:</span>
-											<span>1</span>
+											356А5
 										</th>
-										<td class="placement">
-											<span class="suptotal">Департамент</span>
-											<span>Content</span>
+										<th class="cell-button" scope="row">
+											<span class="suptotal">Страна тура</span>
+											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTable18"
+												data-bs-toggle="dropdown" aria-expanded="false">
+												Круизы
+												<span class="icon icon-arrow">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
+														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
+															stroke-linejoin="round" />
+													</svg>
+												</span>
+											</button>
+											<ul class="dropdown-menu" aria-labelledby="dropdownTable18">
+												<li><a class="dropdown-item" href="#">Action</a></li>
+												<li><a class="dropdown-item" href="#">Another action</a></li>
+												<li><a class="dropdown-item" href="#">Something else here</a></li>
+											</ul>
+										</th>
+										<td class="cell-button">
+											<span class="suptotal">Регион</span>
+											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTable19"
+												data-bs-toggle="dropdown" aria-expanded="false">
+												Total
+												<span class="icon icon-arrow">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
+														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
+															stroke-linejoin="round" />
+													</svg>
+												</span>
+											</button>
+											<ul class="dropdown-menu" aria-labelledby="dropdownTable19">
+												<li><a class="dropdown-item" href="#">Action</a></li>
+												<li><a class="dropdown-item" href="#">Another action</a></li>
+												<li><a class="dropdown-item" href="#">Something else here</a></li>
+											</ul>
 										</td>
-										<td class="name">
-											<span>Имя Фамилия Отчество</span>
-										</td>
-										<td class="email">
-											<span class="suptotal">Почта</span>
-											<span>olga.travel@fstravel.com</span>
-										</td>
-										<td class="status">
-											<span class="suptotal">Статус</span>
-											<div class="wrapper-status">
-												<span class="indicator active"></span>
-												active
+										<td class="counter">
+											<span class="suptotal">Макс. периодичность</span>
+											<div class="item-counter">
+												<button class="btn decrement">
+													<span class="icon icon-decrement">
+														<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
+															<path
+																d="M11.958 7.58317H3.79134C3.46918 7.58317 3.20801 7.322 3.20801 6.99984C3.20801 6.67767 3.46918 6.4165 3.79134 6.4165H11.958C12.2802 6.4165 12.5413 6.67767 12.5413 6.99984C12.5413 7.322 12.2802 7.58317 11.958 7.58317Z"/>
+														</svg>
+													</span>
+												</button>
+												<input type="text" value="7">
+												<button class="btn increment">
+													<span class="icon icon-increment">
+														<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
+															<path d="M11.958 6.41683H8.45801V2.91683C8.45801 2.59466 8.19684 2.3335 7.87467 2.3335C7.55251 2.3335 7.29134 2.59466 7.29134 2.91683V6.41683H3.79134C3.46918 6.41683 3.20801 6.678 3.20801 7.00016C3.20801 7.32233 3.46918 7.5835 3.79134 7.5835H7.29134V11.0835C7.29134 11.4057 7.55251 11.6668 7.87467 11.6668C8.19684 11.6668 8.45801 11.4057 8.45801 11.0835V7.5835H11.958C12.2802 7.5835 12.5413 7.32233 12.5413 7.00016C12.5413 6.678 12.2802 6.41683 11.958 6.41683Z"/>
+														</svg>
+													</span>
+												</button>
 											</div>
 										</td>
-										<td class="date">
-											<span class="suptotal">Последний визит</span>
-											<span>18.01.23</span>
+										<td class="cell-button">
+											<span class="suptotal">Дата</span>
+											<button class="btn btn-calendar">
+												<time>
+													<span class="first">18.01.23</span>
+													<span class="second"></span>
+												</time>
+												<span class="icon icon-calendar">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
+														<path d="M14.25 3H3.75C2.92157 3 2.25 3.67157 2.25 4.5V15C2.25 15.8284 2.92157 16.5 3.75 16.5H14.25C15.0784 16.5 15.75 15.8284 15.75 15V4.5C15.75 3.67157 15.0784 3 14.25 3Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+														<path d="M12 1.5V4.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+														<path d="M6 1.5V4.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+														<path d="M2.25 7.5H15.75" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+													</svg>
+												</span>
+											</button>
 										</td>
-										<td class="date">
-											<span class="suptotal">Последний отчёт</span>
-											<span>18.01.23</span>
-										</td>
-										<td class="total">
-											<span class="suptotal">Total activities </span>
-											<span>100</span>
-										</td>
+
 										<td class="more">
 											<button class="btn btn-shape dropdown-toggle" type="button" id="dropdownTotal"
 												data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="16, 16">
@@ -2738,42 +2447,85 @@
 											</ul>
 										</td>
 									</tr>
-
 									<tr>
 										<th class="id" scope="row">
-											<span class="suptotal">ID:</span>
-											<span>1</span>
+											356А5
 										</th>
-										<td class="placement">
-											<span class="suptotal">Департамент</span>
-											<span>Content</span>
+										<th class="cell-button" scope="row">
+											<span class="suptotal">Страна тура</span>
+											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTable20"
+												data-bs-toggle="dropdown" aria-expanded="false">
+												Сербия
+												<span class="icon icon-arrow">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
+														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
+															stroke-linejoin="round" />
+													</svg>
+												</span>
+											</button>
+											<ul class="dropdown-menu" aria-labelledby="dropdownTable20">
+												<li><a class="dropdown-item" href="#">Action</a></li>
+												<li><a class="dropdown-item" href="#">Another action</a></li>
+												<li><a class="dropdown-item" href="#">Something else here</a></li>
+											</ul>
+										</th>
+										<td class="cell-button">
+											<span class="suptotal">Регион</span>
+											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTable21"
+												data-bs-toggle="dropdown" aria-expanded="false">
+												Total
+												<span class="icon icon-arrow">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
+														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
+															stroke-linejoin="round" />
+													</svg>
+												</span>
+											</button>
+											<ul class="dropdown-menu" aria-labelledby="dropdownTable21">
+												<li><a class="dropdown-item" href="#">Action</a></li>
+												<li><a class="dropdown-item" href="#">Another action</a></li>
+												<li><a class="dropdown-item" href="#">Something else here</a></li>
+											</ul>
 										</td>
-										<td class="name">
-											<span>Имя Фамилия Отчество</span>
-										</td>
-										<td class="email">
-											<span class="suptotal">Почта</span>
-											<span>olga.travel@fstravel.com</span>
-										</td>
-										<td class="status">
-											<span class="suptotal">Статус</span>
-											<div class="wrapper-status">
-												<span class="indicator active"></span>
-												active
+										<td class="counter">
+											<span class="suptotal">Макс. периодичность</span>
+											<div class="item-counter">
+												<button class="btn decrement">
+													<span class="icon icon-decrement">
+														<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
+															<path
+																d="M11.958 7.58317H3.79134C3.46918 7.58317 3.20801 7.322 3.20801 6.99984C3.20801 6.67767 3.46918 6.4165 3.79134 6.4165H11.958C12.2802 6.4165 12.5413 6.67767 12.5413 6.99984C12.5413 7.322 12.2802 7.58317 11.958 7.58317Z"/>
+														</svg>
+													</span>
+												</button>
+												<input type="text" value="7">
+												<button class="btn increment">
+													<span class="icon icon-increment">
+														<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
+															<path d="M11.958 6.41683H8.45801V2.91683C8.45801 2.59466 8.19684 2.3335 7.87467 2.3335C7.55251 2.3335 7.29134 2.59466 7.29134 2.91683V6.41683H3.79134C3.46918 6.41683 3.20801 6.678 3.20801 7.00016C3.20801 7.32233 3.46918 7.5835 3.79134 7.5835H7.29134V11.0835C7.29134 11.4057 7.55251 11.6668 7.87467 11.6668C8.19684 11.6668 8.45801 11.4057 8.45801 11.0835V7.5835H11.958C12.2802 7.5835 12.5413 7.32233 12.5413 7.00016C12.5413 6.678 12.2802 6.41683 11.958 6.41683Z"/>
+														</svg>
+													</span>
+												</button>
 											</div>
 										</td>
-										<td class="date">
-											<span class="suptotal">Последний визит</span>
-											<span>18.01.23</span>
+										<td class="cell-button">
+											<span class="suptotal">Дата</span>
+											<button class="btn btn-calendar">
+												<time>
+													<span class="first">18.01.23</span>
+													<span class="second"></span>
+												</time>
+												<span class="icon icon-calendar">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
+														<path d="M14.25 3H3.75C2.92157 3 2.25 3.67157 2.25 4.5V15C2.25 15.8284 2.92157 16.5 3.75 16.5H14.25C15.0784 16.5 15.75 15.8284 15.75 15V4.5C15.75 3.67157 15.0784 3 14.25 3Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+														<path d="M12 1.5V4.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+														<path d="M6 1.5V4.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+														<path d="M2.25 7.5H15.75" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+													</svg>
+												</span>
+											</button>
 										</td>
-										<td class="date">
-											<span class="suptotal">Последний отчёт</span>
-											<span>18.01.23</span>
-										</td>
-										<td class="total">
-											<span class="suptotal">Total activities </span>
-											<span>100</span>
-										</td>
+
 										<td class="more">
 											<button class="btn btn-shape dropdown-toggle" type="button" id="dropdownTotal"
 												data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="16, 16">
@@ -2824,42 +2576,85 @@
 											</ul>
 										</td>
 									</tr>
-
 									<tr>
 										<th class="id" scope="row">
-											<span class="suptotal">ID:</span>
-											<span>1</span>
+											356А5
 										</th>
-										<td class="placement">
-											<span class="suptotal">Департамент</span>
-											<span>Content</span>
+										<th class="cell-button" scope="row">
+											<span class="suptotal">Страна тура</span>
+											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTable22"
+												data-bs-toggle="dropdown" aria-expanded="false">
+												Индонезия
+												<span class="icon icon-arrow">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
+														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
+															stroke-linejoin="round" />
+													</svg>
+												</span>
+											</button>
+											<ul class="dropdown-menu" aria-labelledby="dropdownTable22">
+												<li><a class="dropdown-item" href="#">Action</a></li>
+												<li><a class="dropdown-item" href="#">Another action</a></li>
+												<li><a class="dropdown-item" href="#">Something else here</a></li>
+											</ul>
+										</th>
+										<td class="cell-button">
+											<span class="suptotal">Регион</span>
+											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTable23"
+												data-bs-toggle="dropdown" aria-expanded="false">
+												Total
+												<span class="icon icon-arrow">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
+														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
+															stroke-linejoin="round" />
+													</svg>
+												</span>
+											</button>
+											<ul class="dropdown-menu" aria-labelledby="dropdownTable23">
+												<li><a class="dropdown-item" href="#">Action</a></li>
+												<li><a class="dropdown-item" href="#">Another action</a></li>
+												<li><a class="dropdown-item" href="#">Something else here</a></li>
+											</ul>
 										</td>
-										<td class="name">
-											<span>Имя Фамилия Отчество</span>
-										</td>
-										<td class="email">
-											<span class="suptotal">Почта</span>
-											<span>olga.travel@fstravel.com</span>
-										</td>
-										<td class="status">
-											<span class="suptotal">Статус</span>
-											<div class="wrapper-status">
-												<span class="indicator active"></span>
-												active
+										<td class="counter">
+											<span class="suptotal">Макс. периодичность</span>
+											<div class="item-counter">
+												<button class="btn decrement">
+													<span class="icon icon-decrement">
+														<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
+															<path
+																d="M11.958 7.58317H3.79134C3.46918 7.58317 3.20801 7.322 3.20801 6.99984C3.20801 6.67767 3.46918 6.4165 3.79134 6.4165H11.958C12.2802 6.4165 12.5413 6.67767 12.5413 6.99984C12.5413 7.322 12.2802 7.58317 11.958 7.58317Z"/>
+														</svg>
+													</span>
+												</button>
+												<input type="text" value="7">
+												<button class="btn increment">
+													<span class="icon icon-increment">
+														<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
+															<path d="M11.958 6.41683H8.45801V2.91683C8.45801 2.59466 8.19684 2.3335 7.87467 2.3335C7.55251 2.3335 7.29134 2.59466 7.29134 2.91683V6.41683H3.79134C3.46918 6.41683 3.20801 6.678 3.20801 7.00016C3.20801 7.32233 3.46918 7.5835 3.79134 7.5835H7.29134V11.0835C7.29134 11.4057 7.55251 11.6668 7.87467 11.6668C8.19684 11.6668 8.45801 11.4057 8.45801 11.0835V7.5835H11.958C12.2802 7.5835 12.5413 7.32233 12.5413 7.00016C12.5413 6.678 12.2802 6.41683 11.958 6.41683Z"/>
+														</svg>
+													</span>
+												</button>
 											</div>
 										</td>
-										<td class="date">
-											<span class="suptotal">Последний визит</span>
-											<span>18.01.23</span>
+										<td class="cell-button">
+											<span class="suptotal">Дата</span>
+											<button class="btn btn-calendar">
+												<time>
+													<span class="first">18.01.23</span>
+													<span class="second"></span>
+												</time>
+												<span class="icon icon-calendar">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
+														<path d="M14.25 3H3.75C2.92157 3 2.25 3.67157 2.25 4.5V15C2.25 15.8284 2.92157 16.5 3.75 16.5H14.25C15.0784 16.5 15.75 15.8284 15.75 15V4.5C15.75 3.67157 15.0784 3 14.25 3Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+														<path d="M12 1.5V4.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+														<path d="M6 1.5V4.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+														<path d="M2.25 7.5H15.75" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+													</svg>
+												</span>
+											</button>
 										</td>
-										<td class="date">
-											<span class="suptotal">Последний отчёт</span>
-											<span>18.01.23</span>
-										</td>
-										<td class="total">
-											<span class="suptotal">Total activities </span>
-											<span>100</span>
-										</td>
+
 										<td class="more">
 											<button class="btn btn-shape dropdown-toggle" type="button" id="dropdownTotal"
 												data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="16, 16">
@@ -2910,42 +2705,85 @@
 											</ul>
 										</td>
 									</tr>
-
 									<tr>
 										<th class="id" scope="row">
-											<span class="suptotal">ID:</span>
-											<span>1</span>
+											356А5
 										</th>
-										<td class="placement">
-											<span class="suptotal">Департамент</span>
-											<span>Content</span>
+										<th class="cell-button" scope="row">
+											<span class="suptotal">Страна тура</span>
+											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTable24"
+												data-bs-toggle="dropdown" aria-expanded="false">
+												Армения
+												<span class="icon icon-arrow">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
+														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
+															stroke-linejoin="round" />
+													</svg>
+												</span>
+											</button>
+											<ul class="dropdown-menu" aria-labelledby="dropdownTable24">
+												<li><a class="dropdown-item" href="#">Action</a></li>
+												<li><a class="dropdown-item" href="#">Another action</a></li>
+												<li><a class="dropdown-item" href="#">Something else here</a></li>
+											</ul>
+										</th>
+										<td class="cell-button">
+											<span class="suptotal">Регион</span>
+											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTable25"
+												data-bs-toggle="dropdown" aria-expanded="false">
+												Total
+												<span class="icon icon-arrow">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
+														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
+															stroke-linejoin="round" />
+													</svg>
+												</span>
+											</button>
+											<ul class="dropdown-menu" aria-labelledby="dropdownTable25">
+												<li><a class="dropdown-item" href="#">Action</a></li>
+												<li><a class="dropdown-item" href="#">Another action</a></li>
+												<li><a class="dropdown-item" href="#">Something else here</a></li>
+											</ul>
 										</td>
-										<td class="name">
-											<span>Имя Фамилия Отчество</span>
-										</td>
-										<td class="email">
-											<span class="suptotal">Почта</span>
-											<span>olga.travel@fstravel.com</span>
-										</td>
-										<td class="status">
-											<span class="suptotal">Статус</span>
-											<div class="wrapper-status">
-												<span class="indicator active"></span>
-												active
+										<td class="counter">
+											<span class="suptotal">Макс. периодичность</span>
+											<div class="item-counter">
+												<button class="btn decrement">
+													<span class="icon icon-decrement">
+														<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
+															<path
+																d="M11.958 7.58317H3.79134C3.46918 7.58317 3.20801 7.322 3.20801 6.99984C3.20801 6.67767 3.46918 6.4165 3.79134 6.4165H11.958C12.2802 6.4165 12.5413 6.67767 12.5413 6.99984C12.5413 7.322 12.2802 7.58317 11.958 7.58317Z"/>
+														</svg>
+													</span>
+												</button>
+												<input type="text" value="7">
+												<button class="btn increment">
+													<span class="icon icon-increment">
+														<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
+															<path d="M11.958 6.41683H8.45801V2.91683C8.45801 2.59466 8.19684 2.3335 7.87467 2.3335C7.55251 2.3335 7.29134 2.59466 7.29134 2.91683V6.41683H3.79134C3.46918 6.41683 3.20801 6.678 3.20801 7.00016C3.20801 7.32233 3.46918 7.5835 3.79134 7.5835H7.29134V11.0835C7.29134 11.4057 7.55251 11.6668 7.87467 11.6668C8.19684 11.6668 8.45801 11.4057 8.45801 11.0835V7.5835H11.958C12.2802 7.5835 12.5413 7.32233 12.5413 7.00016C12.5413 6.678 12.2802 6.41683 11.958 6.41683Z"/>
+														</svg>
+													</span>
+												</button>
 											</div>
 										</td>
-										<td class="date">
-											<span class="suptotal">Последний визит</span>
-											<span>18.01.23</span>
+										<td class="cell-button">
+											<span class="suptotal">Дата</span>
+											<button class="btn btn-calendar">
+												<time>
+													<span class="first">18.01.23</span>
+													<span class="second"></span>
+												</time>
+												<span class="icon icon-calendar">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
+														<path d="M14.25 3H3.75C2.92157 3 2.25 3.67157 2.25 4.5V15C2.25 15.8284 2.92157 16.5 3.75 16.5H14.25C15.0784 16.5 15.75 15.8284 15.75 15V4.5C15.75 3.67157 15.0784 3 14.25 3Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+														<path d="M12 1.5V4.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+														<path d="M6 1.5V4.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+														<path d="M2.25 7.5H15.75" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+													</svg>
+												</span>
+											</button>
 										</td>
-										<td class="date">
-											<span class="suptotal">Последний отчёт</span>
-											<span>18.01.23</span>
-										</td>
-										<td class="total">
-											<span class="suptotal">Total activities </span>
-											<span>100</span>
-										</td>
+
 										<td class="more">
 											<button class="btn btn-shape dropdown-toggle" type="button" id="dropdownTotal"
 												data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="16, 16">
@@ -2996,42 +2834,85 @@
 											</ul>
 										</td>
 									</tr>
-
 									<tr>
 										<th class="id" scope="row">
-											<span class="suptotal">ID:</span>
-											<span>1</span>
+											356А5
 										</th>
-										<td class="placement">
-											<span class="suptotal">Департамент</span>
-											<span>Content</span>
+										<th class="cell-button" scope="row">
+											<span class="suptotal">Страна тура</span>
+											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTable26"
+												data-bs-toggle="dropdown" aria-expanded="false">
+												Сербия
+												<span class="icon icon-arrow">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
+														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
+															stroke-linejoin="round" />
+													</svg>
+												</span>
+											</button>
+											<ul class="dropdown-menu" aria-labelledby="dropdownTable26">
+												<li><a class="dropdown-item" href="#">Action</a></li>
+												<li><a class="dropdown-item" href="#">Another action</a></li>
+												<li><a class="dropdown-item" href="#">Something else here</a></li>
+											</ul>
+										</th>
+										<td class="cell-button">
+											<span class="suptotal">Регион</span>
+											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTable27"
+												data-bs-toggle="dropdown" aria-expanded="false">
+												Total
+												<span class="icon icon-arrow">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
+														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
+															stroke-linejoin="round" />
+													</svg>
+												</span>
+											</button>
+											<ul class="dropdown-menu" aria-labelledby="dropdownTable27">
+												<li><a class="dropdown-item" href="#">Action</a></li>
+												<li><a class="dropdown-item" href="#">Another action</a></li>
+												<li><a class="dropdown-item" href="#">Something else here</a></li>
+											</ul>
 										</td>
-										<td class="name">
-											<span>Имя Фамилия Отчество</span>
-										</td>
-										<td class="email">
-											<span class="suptotal">Почта</span>
-											<span>olga.travel@fstravel.com</span>
-										</td>
-										<td class="status">
-											<span class="suptotal">Статус</span>
-											<div class="wrapper-status">
-												<span class="indicator active"></span>
-												active
+										<td class="counter">
+											<span class="suptotal">Макс. периодичность</span>
+											<div class="item-counter">
+												<button class="btn decrement">
+													<span class="icon icon-decrement">
+														<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
+															<path
+																d="M11.958 7.58317H3.79134C3.46918 7.58317 3.20801 7.322 3.20801 6.99984C3.20801 6.67767 3.46918 6.4165 3.79134 6.4165H11.958C12.2802 6.4165 12.5413 6.67767 12.5413 6.99984C12.5413 7.322 12.2802 7.58317 11.958 7.58317Z"/>
+														</svg>
+													</span>
+												</button>
+												<input type="text" value="7">
+												<button class="btn increment">
+													<span class="icon icon-increment">
+														<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
+															<path d="M11.958 6.41683H8.45801V2.91683C8.45801 2.59466 8.19684 2.3335 7.87467 2.3335C7.55251 2.3335 7.29134 2.59466 7.29134 2.91683V6.41683H3.79134C3.46918 6.41683 3.20801 6.678 3.20801 7.00016C3.20801 7.32233 3.46918 7.5835 3.79134 7.5835H7.29134V11.0835C7.29134 11.4057 7.55251 11.6668 7.87467 11.6668C8.19684 11.6668 8.45801 11.4057 8.45801 11.0835V7.5835H11.958C12.2802 7.5835 12.5413 7.32233 12.5413 7.00016C12.5413 6.678 12.2802 6.41683 11.958 6.41683Z"/>
+														</svg>
+													</span>
+												</button>
 											</div>
 										</td>
-										<td class="date">
-											<span class="suptotal">Последний визит</span>
-											<span>18.01.23</span>
+										<td class="cell-button">
+											<span class="suptotal">Дата</span>
+											<button class="btn btn-calendar">
+												<time>
+													<span class="first">18.01.23</span>
+													<span class="second"></span>
+												</time>
+												<span class="icon icon-calendar">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
+														<path d="M14.25 3H3.75C2.92157 3 2.25 3.67157 2.25 4.5V15C2.25 15.8284 2.92157 16.5 3.75 16.5H14.25C15.0784 16.5 15.75 15.8284 15.75 15V4.5C15.75 3.67157 15.0784 3 14.25 3Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+														<path d="M12 1.5V4.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+														<path d="M6 1.5V4.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+														<path d="M2.25 7.5H15.75" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+													</svg>
+												</span>
+											</button>
 										</td>
-										<td class="date">
-											<span class="suptotal">Последний отчёт</span>
-											<span>18.01.23</span>
-										</td>
-										<td class="total">
-											<span class="suptotal">Total activities </span>
-											<span>100</span>
-										</td>
+
 										<td class="more">
 											<button class="btn btn-shape dropdown-toggle" type="button" id="dropdownTotal"
 												data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="16, 16">
@@ -3082,42 +2963,85 @@
 											</ul>
 										</td>
 									</tr>
-
 									<tr>
 										<th class="id" scope="row">
-											<span class="suptotal">ID:</span>
-											<span>1</span>
+											356А5
 										</th>
-										<td class="placement">
-											<span class="suptotal">Департамент</span>
-											<span>Content</span>
+										<th class="cell-button" scope="row">
+											<span class="suptotal">Страна тура</span>
+											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTable28"
+												data-bs-toggle="dropdown" aria-expanded="false">
+												Индонезия
+												<span class="icon icon-arrow">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
+														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
+															stroke-linejoin="round" />
+													</svg>
+												</span>
+											</button>
+											<ul class="dropdown-menu" aria-labelledby="dropdownTable28">
+												<li><a class="dropdown-item" href="#">Action</a></li>
+												<li><a class="dropdown-item" href="#">Another action</a></li>
+												<li><a class="dropdown-item" href="#">Something else here</a></li>
+											</ul>
+										</th>
+										<td class="cell-button">
+											<span class="suptotal">Регион</span>
+											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTable29"
+												data-bs-toggle="dropdown" aria-expanded="false">
+												Total
+												<span class="icon icon-arrow">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
+														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
+															stroke-linejoin="round" />
+													</svg>
+												</span>
+											</button>
+											<ul class="dropdown-menu" aria-labelledby="dropdownTable29">
+												<li><a class="dropdown-item" href="#">Action</a></li>
+												<li><a class="dropdown-item" href="#">Another action</a></li>
+												<li><a class="dropdown-item" href="#">Something else here</a></li>
+											</ul>
 										</td>
-										<td class="name">
-											<span>Имя Фамилия Отчество</span>
-										</td>
-										<td class="email">
-											<span class="suptotal">Почта</span>
-											<span>olga.travel@fstravel.com</span>
-										</td>
-										<td class="status">
-											<span class="suptotal">Статус</span>
-											<div class="wrapper-status">
-												<span class="indicator active"></span>
-												active
+										<td class="counter">
+											<span class="suptotal">Макс. периодичность</span>
+											<div class="item-counter">
+												<button class="btn decrement">
+													<span class="icon icon-decrement">
+														<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
+															<path
+																d="M11.958 7.58317H3.79134C3.46918 7.58317 3.20801 7.322 3.20801 6.99984C3.20801 6.67767 3.46918 6.4165 3.79134 6.4165H11.958C12.2802 6.4165 12.5413 6.67767 12.5413 6.99984C12.5413 7.322 12.2802 7.58317 11.958 7.58317Z"/>
+														</svg>
+													</span>
+												</button>
+												<input type="text" value="7">
+												<button class="btn increment">
+													<span class="icon icon-increment">
+														<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
+															<path d="M11.958 6.41683H8.45801V2.91683C8.45801 2.59466 8.19684 2.3335 7.87467 2.3335C7.55251 2.3335 7.29134 2.59466 7.29134 2.91683V6.41683H3.79134C3.46918 6.41683 3.20801 6.678 3.20801 7.00016C3.20801 7.32233 3.46918 7.5835 3.79134 7.5835H7.29134V11.0835C7.29134 11.4057 7.55251 11.6668 7.87467 11.6668C8.19684 11.6668 8.45801 11.4057 8.45801 11.0835V7.5835H11.958C12.2802 7.5835 12.5413 7.32233 12.5413 7.00016C12.5413 6.678 12.2802 6.41683 11.958 6.41683Z"/>
+														</svg>
+													</span>
+												</button>
 											</div>
 										</td>
-										<td class="date">
-											<span class="suptotal">Последний визит</span>
-											<span>18.01.23</span>
+										<td class="cell-button">
+											<span class="suptotal">Дата</span>
+											<button class="btn btn-calendar">
+												<time>
+													<span class="first">18.01.23</span>
+													<span class="second"></span>
+												</time>
+												<span class="icon icon-calendar">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
+														<path d="M14.25 3H3.75C2.92157 3 2.25 3.67157 2.25 4.5V15C2.25 15.8284 2.92157 16.5 3.75 16.5H14.25C15.0784 16.5 15.75 15.8284 15.75 15V4.5C15.75 3.67157 15.0784 3 14.25 3Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+														<path d="M12 1.5V4.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+														<path d="M6 1.5V4.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+														<path d="M2.25 7.5H15.75" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+													</svg>
+												</span>
+											</button>
 										</td>
-										<td class="date">
-											<span class="suptotal">Последний отчёт</span>
-											<span>18.01.23</span>
-										</td>
-										<td class="total">
-											<span class="suptotal">Total activities </span>
-											<span>100</span>
-										</td>
+
 										<td class="more">
 											<button class="btn btn-shape dropdown-toggle" type="button" id="dropdownTotal"
 												data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="16, 16">
@@ -3168,128 +3092,85 @@
 											</ul>
 										</td>
 									</tr>
-
 									<tr>
 										<th class="id" scope="row">
-											<span class="suptotal">ID:</span>
-											<span>1</span>
+											356А5
 										</th>
-										<td class="placement">
-											<span class="suptotal">Департамент</span>
-											<span>Content</span>
-										</td>
-										<td class="name">
-											<span>Имя Фамилия Отчество</span>
-										</td>
-										<td class="email">
-											<span class="suptotal">Почта</span>
-											<span>olga.travel@fstravel.com</span>
-										</td>
-										<td class="status">
-											<span class="suptotal">Статус</span>
-											<div class="wrapper-status">
-												<span class="indicator new"></span>
-												new
-											</div>
-										</td>
-										<td class="date">
-											<span class="suptotal">Последний визит</span>
-											<span>18.01.23</span>
-										</td>
-										<td class="date">
-											<span class="suptotal">Последний отчёт</span>
-											<span>18.01.23</span>
-										</td>
-										<td class="total">
-											<span class="suptotal">Total activities </span>
-											<span>100</span>
-										</td>
-										<td class="more">
-											<button class="btn btn-shape dropdown-toggle" type="button" id="dropdownTotal"
-												data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="16, 16">
-												<span class="icon icon-shape">
-													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 16">
-														<path
-															d="M4.00033 8C4.00033 8.92048 3.25413 9.66667 2.33366 9.66667C1.41318 9.66667 0.666992 8.92048 0.666992 8C0.666992 7.07953 1.41318 6.33333 2.33366 6.33333C3.25413 6.33333 4.00033 7.07953 4.00033 8Z" />
-														<path
-															d="M4.00033 2.16667C4.00033 3.08714 3.25413 3.83333 2.33366 3.83333C1.41318 3.83333 0.666992 3.08714 0.666992 2.16667C0.666992 1.24619 1.41318 0.5 2.33366 0.5C3.25413 0.5 4.00033 1.24619 4.00033 2.16667Z" />
-														<path
-															d="M4.00033 13.8333C4.00033 14.7538 3.25413 15.5 2.33366 15.5C1.41318 15.5 0.666992 14.7538 0.666992 13.8333C0.666992 12.9129 1.41318 12.1667 2.33366 12.1667C3.25413 12.1667 4.00033 12.9129 4.00033 13.8333Z" />
+										<th class="cell-button" scope="row">
+											<span class="suptotal">Страна тура</span>
+											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTable30"
+												data-bs-toggle="dropdown" aria-expanded="false">
+												Индонезия
+												<span class="icon icon-arrow">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
+														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
+															stroke-linejoin="round" />
 													</svg>
 												</span>
 											</button>
-											<ul class="dropdown-menu dropdown-menu-end triangle" aria-labelledby="dropdownTotal">
-												<span class="icon icon-triangle">
-													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 8">
-														<path fill-rule="evenodd" clip-rule="evenodd"
-															d="M18 8L10.591 0.653454C9.71231 -0.217818 8.28769 -0.217818 7.40901 0.653454L0 8H18Z" />
+											<ul class="dropdown-menu" aria-labelledby="dropdownTable30">
+												<li><a class="dropdown-item" href="#">Action</a></li>
+												<li><a class="dropdown-item" href="#">Another action</a></li>
+												<li><a class="dropdown-item" href="#">Something else here</a></li>
+											</ul>
+										</th>
+										<td class="cell-button">
+											<span class="suptotal">Регион</span>
+											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTable31"
+												data-bs-toggle="dropdown" aria-expanded="false">
+												Total
+												<span class="icon icon-arrow">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
+														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
+															stroke-linejoin="round" />
 													</svg>
 												</span>
-												<li>
-													<a class="dropdown-item" href="#">
-														<span class="icon icon-block">
-															<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-																<path
-																	d="M15.8333 9.1665H4.16667C3.24619 9.1665 2.5 9.9127 2.5 10.8332V16.6665C2.5 17.587 3.24619 18.3332 4.16667 18.3332H15.8333C16.7538 18.3332 17.5 17.587 17.5 16.6665V10.8332C17.5 9.9127 16.7538 9.1665 15.8333 9.1665Z"
-																	stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
-																<path
-																	d="M5.83301 9.1665V5.83317C5.83301 4.7281 6.27199 3.66829 7.0534 2.88689C7.8348 2.10549 8.89461 1.6665 9.99967 1.6665C11.1047 1.6665 12.1646 2.10549 12.946 2.88689C13.7274 3.66829 14.1663 4.7281 14.1663 5.83317V9.1665"
-																	stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
-															</svg>
-														</span>
-														Заблокировать
-													</a>
-												</li>
-												<li>
-													<a class="dropdown-item" href="#">
-														<span class="icon icon-edit">
-															<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-																<path fill-rule="evenodd" clip-rule="evenodd"
-																	d="M10.9355 3.32017C12.0087 2.24541 13.7492 2.24476 14.8231 3.3187L16.4311 4.92667C17.4959 5.99145 17.507 7.71521 16.4559 8.79358L9.13862 16.3012C8.4331 17.025 7.46544 17.4332 6.455 17.4332L4.63288 17.4331C3.35363 17.433 2.33202 16.3667 2.38582 15.0876L2.46513 13.202C2.50463 12.263 2.89491 11.373 3.55875 10.7081L10.9355 3.32017ZM13.7633 4.38016C13.2751 3.892 12.484 3.8923 11.9962 4.38083L10.9345 5.44417L14.3231 8.83281L15.3825 7.74582C15.8603 7.25565 15.8553 6.47212 15.3713 5.98813L13.7633 4.38016ZM4.61941 11.7688L9.87461 6.50563L13.2761 9.90708L8.06524 15.2534C7.64192 15.6877 7.06133 15.9326 6.45507 15.9326L4.63295 15.9325C4.20653 15.9325 3.86599 15.5771 3.88393 15.1507L3.96324 13.2651C3.98694 12.7017 4.2211 12.1677 4.61941 11.7688ZM17.0958 17.372C17.5099 17.372 17.8455 17.0361 17.8455 16.6217C17.8455 16.2074 17.5099 15.8715 17.0958 15.8715H11.9944C11.5803 15.8715 11.2447 16.2074 11.2447 16.6217C11.2447 17.0361 11.5803 17.372 11.9944 17.372H17.0958Z" />
-															</svg>
-														</span>
-														Редактировать
-													</a>
-												</li>
+											</button>
+											<ul class="dropdown-menu" aria-labelledby="dropdownTable31">
+												<li><a class="dropdown-item" href="#">Action</a></li>
+												<li><a class="dropdown-item" href="#">Another action</a></li>
+												<li><a class="dropdown-item" href="#">Something else here</a></li>
 											</ul>
 										</td>
-									</tr>
-
-									<tr>
-										<th class="id" scope="row">
-											<span class="suptotal">ID:</span>
-											<span>1</span>
-										</th>
-										<td class="placement">
-											<span class="suptotal">Департамент</span>
-											<span>Content</span>
-										</td>
-										<td class="name">
-											<span>Имя Фамилия Отчество</span>
-										</td>
-										<td class="email">
-											<span class="suptotal">Почта</span>
-											<span>olga.travel@fstravel.com</span>
-										</td>
-										<td class="status">
-											<span class="suptotal">Статус</span>
-											<div class="wrapper-status">
-												<span class="indicator new"></span>
-												new
+										<td class="counter">
+											<span class="suptotal">Макс. периодичность</span>
+											<div class="item-counter">
+												<button class="btn decrement">
+													<span class="icon icon-decrement">
+														<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
+															<path
+																d="M11.958 7.58317H3.79134C3.46918 7.58317 3.20801 7.322 3.20801 6.99984C3.20801 6.67767 3.46918 6.4165 3.79134 6.4165H11.958C12.2802 6.4165 12.5413 6.67767 12.5413 6.99984C12.5413 7.322 12.2802 7.58317 11.958 7.58317Z"/>
+														</svg>
+													</span>
+												</button>
+												<input type="text" value="7">
+												<button class="btn increment">
+													<span class="icon icon-increment">
+														<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
+															<path d="M11.958 6.41683H8.45801V2.91683C8.45801 2.59466 8.19684 2.3335 7.87467 2.3335C7.55251 2.3335 7.29134 2.59466 7.29134 2.91683V6.41683H3.79134C3.46918 6.41683 3.20801 6.678 3.20801 7.00016C3.20801 7.32233 3.46918 7.5835 3.79134 7.5835H7.29134V11.0835C7.29134 11.4057 7.55251 11.6668 7.87467 11.6668C8.19684 11.6668 8.45801 11.4057 8.45801 11.0835V7.5835H11.958C12.2802 7.5835 12.5413 7.32233 12.5413 7.00016C12.5413 6.678 12.2802 6.41683 11.958 6.41683Z"/>
+														</svg>
+													</span>
+												</button>
 											</div>
 										</td>
-										<td class="date">
-											<span class="suptotal">Последний визит</span>
-											<span>18.01.23</span>
+										<td class="cell-button">
+											<span class="suptotal">Дата</span>
+											<button class="btn btn-calendar">
+												<time>
+													<span class="first">18.01.23</span>
+													<span class="second"></span>
+												</time>
+												<span class="icon icon-calendar">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
+														<path d="M14.25 3H3.75C2.92157 3 2.25 3.67157 2.25 4.5V15C2.25 15.8284 2.92157 16.5 3.75 16.5H14.25C15.0784 16.5 15.75 15.8284 15.75 15V4.5C15.75 3.67157 15.0784 3 14.25 3Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+														<path d="M12 1.5V4.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+														<path d="M6 1.5V4.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+														<path d="M2.25 7.5H15.75" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+													</svg>
+												</span>
+											</button>
 										</td>
-										<td class="date">
-											<span class="suptotal">Последний отчёт</span>
-											<span>18.01.23</span>
-										</td>
-										<td class="total">
-											<span class="suptotal">Total activities </span>
-											<span>100</span>
-										</td>
+
 										<td class="more">
 											<button class="btn btn-shape dropdown-toggle" type="button" id="dropdownTotal"
 												data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="16, 16">
@@ -3382,6 +3263,7 @@
 							</li>
 						</ul>
 					</nav>
+
 				</div>
 
 
@@ -3390,816 +3272,10 @@
 
 	</main>
 
-	<footer class="footer">
-	
-</footer>
+	<!--#include virtual="/parts/footer.html" -->
 
-	<div class="modal fade" id="addedTownModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <form class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="addedTownTitle">Добавить город</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="form-floating">
-          <input type="text" class="form-control" id="floatingInput1" placeholder="Название города">
-          <label for="floatingInput1">Название города</label>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
-        <button type="submit" class="btn btn-primary btn-lg">Сохранить</button>
-      </div>
-    </form>
-  </div>
-</div>
-
-<div class="modal fade" id="changedTownModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <form class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="changedTownTitle">Изменить город</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="form-floating">
-          <input type="text" class="form-control" id="floatingInput1" value="Москва" placeholder="Название города">
-          <label for="floatingInput1">Название города</label>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
-        <button type="submit" class="btn btn-primary btn-lg">Сохранить</button>
-      </div>
-    </form>
-  </div>
-</div>
-
-<div class="modal fade" id="addedToolsModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <form class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="addedToolsTitle">Добавление инструмента</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-
-        </button>
-      </div>
-      <div class="modal-body">
-
-        <div class="wrapper-check">
-          <div class="form-check">
-            <input class="form-check-input is-radio" type="radio" value="" name="canceledCheck" id="addedTools1">
-            <label class="form-check-label" for="addedTools1">
-              B2B
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input is-radio" type="radio" value="" name="canceledCheck" id="addedTools2">
-            <label class="form-check-label" for="addedTools2">
-              B2C
-            </label>
-          </div>
-        </div>
-
-        <div class="form-floating">
-          <input type="text" class="form-control" id="floatingInput1" placeholder="Название города">
-          <label for="floatingInput1">Название категории</label>
-        </div>
-
-        <select class="form-select" aria-label="Default select example">
-          <option selected disabled>Категория</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
-      </div>
-      <div class="modal-footer is-overflow">
-        <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
-        <button type="submit" class="btn btn-primary btn-lg">
-          Добавить инструмент
-        </button>
-      </div>
-    </form>
-  </div>
-</div>
-
-<div class="modal fade" id="editedToolsModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <form class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="editedToolsTitle">Редактирование инструмента</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-
-        </button>
-      </div>
-      <div class="modal-body">
-
-        <div class="wrapper-check">
-          <div class="form-check">
-            <input class="form-check-input is-radio" type="radio" value="" name="canceledCheck" id="editedTools1">
-            <label class="form-check-label" for="editedTools1">
-              B2B
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input is-radio" type="radio" value="" name="canceledCheck" id="editedTools2">
-            <label class="form-check-label" for="editedTools2">
-              B2C
-            </label>
-          </div>
-        </div>
-
-        <div class="form-floating">
-          <input type="text" class="form-control" id="floatingInput1" placeholder="Название города">
-          <label for="floatingInput1">Название категории</label>
-        </div>
-
-        <select class="form-select" aria-label="Default select example">
-          <option selected disabled>Категория</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
-      </div>
-      <div class="modal-footer is-overflow">
-        <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
-        <button type="submit" class="btn btn-primary btn-lg">
-          Добавить категорию
-        </button>
-      </div>
-    </form>
-  </div>
-</div>
-
-<div class="modal fade" id="canceledToolsModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <form class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="canceledToolsTitle">Отклонение инструмента</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-
-        </button>
-      </div>
-      <div class="modal-body">
-        <textarea class="form-control" placeholder="Причина отклонения" rows="1"></textarea>
-
-        <div class="wrapper-check">
-          <div class="form-check">
-            <input class="form-check-input is-radio" type="radio" value="" name="canceledCheck" id="canceledTools1">
-            <label class="form-check-label" for="canceledTools1">
-              B2B
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input is-radio" type="radio" value="" name="canceledCheck" id="canceledTools2">
-            <label class="form-check-label" for="canceledTools2">
-              B2C
-            </label>
-          </div>
-        </div>
-
-        <select class="form-select" aria-label="Default select example">
-          <option selected disabled>Выбрать категорию</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
-
-        <select class="form-select" aria-label="Default select example">
-          <option selected disabled>Вариант замены предложенного инструмента</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
-        <button type="submit" class="btn btn-primary btn-lg">Отправить</button>
-      </div>
-    </form>
-  </div>
-</div>
-
-<div class="modal fade" id="addedCategoryModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <form class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="addedCategoryTitle">Добавление категории</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-
-        </button>
-      </div>
-      <div class="modal-body">
-
-        <div class="wrapper-check">
-          <div class="form-check">
-            <input class="form-check-input is-radio" type="radio" value="" name="canceledCheck" id="addedCategory1">
-            <label class="form-check-label" for="addedCategory1">
-              B2B
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input is-radio" type="radio" value="" name="canceledCheck" id="addedCategory2">
-            <label class="form-check-label" for="addedCategory2">
-              B2C
-            </label>
-          </div>
-        </div>
-
-        <div class="form-floating">
-          <input type="text" class="form-control" id="floatingInput1" placeholder="Название города">
-          <label for="floatingInput1">Название категории</label>
-        </div>
-      </div>
-      <div class="modal-footer is-overflow">
-        <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
-        <button type="submit" class="btn btn-primary btn-lg">
-          Добавить категорию
-        </button>
-      </div>
-    </form>
-  </div>
-</div>
-
-<div class="modal fade" id="addedProductModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <form class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="addedProductTitle">Добавление продукта</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-
-        </button>
-      </div>
-      <div class="modal-body">
-
-        <div class="wrapper-check">
-          <div class="form-check">
-            <input class="form-check-input is-radio" type="radio" value="" name="canceledCheck" id="addedProduct1">
-            <label class="form-check-label" for="addedProduct1">
-              B2B
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input is-radio" type="radio" value="" name="canceledCheck" id="addedProduct2">
-            <label class="form-check-label" for="addedProduct2">
-              B2C
-            </label>
-          </div>
-        </div>
-
-        <input type="text" class="form-control" placeholder="Название продукта продвижения">
-
-        <select class="form-select" aria-label="Default select example">
-          <option selected disabled>Выбрать категорию</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
-
-        <textarea class="form-control" placeholder="Описание" rows="1"></textarea>
-      </div>
-      <div class="modal-footer is-overflow">
-        <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
-        <button type="submit" class="btn btn-primary btn-lg">
-          Добавить новый продукт
-        </button>
-      </div>
-    </form>
-  </div>
-</div>
-
-<div class="modal fade" id="addedHotelModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <form class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="addedHotelTitle">Добавление отеля</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-
-        </button>
-      </div>
-      <div class="modal-body">
-
-        <input type="text" class="form-control" placeholder="Наименование отеля">
-
-        <select class="form-select" aria-label="Default select example">
-          <option selected disabled>Выберите регион</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
-
-        <select class="form-select" aria-label="Default select example">
-          <option selected disabled>Выберить страну</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
-
-      </div>
-      <div class="modal-footer is-overflow">
-        <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
-        <button type="submit" class="btn btn-primary btn-lg">
-          Добавить новый отель
-        </button>
-      </div>
-    </form>
-  </div>
-</div>
-
-<div class="modal fade" id="addedRegionModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <form class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="addedRegionTitle">Добавление региона</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-
-        </button>
-      </div>
-      <div class="modal-body">
-
-        <input type="text" class="form-control" placeholder="Наименование региона">
-
-        <select class="form-select" aria-label="Default select example">
-          <option selected disabled>Выбрать страну</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
-
-      </div>
-      <div class="modal-footer is-overflow">
-        <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
-        <button type="submit" class="btn btn-primary btn-lg">
-          Добавить новый регион
-        </button>
-      </div>
-    </form>
-  </div>
-</div>
-
-<div class="modal fade" id="addedCountryModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <form class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="addedCountryTitle">Добавление страны</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-
-        </button>
-      </div>
-      <div class="modal-body">
-
-        <input type="text" class="form-control" placeholder="Название страны">
-
-      </div>
-      <div class="modal-footer is-overflow">
-        <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
-        <button type="submit" class="btn btn-primary btn-lg">
-          Добавить новую страну
-        </button>
-      </div>
-    </form>
-  </div>
-</div>
-
-<div class="modal modal-collapse fade" id="bindHotelModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <form class="modal-content">
-      <div class="modal-content-wrapper">
-        <div class="modal-header">
-          <h5 class="modal-title" id="bindHotelTitle">Привязать отель</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-
-          </button>
-        </div>
-        <div class="modal-body">
-
-          <div class="wrapper-search">
-            <button class="btn btn-search" type="submit">
-              <span class="icon icon-search">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M17.31 15.9L20.71 19.29C20.8993 19.4778 21.0058 19.7334 21.0058 20C21.0058 20.2666 20.8993 20.5222 20.71 20.71C20.5222 20.8993 20.2666 21.0058 20 21.0058C19.7334 21.0058 19.4778 20.8993 19.29 20.71L15.9 17.31C14.5025 18.407 12.7767 19.0022 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11C19.0022 12.7767 18.407 14.5025 17.31 15.9ZM11 5C7.68629 5 5 7.68629 5 11C5 14.3137 7.68629 17 11 17C14.3137 17 17 14.3137 17 11C17 7.68629 14.3137 5 11 5Z">
-                  </path>
-                </svg>
-              </span>
-            </button>
-            <input class="form-control" type="search" placeholder="Поиск" aria-label="Search">
-          </div>
-
-          <div>
-            <button class="btn btn-collapse" type="button" data-bs-toggle="collapse" data-bs-target="#collapseModal1"
-              aria-expanded="true" aria-controls="collapseModal1">
-              <span class="icon icon-arrow">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-                  <path d="M6 12L10 8L6 4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </span>
-              Россия
-            </button>
-
-            <div class="collapse show" id="collapseModal1">
-              <button class="btn btn-collapse btn-collapse-nested" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapseModalNested1" aria-expanded="true" aria-controls="collapseModalNested1">
-                <span class="icon icon-arrow">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-                    <path d="M6 12L10 8L6 4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </span>
-                Московская область
-              </button>
-
-              <div class="collapse collapse-nested show" id="collapseModalNested1">
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel1">
-                  <label class="form-check-label" for="collapseModalHostel1">
-                    Отель
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel2">
-                  <label class="form-check-label" for="collapseModalHostel2">
-                    Отель
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel3">
-                  <label class="form-check-label" for="collapseModalHostel3">
-                    Отель
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel4">
-                  <label class="form-check-label" for="collapseModalHostel4">
-                    Отель
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel5">
-                  <label class="form-check-label" for="collapseModalHostel5">
-                    Отель
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel6">
-                  <label class="form-check-label" for="collapseModalHostel6">
-                    Отель
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel7">
-                  <label class="form-check-label" for="collapseModalHostel7">
-                    Отель
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel8">
-                  <label class="form-check-label" for="collapseModalHostel8">
-                    Отель
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel9">
-                  <label class="form-check-label" for="collapseModalHostel9">
-                    Отель
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel10">
-                  <label class="form-check-label" for="collapseModalHostel10">
-                    Отель
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel11">
-                  <label class="form-check-label" for="collapseModalHostel11">
-                    Отель
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel12">
-                  <label class="form-check-label" for="collapseModalHostel12">
-                    Отель
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel13">
-                  <label class="form-check-label" for="collapseModalHostel13">
-                    Отель
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel14">
-                  <label class="form-check-label" for="collapseModalHostel14">
-                    Отель
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel15">
-                  <label class="form-check-label" for="collapseModalHostel15">
-                    Отель
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-        <div class="modal-footer is-overflow">
-          <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
-          <button type="submit" class="btn btn-primary btn-lg">
-            Привязать отель
-          </button>
-        </div>
-      </div>
-    </form>
-  </div>
-</div>
-
-<div class="modal modal-collapse fade" id="bindRegionModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <form class="modal-content">
-      <div class="modal-content-wrapper">
-        <div class="modal-header">
-          <h5 class="modal-title" id="bindRegionTitle">Привязать регион</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-
-          </button>
-        </div>
-        <div class="modal-body">
-
-          <div class="wrapper-search">
-            <button class="btn btn-search" type="submit">
-              <span class="icon icon-search">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M17.31 15.9L20.71 19.29C20.8993 19.4778 21.0058 19.7334 21.0058 20C21.0058 20.2666 20.8993 20.5222 20.71 20.71C20.5222 20.8993 20.2666 21.0058 20 21.0058C19.7334 21.0058 19.4778 20.8993 19.29 20.71L15.9 17.31C14.5025 18.407 12.7767 19.0022 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11C19.0022 12.7767 18.407 14.5025 17.31 15.9ZM11 5C7.68629 5 5 7.68629 5 11C5 14.3137 7.68629 17 11 17C14.3137 17 17 14.3137 17 11C17 7.68629 14.3137 5 11 5Z">
-                  </path>
-                </svg>
-              </span>
-            </button>
-            <input class="form-control" type="search" placeholder="Поиск" aria-label="Search">
-          </div>
-
-          <div>
-            <button class="btn btn-collapse" type="button" data-bs-toggle="collapse" data-bs-target="#collapseModal2"
-              aria-expanded="true" aria-controls="collapseModal2">
-              <span class="icon icon-arrow">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-                  <path d="M6 12L10 8L6 4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </span>
-              Россия
-            </button>
-
-            <div class="collapse show" id="collapseModal2">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="collapseModalRegion1">
-                <label class="form-check-label" for="collapseModalRegion1">
-                  Регион
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="collapseModalRegion2">
-                <label class="form-check-label" for="collapseModalRegion2">
-                  Регион
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="collapseModalRegion3">
-                <label class="form-check-label" for="collapseModalRegion3">
-                  Регион
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="collapseModalRegion4">
-                <label class="form-check-label" for="collapseModalRegion4">
-                  Регион
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="collapseModalRegion5">
-                <label class="form-check-label" for="collapseModalRegion5">
-                  Регион
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="collapseModalRegion6">
-                <label class="form-check-label" for="collapseModalRegion6">
-                  Регион
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="collapseModalRegion7">
-                <label class="form-check-label" for="collapseModalRegion7">
-                  Регион
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="collapseModalRegion8">
-                <label class="form-check-label" for="collapseModalRegion8">
-                  Регион
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="collapseModalRegion9">
-                <label class="form-check-label" for="collapseModalRegion9">
-                  Регион
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="collapseModalRegion10">
-                <label class="form-check-label" for="collapseModalRegion10">
-                  Регион
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="collapseModalRegion11">
-                <label class="form-check-label" for="collapseModalRegion11">
-                  Регион
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="collapseModalRegion12">
-                <label class="form-check-label" for="collapseModalRegion12">
-                  Регион
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="collapseModalRegion13">
-                <label class="form-check-label" for="collapseModalRegion13">
-                  Регион
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="collapseModalRegion14">
-                <label class="form-check-label" for="collapseModalRegion14">
-                  Регион
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="collapseModalRegion15">
-                <label class="form-check-label" for="collapseModalRegion15">
-                  Регион
-                </label>
-              </div>
-            </div>
-          </div>
-
-        </div>
-        <div class="modal-footer is-overflow">
-          <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
-          <button type="submit" class="btn btn-primary btn-lg">
-            Привязать отель
-          </button>
-        </div>
-      </div>
-    </form>
-  </div>
-</div>
-
-<div class="modal modal-collapse fade" id="bindCountryModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <form class="modal-content">
-      <div class="modal-content-wrapper">
-        <div class="modal-header">
-          <h5 class="modal-title" id="bindCountryTitle">Привязать страну</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-
-          </button>
-        </div>
-        <div class="modal-body">
-
-          <div class="wrapper-search">
-            <button class="btn btn-search" type="submit">
-              <span class="icon icon-search">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M17.31 15.9L20.71 19.29C20.8993 19.4778 21.0058 19.7334 21.0058 20C21.0058 20.2666 20.8993 20.5222 20.71 20.71C20.5222 20.8993 20.2666 21.0058 20 21.0058C19.7334 21.0058 19.4778 20.8993 19.29 20.71L15.9 17.31C14.5025 18.407 12.7767 19.0022 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11C19.0022 12.7767 18.407 14.5025 17.31 15.9ZM11 5C7.68629 5 5 7.68629 5 11C5 14.3137 7.68629 17 11 17C14.3137 17 17 14.3137 17 11C17 7.68629 14.3137 5 11 5Z">
-                  </path>
-                </svg>
-              </span>
-            </button>
-            <input class="form-control" type="search" placeholder="Поиск" aria-label="Search">
-          </div>
-
-          <div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="collapseModalCountry1">
-              <label class="form-check-label" for="collapseModalCountry1">
-                Россия
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="collapseModalCountry2">
-              <label class="form-check-label" for="collapseModalCountry2">
-                Грузия
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="collapseModalCountry3">
-              <label class="form-check-label" for="collapseModalCountry3">
-                Отель
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="collapseModalCountry4">
-              <label class="form-check-label" for="collapseModalCountry4">
-                Португалия
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="collapseModalCountry5">
-              <label class="form-check-label" for="collapseModalCountry5">
-                Италия
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="collapseModalCountry6">
-              <label class="form-check-label" for="collapseModalCountry6">
-                Испания
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="collapseModalCountry7">
-              <label class="form-check-label" for="collapseModalCountry7">
-                Монако
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="collapseModalCountry8">
-              <label class="form-check-label" for="collapseModalCountry8">
-                Венгрия
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="collapseModalCountry9">
-              <label class="form-check-label" for="collapseModalCountry9">
-                Россия
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="collapseModalCountry10">
-              <label class="form-check-label" for="collapseModalCountry10">
-                Грузия
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel11">
-              <label class="form-check-label" for="collapseModalHostel11">
-                Португалия
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel12">
-              <label class="form-check-label" for="collapseModalHostel12">
-                Италия
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel13">
-              <label class="form-check-label" for="collapseModalHostel13">
-                Испания
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel14">
-              <label class="form-check-label" for="collapseModalHostel14">
-                Монако
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel15">
-              <label class="form-check-label" for="collapseModalHostel15">
-                Венгрия
-              </label>
-            </div>
-          </div>
-        </div>
-
-        <div class="modal-footer is-overflow">
-          <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
-          <button type="submit" class="btn btn-primary btn-lg">
-            Привязать отель
-          </button>
-        </div>
-      </div>
-    </form>
-  </div>
-</div>
+	<!--#include virtual="/parts/popups.html" -->
 
 </div>
 
-	
-	<script src="libs/bootstrap/bootstrap.bundle.min.js"></script>
-	<script src="libs/swiperjs/swiper-bundle.min.js"></script>
-	<script src="libs/chartjs/chart.umd.js"></script>
-	<script src="libs/vanilla-calendar/vanilla-calendar.min.js"></script>
-	<script src="js/app.min.js"></script>
-
-</body>
-</html>
+<!--#include virtual="/parts/scripts.html" -->

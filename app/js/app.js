@@ -337,6 +337,113 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 	//** (End) For Tables Collapse **//
 
+	//** (End) For Tables Collapse **//
+	const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+
+	//** (Start) For Tables Buttons **//
+	dropdownToggles.forEach(dropdownToggle => {
+		dropdownToggle.addEventListener('show.bs.dropdown', () => {
+			const cellButton = dropdownToggle.closest('.cell-button');
+			if (cellButton) cellButton.classList.add('is-active');
+		});
+
+		dropdownToggle.addEventListener('hide.bs.dropdown', () => {
+			const cellButton = dropdownToggle.closest('.cell-button');
+			if (cellButton) cellButton.classList.remove('is-active');
+		});
+	});
+	//** (End) For Tables Buttons **//
+
+	//** (Start) Vanilla Calendar **//
+	function datePickerFormatter(date) {
+		const options = { day: 'numeric', month: 'numeric', year: '2-digit' };
+		const formattedDate = new Date(date);
+		const formattedDateString = formattedDate.toLocaleDateString('en', options);
+		const [month, day, year] = formattedDateString.split('/');
+		return `${day}.${month}.${year}`;
+	}
+
+	const options = {
+		settings: {
+			lang: 'ru',
+			visibility: {
+				theme: 'light',
+			},
+		},
+		input: true,
+		actions: {
+			changeToInput(e, calendar, dates, time, hours, minutes, keeping) {
+				if (dates[0]) {
+					const formattedDate = datePickerFormatter(dates[0]);
+					const btnCalendar = document.querySelector('.btn-calendar');
+					const firstSpan = btnCalendar.querySelector('.first');
+					firstSpan.textContent = formattedDate;
+				} else {
+					const btnCalendar = document.querySelector('.btn-calendar');
+					const firstSpan = btnCalendar.querySelector('.first');
+					firstSpan.textContent = '';
+				}
+				if (dates[1]) {
+					const formattedDate = datePickerFormatter(dates[1]);
+					const btnCalendar = document.querySelector('.btn-calendar');
+					const firstSpan = btnCalendar.querySelector('.second');
+					firstSpan.textContent = formattedDate;
+				} else {
+					const btnCalendar = document.querySelector('.btn-calendar');
+					const firstSpan = btnCalendar.querySelector('.second');
+					firstSpan.textContent = '';
+				}
+			},
+		},
+		DOMTemplates: {
+			default: `
+				<div class="vanilla-calendar-header">
+					
+					<div class="vanilla-calendar-header__bottom">
+						<div class="vanilla-calendar-header__content">
+							<#Month />
+							<#Year />
+						</div>
+						<div class="vanilla-calendar-header__navigation">
+							<#ArrowPrev />
+							<#ArrowNext />
+						</div>
+					</div>
+				</div>
+				<div class="vanilla-calendar-wrapper">
+					<#WeekNumbers />
+					<div class="vanilla-calendar-content">
+						<#Week />
+						<#Days />
+					</div>
+				</div>
+				<div class="vanilla-calendar-buttons">
+					<button class="btn vanilla-calendar-buttons__close">Закрыть</button>
+					<button class="btn vanilla-calendar-buttons__save">Ок</button>
+				</div>
+			`
+		}
+	};
+
+	const btnCalendars = document.querySelectorAll('.btn-calendar');
+	const calendars = {};
+
+	btnCalendars.forEach((btnCalendar, index) => {
+		const calendarId = `calendar${index + 1}`;
+		btnCalendar.id = calendarId;
+
+		btnCalendar.addEventListener('click', () => {
+			const calendarElement = document.getElementById(calendarId);
+
+			if (!calendars[calendarId]) {
+				const calendar = new VanillaCalendar(calendarElement, options);
+				calendar.init();
+				calendars[calendarId] = calendar;
+			}
+		});
+	});
+	//** (End) Vanilla Calendar **//
+
 	// const modal123 = new bootstrap.Modal(document.getElementById('bindCountryModal'));
 	// modal123.show();
 
