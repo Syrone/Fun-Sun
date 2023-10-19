@@ -397,10 +397,104 @@ document.addEventListener('DOMContentLoaded', () => {
 	// 	},
 	// };
 
-	const vanillaCalendars = document.querySelectorAll('.vanilla-calendar')
+	// const vanillaCalendars = document.querySelectorAll('.vanilla-calendar')
 
-	vanillaCalendars.forEach((vanillaCalendar) => {
+	// vanillaCalendars.forEach((vanillaCalendar) => {
 
+	// 	const options = {
+	// 		type: 'default',
+	// 		settings: {
+	// 			lang: 'ru',
+	// 			visibility: {
+	// 				theme: 'light',
+	// 				weekend: false,
+	// 				daysOutside: false,
+	// 			},
+	// 		},
+
+	// 		DOMTemplates: {
+	// 			default: `
+	// 						<div class="vanilla-calendar-header">
+
+	// 							<div class="vanilla-calendar-header__bottom">
+	// 								<div class="vanilla-calendar-header__content">
+	// 									<#Month />
+	// 									<#Year />
+	// 								</div>
+	// 								<div class="vanilla-calendar-header__navigation">
+	// 									<#ArrowPrev />
+	// 									<#ArrowNext />
+	// 								</div>
+	// 							</div>
+	// 						</div>
+	// 						<div class="vanilla-calendar-wrapper">
+	// 							<#WeekNumbers />
+	// 							<div class="vanilla-calendar-content">
+	// 								<#Week />
+	// 								<#Days />
+	// 							</div>
+	// 						</div>
+	// 						<div class="vanilla-calendar-buttons">
+	// 							<button class="btn vanilla-calendar-buttons__close">Закрыть</button>
+	// 							<button class="btn vanilla-calendar-buttons__save">Ок</button>
+	// 						</div>
+	// 					`
+	// 		},
+
+	// 		CSSClasses: {
+	// 			calendarBtnClose: 'vanilla-calendar-buttons__close',
+	// 			calendarBtnSave: 'vanilla-calendar-buttons__save',
+	// 		},
+	// 	};
+
+	// 	const calendar = new VanillaCalendar(vanillaCalendar, options);
+	// 	calendar.init();
+
+	// 	const closeButton = vanillaCalendar.querySelector('.vanilla-calendar-buttons__close');
+	// 	closeButton.addEventListener('click', function () {
+	// 		const selectedDay = vanillaCalendar.querySelector('.vanilla-calendar-day_selected');
+	// 		const selectedDayBtn = vanillaCalendar.querySelector('.vanilla-calendar-day__btn_selected');
+	// 		if (selectedDay && selectedDayBtn) {
+	// 			selectedDay.classList.remove('vanilla-calendar-day_selected');
+	// 			selectedDayBtn.classList.remove('vanilla-calendar-day__btn_selected');
+	// 			calendar.selectedDates = []
+	// 			console.log(calendar.selectedDates);
+	// 		}
+	// 	});
+	// })
+
+	const dropdownCalendars = document.querySelectorAll('.dropdown-calendar');
+
+	dropdownCalendars.forEach(function (dropdownCalendar) {
+		const today = new Date();
+		const dropdownButton = dropdownCalendar.querySelector('.btn-calendar')
+		const dropdownButtonFirstDate = dropdownButton.querySelector('.first')
+		const dropdownButtonSecondDate = dropdownButton.querySelector('.second')
+		const dropdownMenu = dropdownCalendar.querySelector('.dropdown-menu')
+
+		function hideCalendar() {
+			dropdownCalendar.classList.remove('is-active');
+			dropdownButton.classList.remove('show');
+			dropdownButton.setAttribute('aria-expanded', 'false');
+			dropdownMenu.classList.remove('show');
+		}
+
+		function datePickerFormatter(date) {
+			const options = { day: '2-digit', month: '2-digit', year: '2-digit' };
+			const formattedDate = new Date(date);
+			const formattedDateString = formattedDate.toLocaleDateString('ru', options);
+			const [day, month, year] = formattedDateString.split('.');
+			return `${day}.${month}.${year}`;
+		}
+
+		function dateSelectedFormatter(date) {
+			const options = { day: '2-digit', month: 'long', year: 'numeric' };
+			const formattedDate = new Date(date);
+			const formattedDateString = formattedDate.toLocaleDateString('ru', options);
+			return formattedDateString;
+		}
+
+		const vanilaCalendar = dropdownCalendar.querySelector('.vanilla-calendar')
 		const options = {
 			type: 'default',
 			settings: {
@@ -412,58 +506,65 @@ document.addEventListener('DOMContentLoaded', () => {
 				},
 			},
 
+			actions: {
+				clickDay: function (e, dates) {
+					const selected = dates[0];
+					selectedDate.textContent = dateSelectedFormatter(selected);
+				},
+			},
+
 			DOMTemplates: {
 				default: `
-							<div class="vanilla-calendar-header">
-			
-								<div class="vanilla-calendar-header__bottom">
-									<div class="vanilla-calendar-header__content">
-										<#Month />
-										<#Year />
+									<div class="vanilla-calendar-header">
+										<div class="vanilla-calendar-header__top">
+											<span class="vanilla-calendar-header__selected_date"></span>
+										</div>
+		
+										<div class="vanilla-calendar-header__bottom">
+											<div class="vanilla-calendar-header__content">
+												<#Month />
+												<#Year />
+											</div>
+											<div class="vanilla-calendar-header__navigation">
+												<#ArrowPrev />
+												<#ArrowNext />
+											</div>
+										</div>
 									</div>
-									<div class="vanilla-calendar-header__navigation">
-										<#ArrowPrev />
-										<#ArrowNext />
+									<div class="vanilla-calendar-wrapper">
+										<#WeekNumbers />
+										<div class="vanilla-calendar-content">
+											<#Week />
+											<#Days />
+										</div>
 									</div>
-								</div>
-							</div>
-							<div class="vanilla-calendar-wrapper">
-								<#WeekNumbers />
-								<div class="vanilla-calendar-content">
-									<#Week />
-									<#Days />
-								</div>
-							</div>
-							<div class="vanilla-calendar-buttons">
-								<button class="btn vanilla-calendar-buttons__close">Закрыть</button>
-								<button class="btn vanilla-calendar-buttons__save">Ок</button>
-							</div>
-						`
-			},
-
-			CSSClasses: {
-				calendarBtnClose: 'vanilla-calendar-buttons__close',
-				calendarBtnSave: 'vanilla-calendar-buttons__save',
+									<div class="vanilla-calendar-buttons">
+										<button class="btn vanilla-calendar-buttons__close">Закрыть</button>
+										<button class="btn vanilla-calendar-buttons__save">Ок</button>
+									</div>
+								`
 			},
 		};
-
-		const calendar = new VanillaCalendar(vanillaCalendar, options);
+		const calendar = new VanillaCalendar(vanilaCalendar, options);
 		calendar.init();
-	})
 
-	const dropdownCalendars = document.querySelectorAll('.dropdown-calendar');
-
-	dropdownCalendars.forEach(function (dropdownCalendar) {
-		const dropdownButton = dropdownCalendar.querySelector('.btn-calendar')
-		const dropdownMenu = dropdownCalendar.querySelector('.dropdown-menu')
+		const selectedDate = dropdownCalendar.querySelector('.vanilla-calendar-header__selected_date')
 		const closeButton = dropdownCalendar.querySelector('.vanilla-calendar-buttons__close')
+		const saveButton = dropdownCalendar.querySelector('.vanilla-calendar-buttons__save')
+
+		selectedDate.textContent = dateSelectedFormatter(today);
 
 		closeButton.addEventListener('click', function () {
-			dropdownCalendar.classList.remove('is-active');
-			dropdownButton.classList.remove('show');
-			dropdownButton.setAttribute('aria-expanded', 'false');
-			dropdownMenu.classList.remove('show');
+			hideCalendar()
 		});
+
+		saveButton.addEventListener('click', function () {
+			if (calendar.selectedDates.length > 0) {
+				const formattedDateFirst = datePickerFormatter(calendar.selectedDates[0]);
+				dropdownButtonFirstDate.textContent = formattedDateFirst;
+				hideCalendar();
+			}
+		})
 	});
 	//** (End) Vanilla Calendar **//
 

@@ -540,4 +540,26 @@
 	}
 }
 
+.vanilla-calendar_default {
+
+	.vanilla-calendar-header {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+
+		&__top {
+			margin-block-end: .75rem;
+		}
+	}
+
+	.vanilla-calendar-header__selected_date {
+		display: block;
+		font-size: calc(var(--font-size--sm) + .125rem);
+		font-weight: 700;
+		line-height: 1.2;
+		color: var(--text-color--dark);
+		text-align: left;
+	}
+}
+
 /** (End) Vanilla Calendar **/
