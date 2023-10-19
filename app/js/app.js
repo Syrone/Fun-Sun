@@ -357,7 +357,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	});
 	//** (End) For Tables Collapse **//
-	
+
 	//** (Start) For Tables Buttons **//
 	const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
 
@@ -378,11 +378,11 @@ document.addEventListener('DOMContentLoaded', () => {
 	const dropdownCalendars = document.querySelectorAll('.dropdown-calendar');
 
 	dropdownCalendars.forEach(function (dropdownCalendar) {
-		const today = new Date();
 		const dropdownButton = dropdownCalendar.querySelector('.btn-calendar')
 		const dropdownButtonFirstDate = dropdownButton.querySelector('.first')
 		const dropdownButtonSecondDate = dropdownButton.querySelector('.second')
 		const dropdownMenu = dropdownCalendar.querySelector('.dropdown-menu')
+		const vanilaCalendar = dropdownCalendar.querySelector('.vanilla-calendar')
 
 		function hideCalendar() {
 			dropdownCalendar.classList.remove('is-active')
@@ -406,7 +406,6 @@ document.addEventListener('DOMContentLoaded', () => {
 			return formattedDateString;
 		}
 
-		const vanilaCalendar = dropdownCalendar.querySelector('.vanilla-calendar')
 		const options = {
 			type: 'default',
 			settings: {
@@ -431,7 +430,7 @@ document.addEventListener('DOMContentLoaded', () => {
 										<div class="vanilla-calendar-header__top">
 											<span class="vanilla-calendar-header__selected_date"></span>
 										</div>
-		
+
 										<div class="vanilla-calendar-header__bottom">
 											<div class="vanilla-calendar-header__content">
 												<#Month />
@@ -457,26 +456,44 @@ document.addEventListener('DOMContentLoaded', () => {
 								`
 			},
 		};
+
 		const calendar = new VanillaCalendar(vanilaCalendar, options);
 		calendar.init();
+		let calendarType = calendar.currentType
 
-		const selectedDate = dropdownCalendar.querySelector('.vanilla-calendar-header__selected_date')
-		const closeButton = dropdownCalendar.querySelector('.vanilla-calendar-buttons__close')
-		const saveButton = dropdownCalendar.querySelector('.vanilla-calendar-buttons__save')
+		const selectedDate = calendar.HTMLElement.querySelector('.vanilla-calendar-header__selected_date')
+		const closeButton = calendar.HTMLElement.querySelector('.vanilla-calendar-buttons__close')
+		const saveButton = calendar.HTMLElement.querySelector('.vanilla-calendar-buttons__save')
 
-		selectedDate.textContent = dateSelectedFormatter(today);
+		function handleCalendarTypeChange() {
+			const today = new Date();
+			selectedDate.textContent = dateSelectedFormatter(today);
 
-		closeButton.addEventListener('click', function () {
-			hideCalendar()
-		});
-
-		saveButton.addEventListener('click', function () {
-			if (calendar.selectedDates.length > 0) {
-				const formattedDateFirst = datePickerFormatter(calendar.selectedDates[0]);
-				dropdownButtonFirstDate.textContent = formattedDateFirst;
+			closeButton.addEventListener('click', function () {
 				hideCalendar();
+			});
+
+			saveButton.addEventListener('click', function () {
+				if (calendar.selectedDates.length > 0) {
+					const formattedDateFirst = datePickerFormatter(calendar.selectedDates[0]);
+					dropdownButtonFirstDate.textContent = formattedDateFirst;
+					hideCalendar();
+				}
+			});
+		}
+
+		handleCalendarTypeChange()
+		
+		const observerCalendarType = new MutationObserver(function(mutationsList) {
+			for (let mutation of mutationsList) {
+				if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+					handleCalendarTypeChange();
+					break;
+				}
 			}
-		})
+		});
+		
+		observerCalendarType.observe(vanilaCalendar, { attributes: true });
 	});
 	//** (End) Vanilla Calendar **//
 
