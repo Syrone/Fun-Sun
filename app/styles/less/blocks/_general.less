@@ -130,7 +130,7 @@ h3,
 	&-arrow,
 	&-plus,
 	&-close,
-	&-calendar {
+	&-calendar-outline {
 		svg {
 			fill: none;
 			stroke: currentColor;
@@ -770,13 +770,35 @@ textarea {
 }
 
 .btn-calendar {
-	
+
+	&.multiple {
+
+		&>time {
+
+			.suptitle {
+				display: inline-block;
+			}
+		}
+	}
+
+	&::after {
+		all: unset;
+	}
+
 	&>time {
 		width: 100%;
+		display: flex;
+		flex-direction: column;
+
+		.suptitle {
+			display: none;
+			color: var(--text-color--light);
+		}
 	}
 
 	.icon {
 		--size: 1.125rem;
+		flex-shrink: 0;
 	}
 }
 
@@ -1199,6 +1221,14 @@ textarea {
 	}
 }
 
+.dropdown-calendar {
+
+	.dropdown-menu {
+		padding: 0;
+		background-color: transparent;
+	}
+}
+
 //** (End) Dropdowns **//
 
 //** (Start) Table **//
@@ -1279,7 +1309,7 @@ textarea {
 			&:is(.is-active) {
 				background-color: var(--gray-color--light);
 			}
- 
+
 			&:first-child {
 
 				&>.btn {
@@ -1288,7 +1318,7 @@ textarea {
 					border-bottom-left-radius: .5rem;
 				}
 			}
-			
+
 			&:last-child {
 
 				&>.btn {
@@ -1662,11 +1692,28 @@ textarea {
 }
 
 .table-items-v2 {
+	thead {
+
+		th {
+
+			&:not(:last-child) {
+				width: 25%;
+			}
+		}
+	}
 
 	tbody {
 
 		.id {
 			display: none;
+		}
+
+		tr {
+
+			&>:not(.id):first-of-type {
+				border-bottom-left-radius: 0.5rem;
+				border-top-left-radius: 0.5rem;
+			}
 		}
 	}
 }

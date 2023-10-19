@@ -324,10 +324,6 @@
   color: var(--text-color--dark);
   border-radius: 50%;
 }
-[data-calendar-theme=light] .vanilla-calendar-day__btn_prev,
-[data-calendar-theme=light] .vanilla-calendar-day__btn_next {
-  display: none;
-}
 [data-calendar-theme=light] .vanilla-calendar-day__btn_today {
   font-weight: 400;
   color: var(--text-color--dark);
@@ -349,7 +345,7 @@
   outline-color: var(--accent);
 }
 .vanilla-calendar {
-  box-shadow: var(--box-shadow-4);
+  box-shadow: none;
   border-radius: 1rem;
   padding-block-end: 0.5rem;
 }
