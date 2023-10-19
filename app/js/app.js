@@ -57,6 +57,24 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	}
 
+	function closeDropdownMenus() {
+		const dropdownCellButtons = document.querySelectorAll('.table-wrapper tbody .cell-button.is-active');
+		dropdownCellButtons.forEach((dropdownCellButton) => {
+			dropdownCellButton.classList.remove('is-active');
+		});
+
+		const dropdownButtons = document.querySelectorAll('.table-wrapper tbody .dropdown-toggle');
+		dropdownButtons.forEach((dropdownButton) => {
+			dropdownButton.classList.remove('show');
+			dropdownButton.setAttribute('aria-expanded', 'false');
+		});
+
+		const dropdownMenus = document.querySelectorAll('.table-wrapper tbody .dropdown-menu.show');
+		dropdownMenus.forEach((dropdownMenu) => {
+			dropdownMenu.classList.remove('show');
+		});
+	}
+
 	function handleScroll(event) {
 		const tableElement = event.target;
 		const scrollTop = tableElement.scrollTop;
@@ -75,6 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 
 		calculateTableHeight();
+		closeDropdownMenus();
 	}
 
 	function handleResize() {
@@ -87,6 +106,8 @@ document.addEventListener('DOMContentLoaded', () => {
 				tableElement.removeEventListener('scroll', handleScroll);
 			});
 		}
+
+		closeDropdownMenus();
 	}
 
 	window.addEventListener('load', function () {
@@ -336,11 +357,10 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	});
 	//** (End) For Tables Collapse **//
-
-	//** (End) For Tables Collapse **//
+	
+	//** (Start) For Tables Buttons **//
 	const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
 
-	//** (Start) For Tables Buttons **//
 	dropdownToggles.forEach(dropdownToggle => {
 		dropdownToggle.addEventListener('show.bs.dropdown', () => {
 			const cellButton = dropdownToggle.closest('.cell-button');
@@ -355,114 +375,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	//** (End) For Tables Buttons **//
 
 	//** (Start) Vanilla Calendar **//
-	// function datePickerFormatter(date) {
-	// 	const options = { day: 'numeric', month: 'numeric', year: '2-digit' };
-	// 	const formattedDate = new Date(date);
-	// 	const formattedDateString = formattedDate.toLocaleDateString('en', options);
-	// 	const [month, day, year] = formattedDateString.split('/');
-	// 	return `${day}.${month}.${year}`;
-	// }
-
-	// const options = {
-	// 	settings: {
-	// 		lang: 'ru',
-	// 		visibility: {
-	// 			theme: 'light',
-	// 		},
-	// 	},
-	// 	input: true,
-	// 	actions: {
-	// 		changeToInput(e, calendar, dates, time, hours, minutes, keeping) {
-	// 			if (dates[0]) {
-	// 				const formattedDate = datePickerFormatter(dates[0]);
-	// 				const btnCalendar = document.querySelector('.btn-calendar');
-	// 				const firstSpan = btnCalendar.querySelector('.first');
-	// 				firstSpan.textContent = formattedDate;
-	// 			} else {
-	// 				const btnCalendar = document.querySelector('.btn-calendar');
-	// 				const firstSpan = btnCalendar.querySelector('.first');
-	// 				firstSpan.textContent = '';
-	// 			}
-	// 			if (dates[1]) {
-	// 				const formattedDate = datePickerFormatter(dates[1]);
-	// 				const btnCalendar = document.querySelector('.btn-calendar');
-	// 				const firstSpan = btnCalendar.querySelector('.second');
-	// 				firstSpan.textContent = formattedDate;
-	// 			} else {
-	// 				const btnCalendar = document.querySelector('.btn-calendar');
-	// 				const firstSpan = btnCalendar.querySelector('.second');
-	// 				firstSpan.textContent = '';
-	// 			}
-	// 		},
-	// 	},
-	// };
-
-	// const vanillaCalendars = document.querySelectorAll('.vanilla-calendar')
-
-	// vanillaCalendars.forEach((vanillaCalendar) => {
-
-	// 	const options = {
-	// 		type: 'default',
-	// 		settings: {
-	// 			lang: 'ru',
-	// 			visibility: {
-	// 				theme: 'light',
-	// 				weekend: false,
-	// 				daysOutside: false,
-	// 			},
-	// 		},
-
-	// 		DOMTemplates: {
-	// 			default: `
-	// 						<div class="vanilla-calendar-header">
-
-	// 							<div class="vanilla-calendar-header__bottom">
-	// 								<div class="vanilla-calendar-header__content">
-	// 									<#Month />
-	// 									<#Year />
-	// 								</div>
-	// 								<div class="vanilla-calendar-header__navigation">
-	// 									<#ArrowPrev />
-	// 									<#ArrowNext />
-	// 								</div>
-	// 							</div>
-	// 						</div>
-	// 						<div class="vanilla-calendar-wrapper">
-	// 							<#WeekNumbers />
-	// 							<div class="vanilla-calendar-content">
-	// 								<#Week />
-	// 								<#Days />
-	// 							</div>
-	// 						</div>
-	// 						<div class="vanilla-calendar-buttons">
-	// 							<button class="btn vanilla-calendar-buttons__close">Закрыть</button>
-	// 							<button class="btn vanilla-calendar-buttons__save">Ок</button>
-	// 						</div>
-	// 					`
-	// 		},
-
-	// 		CSSClasses: {
-	// 			calendarBtnClose: 'vanilla-calendar-buttons__close',
-	// 			calendarBtnSave: 'vanilla-calendar-buttons__save',
-	// 		},
-	// 	};
-
-	// 	const calendar = new VanillaCalendar(vanillaCalendar, options);
-	// 	calendar.init();
-
-	// 	const closeButton = vanillaCalendar.querySelector('.vanilla-calendar-buttons__close');
-	// 	closeButton.addEventListener('click', function () {
-	// 		const selectedDay = vanillaCalendar.querySelector('.vanilla-calendar-day_selected');
-	// 		const selectedDayBtn = vanillaCalendar.querySelector('.vanilla-calendar-day__btn_selected');
-	// 		if (selectedDay && selectedDayBtn) {
-	// 			selectedDay.classList.remove('vanilla-calendar-day_selected');
-	// 			selectedDayBtn.classList.remove('vanilla-calendar-day__btn_selected');
-	// 			calendar.selectedDates = []
-	// 			console.log(calendar.selectedDates);
-	// 		}
-	// 	});
-	// })
-
 	const dropdownCalendars = document.querySelectorAll('.dropdown-calendar');
 
 	dropdownCalendars.forEach(function (dropdownCalendar) {
@@ -473,7 +385,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		const dropdownMenu = dropdownCalendar.querySelector('.dropdown-menu')
 
 		function hideCalendar() {
-			dropdownCalendar.classList.remove('is-active');
+			dropdownCalendar.classList.remove('is-active')
 			dropdownButton.classList.remove('show');
 			dropdownButton.setAttribute('aria-expanded', 'false');
 			dropdownMenu.classList.remove('show');
