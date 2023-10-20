@@ -439,6 +439,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		const calendar = new VanillaCalendar(vanilaCalendar, options);
 		calendar.init();
 
+		const selectedDate = dropdownCalendar.querySelector('.vanilla-calendar-header__selected_date')
+
 		function hideCalendar() {
 			dropdownCalendar.classList.remove('is-active')
 			dropdownButton.classList.remove('show');
@@ -461,10 +463,9 @@ document.addEventListener('DOMContentLoaded', () => {
 			return formattedDateString;
 		}
 
-		function handleCalendarTypeChange() {
+		function handleCalendarTypeChange(_selectedDate) {
 			const today = new Date();
-			const selectedDate = calendar.HTMLElement.querySelector('.vanilla-calendar-header__selected_date')
-			selectedDate.textContent = dateSelectedFormatter(today);
+			_selectedDate.textContent = dateSelectedFormatter(today);
 
 			vanilaCalendar.addEventListener('click', function (event) {
 				if (event.target.matches('.vanilla-calendar-buttons__close')) {
@@ -477,11 +478,9 @@ document.addEventListener('DOMContentLoaded', () => {
 					}
 				}
 			});
-
-			console.log(selectedDate.textContent);
 		}
 
-		handleCalendarTypeChange();
+		handleCalendarTypeChange(selectedDate);
 
 		let calendarType = calendar.currentType
 
@@ -491,8 +490,15 @@ document.addEventListener('DOMContentLoaded', () => {
 			},
 			set: function (value) {
 				calendarType = value;
-				if (!calendarType === 'month' && !calendarType === 'year') {
-					handleCalendarTypeChange();
+				if (!(calendarType === 'month') && !(calendarType === 'year')) {
+					requestAnimationFrame(function() {
+						const selectedDate = dropdownCalendar.querySelector('.vanilla-calendar-header__selected_date');
+						if (calendar.selectedDates.length > 0) {
+							selectedDate.textContent = dateSelectedFormatter(calendar.selectedDates[0]);
+						} else {
+							handleCalendarTypeChange(selectedDate);
+						}
+					});
 				}
 			}
 		});
