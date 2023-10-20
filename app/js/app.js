@@ -377,7 +377,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	//** (Start) Vanilla Calendar **//
 	const dropdownCalendars = document.querySelectorAll('.dropdown-calendar');
 
-	dropdownCalendars.forEach(function (dropdownCalendar) {
+	dropdownCalendars.forEach(function (dropdownCalendar, index) {
 		const dropdownButton = dropdownCalendar.querySelector('.btn-calendar')
 		const dropdownButtonFirstDate = dropdownButton.querySelector('.first')
 		const dropdownButtonSecondDate = dropdownButton.querySelector('.second')
