@@ -384,28 +384,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		const dropdownMenu = dropdownCalendar.querySelector('.dropdown-menu')
 		const vanilaCalendar = dropdownCalendar.querySelector('.vanilla-calendar')
 
-		function hideCalendar() {
-			dropdownCalendar.classList.remove('is-active')
-			dropdownButton.classList.remove('show');
-			dropdownButton.setAttribute('aria-expanded', 'false');
-			dropdownMenu.classList.remove('show');
-		}
-
-		function datePickerFormatter(date) {
-			const options = { day: '2-digit', month: '2-digit', year: '2-digit' };
-			const formattedDate = new Date(date);
-			const formattedDateString = formattedDate.toLocaleDateString('ru', options);
-			const [day, month, year] = formattedDateString.split('.');
-			return `${day}.${month}.${year}`;
-		}
-
-		function dateSelectedFormatter(date) {
-			const options = { day: '2-digit', month: 'long', year: 'numeric' };
-			const formattedDate = new Date(date);
-			const formattedDateString = formattedDate.toLocaleDateString('ru', options);
-			return formattedDateString;
-		}
-
 		const options = {
 			type: 'default',
 			settings: {
@@ -420,6 +398,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			actions: {
 				clickDay: function (e, dates) {
 					const selected = dates[0];
+					const selectedDate = calendar.HTMLElement.querySelector('.vanilla-calendar-header__selected_date')
 					selectedDate.textContent = dateSelectedFormatter(selected);
 				},
 			},
@@ -459,41 +438,64 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		const calendar = new VanillaCalendar(vanilaCalendar, options);
 		calendar.init();
-		let calendarType = calendar.currentType
 
-		const selectedDate = calendar.HTMLElement.querySelector('.vanilla-calendar-header__selected_date')
-		const closeButton = calendar.HTMLElement.querySelector('.vanilla-calendar-buttons__close')
-		const saveButton = calendar.HTMLElement.querySelector('.vanilla-calendar-buttons__save')
+		function hideCalendar() {
+			dropdownCalendar.classList.remove('is-active')
+			dropdownButton.classList.remove('show');
+			dropdownButton.setAttribute('aria-expanded', 'false');
+			dropdownMenu.classList.remove('show');
+		}
+
+		function datePickerFormatter(date) {
+			const options = { day: '2-digit', month: '2-digit', year: '2-digit' };
+			const formattedDate = new Date(date);
+			const formattedDateString = formattedDate.toLocaleDateString('ru', options);
+			const [day, month, year] = formattedDateString.split('.');
+			return `${day}.${month}.${year}`;
+		}
+
+		function dateSelectedFormatter(date) {
+			const options = { day: '2-digit', month: 'long', year: 'numeric' };
+			const formattedDate = new Date(date);
+			const formattedDateString = formattedDate.toLocaleDateString('ru', options);
+			return formattedDateString;
+		}
 
 		function handleCalendarTypeChange() {
 			const today = new Date();
+			const selectedDate = calendar.HTMLElement.querySelector('.vanilla-calendar-header__selected_date')
 			selectedDate.textContent = dateSelectedFormatter(today);
 
-			closeButton.addEventListener('click', function () {
-				hideCalendar();
-			});
-
-			saveButton.addEventListener('click', function () {
-				if (calendar.selectedDates.length > 0) {
-					const formattedDateFirst = datePickerFormatter(calendar.selectedDates[0]);
-					dropdownButtonFirstDate.textContent = formattedDateFirst;
+			vanilaCalendar.addEventListener('click', function (event) {
+				if (event.target.matches('.vanilla-calendar-buttons__close')) {
 					hideCalendar();
+				} else if (event.target.matches('.vanilla-calendar-buttons__save')) {
+					if (calendar.selectedDates.length > 0) {
+						const formattedDateFirst = datePickerFormatter(calendar.selectedDates[0]);
+						dropdownButtonFirstDate.textContent = formattedDateFirst;
+						hideCalendar();
+					}
 				}
 			});
+
+			console.log(selectedDate.textContent);
 		}
 
-		handleCalendarTypeChange()
-		
-		const observerCalendarType = new MutationObserver(function(mutationsList) {
-			for (let mutation of mutationsList) {
-				if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+		handleCalendarTypeChange();
+
+		let calendarType = calendar.currentType
+
+		Object.defineProperty(calendar, 'currentType', {
+			get: function () {
+				return calendarType;
+			},
+			set: function (value) {
+				calendarType = value;
+				if (!calendarType === 'month' && !calendarType === 'year') {
 					handleCalendarTypeChange();
-					break;
 				}
 			}
 		});
-		
-		observerCalendarType.observe(vanilaCalendar, { attributes: true });
 	});
 	//** (End) Vanilla Calendar **//
 

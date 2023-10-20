@@ -64,11 +64,11 @@ function scripts() {
 				]
 			},
 			optimization: {
-				minimize: true,
+				minimize: false,
 				minimizer: [
 					new TerserPlugin({
-						terserOptions: { format: { comments: false } },
-						extractComments: false
+						terserOptions: { format: { comments: true } },
+						extractComments: true
 					})
 				]
 			},
