@@ -193,10 +193,6 @@
 	background-color: var(--accent);
 }
 
-.table-items tbody .suptotal {
-	display: none;
-}
-
 /** (End) Wrapper Table **/
 
 /** (Start) Wrapper MyData **/
@@ -361,6 +357,9 @@
 	input {
 		width: 1.625rem;
 		height: 1.25rem;
+		font-size: var(--font-size);
+		font-weight: 400;
+		color: var(--text-color);
 		background-color: transparent;
 		border: none;
 		padding: 0 .25rem;
@@ -430,6 +429,26 @@
 
 	.vanilla-calendar-day {
 
+		&:nth-child(7n) {
+
+			.vanilla-calendar-day__btn {
+
+				&::after {
+					all: unset;
+				}
+			}
+		}
+
+		&:nth-child(7n + 1) {
+			.vanilla-calendar-day__btn {
+
+				&::before {
+					border-top-left-radius: .25rem;
+					border-bottom-left-radius: .25rem;
+				}
+			}
+		}
+
 		&__btn {
 			min-width: 2.25rem;
 			min-height: 2.25rem;
@@ -453,12 +472,111 @@
 				background-color: var(--accent);
 
 				&:hover {
+					color: var(--text-light);
 					background-color: var(--accent);
 					border-radius: 50%;
 				}
 
 				&:focus-visible {
 					outline-color: var(--accent);
+				}
+
+				&.vanilla-calendar-day__btn_intermediate {
+					color: var(--text-color--dark);
+					background-color: var(--accent-05);
+					border-color: transparent;
+					border-radius: .25rem;
+					position: relative;
+					z-index: 1;
+
+					&::after,
+					&::before {
+						content: '';
+						width: 50%;
+						height: 100%;
+						background-color: var(--accent-05);
+						position: absolute;
+						top: 0;
+						isolation: isolate;
+						z-index: -1;
+					}
+
+					&::after {
+						right: -.125rem;
+					}
+
+					&::before {
+						left: 0;
+					}
+
+					&:is(:hover, :focus-visible, :active) {
+						background-color: var(--secondary);
+
+						&::after,
+						&::before {
+							background-color: var(--secondary);
+						}
+					}
+				}
+			}
+		}
+
+		&_selected {
+
+			&-first,
+			&-last {
+				position: relative;
+				z-index: 1;
+
+				&>* {
+					border-color: transparent;
+				}
+
+				&::after {
+					content: '';
+					width: 50%;
+					height: 100%;
+					background-color: var(--accent-05);
+					pointer-events: none;
+					position: absolute;
+					top: 0;
+					z-index: -1;
+				}
+			}
+
+			&-first {
+
+				&::after {
+					right: -.125rem;
+				}
+			}
+
+			&-last {
+
+				&::after {
+					left: 0;
+				}
+			}
+		}
+
+		&__first {
+
+			& > * {
+
+				&::before {
+					border-top-left-radius: .25rem;
+					border-bottom-left-radius: .25rem;
+				}
+			}
+		}
+
+		&__last {
+
+			& > * {
+
+				&::after {
+					border-top-right-radius: .25rem;
+					border-bottom-right-radius: .25rem;
 				}
 			}
 		}
@@ -546,19 +664,82 @@
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
-
-		&__top {
-			margin-block-end: .75rem;
-		}
 	}
+}
 
-	.vanilla-calendar-header__selected_date {
+.vanilla-calendar-top {
+	margin-block-end: .75rem;
+
+	&__selected_date {
 		display: block;
 		font-size: calc(var(--font-size--sm) + .125rem);
 		font-weight: 700;
 		line-height: 1.2;
 		color: var(--text-color--dark);
 		text-align: left;
+	}
+}
+
+.vanilla-calendar-tabs {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	margin-block-end: .375rem;
+
+	.btn-calendar-tab {
+		min-height: auto;
+		font-size: var(--font-size--tiny);
+		font-weight: 700;
+		line-height: 1.5;
+		color: var(--text-color);
+		text-transform: uppercase;
+		border-block-width: 0 1.5px;
+		border-inline-width: 0;
+		border-style: solid;
+		border-color: transparent;
+		border-radius: 0;
+		padding: 0 0 .2rem 0;
+
+		&:is(:hover, :focus-visible, :active, .is-active) {
+			color: var(--accent);
+			border-color: var(--accent);
+		}
+	}
+}
+
+.vanilla-calendar_multiple {
+
+	.vanilla-calendar-grid {
+		grid-template-columns: repeat(2, minmax(220px, 1fr));
+		gap: 0 1.75rem;
+	}
+
+	.vanilla-calendar-top,
+	.vanilla-calendar-buttons {
+		grid-column: -1 / 1;
+	}
+
+	.vanilla-calendar-header {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.vanilla-calendar-column {
+		grid-row: 2;
+	}
+}
+
+.vanilla-calendar-column_year {
+
+	.vanilla-calendar-header {
+		flex-direction: row;
+		align-items: center;
+
+		&__content {
+			flex-grow: 1;
+			justify-content: flex-start;
+			order: -1;
+		}
 	}
 }
 

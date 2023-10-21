@@ -981,30 +981,43 @@ textarea.form-control:is(:focus) {
 .table tbody .cell-button:is(.is-active) {
   background-color: var(--gray-color--light);
 }
-.table tbody .cell-button:first-child > .btn {
-  border-inline-start: none;
-  border-top-left-radius: 0.5rem;
-  border-bottom-left-radius: 0.5rem;
-}
-.table tbody .cell-button:last-child > .btn {
-  border-inline-end: none;
-  border-top-right-radius: 0.5rem;
-  border-bottom-right-radius: 0.5rem;
-}
 .table tbody .cell-button > .btn {
   width: 100%;
   height: 100%;
   max-height: 100%;
   min-height: 44px;
+  font-weight: 400;
+  line-height: 1.25rem;
   color: var(--text-color);
   background-color: transparent;
   border: none;
   border-radius: 0;
-  padding: 0.875rem 0.5rem;
+  padding: 1rem 0.5rem;
+}
+.table tbody .cell-button > .btn.multiple {
+  padding-block: 0.375rem;
 }
 .table tbody .cell-button > .btn:is(:hover, :focus-visible, :active, .show) {
   color: var(--accent);
   background-color: transparent;
+}
+.table tbody .cell-button > .btn .text-truncate {
+  display: block;
+  max-width: 100px;
+}
+.table tbody .cell-check {
+  padding: 0;
+}
+.table tbody .cell-check .form-check {
+  justify-content: center;
+}
+.table tbody .cell-check .form-check:is(:hover, :focus, :active, .checked) {
+  background-color: transparent;
+}
+.table tbody .cell-check .form-check-input {
+  width: 1.25rem;
+  height: 1.25rem;
+  border-width: 2px;
 }
 .table tr.passive {
   border-radius: 0.5rem;
@@ -1245,13 +1258,17 @@ textarea.form-control:is(:focus) {
   font-weight: 400;
   color: var(--text-color);
 }
+.table-items tbody .suptotal,
+.table-items-xxl tbody .suptotal {
+  display: none;
+}
 .table-items-v2 thead th:not(:last-child) {
   width: 25%;
 }
 .table-items-v2 tbody .id {
   display: none;
 }
-.table-items-v2 tbody tr > :not(.id):first-of-type {
+.table-items-v2 tbody tr > *:not(.id):first-of-type {
   border-bottom-left-radius: 0.5rem;
   border-top-left-radius: 0.5rem;
 }

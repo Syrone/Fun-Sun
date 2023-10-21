@@ -1310,38 +1310,49 @@ textarea {
 				background-color: var(--gray-color--light);
 			}
 
-			&:first-child {
-
-				&>.btn {
-					border-inline-start: none;
-					border-top-left-radius: .5rem;
-					border-bottom-left-radius: .5rem;
-				}
-			}
-
-			&:last-child {
-
-				&>.btn {
-					border-inline-end: none;
-					border-top-right-radius: .5rem;
-					border-bottom-right-radius: .5rem;
-				}
-			}
-
 			&>.btn {
 				width: 100%;
 				height: 100%;
 				max-height: 100%;
 				min-height: 44px;
+				font-weight: 400;
+				line-height: 1.25rem;
 				color: var(--text-color);
 				background-color: transparent;
 				border: none;
 				border-radius: 0;
-				padding: .875rem .5rem;
+				padding: 1rem .5rem;
+
+				&.multiple {
+					padding-block: .375rem;
+				}
 
 				&:is(:hover, :focus-visible, :active, .show) {
 					color: var(--accent);
 					background-color: transparent;
+				}
+
+				.text-truncate {
+					display: block;
+					max-width: 100px;
+				}
+			}
+		}
+
+		.cell-check {
+			padding: 0;
+
+			.form-check {
+				justify-content: center;
+
+				&:is(:hover, :focus, :active, .checked) {
+					background-color: transparent;
+				}
+
+				&-input {
+					width: 1.25rem;
+					height: 1.25rem;
+					border-width: 2px;
 				}
 			}
 		}
@@ -1691,7 +1702,19 @@ textarea {
 	}
 }
 
+.table-items,
+.table-items-xxl {
+
+	tbody {
+
+		.suptotal {
+			display: none;
+		}
+	}
+}
+
 .table-items-v2 {
+
 	thead {
 
 		th {
@@ -1710,7 +1733,7 @@ textarea {
 
 		tr {
 
-			&>:not(.id):first-of-type {
+			&>*:not(.id):first-of-type {
 				border-bottom-left-radius: 0.5rem;
 				border-top-left-radius: 0.5rem;
 			}
