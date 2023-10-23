@@ -119,7 +119,6 @@
     background-color: var(--background);
     border-radius: 0.5rem;
     padding: 1rem;
-    position: relative;
   }
   .table-items-xxl tbody tr > * {
     width: 100%;
@@ -152,11 +151,13 @@
     flex-basis: calc(50% - 0.5rem);
   }
   .table-items-xxl tbody .more {
-    width: auto;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-block-end: -1.35rem;
     padding: 0;
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
+    border: none;
+    order: -10;
   }
   /** (End) Table **/
   /** (Start) Card **/
@@ -329,12 +330,12 @@
     background-color: var(--background);
     border-radius: 0.5rem;
     padding: 1rem;
-    position: relative;
   }
   .table-items tbody tr > * {
     width: 100%;
     padding-top: 0.75rem;
     border-radius: none;
+    border: none;
     background-color: transparent;
   }
   .table-items tbody .suptotal {
@@ -362,11 +363,13 @@
     flex-basis: calc(50% - 0.5rem);
   }
   .table-items tbody .more {
-    width: auto;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-block-end: -1.35rem;
     padding: 0;
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
+    border: none;
+    order: -10;
   }
   .table-items .wrapper-status {
     justify-content: start;

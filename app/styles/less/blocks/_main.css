@@ -393,8 +393,8 @@
 [data-calendar-theme=light] .vanilla-calendar-day_selected-last > * {
   border-color: transparent;
 }
-[data-calendar-theme=light] .vanilla-calendar-day_selected-first::after,
-[data-calendar-theme=light] .vanilla-calendar-day_selected-last::after {
+[data-calendar-theme=light] .vanilla-calendar-day_selected-first .vanilla-calendar-day__btn::after,
+[data-calendar-theme=light] .vanilla-calendar-day_selected-last .vanilla-calendar-day__btn::after {
   content: '';
   width: 50%;
   height: 100%;
@@ -404,10 +404,10 @@
   top: 0;
   z-index: -1;
 }
-[data-calendar-theme=light] .vanilla-calendar-day_selected-first::after {
+[data-calendar-theme=light] .vanilla-calendar-day_selected-first .vanilla-calendar-day__btn::after {
   right: -0.125rem;
 }
-[data-calendar-theme=light] .vanilla-calendar-day_selected-last::after {
+[data-calendar-theme=light] .vanilla-calendar-day_selected-last .vanilla-calendar-day__btn::after {
   left: 0;
 }
 [data-calendar-theme=light] .vanilla-calendar-day__first > *::before {
@@ -427,6 +427,12 @@
 .vanilla-calendar-year {
   font-size: var(--font-size--sm);
   font-weight: 600;
+}
+.vanilla-calendar .vanilla-calendar-tabs {
+  display: none;
+}
+.vanilla-calendar--multiple .vanilla-calendar-tabs {
+  display: flex;
 }
 .vanilla-calendar-header {
   padding-inline: 0;

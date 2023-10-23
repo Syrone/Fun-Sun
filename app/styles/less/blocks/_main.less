@@ -532,29 +532,38 @@
 					border-color: transparent;
 				}
 
-				&::after {
-					content: '';
-					width: 50%;
-					height: 100%;
-					background-color: var(--accent-05);
-					pointer-events: none;
-					position: absolute;
-					top: 0;
-					z-index: -1;
+				.vanilla-calendar-day__btn {
+
+					&::after {
+						content: '';
+						width: 50%;
+						height: 100%;
+						background-color: var(--accent-05);
+						pointer-events: none;
+						position: absolute;
+						top: 0;
+						z-index: -1;
+					}
 				}
 			}
 
 			&-first {
 
-				&::after {
-					right: -.125rem;
+				.vanilla-calendar-day__btn {
+					
+					&::after {
+						right: -.125rem;
+					}
 				}
 			}
 
 			&-last {
 
-				&::after {
-					left: 0;
+				.vanilla-calendar-day__btn {
+					
+					&::after {
+						left: 0;
+					}
 				}
 			}
 		}
@@ -592,6 +601,17 @@
 	&-year {
 		font-size: var(--font-size--sm);
 		font-weight: 600;
+	}
+
+	.vanilla-calendar-tabs {
+		display: none;
+	}
+
+	&--multiple {
+
+		.vanilla-calendar-tabs {
+			display: flex;
+		}
 	}
 }
 

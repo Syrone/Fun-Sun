@@ -160,7 +160,6 @@
 				background-color: var(--background);
 				border-radius: .5rem;
 				padding: 1rem;
-				position: relative;
 
 				&>* {
 					width: 100%;
@@ -199,11 +198,13 @@
 			}
 
 			.more {
-				width: auto;
+				width: 100%;
+				display: flex;
+				justify-content: flex-end;
+				margin-block-end: -1.35rem;
 				padding: 0;
-				position: absolute;
-				top: 1rem;
-				right: 1rem;
+				border: none;
+				order: -10;
 			}
 
 		}
@@ -446,12 +447,12 @@
 				background-color: var(--background);
 				border-radius: .5rem;
 				padding: 1rem;
-				position: relative;
 
 				&>* {
 					width: 100%;
 					padding-top: .75rem;
 					border-radius: none;
+					border: none;
 					background-color: transparent;
 				}
 			}
@@ -485,11 +486,13 @@
 			}
 
 			.more {
-				width: auto;
+				width: 100%;
+				display: flex;
+				justify-content: flex-end;
+				margin-block-end: -1.35rem;
 				padding: 0;
-				position: absolute;
-				top: 1rem;
-				right: 1rem;
+				border: none;
+				order: -10;
 			}
 
 		}

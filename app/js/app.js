@@ -379,18 +379,98 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	dropdownCalendars.forEach(function (dropdownCalendar, index) {
 		const dropdownButton = dropdownCalendar.querySelector('.btn-calendar')
+		const dropdownBootstrap = new bootstrap.Dropdown(dropdownButton);
 		const dropdownButtonFirstDate = dropdownButton.querySelector('.first')
 		const dropdownButtonSecondDate = dropdownButton.querySelector('.second')
 		const dropdownMenu = dropdownCalendar.querySelector('.dropdown-menu')
 		const vanilaCalendar = dropdownCalendar.querySelector('.vanilla-calendar')
 
-		const options = {
+		const defaultTemplate = `
+			<div class="vanilla-calendar-header">
+					<div class="vanilla-calendar-top">
+							<div class="vanilla-calendar-tabs">
+									<button class="btn btn-calendar-tab btn-calendar-default">Дата</button>
+									<button class="btn btn-calendar-tab btn-calendar-multiple">Диапазон</button>
+							</div>
+
+							<span class="vanilla-calendar-top__selected_date"></span>
+					</div>
+
+					<div class="vanilla-calendar-header__bottom">
+							<div class="vanilla-calendar-header__content">
+									<#Month />
+									<#Year />
+							</div>
+							<div class="vanilla-calendar-header__navigation">
+									<#ArrowPrev />
+									<#ArrowNext />
+							</div>
+					</div>
+			</div>
+			<div class="vanilla-calendar-wrapper">
+					<#WeekNumbers />
+					<div class="vanilla-calendar-content">
+							<#Week />
+							<#Days />
+					</div>
+			</div>
+			<div class="vanilla-calendar-buttons">
+					<button class="btn vanilla-calendar-buttons__close">Закрыть</button>
+					<button class="btn vanilla-calendar-buttons__save">Ок</button>
+			</div>
+		`;
+
+		const multipleTemplate = `
+		<div class="vanilla-calendar-grid">
+			<div class="vanilla-calendar-top">
+				<div class="vanilla-calendar-tabs">
+					<button class="btn btn-calendar-tab btn-calendar-default">Дата</button>
+					<button class="btn btn-calendar-tab btn-calendar-multiple">Диапазон</button>
+				</div>
+
+				<span class="vanilla-calendar-top__selected_date"></span>
+			</div>
+			<#Multiple>
+				<div class="vanilla-calendar-column">
+					<div class="vanilla-calendar-header">
+						<div class="vanilla-calendar-header__bottom">
+							<div class="vanilla-calendar-header__content">
+								<#Month />
+								<#Year />
+							</div>
+							<div class="vanilla-calendar-header__navigation">
+								<#ArrowPrev />
+								<#ArrowNext />
+							</div>
+						</div>
+					</div>
+					<div class="vanilla-calendar-wrapper">
+						<#WeekNumbers />
+						<div class="vanilla-calendar-content">
+							<#Week />
+							<#Days />
+						</div>
+					</div>
+				</div>
+			<#/Multiple>
+			<div class="vanilla-calendar-buttons">
+				<button class="btn vanilla-calendar-buttons__close">Закрыть</button>
+				<button class="btn vanilla-calendar-buttons__save">Ок</button>
+			</div>
+		</div>
+	`;
+
+		const optionsSingle = {
+			type: 'default',
 			settings: {
 				lang: 'ru',
 				visibility: {
 					theme: 'light',
 					weekend: false,
 					daysOutside: false,
+				},
+				selection: {
+					day: 'single',
 				},
 			},
 
@@ -400,86 +480,49 @@ document.addEventListener('DOMContentLoaded', () => {
 
 					if (dates[1]) {
 						dates.sort((a, b) => +new Date(a) - +new Date(b));
-						selectedDate.textContent = `${dateSelectedFormatter(dates[0])} - ${dateSelectedFormatter(dates[dates.length - 1])}`;
+						selectedDate.textContent = `${formatterForSelected(dates[0])} - ${formatterForSelected(dates[dates.length - 1])}`;
 					} else if (dates[0]) {
-						selectedDate.textContent = dateSelectedFormatter(dates[0])
+						selectedDate.textContent = formatterForSelected(dates[0])
 					}
 				},
 			},
-
 			DOMTemplates: {
-				default: `
-									<div class="vanilla-calendar-header">
-										<div class="vanilla-calendar-top">
-											<span class="vanilla-calendar-top__selected_date"></span>
-										</div>
-
-										<div class="vanilla-calendar-header__bottom">
-											<div class="vanilla-calendar-header__content">
-												<#Month />
-												<#Year />
-											</div>
-											<div class="vanilla-calendar-header__navigation">
-												<#ArrowPrev />
-												<#ArrowNext />
-											</div>
-										</div>
-									</div>
-									<div class="vanilla-calendar-wrapper">
-										<#WeekNumbers />
-										<div class="vanilla-calendar-content">
-											<#Week />
-											<#Days />
-										</div>
-									</div>
-									<div class="vanilla-calendar-buttons">
-										<button class="btn vanilla-calendar-buttons__close">Закрыть</button>
-										<button class="btn vanilla-calendar-buttons__save">Ок</button>
-									</div>
-								`,
-				multiple: `
-				<div class="vanilla-calendar-grid">
-					<div class="vanilla-calendar-top">
-						<div class="vanilla-calendar-tabs">
-							<button class="btn btn-calendar-tab btn-calendar-default">Дата</button>
-							<button class="btn btn-calendar-tab btn-calendar-multiple">Диапазон</button>
-						</div>
-
-						<span class="vanilla-calendar-top__selected_date"></span>
-					</div>
-					<#Multiple>
-						<div class="vanilla-calendar-column">
-							<div class="vanilla-calendar-header">
-								<div class="vanilla-calendar-header__bottom">
-									<div class="vanilla-calendar-header__content">
-										<#Month />
-										<#Year />
-									</div>
-									<div class="vanilla-calendar-header__navigation">
-										<#ArrowPrev />
-										<#ArrowNext />
-									</div>
-								</div>
-							</div>
-							<div class="vanilla-calendar-wrapper">
-								<#WeekNumbers />
-								<div class="vanilla-calendar-content">
-									<#Week />
-									<#Days />
-								</div>
-							</div>
-						</div>
-					<#/Multiple>
-					<div class="vanilla-calendar-buttons">
-						<button class="btn vanilla-calendar-buttons__close">Закрыть</button>
-						<button class="btn vanilla-calendar-buttons__save">Ок</button>
-					</div>
-				</div>
-			`
+				default: defaultTemplate,
 			},
 		};
 
-		const calendar = new VanillaCalendar(vanilaCalendar, options);
+		const optionsMultiple = {
+			type: 'multiple',
+			settings: {
+				lang: 'ru',
+				visibility: {
+					theme: 'light',
+					weekend: false,
+					daysOutside: false,
+				},
+				selection: {
+					day: 'multiple-ranged',
+				},
+			},
+
+			actions: {
+				clickDay: function (e, dates) {
+					const selectedDate = calendar.HTMLElement.querySelector('.vanilla-calendar-top__selected_date')
+
+					if (dates[1]) {
+						dates.sort((a, b) => +new Date(a) - +new Date(b));
+						selectedDate.textContent = `${formatterForSelected(dates[0])} - ${formatterForSelected(dates[dates.length - 1])}`;
+					} else if (dates[0]) {
+						selectedDate.textContent = formatterForSelected(dates[0])
+					}
+				},
+			},
+			DOMTemplates: {
+				multiple: multipleTemplate,
+			},
+		};
+
+		var calendar = new VanillaCalendar(vanilaCalendar, optionsMultiple);
 		calendar.init();
 
 		const selectedDate = dropdownCalendar.querySelector('.vanilla-calendar-top__selected_date')
@@ -512,12 +555,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		function hideCalendar() {
 			dropdownCalendar.classList.remove('is-active')
-			dropdownButton.classList.remove('show');
-			dropdownButton.setAttribute('aria-expanded', 'false');
-			dropdownMenu.classList.remove('show');
+			dropdownBootstrap.hide()
 		}
 
-		function datePickerFormatter(date) {
+		function restartCalendar(type) {
+			if (type === 'default') {
+				calendar = new VanillaCalendar(vanilaCalendar, optionsSingle);
+			} else if (type === 'multiple') {
+				calendar = new VanillaCalendar(vanilaCalendar, optionsMultiple);
+			}
+			calendar.init();
+		}
+
+		function formatterForButton(date) {
 			const options = { day: '2-digit', month: '2-digit', year: '2-digit' };
 			const formattedDate = new Date(date);
 			const formattedDateString = formattedDate.toLocaleDateString('ru', options);
@@ -525,17 +575,19 @@ document.addEventListener('DOMContentLoaded', () => {
 			return `${day}.${month}.${year}`;
 		}
 
-		function dateSelectedFormatter(date) {
+		function formatterForSelected(date) {
 			const options = { day: '2-digit', month: 'long', year: 'numeric' };
 			const formattedDate = new Date(date);
 			const formattedDateString = formattedDate.toLocaleDateString('ru', options);
 			return formattedDateString;
 		}
 
-		function handleCalendarTypeChange(_selectedDate) {
+		function calendarToDay(_selectedDate) {
 			const today = new Date();
-			_selectedDate.textContent = dateSelectedFormatter(today);
+			_selectedDate.textContent = formatterForSelected(today);
+		}
 
+		function handleCalendarButtons() {
 			vanilaCalendar.addEventListener('click', function (event) {
 				if (event.target.matches('.vanilla-calendar-buttons__close')) {
 					hideCalendar();
@@ -545,31 +597,35 @@ document.addEventListener('DOMContentLoaded', () => {
 					let lastDate = selectedDates[selectedDates.length - 1];
 					if (selectedDates.length === 1) {
 						dropdownButton.classList.remove('multiple')
-						dropdownButtonFirstDate.textContent = datePickerFormatter(firstDate);
+						dropdownButtonFirstDate.textContent = formatterForButton(firstDate);
 						dropdownButtonSecondDate.textContent = '';
 						hideCalendar();
 					} else if (selectedDates.length > 1) {
 						dropdownButton.classList.add('multiple')
-						dropdownButtonFirstDate.textContent = datePickerFormatter(firstDate);
-						dropdownButtonSecondDate.textContent = datePickerFormatter(lastDate);
+						dropdownButtonFirstDate.textContent = formatterForButton(firstDate);
+						dropdownButtonSecondDate.textContent = formatterForButton(lastDate);
 						hideCalendar();
 					}
 				} else if (event.target.matches('.btn-calendar-default')) {
 					if (calendarType === 'multiple') {
-						calendar.type = 'default'
-						calendar.settings.selection.day = 'single'
-						calendar.update()
+						restartCalendar('default');
+						vanilaCalendar.classList.remove('vanilla-calendar_multiple');
+					}
+				} else if (event.target.matches('.btn-calendar-multiple')) {
+					if (calendarType === 'default') {
+						restartCalendar('multiple');
+						vanilaCalendar.classList.remove('vanilla-calendar_default');
 					}
 				}
 			});
 		}
 
-		handleCalendarTypeChange(selectedDate);
-
-		handleCalendarChanges()
-
-		if (calendarType === 'multiple') {
-			calendar.settings.selection.day = 'multiple-ranged'
+		if (calendarType === 'default' || calendarType === 'multiple') {
+			requestAnimationFrame(function () {
+				calendarToDay(selectedDate);
+				handleCalendarButtons();
+				handleCalendarChanges()
+			})
 		}
 
 		const observerCalendar = new MutationObserver(function (mutationsList, observer) {
@@ -578,29 +634,35 @@ document.addEventListener('DOMContentLoaded', () => {
 			let firstDate = selectedDates[0];
 			let lastDate = selectedDates[selectedDates.length - 1];
 
-			handleCalendarChanges();
+			dropdownBootstrap.update()
 
-			if (!(calendarType === 'month') && !(calendarType === 'year')) {
+			if (calendarType === 'default') {
 				requestAnimationFrame(function () {
 					const selectedDate = dropdownCalendar.querySelector('.vanilla-calendar-top__selected_date');
 					if (selectedDates.length === 1) {
-						selectedDate.textContent = dateSelectedFormatter(firstDate)
+						selectedDate.textContent = formatterForSelected(firstDate)
 					} else {
-						handleCalendarTypeChange(selectedDate);
+						calendarToDay(selectedDate);
+						handleCalendarButtons();
 					}
+
+					handleCalendarChanges();
 				});
 			}
 
-			if ((calendarType === 'multiple')) {
+			if (calendarType === 'multiple') {
 				requestAnimationFrame(function () {
 					const selectedDate = dropdownCalendar.querySelector('.vanilla-calendar-top__selected_date');
 					if (selectedDates.length === 1) {
-						selectedDate.textContent = dateSelectedFormatter(firstDate)
+						selectedDate.textContent = formatterForSelected(firstDate)
 					} else if (selectedDates.length > 1) {
-						selectedDate.textContent = `${dateSelectedFormatter(firstDate)} - ${dateSelectedFormatter(lastDate)}`;
+						selectedDate.textContent = `${formatterForSelected(firstDate)} - ${formatterForSelected(lastDate)}`;
 					} else {
-						handleCalendarTypeChange(selectedDate);
+						calendarToDay(selectedDate);
+						handleCalendarButtons();
 					}
+
+					handleCalendarChanges();
 				});
 			}
 		});
