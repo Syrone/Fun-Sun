@@ -396,7 +396,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	//** (Start) Vanilla Calendar **//
 	const dropdownCalendars = document.querySelectorAll('.dropdown-calendar');
 
-	dropdownCalendars.forEach(function (dropdownCalendar, index) {
+	dropdownCalendars.forEach(function (dropdownCalendar) {
 		const dropdownButton = dropdownCalendar.querySelector('.btn-calendar')
 		const dropdownBootstrap = new bootstrap.Dropdown(dropdownButton);
 		const dropdownButtonFirstDate = dropdownButton.querySelector('.first')
@@ -546,11 +546,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		calendar.init();
 		calendarMultiple.init();
 
-		const selectedDate = vanilaCalendar.querySelector('.vanilla-calendar-top__selected_date')
-		let calendarDefaultType = calendar.currentType
-
-		function handleCalendarChanges() {
-			const vanillaCalendarDays = dropdownCalendar.querySelectorAll('.vanilla-calendar-days');
+		function calendarDaysFirstLast() {
+			const vanillaCalendarDays = vanilaCalendarMultiple.querySelectorAll('.vanilla-calendar-days');
 
 			vanillaCalendarDays.forEach(function (vanillaCalendarDays) {
 				const vanillaCalendarDayItems = vanillaCalendarDays.querySelectorAll('.vanilla-calendar-day');
@@ -648,22 +645,20 @@ document.addEventListener('DOMContentLoaded', () => {
 			});
 		}
 
+		const observerConfig = {
+			childList: true,
+		};
+
 		if (vanilaCalendarMultiple) {
 			const selectedDateMultiple = vanilaCalendarMultiple.querySelector('.vanilla-calendar-top__selected_date')
 			let calendarMultipleType = calendarMultiple.currentType
 			vanilaCalendarMultiple.classList.add('d-none');
 
-			if (calendarMultipleType === 'default' || calendarMultipleType === 'multiple') {
-				requestAnimationFrame(function () {
-					calendarToDay(selectedDateMultiple);
-					calendarMultipleButtons();
-					handleCalendarChanges();
-				})
+			if (calendarMultipleType === 'multiple') {
+				calendarToDay(selectedDateMultiple);
+				calendarMultipleButtons();
+				calendarDaysFirstLast();
 			}
-
-			const observerConfig = {
-				childList: true,
-			};
 
 			const observerMultipleCalendar = new MutationObserver(function (mutationsList, observer) {
 				let calendarMultipleType = calendarMultiple.currentType
@@ -672,20 +667,6 @@ document.addEventListener('DOMContentLoaded', () => {
 				let lastDate = selectedDates[selectedDates.length - 1];
 
 				dropdownBootstrap.update()
-
-				if (calendarMultipleType === 'default') {
-					requestAnimationFrame(function () {
-						const selectedDateMultiple = vanilaCalendarMultiple.querySelector('.vanilla-calendar-top__selected_date');
-						if (selectedDates.length === 1) {
-							selectedDateMultiple.textContent = formatterForSelected(firstDate)
-						} else {
-							calendarToDay(selectedDateMultiple);
-							calendarMultipleButtons();
-						}
-
-						handleCalendarChanges();
-					});
-				}
 
 				if (calendarMultipleType === 'multiple') {
 					requestAnimationFrame(function () {
@@ -698,67 +679,45 @@ document.addEventListener('DOMContentLoaded', () => {
 							calendarToDay(selectedDateMultiple);
 							calendarMultipleButtons();
 						}
+						calendarDaysFirstLast();
+					});
+				}
+			});
+			
+			observerMultipleCalendar.observe(vanilaCalendarMultiple, observerConfig);
+		}
 
-						handleCalendarChanges();
+		if (vanilaCalendar) {
+			const selectedDate = vanilaCalendar.querySelector('.vanilla-calendar-top__selected_date')
+			let calendarDefaultType = calendar.currentType
+
+			if (calendarDefaultType === 'default') {
+				calendarToDay(selectedDate);
+				calendarDefaultButtons();
+			}
+
+			const observerDefaultCalendar = new MutationObserver(function (mutationsList, observer) {
+				calendarDefaultType = calendar.currentType;
+				const selectedDates = calendar.selectedDates;
+				let firstDate = selectedDates[0];
+
+				dropdownBootstrap.update()
+
+				if (calendarDefaultType === 'default') {
+					requestAnimationFrame(function () {
+						const selectedDate = vanilaCalendar.querySelector('.vanilla-calendar-top__selected_date');
+						if (selectedDates.length === 1) {
+							selectedDate.textContent = formatterForSelected(firstDate)
+						} else {
+							calendarToDay(selectedDate);
+							calendarDefaultButtons();
+						}
 					});
 				}
 			});
 
-			observerMultipleCalendar.observe(vanilaCalendarMultiple, observerConfig);
+			observerDefaultCalendar.observe(vanilaCalendar, observerConfig);
 		}
-
-		if (calendarDefaultType === 'default' || calendarDefaultType === 'multiple') {
-			requestAnimationFrame(function () {
-				calendarToDay(selectedDate);
-				calendarDefaultButtons();
-				handleCalendarChanges();
-			})
-		}
-
-		const observerDefaultCalendar = new MutationObserver(function (mutationsList, observer) {
-			calendarDefaultType = calendar.currentType;
-			const selectedDates = calendar.selectedDates;
-			let firstDate = selectedDates[0];
-			let lastDate = selectedDates[selectedDates.length - 1];
-
-			dropdownBootstrap.update()
-
-			if (calendarDefaultType === 'default') {
-				requestAnimationFrame(function () {
-					const selectedDate = vanilaCalendar.querySelector('.vanilla-calendar-top__selected_date');
-					if (selectedDates.length === 1) {
-						selectedDate.textContent = formatterForSelected(firstDate)
-					} else {
-						calendarToDay(selectedDate);
-						calendarDefaultButtons();
-					}
-
-					handleCalendarChanges();
-				});
-			}
-
-			if (calendarDefaultType === 'multiple') {
-				requestAnimationFrame(function () {
-					const selectedDate = vanilaCalendar.querySelector('.vanilla-calendar-top__selected_date');
-					if (selectedDates.length === 1) {
-						selectedDate.textContent = formatterForSelected(firstDate)
-					} else if (selectedDates.length > 1) {
-						selectedDate.textContent = `${formatterForSelected(firstDate)} - ${formatterForSelected(lastDate)}`;
-					} else {
-						calendarToDay(selectedDate);
-						calendarDefaultButtons();
-					}
-
-					handleCalendarChanges();
-				});
-			}
-		});
-
-		const observerConfig = {
-			childList: true,
-		};
-
-		observerDefaultCalendar.observe(vanilaCalendar, observerConfig);
 	});
 	//** (End) Vanilla Calendar **//
 

@@ -777,4 +777,15 @@
     aspect-ratio: auto 100 / 70;
   }
   /** (End) Wrapper Graph **/
+  /** (Start) Vanilla Calendar **/
+  .vanilla-calendar--multiple .vanilla-calendar-grid {
+    grid-template-columns: repeat(1, minmax(220px, 1fr));
+  }
+  .vanilla-calendar--multiple .vanilla-calendar-column {
+    grid-row: auto;
+  }
+  .vanilla-calendar--multiple .vanilla-calendar-column + .vanilla-calendar-column {
+    margin-block-start: 1rem;
+  }
+  /** (End) Vanilla Calendar **/
 }
