@@ -547,9 +547,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		calendarMultiple.init();
 
 		const selectedDate = vanilaCalendar.querySelector('.vanilla-calendar-top__selected_date')
-		const selectedDateMultiple = vanilaCalendarMultiple.querySelector('.vanilla-calendar-top__selected_date')
 		let calendarDefaultType = calendar.currentType
-		let calendarMultipleType = calendarMultiple.currentType
 
 		function handleCalendarChanges() {
 			const vanillaCalendarDays = dropdownCalendar.querySelectorAll('.vanilla-calendar-days');
@@ -651,20 +649,68 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 
 		if (vanilaCalendarMultiple) {
+			const selectedDateMultiple = vanilaCalendarMultiple.querySelector('.vanilla-calendar-top__selected_date')
+			let calendarMultipleType = calendarMultiple.currentType
 			vanilaCalendarMultiple.classList.add('d-none');
+
+			if (calendarMultipleType === 'default' || calendarMultipleType === 'multiple') {
+				requestAnimationFrame(function () {
+					calendarToDay(selectedDateMultiple);
+					calendarMultipleButtons();
+					handleCalendarChanges();
+				})
+			}
+
+			const observerConfig = {
+				childList: true,
+			};
+
+			const observerMultipleCalendar = new MutationObserver(function (mutationsList, observer) {
+				let calendarMultipleType = calendarMultiple.currentType
+				const selectedDates = calendarMultiple.selectedDates;
+				let firstDate = selectedDates[0];
+				let lastDate = selectedDates[selectedDates.length - 1];
+
+				dropdownBootstrap.update()
+
+				if (calendarMultipleType === 'default') {
+					requestAnimationFrame(function () {
+						const selectedDateMultiple = vanilaCalendarMultiple.querySelector('.vanilla-calendar-top__selected_date');
+						if (selectedDates.length === 1) {
+							selectedDateMultiple.textContent = formatterForSelected(firstDate)
+						} else {
+							calendarToDay(selectedDateMultiple);
+							calendarMultipleButtons();
+						}
+
+						handleCalendarChanges();
+					});
+				}
+
+				if (calendarMultipleType === 'multiple') {
+					requestAnimationFrame(function () {
+						const selectedDateMultiple = vanilaCalendarMultiple.querySelector('.vanilla-calendar-top__selected_date');
+						if (selectedDates.length === 1) {
+							selectedDateMultiple.textContent = formatterForSelected(firstDate)
+						} else if (selectedDates.length > 1) {
+							selectedDateMultiple.textContent = `${formatterForSelected(firstDate)} - ${formatterForSelected(lastDate)}`;
+						} else {
+							calendarToDay(selectedDateMultiple);
+							calendarMultipleButtons();
+						}
+
+						handleCalendarChanges();
+					});
+				}
+			});
+
+			observerMultipleCalendar.observe(vanilaCalendarMultiple, observerConfig);
 		}
 
 		if (calendarDefaultType === 'default' || calendarDefaultType === 'multiple') {
 			requestAnimationFrame(function () {
 				calendarToDay(selectedDate);
 				calendarDefaultButtons();
-				handleCalendarChanges();
-			})
-		}
-		if (calendarMultipleType === 'default' || calendarMultipleType === 'multiple') {
-			requestAnimationFrame(function () {
-				calendarToDay(selectedDateMultiple);
-				calendarMultipleButtons();
 				handleCalendarChanges();
 			})
 		}
@@ -708,51 +754,11 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 		});
 
-		const observerMultipleCalendar = new MutationObserver(function (mutationsList, observer) {
-			let calendarMultipleType = calendarMultiple.currentType
-			const selectedDates = calendarMultiple.selectedDates;
-			let firstDate = selectedDates[0];
-			let lastDate = selectedDates[selectedDates.length - 1];
-
-			dropdownBootstrap.update()
-
-			if (calendarMultipleType === 'default') {
-				requestAnimationFrame(function () {
-					const selectedDateMultiple = vanilaCalendarMultiple.querySelector('.vanilla-calendar-top__selected_date');
-					if (selectedDates.length === 1) {
-						selectedDateMultiple.textContent = formatterForSelected(firstDate)
-					} else {
-						calendarToDay(selectedDateMultiple);
-						calendarMultipleButtons();
-					}
-
-					handleCalendarChanges();
-				});
-			}
-
-			if (calendarMultipleType === 'multiple') {
-				requestAnimationFrame(function () {
-					const selectedDateMultiple = vanilaCalendarMultiple.querySelector('.vanilla-calendar-top__selected_date');
-					if (selectedDates.length === 1) {
-						selectedDateMultiple.textContent = formatterForSelected(firstDate)
-					} else if (selectedDates.length > 1) {
-						selectedDateMultiple.textContent = `${formatterForSelected(firstDate)} - ${formatterForSelected(lastDate)}`;
-					} else {
-						calendarToDay(selectedDateMultiple);
-						calendarMultipleButtons();
-					}
-
-					handleCalendarChanges();
-				});
-			}
-		});
-
 		const observerConfig = {
 			childList: true,
 		};
 
 		observerDefaultCalendar.observe(vanilaCalendar, observerConfig);
-		observerMultipleCalendar.observe(vanilaCalendarMultiple, observerConfig);
 	});
 	//** (End) Vanilla Calendar **//
 
