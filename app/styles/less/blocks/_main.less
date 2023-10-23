@@ -12,23 +12,40 @@
 	&.is-three {
 		grid-template-columns: auto auto 1fr;
 	}
-}
 
-.header-page h1 {
-	margin: 0;
-}
+	h1 {
+		margin: 0;
+	}
 
-.header-page form {
-	display: table;
-	margin-left: auto;
-}
+	form {
+		display: table;
+		margin-left: auto;
+	}
 
-.header-page .btn-search[type="button"] {
-	display: none;
-}
+	.btn-search[type="button"] {
+		display: none;
+	}
 
-.header-page .form-control {
-	max-width: 240px;
+	.form-control {
+		max-width: 240px;
+	}
+
+	&-end {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		gap: 1.5rem;
+
+		.btn-group--custom {
+			gap: .75rem;
+		}
+
+		form {
+			display: block;
+			max-width: max-content;
+			margin: 0;
+		}
+	}
 }
 
 /** (End) Header Page **/
@@ -44,7 +61,6 @@
 	}
 
 	.table-responsive {
-		max-height: 600px;
 		border-radius: .625rem;
 		scrollbar-gutter: stable;
 	}
@@ -104,6 +120,7 @@
 	align-items: center;
 	justify-content: space-between;
 	gap: 1rem;
+	margin-block-end: 1.5rem;
 
 	h2 {
 		line-height: 2.25rem;
@@ -111,26 +128,30 @@
 	}
 }
 
-
-.table-filter>*+* {
-	padding-top: 1rem;
-}
-
-.table-action {
+.page-filter {
 	display: flex;
-	gap: .75rem;
-}
-
-.table-action>* {
-	flex: 1;
-}
-
-.table-action .dropdown .btn {
-	width: 100%;
-	display: flex;
+	flex-wrap: wrap;
 	align-items: center;
-	justify-content: space-between;
-	gap: 1rem;
+	gap: .75rem;
+	margin-block-end: 1.125rem;
+
+	&>*{
+		flex: 1;
+
+		&>.dropdown-toggle {
+			width: 100%;
+			justify-content: space-between;
+			text-align: left;
+		}
+	}
+}
+
+.table-filter {
+	margin-block-end: 1.5rem;
+
+	&>*+* {
+		padding-block-start: 1rem;
+	}
 }
 
 .table-buttons {
@@ -550,7 +571,7 @@
 			&-first {
 
 				.vanilla-calendar-day__btn {
-					
+
 					&::after {
 						right: -.125rem;
 					}
@@ -560,7 +581,7 @@
 			&-last {
 
 				.vanilla-calendar-day__btn {
-					
+
 					&::after {
 						left: 0;
 					}
@@ -570,7 +591,7 @@
 
 		&__first {
 
-			& > * {
+			&>* {
 
 				&::before {
 					border-top-left-radius: .25rem;
@@ -581,7 +602,7 @@
 
 		&__last {
 
-			& > * {
+			&>* {
 
 				&::after {
 					border-top-right-radius: .25rem;
@@ -607,7 +628,7 @@
 		display: none;
 	}
 
-	&--multiple {
+	&.with-tabs {
 
 		.vanilla-calendar-tabs {
 			display: flex;

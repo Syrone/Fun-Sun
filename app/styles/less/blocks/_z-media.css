@@ -80,6 +80,7 @@
   }
   .table-items-xxl.table-items-v2 tbody .more {
     padding: 0;
+    border: none;
   }
   .table-items-xxl .table {
     border-collapse: collapse;
@@ -151,13 +152,15 @@
     flex-basis: calc(50% - 0.5rem);
   }
   .table-items-xxl tbody .more {
-    width: 100%;
+    width: max-content;
     display: flex;
     justify-content: flex-end;
     margin-block-end: -1.35rem;
+    margin-inline-start: auto;
     padding: 0;
     border: none;
     order: -10;
+    position: relative;
   }
   /** (End) Table **/
   /** (Start) Card **/
@@ -185,10 +188,30 @@
   .header-page h1 {
     font-size: var(--font-size--xl);
   }
+  .header-page-end form .btn-search[type="submit"],
+  .header-page-end form .form-control {
+    display: none;
+  }
+  .header-page-end form .btn-search[type="button"] {
+    display: flex;
+    position: static;
+    margin: 0;
+    padding: 0.375rem;
+    transform: unset;
+  }
   /** (End) Header Page **/
   /** (Start) Wrapper Table **/
   .table-header h2 {
     font-size: var(--font-size--md);
+  }
+  .page-filter > *:not(:nth-child(n+6)),
+  .page-filter > *:not(.dropdown-filter),
+  .page-filter > .dropdown-calendar {
+    flex-basis: calc(20% - 0.75rem);
+  }
+  .page-filter > *:nth-child(n+6):not(.dropdown-calendar) {
+    flex-basis: calc(25% - 0.75rem);
+    order: 1;
   }
   /** (End) Wrapper Table **/
 }
@@ -261,17 +284,16 @@
     grid-row: 2;
     grid-column: span 2;
   }
+  .header-page > .swiper {
+    width: calc(100% + (var(--bs-gutter-x) * 2));
+    margin-inline: calc(var(--bs-gutter-x) * -1);
+    padding-inline: var(--bs-gutter-x);
+  }
   .header-page.is-three {
     grid-template-columns: auto 1fr;
   }
   /** (End) Header Page **/
   /** (Start) Wrapper Table **/
-  .table-action {
-    flex-wrap: wrap;
-  }
-  .table-action > * {
-    flex: 0 0 calc(50% - 0.75rem);
-  }
   .table-header {
     flex-direction: column;
     align-items: flex-start;
@@ -279,6 +301,16 @@
   .table-header .btn-group {
     width: 100%;
     max-width: unset;
+  }
+  .page-filter > *:not(.dropdown-calendar, .dropdown-filter) {
+    display: none;
+  }
+  .page-filter .dropdown-filter > .dropdown-toggle {
+    justify-content: center;
+    text-align: center;
+  }
+  .page-filter .btn-calendar {
+    text-align: center;
   }
   /** (End) Wrapper Table **/
   .table-items,
@@ -363,13 +395,15 @@
     flex-basis: calc(50% - 0.5rem);
   }
   .table-items tbody .more {
-    width: 100%;
+    width: max-content;
     display: flex;
     justify-content: flex-end;
     margin-block-end: -1.35rem;
+    margin-inline-start: auto;
     padding: 0;
     border: none;
     order: -10;
+    position: relative;
   }
   .table-items .wrapper-status {
     justify-content: start;
@@ -447,6 +481,9 @@
   }
   .btn-lg {
     padding-inline: 1rem;
+  }
+  .btn-download.is-phone {
+    display: flex;
   }
   .table thead .wrapper-search {
     max-width: max-content;
@@ -565,6 +602,12 @@
   .header-page h1 {
     font-size: 1.25rem;
   }
+  .header-page-end {
+    gap: 0;
+  }
+  .header-page-end .btn-download:not(.is-phone) {
+    display: none;
+  }
   /** (End) Header Page **/
   .dropdown-nested .dropdown-menu {
     height: auto;
@@ -666,23 +709,25 @@
   .wrapper-table .tab-pane .wrapper-pagination {
     grid-row: 1;
   }
-  .table-action {
-    flex-wrap: wrap;
-  }
-  .table-action > * {
-    flex: 0 0 calc(100%);
+  .table-filter {
+    margin-block-end: 0;
   }
   .table-buttons {
     flex-wrap: wrap;
   }
   .table-buttons .swiper-buttons {
-    margin-inline-start: 0;
+    width: calc(100% + (var(--bs-gutter-x) * 2));
+    margin-inline: calc(var(--bs-gutter-x) * -1);
+    padding-inline: var(--bs-gutter-x);
   }
   .table-buttons > time {
     margin-block: 1.125rem 0.25rem;
   }
-  .table-buttons > .table-button {
+  .table-buttons:not(.single-button) > .table-button {
     flex-basis: calc(50% - 0.25rem);
+  }
+  .table-buttons.single-button > .table-button {
+    flex-basis: 100%;
   }
   .table-wrapper {
     margin-block: 0;
@@ -699,6 +744,12 @@
     width: 100%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+  }
+  .page-filter {
+    margin-block-end: 1rem;
+  }
+  .page-filter .btn-calendar {
+    text-align: left;
   }
   /** (End) Wrapper Table **/
   /** (Start) Wrapper Graph **/
