@@ -279,12 +279,84 @@ document.addEventListener('DOMContentLoaded', () => {
 	const rootStyles = getComputedStyle(document.documentElement);
 	const colors = {
 		accent: rootStyles.getPropertyValue('--accent'),
-		secondary: rootStyles.getPropertyValue('--secondary')
+		secondary: rootStyles.getPropertyValue('--secondary'),
+		warning: rootStyles.getPropertyValue('--warning'),
+		textDark: rootStyles.getPropertyValue('--text-color--dark'),
 	};
 
 	//** (Start) Graph Without Scales **//
 	const canvasTrendingUp = document.getElementById('canvasTrendingUp')
 	const canvasTrendingDown = document.getElementById('canvasTrendingDown')
+	const canvasTypePromotion = document.getElementById('graphTypePromotion')
+	const canvasAttribution = document.getElementById('graphAttribution')
+	const canvasStatus = document.getElementById('graphStatus')
+	let max
+
+	function getDoughnutGradient(chart) {
+		const { ctx, chartArea: { top, bottom, left, right } } = chart
+		const gradientSegment = ctx.createLinearGradient(20, 20, 150, 150)
+		gradientSegment.addColorStop(0, '#8EB8FF');
+		gradientSegment.addColorStop(1, '#4872F2');
+		return gradientSegment
+	}
+
+	const doughnetBackground = {
+		beforeDatasetsDraw(chart) {
+			const { ctx, data } = chart;
+			const innerRadius = chart.getDatasetMeta(0).data[0].innerRadius
+			const outerRadius = chart.getDatasetMeta(0).data[0].outerRadius
+			const sliceThickness = (outerRadius - innerRadius) + 6
+			const angle = Math.PI / 180
+
+			ctx.save();
+
+			data.datasets.forEach((dataset, index) => {
+				chart.getDatasetMeta(index).data[0].innerRadius = innerRadius - (sliceThickness * index)
+				chart.getDatasetMeta(index).data[0].outerRadius = outerRadius - (sliceThickness * index)
+
+				ctx.beginPath();
+				ctx.lineWidth = chart.getDatasetMeta(index).data[0].outerRadius - chart.getDatasetMeta(index).data[0].innerRadius
+				ctx.arc(chart.getDatasetMeta(index).data[0].x, chart.getDatasetMeta(index).data[0].y, chart.getDatasetMeta(index).data[0].outerRadius - (chart.getDatasetMeta(index).data[0].outerRadius - chart.getDatasetMeta(index).data[0].innerRadius) / 2, 0, angle * 360, false)
+				ctx.strokeStyle = '#919EAB29'
+				ctx.stroke();
+
+			})
+		}
+	}
+
+	const doughnetGradient = {
+		beforeDatasetsDraw(chart) {
+			const { ctx } = chart;
+
+			const gradientAccent = ctx.createLinearGradient(20, 20, 220, 220);
+			const gradientWarning = ctx.createLinearGradient(20, 20, 220, 220);
+			gradientAccent.addColorStop(0, '#8EB8FF');
+			gradientAccent.addColorStop(1, '#4872F2');
+			gradientWarning.addColorStop(0, '#FA9596');
+			gradientWarning.addColorStop(1, '#E73C3E');
+			chart.getDatasetMeta(0).data[0].options.backgroundColor = gradientAccent
+			if (chart.getDatasetMeta().length > 1) {
+				chart.getDatasetMeta(1).data[0].options.backgroundColor = gradientWarning
+			}
+		}
+	}
+
+	const doughnutLabel = {
+		beforeInit(chart) {
+			const { ctx, data } = chart;
+
+			const totalData = data.datasets.reduce((total, dataset) => total + dataset.data.reduce((sum, value) => sum + value, 0), 0);
+
+			const labelContainer = document.createElement('div');
+			labelContainer.classList.add('current-data');
+			labelContainer.innerHTML = `
+				Всего
+				<span>${totalData.toLocaleString('en-US')}</span>
+			`;
+
+			ctx.canvas.parentNode.appendChild(labelContainer);
+		}
+	}
 
 	if (canvasTrendingUp) {
 		const GraphTrendingUp = new Chart(canvasTrendingUp, {
@@ -302,7 +374,6 @@ document.addEventListener('DOMContentLoaded', () => {
 				}]
 			},
 			options: {
-				responsive: false,
 				scales: {
 					y: {
 						display: false,
@@ -336,7 +407,6 @@ document.addEventListener('DOMContentLoaded', () => {
 				}]
 			},
 			options: {
-				responsive: false,
 				scales: {
 					y: {
 						display: false,
@@ -351,6 +421,122 @@ document.addEventListener('DOMContentLoaded', () => {
 					}
 				}
 			}
+		});
+	}
+
+	if (canvasTypePromotion) {
+		const GraphTypePromotion = new Chart(canvasTypePromotion, {
+			type: 'doughnut',
+			data: {
+				datasets: [
+					{
+						label: 'B2B',
+						data: [5000],
+						pointStyle: false,
+						circumference: (ctx) => {
+							const dataPoints = ctx.chart.data.datasets.map((dataset) => {
+								return dataset.data[0]
+							})
+							max = Math.max(...dataPoints)
+							return ctx.dataset.data / max * 275
+						},
+					},
+				]
+			},
+			options: {
+				borderColor: '',
+				hoverBorderColor: '',
+				borderWidth: 0,
+				borderRadius: 16,
+				cutout: 85,
+				plugins: {
+					legend: {
+						display: false
+					},
+				},
+			},
+			plugins: [doughnutLabel, doughnetBackground, doughnetGradient]
+		});
+	}
+
+	if (canvasAttribution) {
+		const GraphAttribution = new Chart(canvasAttribution, {
+			type: 'doughnut',
+			data: {
+				datasets: [
+					{
+						label: 'Есть',
+						data: [5000],
+						pointStyle: false,
+						circumference: (ctx) => {
+							const dataPoints = ctx.chart.data.datasets.map((dataset) => {
+								return dataset.data[0]
+							})
+							max = Math.max(...dataPoints)
+							return ctx.dataset.data / max * 330
+						},
+					},
+					{
+						label: 'Нет',
+						data: [5989],
+						pointStyle: false,
+						circumference: (ctx) => {
+							return ctx.dataset.data / max * 180
+						},
+					}
+				]
+			},
+			options: {
+				borderColor: '',
+				hoverBorderColor: '',
+				borderWidth: 0,
+				borderRadius: 16,
+				cutout: 85,
+				plugins: {
+					legend: {
+						display: false
+					},
+				},
+			},
+			plugins: [doughnutLabel, doughnetBackground, doughnetGradient]
+		});
+	}
+
+	if (canvasStatus) {
+		const GraphStatus = new Chart(canvasStatus, {
+			type: 'doughnut',
+			data: {
+				labels: [
+					'Выполнено',
+					'Запланировано'
+				],
+				datasets: [
+					{
+						data: [8500, 2489],
+						backgroundColor: (context) => {
+							const chart = context.chart;
+							const { chartArea } = chart
+							if (!chartArea) {
+								return null
+							}
+							return getDoughnutGradient(chart);
+						},
+						pointStyle: false,
+					}
+				]
+			},
+			options: {
+				borderColor: 'rgb(255, 255, 255)',
+				hoverBorderColor: 'rgb(255, 255, 255)',
+				borderWidth: 5,
+				cutout: 85,
+				plugins: {
+					legend: {
+						display: false
+					},
+				},
+			},
+			plugins: [doughnutLabel]
 		});
 	}
 	//** (End) Graph Without Scales **//
@@ -683,7 +869,7 @@ document.addEventListener('DOMContentLoaded', () => {
 					});
 				}
 			});
-			
+
 			observerMultipleCalendar.observe(vanilaCalendarMultiple, observerConfig);
 		}
 

@@ -764,17 +764,12 @@
   .wrapper-graph .graph-main {
     position: relative;
   }
-  .wrapper-graph .graph-main-end {
+  .wrapper-graph .graph-main-end .graph-box {
     width: 100px;
     height: 70px;
     position: absolute;
     top: 0;
     right: 0;
-  }
-  .wrapper-graph .graph-canvas {
-    width: 100px !important;
-    height: 70px !important;
-    aspect-ratio: auto 100 / 70;
   }
   /** (End) Wrapper Graph **/
   /** (Start) Vanilla Calendar **/

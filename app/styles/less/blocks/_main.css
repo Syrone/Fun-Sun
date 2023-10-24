@@ -73,6 +73,9 @@
 .wrapper-table .tab-pane .wrapper-navigation {
   grid-column: auto;
 }
+.wrapper-table .wrapper-graph {
+  margin-block: 2rem 1.25rem;
+}
 .wrapper-pagination {
   grid-column: auto;
 }
@@ -144,6 +147,7 @@
   line-height: 1;
 }
 .indicator {
+  display: block;
   --size: 0.75rem;
   width: var(--size);
   height: var(--size);
@@ -192,23 +196,6 @@
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow-3);
 }
-.wrapper-graph .graph--info {
-  height: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 1.5rem 1.875rem 1.5rem 1.25rem;
-}
-.wrapper-graph .graph--info .graph-header {
-  font-weight: 400;
-  color: var(--text-color);
-  margin: 0;
-}
-.wrapper-graph .graph--info .badge {
-  min-width: 85px;
-}
 .wrapper-graph .graph-header {
   font-size: var(--font-size--sm);
   font-weight: 600;
@@ -233,10 +220,6 @@
   flex-direction: column;
   justify-content: space-between;
   gap: 0.75rem;
-}
-.wrapper-graph .graph-main-end {
-  width: 130px;
-  height: 100px;
 }
 .wrapper-graph .graph-main-title {
   font-size: var(--font-size--tl);
@@ -277,6 +260,107 @@
 .wrapper-graph .graph-main-info .total {
   font-weight: 600;
   color: var(--text-color--dark);
+}
+.wrapper-graph .graph-box > * {
+  margin-inline: auto;
+}
+.wrapper-graph .graph--info {
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.5rem 1.875rem 1.5rem 1.25rem;
+}
+.wrapper-graph .graph--info .graph-header {
+  font-weight: 400;
+  color: var(--text-color);
+  margin: 0;
+}
+.wrapper-graph .graph--info .badge {
+  min-width: 85px;
+}
+.wrapper-graph .graph--circle {
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+  padding: 1.5rem;
+  box-shadow: var(--box-shadow-2);
+}
+.wrapper-graph .graph--circle .graph-header {
+  font-size: var(--font-size--md);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-color--dark);
+}
+.wrapper-graph .graph--circle .graph-header h3 {
+  font: inherit;
+}
+.wrapper-graph .graph--circle .graph-main .graph-box {
+  width: 100%;
+  max-width: 210px;
+  margin-inline: auto;
+  position: relative;
+}
+.wrapper-graph .graph--circle .graph-main .graph-box canvas {
+  position: relative;
+  z-index: 10;
+}
+.wrapper-graph .graph--circle .graph-main .graph-box .current-data {
+  font-size: var(--font-size);
+  font-weight: 600;
+  color: var(--text-color);
+  line-height: 1.3;
+  text-align: center;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.wrapper-graph .graph--circle .graph-main .graph-box .current-data span {
+  display: block;
+  font-size: var(--font-size--xxl);
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--text-color--dark);
+}
+.wrapper-graph .graph--circle .graph-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0 0 1rem 1rem;
+}
+.wrapper-graph .graph--circle .graph-footer-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.25rem;
+}
+.wrapper-graph .graph--circle .graph-footer-line > * {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.wrapper-graph .graph--circle .graph-footer-line .indicator {
+  --size: 1rem;
+  border-radius: 0.375rem;
+}
+.wrapper-graph .graph--circle .graph-footer-line .type,
+.wrapper-graph .graph--circle .graph-footer-line .total,
+.wrapper-graph .graph--circle .graph-footer-line .percent {
+  font-weight: 600;
+  line-height: 1.5;
+}
+.wrapper-graph .graph--circle .graph-footer-line .line-end {
+  text-align: left;
+}
+.wrapper-graph .graph--circle .graph-footer-line .line-end .total {
+  color: var(--text-color--dark);
+}
+.wrapper-graph .graph--circle .graph-footer-line .line-end .percent {
+  min-width: 7ch;
 }
 /** (End) Wrapper Graph **/
 /** (Start) Custom Counter **/
