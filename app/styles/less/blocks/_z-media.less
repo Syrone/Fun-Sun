@@ -317,35 +317,82 @@
 
 	//** (End) ICONS **//
 
+	//** (Start) Buttons **//
+	.btn-table {
+
+		.desktop {
+			display: none;
+		}
+
+		.mobile {
+			display: block;
+		}
+	}
+
+	//** (End) Buttons **//
+
 	/** (Start) Header Page **/
-	.header .navbar {
-		padding-block: .375rem;
-	}
+	.header {
 
-	.header .navbar-brand {
-		max-width: 120px;
-	}
+		.navbar {
+			padding-block: .375rem;
+		}
 
-	.header .navbar-nav .nav-link .icon {
-		--size: 1.125rem;
-	}
+		.navbar-brand {
+			max-width: 120px;
+		}
 
-	.header .navbar-nav .nav-item {
-		font-size: .75rem;
+		.navbar-nav {
+
+			.nav-link {
+
+				.icon {
+					--size: 1.125rem;
+				}
+			}
+
+			.nav-item {
+				font-size: .75rem;
+			}
+		}
 	}
 
 	/** (End) Header Page **/
 
-	//** (Start) Buttons **//
-	.btn-table .desktop {
-		display: none;
+	/** (Start) Wrapper Graph **/
+	.wrapper-graph {
+
+		.graph--circle {
+			gap: 1.875rem;
+
+			.graph-header {
+				margin-block-end: .375rem;
+			}
+
+			.graph-footer {
+				padding-block-end: 0;
+			}
+		}
+
+		.graph--progress {
+
+			.graph-header {
+				flex-direction: row;
+				justify-content: space-between;
+				padding-block-end: 1rem;
+
+				.graph-line {
+					gap: 1.5rem;
+				}
+			}
+
+			.graph-main {
+				padding-block-start: 1rem;
+			}
+		}
 	}
 
-	.btn-table .mobile {
-		display: block;
-	}
-
-	//** (End) Buttons **//
+	/** (End) Wrapper Graph **/
 }
 
 @media (max-width: 992px) {
@@ -1169,13 +1216,49 @@
 				position: relative;
 
 				&-end {
-					
+
 					.graph-box {
 						width: 100px;
 						height: 70px;
 						position: absolute;
 						top: 0;
 						right: 0;
+					}
+				}
+			}
+		}
+
+		.graph--progress {
+			padding: 1rem .25rem 1rem 1rem;
+
+			.graph-header {
+				flex-direction: column;
+				gap: .75rem;
+				padding-block-end: 0;
+
+				.graph-line {
+					gap: 2rem;
+				}
+			}
+
+			.wrapper-progress {
+
+				.progress-items {
+					padding-inline-end: .25rem;
+				}
+
+				&-top,
+				&-bottom {
+
+					.title {
+						width: 80px;
+					}
+				}
+
+				&-bottom {
+
+					.progress-total {
+						padding-inline-end: .875rem;
 					}
 				}
 			}
@@ -1188,7 +1271,7 @@
 	.vanilla-calendar--multiple {
 
 		.vanilla-calendar-grid {
-			grid-template-columns: repeat(1, minmax(220px, 1fr));
+			grid-template-columns: repeat(1, 260px);
 		}
 
 		.vanilla-calendar-column {

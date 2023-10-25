@@ -48,6 +48,9 @@ h3,
 .bg-primary {
   background-color: var(--accent) !important;
 }
+.bg-success {
+  background-color: var(--secondary) !important;
+}
 .text-primary {
   color: var(--accent) !important;
 }
@@ -567,6 +570,17 @@ textarea.form-control:is(:focus) {
 .btn-calendar.multiple > time .suptitle {
   display: inline-block;
 }
+.btn-calendar.inline > time {
+  max-width: max-content;
+  flex-direction: row;
+  gap: 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.btn-calendar.inline > time .suptitle {
+  display: none;
+}
 .btn-calendar::after {
   all: unset;
 }
@@ -693,6 +707,22 @@ textarea.form-control:is(:focus) {
 }
 .btn-download:is(:hover, :focus-visible, :active, .is-active) {
   color: var(--accent);
+}
+.progress {
+  height: 0.5rem;
+  background-color: var(--background);
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-block-end: 1px dashed var(--gray-color);
+  position: relative;
+}
+.progress-bar {
+  height: 100%;
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 .dropdown .btn .icon {
   --size: 0.875rem;

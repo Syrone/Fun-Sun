@@ -106,7 +106,11 @@
 	}
 
 	.wrapper-graph {
-		margin-block: 2rem 1.25rem;
+		margin-block: 2rem 0;
+
+		&+* {
+			margin-block-start: 1.25rem;
+		}
 	}
 }
 
@@ -139,7 +143,7 @@
 	gap: .75rem;
 	margin-block-end: 1.125rem;
 
-	&>*{
+	&>* {
 		flex: 1;
 
 		&>.dropdown-toggle {
@@ -339,9 +343,52 @@
 		}
 
 		&-box {
-			
+
 			&>* {
 				margin-inline: auto;
+			}
+		}
+
+		&-line {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: .25rem;
+
+			&>* {
+				display: flex;
+				align-items: center;
+				gap: .5rem;
+			}
+
+			.indicator {
+				--size: 1rem;
+				border-radius: .375rem;
+			}
+
+			.type,
+			.total,
+			.percent {
+				font-size: var(--font-size--sm);
+				font-weight: 600;
+				line-height: 1.5;
+			}
+
+			.type {
+				font-size: var(--font-size);
+				color: var(--text-color);
+			}
+
+			.line-end {
+				text-align: left;
+
+				.total {
+					color: var(--text-color--dark);
+				}
+
+				.percent {
+					min-width: 7ch;
+				}
 			}
 		}
 	}
@@ -427,41 +474,123 @@
 			flex-direction: column;
 			gap: 1rem;
 			padding: 0 0 1rem 1rem;
+		}
+	}
 
-			&-line {
+	.graph--progress {
+		height: 100%;
+		padding: 1.5rem .25rem 1.5rem 1.5rem;
+
+		.graph-header {
+			display: flex;
+			flex-direction: column;
+			gap: 1.25rem;
+			font-size: var(--font-size--md);
+			font-weight: 700;
+			line-height: 1.2;
+			color: var(--text-color--dark);
+			margin-block-end: 0;
+			padding-block-end: .75rem;
+
+			h3 {
+				font: inherit;
+			}
+
+			.graph-line {
+				justify-content: flex-start;
+				gap: 4rem;
+
+				&>* {
+					gap: .75rem;
+				}
+
+				.type {
+					font-size: var(--font-size--sm);
+					line-height: 1.2;
+				}
+			}
+		}
+
+		.graph-main {
+			padding-block-start: 1.5rem;
+		}
+
+		.wrapper-progress {
+			width: 100%;
+
+			&-top,
+			&-bottom {
+
+				.title {
+					width: 130px;
+					flex-shrink: 0;
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+				}
+			}
+
+			&-bottom {
+
+				.progress-total {
+					display: flex;
+					gap: 1.25rem;
+					margin-block-start: .75rem;
+					padding-inline-end: 1.4rem;
+				}
+
+				.progress-total-content {
+					width: 100%;
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+				}
+
+				.progress-total-item {
+					font-size: var(--font-size--tiny);
+					font-weight: 400;
+					line-height: 1.5;
+					color: var(--text-form);
+
+					&:not(:first-child, :last-child) {
+						margin-inline-start: 1rem;
+					}
+				}
+			}
+
+			.progress-items {
+				max-height: 260px;
+				display: flex;
+				flex-direction: column;
+				gap: 1.875rem;
+				padding-inline-end: .875rem;
+				overflow-y: auto;
+				overflow-x: auto;
+				scrollbar-gutter: stable;
+
+				&-v2 {
+					max-height: 220px;
+				}
+			}
+
+			.progress-item {
+				width: 100%;
 				display: flex;
 				align-items: center;
 				justify-content: space-between;
-				gap: .25rem;
+				gap: 1.25rem;
 
-				&>* {
-					display: flex;
-					align-items: center;
-					gap: .5rem;
-				}
-
-				.indicator {
-					--size: 1rem;
-					border-radius: .375rem;
-				}
-
-				.type,
-				.total,
-				.percent {
-					font-weight: 600;
+				.title {
+					font-size: var(--font-size--tiny);
+					font-weight: 400;
 					line-height: 1.5;
+					color: var(--text-form);
+					text-align: right;
+					margin: 0;
 				}
 
-				.line-end {
-					text-align: left;
-
-					.total {
-						color: var(--text-color--dark);
-					}
-
-					.percent {
-						min-width: 7ch;
-					}
+				.progress {
+					width: 100%;
 				}
 			}
 		}

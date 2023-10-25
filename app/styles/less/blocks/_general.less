@@ -65,6 +65,10 @@ h3,
 	background-color: var(--accent) !important;
 }
 
+.bg-success {
+	background-color: var(--secondary) !important;
+}
+
 //** (End) Backgrounds **//
 
 //** (Start) Text **//
@@ -782,6 +786,23 @@ textarea {
 		}
 	}
 
+	&.inline {
+
+		&>time {
+			max-width: max-content;
+			flex-direction: row;
+			gap: .5rem;
+
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+
+			.suptitle {
+				display: none;
+			}
+		}
+	}
+
 	&::after {
 		all: unset;
 	}
@@ -953,6 +974,27 @@ textarea {
 
 //** (End) Buttons **//
 
+//** (Start) Progress **//
+.progress {
+	height: .5rem;
+	background-color: var(--background);
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	border-block-end: 1px dashed var(--gray-color);
+	position: relative;
+
+	&-bar {
+		height: 100%;
+		border-top-right-radius: .25rem;
+		border-bottom-right-radius: .25rem;
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+}
+
+//** (End) Progress **//
+
 //** (Start) Dropdowns **//
 .dropdown {
 
@@ -1035,7 +1077,7 @@ textarea {
 				color: var(--accent);
 			}
 		}
-		
+
 		&:is(:active, .show) {
 
 			.icon-menu {
@@ -1043,7 +1085,7 @@ textarea {
 				visibility: hidden;
 				position: absolute;
 			}
-			
+
 			.icon-close {
 				color: var(--table);
 				opacity: 1;

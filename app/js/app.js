@@ -293,7 +293,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	let max
 
 	function getDoughnutGradient(chart) {
-		const { ctx, chartArea: { top, bottom, left, right } } = chart
+		const { ctx } = chart
+
 		const gradientSegment = ctx.createLinearGradient(20, 20, 150, 150)
 		gradientSegment.addColorStop(0, '#8EB8FF');
 		gradientSegment.addColorStop(1, '#4872F2');
@@ -906,6 +907,19 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	});
 	//** (End) Vanilla Calendar **//
+
+	//** (Start) Progress Bar **//
+	const progressBars = document.querySelectorAll('.progress-bar');
+
+	if (progressBars.length > 0) {
+		progressBars.forEach(progressBar => {
+			const currentValue = parseFloat(progressBar.getAttribute('aria-valuenow'));
+			const maxValue = parseFloat(progressBar.getAttribute('aria-valuemax'));
+			const fillPercentage = (currentValue / maxValue) * 100;
+			progressBar.style.width = `${fillPercentage}%`;
+		});
+	}
+	//** (End) Progress Bar **//
 
 	// const modal123 = new bootstrap.Modal(document.getElementById('bindCountryModal'));
 	// modal123.show();

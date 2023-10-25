@@ -74,7 +74,10 @@
   grid-column: auto;
 }
 .wrapper-table .wrapper-graph {
-  margin-block: 2rem 1.25rem;
+  margin-block: 2rem 0;
+}
+.wrapper-table .wrapper-graph + * {
+  margin-block-start: 1.25rem;
 }
 .wrapper-pagination {
   grid-column: auto;
@@ -264,6 +267,41 @@
 .wrapper-graph .graph-box > * {
   margin-inline: auto;
 }
+.wrapper-graph .graph-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.25rem;
+}
+.wrapper-graph .graph-line > * {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.wrapper-graph .graph-line .indicator {
+  --size: 1rem;
+  border-radius: 0.375rem;
+}
+.wrapper-graph .graph-line .type,
+.wrapper-graph .graph-line .total,
+.wrapper-graph .graph-line .percent {
+  font-size: var(--font-size--sm);
+  font-weight: 600;
+  line-height: 1.5;
+}
+.wrapper-graph .graph-line .type {
+  font-size: var(--font-size);
+  color: var(--text-color);
+}
+.wrapper-graph .graph-line .line-end {
+  text-align: left;
+}
+.wrapper-graph .graph-line .line-end .total {
+  color: var(--text-color--dark);
+}
+.wrapper-graph .graph-line .line-end .percent {
+  min-width: 7ch;
+}
 .wrapper-graph .graph--info {
   height: 100%;
   display: flex;
@@ -332,35 +370,100 @@
   gap: 1rem;
   padding: 0 0 1rem 1rem;
 }
-.wrapper-graph .graph--circle .graph-footer-line {
+.wrapper-graph .graph--progress {
+  height: 100%;
+  padding: 1.5rem 0.25rem 1.5rem 1.5rem;
+}
+.wrapper-graph .graph--progress .graph-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  font-size: var(--font-size--md);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-color--dark);
+  margin-block-end: 0;
+  padding-block-end: 0.75rem;
+}
+.wrapper-graph .graph--progress .graph-header h3 {
+  font: inherit;
+}
+.wrapper-graph .graph--progress .graph-header .graph-line {
+  justify-content: flex-start;
+  gap: 4rem;
+}
+.wrapper-graph .graph--progress .graph-header .graph-line > * {
+  gap: 0.75rem;
+}
+.wrapper-graph .graph--progress .graph-header .graph-line .type {
+  font-size: var(--font-size--sm);
+  line-height: 1.2;
+}
+.wrapper-graph .graph--progress .graph-main {
+  padding-block-start: 1.5rem;
+}
+.wrapper-graph .graph--progress .wrapper-progress {
+  width: 100%;
+}
+.wrapper-graph .graph--progress .wrapper-progress-top .title,
+.wrapper-graph .graph--progress .wrapper-progress-bottom .title {
+  width: 130px;
+  flex-shrink: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.wrapper-graph .graph--progress .wrapper-progress-bottom .progress-total {
+  display: flex;
+  gap: 1.25rem;
+  margin-block-start: 0.75rem;
+  padding-inline-end: 1.4rem;
+}
+.wrapper-graph .graph--progress .wrapper-progress-bottom .progress-total-content {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 0.25rem;
 }
-.wrapper-graph .graph--circle .graph-footer-line > * {
+.wrapper-graph .graph--progress .wrapper-progress-bottom .progress-total-item {
+  font-size: var(--font-size--tiny);
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-form);
+}
+.wrapper-graph .graph--progress .wrapper-progress-bottom .progress-total-item:not(:first-child, :last-child) {
+  margin-inline-start: 1rem;
+}
+.wrapper-graph .graph--progress .wrapper-progress .progress-items {
+  max-height: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.875rem;
+  padding-inline-end: 0.875rem;
+  overflow-y: auto;
+  overflow-x: auto;
+  scrollbar-gutter: stable;
+}
+.wrapper-graph .graph--progress .wrapper-progress .progress-items-v2 {
+  max-height: 220px;
+}
+.wrapper-graph .graph--progress .wrapper-progress .progress-item {
+  width: 100%;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: space-between;
+  gap: 1.25rem;
 }
-.wrapper-graph .graph--circle .graph-footer-line .indicator {
-  --size: 1rem;
-  border-radius: 0.375rem;
-}
-.wrapper-graph .graph--circle .graph-footer-line .type,
-.wrapper-graph .graph--circle .graph-footer-line .total,
-.wrapper-graph .graph--circle .graph-footer-line .percent {
-  font-weight: 600;
+.wrapper-graph .graph--progress .wrapper-progress .progress-item .title {
+  font-size: var(--font-size--tiny);
+  font-weight: 400;
   line-height: 1.5;
+  color: var(--text-form);
+  text-align: right;
+  margin: 0;
 }
-.wrapper-graph .graph--circle .graph-footer-line .line-end {
-  text-align: left;
-}
-.wrapper-graph .graph--circle .graph-footer-line .line-end .total {
-  color: var(--text-color--dark);
-}
-.wrapper-graph .graph--circle .graph-footer-line .line-end .percent {
-  min-width: 7ch;
+.wrapper-graph .graph--progress .wrapper-progress .progress-item .progress {
+  width: 100%;
 }
 /** (End) Wrapper Graph **/
 /** (Start) Custom Counter **/
