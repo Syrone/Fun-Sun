@@ -280,6 +280,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	const colors = {
 		accent: rootStyles.getPropertyValue('--accent'),
 		secondary: rootStyles.getPropertyValue('--secondary'),
+		third: rootStyles.getPropertyValue('--third'),
+		fourth: rootStyles.getPropertyValue('--fourth'),
+		fifth: rootStyles.getPropertyValue('--fifth'),
 		warning: rootStyles.getPropertyValue('--warning'),
 		textDark: rootStyles.getPropertyValue('--text-color--dark'),
 	};
@@ -290,6 +293,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const canvasTypePromotion = document.getElementById('graphTypePromotion')
 	const canvasAttribution = document.getElementById('graphAttribution')
 	const canvasStatus = document.getElementById('graphStatus')
+	const canvasMarketingDivision = document.getElementById('graphMarketingDivision')
 	let max
 
 	function getDoughnutGradient(chart) {
@@ -531,6 +535,48 @@ document.addEventListener('DOMContentLoaded', () => {
 				hoverBorderColor: 'rgb(255, 255, 255)',
 				borderWidth: 5,
 				cutout: 85,
+				plugins: {
+					legend: {
+						display: false
+					},
+				},
+			},
+			plugins: [doughnutLabel]
+		});
+	}
+
+	if (canvasMarketingDivision) {
+		const GraphMarketingDivision = new Chart(canvasMarketingDivision, {
+			type: 'doughnut',
+			data: {
+				labels: [
+					'Operational Marketing',
+					'Advertising',
+					'E-Commerce',
+					'SMM B2C',
+					'Franchising',
+					'ЗТА'
+				],
+				datasets: [
+					{
+						data: [6989, 6989, 2000, 2989, 2989, 2989],
+						backgroundColor: [
+							colors.accent,
+							colors.secondary,
+							colors.third,
+							colors.warning,
+							colors.fourth,
+							colors.fifth
+						],
+						pointStyle: false,
+					}
+				]
+			},
+			options: {
+				borderColor: 'rgb(255, 255, 255)',
+				hoverBorderColor: 'rgb(255, 255, 255)',
+				borderWidth: 5,
+				cutout: 88,
 				plugins: {
 					legend: {
 						display: false

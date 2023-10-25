@@ -169,6 +169,15 @@
 .indicator.new {
   background-color: var(--accent);
 }
+.indicator.third {
+  background-color: var(--third);
+}
+.indicator.fourth {
+  background-color: var(--fourth);
+}
+.indicator.fifth {
+  background-color: var(--fifth);
+}
 /** (End) Wrapper Table **/
 /** (Start) Wrapper MyData **/
 .wrapper-mydata {
@@ -290,17 +299,24 @@
   line-height: 1.5;
 }
 .wrapper-graph .graph-line .type {
+  max-width: 160px;
   font-size: var(--font-size);
   color: var(--text-color);
 }
 .wrapper-graph .graph-line .line-end {
   text-align: left;
 }
+.wrapper-graph .graph-line .line-end .total,
+.wrapper-graph .graph-line .line-end .percent {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .wrapper-graph .graph-line .line-end .total {
   color: var(--text-color--dark);
 }
 .wrapper-graph .graph-line .line-end .percent {
-  min-width: 7ch;
+  min-width: 6ch;
 }
 .wrapper-graph .graph--info {
   height: 100%;
@@ -335,9 +351,20 @@
 .wrapper-graph .graph--circle .graph-header h3 {
   font: inherit;
 }
+.wrapper-graph .graph--circle .graph-header h3 span {
+  display: block;
+  font-size: var(--font-size);
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-color);
+  margin-block-start: 0.25rem;
+}
 .wrapper-graph .graph--circle .graph-main .graph-box {
   width: 100%;
   max-width: 210px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-inline: auto;
   position: relative;
 }

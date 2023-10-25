@@ -372,6 +372,26 @@
 			.graph-footer {
 				padding-block-end: 0;
 			}
+
+			&-v2 {
+				flex-direction: row;
+				flex-wrap: wrap;
+				gap: 1.25rem;
+				padding-block-end: 2.5rem;
+
+				.graph-main,
+				.graph-footer {
+					flex-basis: calc(50% - .625rem);
+				}
+
+				.graph-header {
+					width: 100%;
+				}
+
+				.graph-footer {
+					padding-inline: 0 4rem;
+				}
+			}
 		}
 
 		.graph--progress {
@@ -707,6 +727,16 @@
 		.graph--info {
 			padding: 1.5rem;
 		}
+
+		.graph--circle {
+
+			&-v2 {
+
+				.graph-footer {
+					padding-inline-end: 0;
+				}
+			}
+		}
 	}
 
 	/** (End) Wrapper Graph **/
@@ -997,6 +1027,73 @@
 
 	/** (End) Wrapper MyData **/
 
+	/** (Start) Wrapper Graph **/
+	.wrapper-graph {
+
+		.graph--circle,
+		.graph--progress {
+			
+			.graph-header {
+				font-size: var(--font-size--sm);
+			}
+		}
+
+		.graph--progress {
+			padding: 1rem .25rem 1rem 1rem;
+
+			.graph-header {
+				flex-direction: column;
+				gap: .75rem;
+				padding-block-end: 0;
+
+				.graph-line {
+					gap: 2rem;
+				}
+			}
+
+			.wrapper-progress {
+
+				.progress-items {
+					padding-inline-end: .25rem;
+				}
+
+				&-top,
+				&-bottom {
+
+					.title {
+						width: 80px;
+					}
+				}
+
+				&-bottom {
+
+					.progress-total {
+						padding-inline-end: .875rem;
+					}
+				}
+			}
+		}
+
+		.graph--circle {
+
+			&-v2 {
+				flex-direction: column;
+				gap: 2.5rem;
+
+				.graph-main,
+				.graph-footer {
+					flex-basis: 100%;
+				}
+
+				.graph-footer {
+					margin-inline: -.5rem;
+				}
+			}
+		}
+	}
+
+	/** (End) Wrapper Graph **/
+
 }
 
 @media (max-width: 576px) {
@@ -1223,42 +1320,6 @@
 						position: absolute;
 						top: 0;
 						right: 0;
-					}
-				}
-			}
-		}
-
-		.graph--progress {
-			padding: 1rem .25rem 1rem 1rem;
-
-			.graph-header {
-				flex-direction: column;
-				gap: .75rem;
-				padding-block-end: 0;
-
-				.graph-line {
-					gap: 2rem;
-				}
-			}
-
-			.wrapper-progress {
-
-				.progress-items {
-					padding-inline-end: .25rem;
-				}
-
-				&-top,
-				&-bottom {
-
-					.title {
-						width: 80px;
-					}
-				}
-
-				&-bottom {
-
-					.progress-total {
-						padding-inline-end: .875rem;
 					}
 				}
 			}
