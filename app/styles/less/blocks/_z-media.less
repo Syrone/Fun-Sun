@@ -362,6 +362,20 @@
 	/** (Start) Wrapper Graph **/
 	.wrapper-graph {
 
+		.tooltip-canvas {
+
+			.list-group-item {
+
+				.title {
+					font-size: var(--font-size--sm);
+				}
+
+				.date {
+					font-size: calc(var(--font-size--tiny) - .125rem);
+				}
+			}
+		}
+
 		.graph--circle {
 			gap: 1.875rem;
 
@@ -394,16 +408,23 @@
 			}
 		}
 
-		.graph--progress {
+		.graph--progress,
+		.graph--bar {
 
 			.graph-header {
 				flex-direction: row;
 				justify-content: space-between;
-				padding-block-end: 1rem;
 
 				.graph-line {
 					gap: 1.5rem;
 				}
+			}
+		}
+
+		.graph--progress {
+
+			.graph-header {
+				padding-block-end: 1rem;
 			}
 
 			.graph-main {
@@ -1031,10 +1052,21 @@
 	.wrapper-graph {
 
 		.graph--circle,
-		.graph--progress {
-			
+		.graph--progress,
+		.graph--mini-table,
+		.graph--bar {
+
 			.graph-header {
 				font-size: var(--font-size--sm);
+			}
+		}
+
+		.graph--progress,
+		.graph--bar {
+
+			.graph-header {
+				flex-direction: column;
+				gap: .75rem;
 			}
 		}
 
@@ -1042,8 +1074,6 @@
 			padding: 1rem .25rem 1rem 1rem;
 
 			.graph-header {
-				flex-direction: column;
-				gap: .75rem;
 				padding-block-end: 0;
 
 				.graph-line {
@@ -1082,13 +1112,17 @@
 
 				.graph-main,
 				.graph-footer {
-					flex-basis: 100%;
+					flex-basis: unset;
 				}
 
 				.graph-footer {
 					margin-inline: -.5rem;
 				}
 			}
+		}
+
+		.graph--mini-table {
+			padding: 1.25rem 1rem;
 		}
 	}
 

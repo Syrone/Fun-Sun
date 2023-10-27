@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const tableElements = document.querySelectorAll('.table-fullscreen');
 	const tabTableElements = document.querySelectorAll('.tab-table-fullscreen');
 	const navLinksTable = document.querySelectorAll('.nav-link-table');
+	const tablesHandleScroll = document.querySelectorAll('[data-handle-scroll]')
 
 	function calculateTableHeight() {
 		const windowWidth = window.innerWidth;
@@ -109,6 +110,12 @@ document.addEventListener('DOMContentLoaded', () => {
 			});
 		}
 
+		if (tablesHandleScroll.length > 0) {
+			tablesHandleScroll.forEach(function (tableHandleScroll) {
+				tableHandleScroll.addEventListener('scroll', handleScroll)
+			})
+		}
+
 		closeDropdownMenus();
 	}
 
@@ -137,6 +144,12 @@ document.addEventListener('DOMContentLoaded', () => {
 	const observerTabTableHeight = new MutationObserver(function (mutationsList, observer) {
 		calculateTableHeight();
 	});
+
+	if (tablesHandleScroll.length > 0) {
+		tablesHandleScroll.forEach(function (tableHandleScroll) {
+			tableHandleScroll.addEventListener('scroll', handleScroll)
+		})
+	}
 
 	tabTableElements.forEach(function (tabTableElement) {
 		tabTableElement.addEventListener('scroll', handleScroll);
@@ -278,6 +291,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	// Получаем значение переменной цвета из CSS
 	const rootStyles = getComputedStyle(document.documentElement);
 	const colors = {
+		background: rootStyles.getPropertyValue('--background'),
 		accent: rootStyles.getPropertyValue('--accent'),
 		secondary: rootStyles.getPropertyValue('--secondary'),
 		third: rootStyles.getPropertyValue('--third'),
@@ -285,6 +299,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		fifth: rootStyles.getPropertyValue('--fifth'),
 		warning: rootStyles.getPropertyValue('--warning'),
 		textDark: rootStyles.getPropertyValue('--text-color--dark'),
+		textLight: rootStyles.getPropertyValue('--text-color--light'),
 	};
 
 	//** (Start) Graph Without Scales **//
@@ -294,6 +309,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const canvasAttribution = document.getElementById('graphAttribution')
 	const canvasStatus = document.getElementById('graphStatus')
 	const canvasMarketingDivision = document.getElementById('graphMarketingDivision')
+	const canvasQuantityByMonth = document.getElementById('graphQuantityByMonth')
 	let max
 
 	function getDoughnutGradient(chart) {
@@ -364,7 +380,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	if (canvasTrendingUp) {
-		const GraphTrendingUp = new Chart(canvasTrendingUp, {
+		const graphTrendingUp = new Chart(canvasTrendingUp, {
 			type: 'line',
 			data: {
 				labels: ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница'],
@@ -397,7 +413,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	if (canvasTrendingDown) {
-		const GraphTrendingDown = new Chart(canvasTrendingDown, {
+		const graphTrendingDown = new Chart(canvasTrendingDown, {
 			type: 'line',
 			data: {
 				labels: ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница'],
@@ -430,7 +446,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	if (canvasTypePromotion) {
-		const GraphTypePromotion = new Chart(canvasTypePromotion, {
+		const graphTypePromotion = new Chart(canvasTypePromotion, {
 			type: 'doughnut',
 			data: {
 				datasets: [
@@ -465,7 +481,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	if (canvasAttribution) {
-		const GraphAttribution = new Chart(canvasAttribution, {
+		const graphAttribution = new Chart(canvasAttribution, {
 			type: 'doughnut',
 			data: {
 				datasets: [
@@ -508,7 +524,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	if (canvasStatus) {
-		const GraphStatus = new Chart(canvasStatus, {
+		const graphStatus = new Chart(canvasStatus, {
 			type: 'doughnut',
 			data: {
 				labels: [
@@ -546,7 +562,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	if (canvasMarketingDivision) {
-		const GraphMarketingDivision = new Chart(canvasMarketingDivision, {
+		const graphMarketingDivision = new Chart(canvasMarketingDivision, {
 			type: 'doughnut',
 			data: {
 				labels: [
@@ -585,6 +601,196 @@ document.addEventListener('DOMContentLoaded', () => {
 			},
 			plugins: [doughnutLabel]
 		});
+	}
+
+	if (canvasQuantityByMonth) {
+		const dates = [
+			new Date('2022-01-01'),
+			new Date('2022-02-13'),
+			new Date('2022-03-21'),
+			new Date('2022-04-11'),
+			new Date('2022-05-06'),
+			new Date('2022-06-26'),
+			new Date('2022-07-24'),
+			new Date('2022-08-24'),
+			new Date('2022-09-02'),
+			new Date('2022-10-11'),
+			new Date('2022-11-11'),
+			new Date('2022-12-01')
+		];
+		const getOrCreateTooltip = (chart) => {
+			let tooltipEl = chart.canvas.parentNode.querySelector('div')
+			if (!tooltipEl) {
+				tooltipEl = document.createElement('div')
+				tooltipEl.classList.add('tooltip-canvas')
+				const tooltipUl = document.createElement('ul')
+				tooltipUl.classList.add('tooltip-list', 'list-group')
+				tooltipEl.appendChild(tooltipUl)
+
+				chart.canvas.parentNode.appendChild(tooltipEl)
+			}
+			return tooltipEl
+		}
+		const externalTooltipHandler = (context) => {
+			const { chart, tooltip } = context
+			const tooltipEl = getOrCreateTooltip(chart)
+
+			if (tooltip.opacity === 0) {
+				tooltipEl.style.opacity = 0
+				return
+			}
+
+			if (tooltip.dataPoints.length > 0) {
+				const label = tooltip.dataPoints[0].dataset.label
+				const data = tooltip.dataPoints[0].dataset.data[tooltip.dataPoints[0].dataIndex]
+				const date = new Date(tooltip.dataPoints[0].chart.data.labels[tooltip.dataPoints[0].dataIndex])
+				const formatterDate = date.toLocaleString('ru-RU', {
+					year: 'numeric',
+					month: 'long',
+					day: 'numeric',
+				}).replace(' г.', '');
+				const tooltipUl = tooltipEl.querySelector('ul')
+				const tooltipLi = document.createElement('li')
+				tooltipLi.classList.add('list-group-item')
+				const tooltipTitleSpan = document.createElement('span')
+				const tooltipDateSpan = document.createElement('date')
+				const tooltipTitle = document.createTextNode(data + ' ' + label)
+				const tooltipDate = document.createTextNode(formatterDate)
+				tooltipTitleSpan.classList.add('title')
+				tooltipDateSpan.classList.add('date')
+				tooltipUl.appendChild(tooltipLi)
+				tooltipLi.appendChild(tooltipTitleSpan)
+				tooltipLi.appendChild(tooltipDateSpan)
+				tooltipTitleSpan.appendChild(tooltipTitle)
+				tooltipDateSpan.appendChild(tooltipDate)
+
+				while (tooltipUl.firstChild) {
+					tooltipUl.firstChild.remove()
+				}
+
+				tooltipUl.appendChild(tooltipLi)
+				tooltipEl.style.opacity = 1
+			}
+
+			const { offsetLeft: positionX, offsetTop: positionY } = chart.canvas
+			const tooltipHeight = tooltipEl.offsetHeight;
+			tooltipEl.style.left = positionX + tooltip.caretX + 'px'
+			tooltipEl.style.top = positionY + tooltip.caretY - tooltipHeight - 20 + 'px'
+		}
+		const titleTooltip = (tooltipItems) => {
+			return ''
+		}
+
+		const graphQuantityByMonth = new Chart(canvasQuantityByMonth, {
+			type: 'bar',
+			data: {
+				labels: dates,
+				datasets: [
+					{
+						label: 'Выполненных',
+						data: [450, 250, 350, 400, 150, 500, 450, 300, 350, 400, 470, 470],
+						backgroundColor: [
+							colors.secondary,
+						],
+						pointStyle: false,
+					},
+					{
+						label: 'Запланированных',
+						data: [550, 210, 500, 700, 270, 250, 550, 250, 500, 700, 250, 250],
+						backgroundColor: [
+							colors.accent,
+						],
+						pointStyle: false,
+					}
+				]
+			},
+			options: {
+				borderRadius: {
+					topLeft: 8,
+					topRight: 8,
+					bottomLeft: 0,
+					bottomRight: 0
+				},
+				scales: {
+					x: {
+						border: {
+							display: false,
+						},
+						grid: {
+							display: false,
+							drawTicks: false,
+						},
+						display: true,
+						type: 'timeseries',
+						time: {
+							unit: 'month',
+							displayFormats: {
+								month: 'MMM'
+							},
+						},
+						ticks: {
+							callback: function (value, index, values) {
+								const date = new Date(value);
+								const month = date.toLocaleString('ru-RU', { month: 'short' }).slice(0, 3);
+								return month.charAt(0).toUpperCase() + month.slice(1);
+							},
+							font: {
+								family: 'Open-sans',
+								size: 14,
+								weight: '400',
+							},
+							color: colors.textLight,
+							padding: 20,
+						},
+					},
+					y: {
+						border: {
+							display: false,
+						},
+						grid: {
+							color: '#f5f5f5',
+							drawTicks: false,
+						},
+						ticks: {
+							font: {
+								family: 'Open-sans',
+								size: 14,
+								weight: '400',
+							},
+							color: colors.textLight,
+							padding: 20,
+						}
+					}
+				},
+				plugins: {
+					legend: {
+						display: false
+					},
+					interaction: {
+						mode: 'index',
+						intersect: false,
+					},
+					tooltip: {
+						enabled: false,
+						position: 'nearest',
+						external: externalTooltipHandler,
+					},
+				},
+			},
+		});
+
+		console.log(graphQuantityByMonth);
+
+		function checkScreenWidth() {
+			var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+			if (screenWidth <= 1200) {
+				graphQuantityByMonth.scales.x.ctx.font = '10'
+			}
+		}
+
+		window.addEventListener('load', checkScreenWidth);
+		window.addEventListener('resize', checkScreenWidth);
 	}
 	//** (End) Graph Without Scales **//
 

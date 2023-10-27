@@ -1017,11 +1017,14 @@ textarea.form-control:is(:focus) {
   border-radius: 1.25rem;
   text-align: center;
 }
-.table thead {
+.table thead,
+.table tfoot {
   position: sticky;
-  top: 0;
   left: 0;
   z-index: 10;
+}
+.table thead {
+  top: 0;
 }
 .table thead th {
   font-size: var(--font-size--tiny);
@@ -1088,6 +1091,19 @@ textarea.form-control:is(:focus) {
   width: 1.25rem;
   height: 1.25rem;
   border-width: 2px;
+}
+.table tfoot {
+  bottom: 0;
+}
+.table tfoot tr > * {
+  color: var(--accent);
+  border-block: 1px solid var(--accent);
+}
+.table tfoot tr > *:first-child {
+  border-inline-start: 1px solid var(--accent);
+}
+.table tfoot tr > *:last-child {
+  border-inline-end: 1px solid var(--accent);
 }
 .table tr.passive {
   border-radius: 0.5rem;
@@ -1327,6 +1343,9 @@ textarea.form-control:is(:focus) {
   display: block;
   font-weight: 400;
   color: var(--text-color);
+}
+.table > :not(:last-child) > :last-child > * {
+  border-block-end: none;
 }
 .table-items tbody .suptotal,
 .table-items-xxl tbody .suptotal {
