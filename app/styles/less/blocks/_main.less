@@ -284,6 +284,10 @@
 		.graph-overflow {
 			width: 100%;
 		}
+
+		.graph-body {
+			position: relative;
+		}
 	}
 
 	.tooltip-canvas {
@@ -297,7 +301,6 @@
 		opacity: 1;
 		pointer-events: none;
 		position: absolute;
-		transform: translateX(-50%);
 		transition: .25s ease-in-out;
 
 		&.overflow-start {
@@ -315,18 +318,12 @@
 			}
 		}
 
-		&>.icon {
-			position: absolute;
-			top: 99%;
-			right: 50%;
-			transform: rotate(180deg) translateX(-50%);
-		}
-
 		* {
 			border: none;
 		}
 
 		.list-group-item {
+			background-color: inherit;
 
 			.title,
 			.date {

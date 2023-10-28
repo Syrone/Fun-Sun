@@ -214,6 +214,9 @@
 .wrapper-graph .graph-box .graph-overflow {
   width: 100%;
 }
+.wrapper-graph .graph-box .graph-body {
+  position: relative;
+}
 .wrapper-graph .tooltip-canvas {
   font-family: var(--font);
   font-weight: 600;
@@ -225,7 +228,6 @@
   opacity: 1;
   pointer-events: none;
   position: absolute;
-  transform: translateX(-50%);
   transition: 0.25s ease-in-out;
 }
 .wrapper-graph .tooltip-canvas.overflow-start > .icon {
@@ -235,14 +237,11 @@
 .wrapper-graph .tooltip-canvas.overflow-end > .icon {
   right: 33%;
 }
-.wrapper-graph .tooltip-canvas > .icon {
-  position: absolute;
-  top: 99%;
-  right: 50%;
-  transform: rotate(180deg) translateX(-50%);
-}
 .wrapper-graph .tooltip-canvas * {
   border: none;
+}
+.wrapper-graph .tooltip-canvas .list-group-item {
+  background-color: inherit;
 }
 .wrapper-graph .tooltip-canvas .list-group-item .title,
 .wrapper-graph .tooltip-canvas .list-group-item .date {

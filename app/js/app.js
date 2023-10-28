@@ -691,16 +691,8 @@ document.addEventListener('DOMContentLoaded', () => {
 			if (!tooltipEl) {
 				tooltipEl = document.createElement('div');
 				tooltipEl.classList.add('tooltip-canvas');
-				const tooltipTriangle = document.createElement('span');
-				const tooltipSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
 				const tooltipUl = document.createElement('ul');
-				tooltipTriangle.classList.add('icon', 'icon-triangle');
-				tooltipSvg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
-				tooltipSvg.setAttribute('viewBox', '0 0 18 8');
-				tooltipSvg.innerHTML = '<path fill-rule="evenodd" clip-rule="evenodd" d="M18 8L10.591 0.653454C9.71231 -0.217818 8.28769 -0.217818 7.40901 0.653454L0 8H18Z"/>';
 				tooltipUl.classList.add('tooltip-list', 'list-group');
-				tooltipEl.appendChild(tooltipTriangle);
-				tooltipTriangle.appendChild(tooltipSvg);
 				tooltipEl.appendChild(tooltipUl);
 
 				chart.canvas.parentNode.appendChild(tooltipEl);
@@ -748,11 +740,38 @@ document.addEventListener('DOMContentLoaded', () => {
 				tooltipEl.style.opacity = 1
 			}
 
-			const { offsetLeft: positionX, offsetTop: positionY } = chart.canvas
-			const bodyRect = document.body.getBoundingClientRect();
+			const { offsetLeft: positionX, offsetTop: positionY } = chart.canvas;
+			const tooltipWidth = tooltipEl.offsetWidth;
 			const tooltipHeight = tooltipEl.offsetHeight;
-			tooltipEl.style.left = positionX + tooltip.caretX + 'px'
-			tooltipEl.style.top = positionY + tooltip.caretY - tooltipHeight - 20 + 'px'
+			const containerHeight = chart.height;
+
+			// Учитываем смещение прокрутки
+			const container = chart.canvas.parentNode.parentNode;
+			const containerWidth = chart.canvas.parentNode.parentNode.offsetWidth;
+			const scrollLeft = container.scrollLeft;
+
+			let tooltipLeft = positionX + tooltip.caretX - (tooltipWidth / 2);
+			let tooltipTop = positionY + tooltip.caretY - tooltipHeight - 20;
+
+			if (tooltip.caretX - (tooltipWidth / 2) < scrollLeft) {
+				tooltipLeft = scrollLeft;
+				tooltipEl.classList.add('overflow-start')
+			} else if (tooltip.caretX + (tooltipWidth / 2) > containerWidth + scrollLeft) {
+				tooltipLeft = containerWidth - tooltipWidth + scrollLeft;
+				tooltipEl.classList.add('overflow-end')
+			} else {
+				tooltipEl.classList.remove('overflow-start')
+				tooltipEl.classList.remove('overflow-end')
+			}
+
+			if (tooltipTop < 0) {
+				tooltipTop = 0;
+			} else if (tooltipTop + tooltipHeight > containerHeight) {
+				tooltipTop = containerHeight - tooltipHeight;
+			}
+
+			tooltipEl.style.left = tooltipLeft + "px";
+			tooltipEl.style.top = tooltipTop + "px";
 		}
 
 		const graphQuantityByMonth = new Chart(canvasQuantityByMonth, {
