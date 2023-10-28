@@ -248,6 +248,9 @@
   }
   /** (End) Header Page **/
   /** (Start) Wrapper Graph **/
+  .wrapper-graph .graph-box .axes-y > * {
+    height: 400px;
+  }
   .wrapper-graph .tooltip-canvas .list-group-item .title {
     font-size: var(--font-size--sm);
   }
@@ -517,6 +520,12 @@
     min-width: 260px;
   }
   /** (Start) Wrapper Graph **/
+  .wrapper-graph .graph-box .graph-overflow {
+    overflow-x: auto;
+  }
+  .wrapper-graph .graph-box .graph-overflow .graph-body {
+    width: 860px;
+  }
   .wrapper-graph .graph,
   .wrapper-graph .graph--info {
     padding: 1.5rem;

@@ -362,6 +362,16 @@
 	/** (Start) Wrapper Graph **/
 	.wrapper-graph {
 
+		.graph-box {
+
+			.axes-y {
+
+				&>* {
+					height: 400px;
+				}
+			}
+		}
+
 		.tooltip-canvas {
 
 			.list-group-item {
@@ -743,6 +753,17 @@
 
 	/** (Start) Wrapper Graph **/
 	.wrapper-graph {
+
+		.graph-box {
+
+			.graph-overflow {
+				overflow-x: auto;
+
+				.graph-body {
+					width: 860px;
+				}
+			}
+		}
 
 		.graph,
 		.graph--info {
@@ -1331,6 +1352,7 @@
 
 	/** (Start) Wrapper Graph **/
 	.wrapper-graph {
+
 		.graph {
 
 			&--info {

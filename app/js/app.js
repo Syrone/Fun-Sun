@@ -293,7 +293,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	const colors = {
 		background: rootStyles.getPropertyValue('--background'),
 		accent: rootStyles.getPropertyValue('--accent'),
+		accent50: rootStyles.getPropertyValue('--accent-50'),
 		secondary: rootStyles.getPropertyValue('--secondary'),
+		secondary50: rootStyles.getPropertyValue('--secondary-50'),
 		third: rootStyles.getPropertyValue('--third'),
 		fourth: rootStyles.getPropertyValue('--fourth'),
 		fifth: rootStyles.getPropertyValue('--fifth'),
@@ -310,6 +312,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const canvasStatus = document.getElementById('graphStatus')
 	const canvasMarketingDivision = document.getElementById('graphMarketingDivision')
 	const canvasQuantityByMonth = document.getElementById('graphQuantityByMonth')
+	const canvasQuantityByMonthAxesY = document.getElementById('graphQuantityByMonthAxesY')
 	let max
 
 	function getDoughnutGradient(chart) {
@@ -395,6 +398,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				}]
 			},
 			options: {
+				maintainAspectRatio: false,
 				scales: {
 					y: {
 						display: false,
@@ -428,6 +432,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				}]
 			},
 			options: {
+				maintainAspectRatio: false,
 				scales: {
 					y: {
 						display: false,
@@ -603,7 +608,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	}
 
-	if (canvasQuantityByMonth) {
+	if (canvasQuantityByMonth && canvasQuantityByMonthAxesY) {
 		const dates = [
 			new Date('2022-01-01'),
 			new Date('2022-02-13'),
@@ -616,18 +621,89 @@ document.addEventListener('DOMContentLoaded', () => {
 			new Date('2022-09-02'),
 			new Date('2022-10-11'),
 			new Date('2022-11-11'),
-			new Date('2022-12-01')
+			new Date('2022-12-01'),
 		];
+
+		const data = {
+			labels: dates,
+			datasets: [
+				{
+					label: 'Выполненных',
+					data: [450, 250, 350, 400, 150, 500, 450, 300, 350, 400, 470, 470],
+					backgroundColor: colors.secondary,
+					hoverBackgroundColor: createDiagonalPattern(colors.secondary, colors.secondary50),
+					pointStyle: false,
+				},
+				{
+					label: 'Запланированных',
+					data: [550, 210, 500, 700, 270, 250, 550, 250, 500, 700, 250, 250],
+					backgroundColor: colors.accent,
+					hoverBackgroundColor: createDiagonalPattern(colors.accent, colors.accent50),
+					pointStyle: false,
+				}
+			]
+		}
+
+		function createDiagonalPattern(colorStroke, colorFill) {
+			const canvas = document.createElement('canvas');
+			const context = canvas.getContext('2d');
+
+			const size = 20;
+			const stroke = 8;
+			const strokeOffset = stroke / 2;
+			canvas.width = size;
+			canvas.height = size;
+
+			context.fillStyle = colorFill;
+			context.fillRect(0, 0, size, size);
+
+			context.strokeStyle = colorStroke, colorFill;
+			context.lineWidth = stroke;
+
+			// Отрисовка наклонных линий
+			context.moveTo(-strokeOffset, size / 2 - strokeOffset);
+			context.lineTo(size / 2 + strokeOffset, size + strokeOffset);
+			context.moveTo(size / 2 - strokeOffset, -strokeOffset);
+			context.lineTo(size + strokeOffset, size / 2 + strokeOffset);
+			context.stroke();
+
+			// Создание временного холста для разворота
+			const tempCanvas = document.createElement('canvas');
+			const tempContext = tempCanvas.getContext('2d');
+			tempCanvas.width = size;
+			tempCanvas.height = size;
+			tempContext.drawImage(canvas, 0, 0);
+
+			// Создание развернутого узора
+			const mirroredCanvas = document.createElement('canvas');
+			const mirroredContext = mirroredCanvas.getContext('2d');
+			mirroredCanvas.width = size;
+			mirroredCanvas.height = size;
+			mirroredContext.scale(-1, 1);
+			mirroredContext.translate(-size, 0);
+			mirroredContext.drawImage(tempCanvas, 0, 0);
+
+			return mirroredContext.createPattern(mirroredCanvas, 'repeat');
+		}
+
 		const getOrCreateTooltip = (chart) => {
 			let tooltipEl = chart.canvas.parentNode.querySelector('div')
 			if (!tooltipEl) {
-				tooltipEl = document.createElement('div')
-				tooltipEl.classList.add('tooltip-canvas')
-				const tooltipUl = document.createElement('ul')
-				tooltipUl.classList.add('tooltip-list', 'list-group')
-				tooltipEl.appendChild(tooltipUl)
+				tooltipEl = document.createElement('div');
+				tooltipEl.classList.add('tooltip-canvas');
+				const tooltipTriangle = document.createElement('span');
+				const tooltipSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+				const tooltipUl = document.createElement('ul');
+				tooltipTriangle.classList.add('icon', 'icon-triangle');
+				tooltipSvg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+				tooltipSvg.setAttribute('viewBox', '0 0 18 8');
+				tooltipSvg.innerHTML = '<path fill-rule="evenodd" clip-rule="evenodd" d="M18 8L10.591 0.653454C9.71231 -0.217818 8.28769 -0.217818 7.40901 0.653454L0 8H18Z"/>';
+				tooltipUl.classList.add('tooltip-list', 'list-group');
+				tooltipEl.appendChild(tooltipTriangle);
+				tooltipTriangle.appendChild(tooltipSvg);
+				tooltipEl.appendChild(tooltipUl);
 
-				chart.canvas.parentNode.appendChild(tooltipEl)
+				chart.canvas.parentNode.appendChild(tooltipEl);
 			}
 			return tooltipEl
 		}
@@ -673,38 +749,22 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 
 			const { offsetLeft: positionX, offsetTop: positionY } = chart.canvas
+			const bodyRect = document.body.getBoundingClientRect();
 			const tooltipHeight = tooltipEl.offsetHeight;
 			tooltipEl.style.left = positionX + tooltip.caretX + 'px'
 			tooltipEl.style.top = positionY + tooltip.caretY - tooltipHeight - 20 + 'px'
 		}
-		const titleTooltip = (tooltipItems) => {
-			return ''
-		}
 
 		const graphQuantityByMonth = new Chart(canvasQuantityByMonth, {
 			type: 'bar',
-			data: {
-				labels: dates,
-				datasets: [
-					{
-						label: 'Выполненных',
-						data: [450, 250, 350, 400, 150, 500, 450, 300, 350, 400, 470, 470],
-						backgroundColor: [
-							colors.secondary,
-						],
-						pointStyle: false,
-					},
-					{
-						label: 'Запланированных',
-						data: [550, 210, 500, 700, 270, 250, 550, 250, 500, 700, 250, 250],
-						backgroundColor: [
-							colors.accent,
-						],
-						pointStyle: false,
-					}
-				]
-			},
+			data,
 			options: {
+				maintainAspectRatio: false,
+				layout: {
+					padding: {
+						top: 28.2,
+					},
+				},
 				borderRadius: {
 					topLeft: 8,
 					topRight: 8,
@@ -742,8 +802,65 @@ document.addEventListener('DOMContentLoaded', () => {
 							color: colors.textLight,
 							padding: 20,
 						},
+						offset: true,
+						offsetPercentage: 10,
 					},
 					y: {
+						beginAtZero: true,
+						border: {
+							display: false,
+						},
+						grid: {
+							color: '#f5f5f5',
+							drawTicks: false,
+						},
+						ticks: {
+							display: false,
+						}
+					}
+				},
+				plugins: {
+					legend: {
+						display: false
+					},
+					interaction: {
+						mode: 'index',
+						intersect: false,
+					},
+					tooltip: {
+						enabled: false,
+						external: externalTooltipHandler,
+					},
+				},
+				barPercentage: 0.8,
+			},
+		});
+
+		const graphQuantityByMonthAxesY = new Chart(canvasQuantityByMonthAxesY, {
+			type: 'bar',
+			data,
+			options: {
+				maintainAspectRatio: false,
+				layout: {
+					padding: {
+						bottom: 59.35,
+					},
+				},
+				borderRadius: {
+					topLeft: 8,
+					topRight: 8,
+					bottomLeft: 0,
+					bottomRight: 0
+				},
+				scales: {
+					x: {
+						display: false,
+					},
+					y: {
+						beginAtZero: true,
+						afterFit: (ctx) => {
+							ctx.width = 46
+						},
 						border: {
 							display: false,
 						},
@@ -770,27 +887,27 @@ document.addEventListener('DOMContentLoaded', () => {
 						mode: 'index',
 						intersect: false,
 					},
-					tooltip: {
-						enabled: false,
-						position: 'nearest',
-						external: externalTooltipHandler,
-					},
 				},
 			},
 		});
 
-		console.log(graphQuantityByMonth);
+		function responsiveFonts() {
+			const screenWidth = window.innerWidth
 
-		function checkScreenWidth() {
-			var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-
-			if (screenWidth <= 1200) {
-				graphQuantityByMonth.scales.x.ctx.font = '10'
+			if (screenWidth < 1200) {
+				graphQuantityByMonth.config._config.options.scales.x.ticks.font.size = '10'
+				graphQuantityByMonthAxesY.config._config.options.scales.y.ticks.font.size = '10'
+			} else if (screenWidth > 1200) {
+				graphQuantityByMonth.config._config.options.scales.x.ticks.font.size = '14'
+				graphQuantityByMonthAxesY.config._config.options.scales.y.ticks.font.size = '14'
 			}
+
+			graphQuantityByMonth.resize()
+			graphQuantityByMonthAxesY.resize()
 		}
 
-		window.addEventListener('load', checkScreenWidth);
-		window.addEventListener('resize', checkScreenWidth);
+		window.addEventListener('resize', responsiveFonts)
+		window.addEventListener('onload', responsiveFonts)
 	}
 	//** (End) Graph Without Scales **//
 

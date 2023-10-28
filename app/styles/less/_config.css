@@ -31,10 +31,12 @@
 :root {
   /*Colors*/
   --accent: #4872F2;
+  --accent-50: rgba(72, 114, 242, 0.5);
   --accent-20: rgba(72, 114, 242, 0.2);
   --accent-05: #f3f6ff;
   --accent--light: #EDF1FE;
   --secondary: #49C8C0;
+  --secondary-50: rgba(73, 200, 192, 0.5);
   --secondary--light: #E8F8F7;
   --third: #FFE100;
   --fourth: #9747FF;

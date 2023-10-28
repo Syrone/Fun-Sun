@@ -257,6 +257,35 @@
 /** (Start) Wrapper Graph **/
 .wrapper-graph {
 
+	.graph-box {
+		width: 100%;
+
+		.axes-y {
+			display: flex;
+			flex-direction: row;
+
+			&>* {
+				height: 620px;
+			}
+
+			.graph-axes-y {
+				width: 46px;
+			}
+
+			.graph-overflow {
+				width: calc(100% - 46px);
+
+				&>* {
+					height: 100%;
+				}
+			}
+		}
+
+		.graph-overflow {
+			width: 100%;
+		}
+	}
+
 	.tooltip-canvas {
 		font-family: var(--font);
 		font-weight: 600;
@@ -270,6 +299,28 @@
 		position: absolute;
 		transform: translateX(-50%);
 		transition: .25s ease-in-out;
+
+		&.overflow-start {
+			
+			&>.icon {
+				right: auto;
+				left: 11%;
+			}
+		}
+
+		&.overflow-end {
+			
+			&>.icon {
+				right: 33%;
+			}
+		}
+
+		&>.icon {
+			position: absolute;
+			top: 99%;
+			right: 50%;
+			transform: rotate(180deg) translateX(-50%);
+		}
 
 		* {
 			border: none;
@@ -399,6 +450,7 @@
 		}
 
 		&-box {
+			position: relative;
 
 			&>* {
 				margin-inline: auto;

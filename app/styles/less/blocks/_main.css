@@ -192,6 +192,28 @@
 }
 /** (End) Wrapper MyData **/
 /** (Start) Wrapper Graph **/
+.wrapper-graph .graph-box {
+  width: 100%;
+}
+.wrapper-graph .graph-box .axes-y {
+  display: flex;
+  flex-direction: row;
+}
+.wrapper-graph .graph-box .axes-y > * {
+  height: 620px;
+}
+.wrapper-graph .graph-box .axes-y .graph-axes-y {
+  width: 46px;
+}
+.wrapper-graph .graph-box .axes-y .graph-overflow {
+  width: calc(100% - 46px);
+}
+.wrapper-graph .graph-box .axes-y .graph-overflow > * {
+  height: 100%;
+}
+.wrapper-graph .graph-box .graph-overflow {
+  width: 100%;
+}
 .wrapper-graph .tooltip-canvas {
   font-family: var(--font);
   font-weight: 600;
@@ -205,6 +227,19 @@
   position: absolute;
   transform: translateX(-50%);
   transition: 0.25s ease-in-out;
+}
+.wrapper-graph .tooltip-canvas.overflow-start > .icon {
+  right: auto;
+  left: 11%;
+}
+.wrapper-graph .tooltip-canvas.overflow-end > .icon {
+  right: 33%;
+}
+.wrapper-graph .tooltip-canvas > .icon {
+  position: absolute;
+  top: 99%;
+  right: 50%;
+  transform: rotate(180deg) translateX(-50%);
 }
 .wrapper-graph .tooltip-canvas * {
   border: none;
@@ -305,6 +340,9 @@
 .wrapper-graph .graph-main-info .total {
   font-weight: 600;
   color: var(--text-color--dark);
+}
+.wrapper-graph .graph-box {
+  position: relative;
 }
 .wrapper-graph .graph-box > * {
   margin-inline: auto;

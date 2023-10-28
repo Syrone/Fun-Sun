@@ -131,7 +131,7 @@ h3,
   height: 0.5rem;
 }
 .icon-triangle svg {
-  fill: white;
+  fill: var(--background);
 }
 .icon-hint svg path {
   opacity: 0.3;
