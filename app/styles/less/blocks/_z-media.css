@@ -162,6 +162,25 @@
     order: -10;
     position: relative;
   }
+  .table-collapse--date .table .date {
+    width: 45px;
+  }
+  .table-collapse--date .table .date .desktop {
+    display: none;
+  }
+  .table-collapse--date .table .date .mobile {
+    display: block;
+  }
+  .table-collapse--date .table .date > * {
+    max-width: 45px;
+  }
+  .table-collapse--date .table .total {
+    width: 55px;
+    padding-inline-end: 1rem;
+  }
+  .table-collapse--date .table .total > * {
+    max-width: 55px;
+  }
   /** (End) Table **/
   /** (Start) Card **/
   .card-footer {
@@ -518,6 +537,23 @@
   }
   .table-collapse .search {
     min-width: 260px;
+  }
+  .table-collapse--date {
+    width: 100%;
+    margin-inline: auto;
+    padding: 0.125rem 0 0.125rem 0.3rem;
+  }
+  .table-collapse--date .table {
+    width: 940px;
+  }
+  .table-collapse--date .table thead > * > * {
+    padding-block: 0.675rem;
+  }
+  .table-collapse--date .table tbody > * > * {
+    padding-block: 0.75rem;
+  }
+  .table-collapse--date .table tbody > * > * .btn {
+    margin-block: -0.0625rem;
   }
   /** (Start) Wrapper Graph **/
   .wrapper-graph .graph-box .graph-overflow {

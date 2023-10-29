@@ -213,6 +213,37 @@
 		}
 	}
 
+	.table-collapse--date {
+
+		.table {
+
+			.date {
+				width: 45px;
+
+				.desktop {
+					display: none;
+				}
+
+				.mobile {
+					display: block;
+				}
+
+				&>* {
+					max-width: 45px;
+				}
+			}
+
+			.total {
+				width: 55px;
+				padding-inline-end: 1rem;
+
+				&>* {
+					max-width: 55px;
+				}
+			}
+		}
+	}
+
 	/** (End) Table **/
 
 	/** (Start) Card **/
@@ -746,6 +777,40 @@
 
 		.search {
 			min-width: 260px;
+		}
+	}
+
+	.table-collapse--date {
+		width: 100%;
+		margin-inline: auto;
+		padding: 0.125rem 0 0.125rem 0.3rem;
+
+		.table {
+			width: 940px;
+
+			thead {
+
+				&>* {
+
+					&>* {
+						padding-block: .675rem;
+					}
+				}
+			}
+
+			tbody {
+
+				&>* {
+
+					&>* {
+						padding-block: .75rem;
+
+						.btn {
+							margin-block: -.0625rem;
+						}
+					}
+				}
+			}
 		}
 	}
 
