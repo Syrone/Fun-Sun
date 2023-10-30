@@ -25,6 +25,20 @@
 	flex: 0 0 auto;
 }
 
+.today-time {
+	display: block;
+	font-size: calc(var(--font-size--sm) + .125rem);
+	color: var(--text-color);
+	margin-inline-start: auto;
+
+	&>span {
+		display: inline-block;
+		font-size: var(--font-size--tiny);
+		color: var(--text-color--light);
+		margin-inline-end: .375rem;
+	}
+}
+
 /** (Start) Scroll **/
 ::-webkit-scrollbar {
 	width: .375rem;
@@ -76,6 +90,9 @@ h3,
 	color: var(--accent) !important;
 }
 
+.text-danger {
+	color: var(--warning) !important;
+}
 //** (End) Text **//
 
 //** (Start) ICONS **//
@@ -634,7 +651,12 @@ textarea {
 	color: var(--text-color);
 	background-color: var(--gray-color--light);
 
-	&:is(:hover, :focus-visible, .active) {
+	&:hover {
+		color: var(--text-color);
+		background-color: var(--accent-10);
+	}
+
+	&:is(:active, :focus-visible, .active) {
 		color: var(--accent);
 		background-color: #E4E8F5;
 		border: 1px solid var(--accent);
@@ -1465,9 +1487,14 @@ textarea {
 					background-color: transparent;
 				}
 
+				.btn-table-text {
+					width: 100%;
+				}
+
 				.text-truncate {
 					display: block;
 					max-width: 90px;
+					margin-inline: auto;
 				}
 			}
 		}
@@ -1486,6 +1513,25 @@ textarea {
 					width: 1.25rem;
 					height: 1.25rem;
 					border-width: 2px;
+				}
+			}
+		}
+
+		.last-date {
+			font-weight: 600;
+
+			time {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: .675rem;
+				line-height: 1.25rem;
+				white-space: nowrap;
+
+				.icon {
+					--size: 1.125rem;
+					display: none;
+					color: var(--text-color);
 				}
 			}
 		}
@@ -1597,13 +1643,12 @@ textarea {
 
 		thead {
 
-			tr {
-				position: relative;
-			}
-
 			th {
 				padding-block: 1rem;
-				position: relative;
+
+				&:not(.more) {
+					position: relative;
+				}
 
 				&:first-child {
 					padding-inline-start: 1rem;
@@ -1978,17 +2023,8 @@ textarea {
 	}
 }
 
-.table-items-v2 {
-
-	thead {
-
-		th {
-
-			&:not(:last-child) {
-				width: 25%;
-			}
-		}
-	}
+.table-items-v2,
+.table-items-v3 {
 
 	tbody {
 
@@ -2001,6 +2037,32 @@ textarea {
 			&>*:not(.id):first-of-type {
 				border-bottom-left-radius: 0.5rem;
 				border-top-left-radius: 0.5rem;
+			}
+		}
+	}
+}
+
+.table-items-v2 {
+
+	thead {
+
+		th {
+
+			&:not(:last-child) {
+				width: 25%;
+			}
+		}
+	}
+}
+
+.table-items-v3 {
+
+	thead {
+
+		th {
+
+			&:not(:last-child) {
+				width: 20%;
 			}
 		}
 	}
@@ -2275,7 +2337,12 @@ textarea {
 			margin: 0;
 			padding: .5rem 1.5rem;
 
-			&:is(:hover, :focus-visible, :active, .active) {
+			&:hover {
+				color: var(--text-color);
+				background-color: var(--accent-10);
+			}
+
+			&:is(:focus-visible, :active, .active) {
 				background-color: #e4e8f5;
 				border: 1px solid var(--accent);
 				color: var(--accent);

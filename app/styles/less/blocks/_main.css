@@ -112,6 +112,9 @@
   justify-content: space-between;
   text-align: left;
 }
+.page-filter .today-time {
+  display: none;
+}
 .table-filter {
   margin-block-end: 1.5rem;
 }
@@ -126,18 +129,6 @@
 .table-buttons > .btn,
 .table-buttons time {
   flex-shrink: 0;
-}
-.table-buttons time {
-  display: block;
-  font-size: calc(var(--font-size--sm) + 0.125rem);
-  color: var(--text-color);
-  margin-inline-start: auto;
-}
-.table-buttons time > span {
-  display: inline-block;
-  font-size: var(--font-size--tiny);
-  color: var(--text-color--light);
-  margin-inline-end: 0.375rem;
 }
 .table-buttons .swiper-buttons {
   margin-inline-start: 1rem;

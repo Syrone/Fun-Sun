@@ -19,6 +19,18 @@
 .footer {
   flex: 0 0 auto;
 }
+.today-time {
+  display: block;
+  font-size: calc(var(--font-size--sm) + 0.125rem);
+  color: var(--text-color);
+  margin-inline-start: auto;
+}
+.today-time > span {
+  display: inline-block;
+  font-size: var(--font-size--tiny);
+  color: var(--text-color--light);
+  margin-inline-end: 0.375rem;
+}
 /** (Start) Scroll **/
 ::-webkit-scrollbar {
   width: 0.375rem;
@@ -53,6 +65,9 @@ h3,
 }
 .text-primary {
   color: var(--accent) !important;
+}
+.text-danger {
+  color: var(--warning) !important;
 }
 .icon {
   --size: 1rem;
@@ -458,7 +473,11 @@ textarea.form-control:is(:focus) {
   color: var(--text-color);
   background-color: var(--gray-color--light);
 }
-.btn-light:is(:hover, :focus-visible, .active) {
+.btn-light:hover {
+  color: var(--text-color);
+  background-color: var(--accent-10);
+}
+.btn-light:is(:active, :focus-visible, .active) {
   color: var(--accent);
   background-color: #E4E8F5;
   border: 1px solid var(--accent);
@@ -1075,9 +1094,13 @@ textarea.form-control:is(:focus) {
   color: var(--accent);
   background-color: transparent;
 }
+.table tbody .cell-button > .btn .btn-table-text {
+  width: 100%;
+}
 .table tbody .cell-button > .btn .text-truncate {
   display: block;
   max-width: 90px;
+  margin-inline: auto;
 }
 .table tbody .cell-check {
   padding: 0;
@@ -1092,6 +1115,22 @@ textarea.form-control:is(:focus) {
   width: 1.25rem;
   height: 1.25rem;
   border-width: 2px;
+}
+.table tbody .last-date {
+  font-weight: 600;
+}
+.table tbody .last-date time {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.675rem;
+  line-height: 1.25rem;
+  white-space: nowrap;
+}
+.table tbody .last-date time .icon {
+  --size: 1.125rem;
+  display: none;
+  color: var(--text-color);
 }
 .table tfoot {
   bottom: 0;
@@ -1171,11 +1210,10 @@ textarea.form-control:is(:focus) {
   padding-inline-end: 1.5rem;
   cursor: default;
 }
-.table-collapse thead tr {
-  position: relative;
-}
 .table-collapse thead th {
   padding-block: 1rem;
+}
+.table-collapse thead th:not(.more) {
   position: relative;
 }
 .table-collapse thead th:first-child {
@@ -1416,15 +1454,20 @@ textarea.form-control:is(:focus) {
 .table-items-xxl tbody .suptotal {
   display: none;
 }
+.table-items-v2 tbody .id,
+.table-items-v3 tbody .id {
+  display: none;
+}
+.table-items-v2 tbody tr > *:not(.id):first-of-type,
+.table-items-v3 tbody tr > *:not(.id):first-of-type {
+  border-bottom-left-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+}
 .table-items-v2 thead th:not(:last-child) {
   width: 25%;
 }
-.table-items-v2 tbody .id {
-  display: none;
-}
-.table-items-v2 tbody tr > *:not(.id):first-of-type {
-  border-bottom-left-radius: 0.5rem;
-  border-top-left-radius: 0.5rem;
+.table-items-v3 thead th:not(:last-child) {
+  width: 20%;
 }
 .collapse-nested {
   margin-block-start: 0.375rem;
@@ -1623,8 +1666,13 @@ textarea.form-control:is(:focus) {
   margin: 0;
   padding: 0.5rem 1.5rem;
 }
-.swiper-buttons-tab .swiper-slide .btn:is(:hover, :focus-visible, :active, .active),
-.swiper-buttons-tab-overflow .swiper-slide .btn:is(:hover, :focus-visible, :active, .active) {
+.swiper-buttons-tab .swiper-slide .btn:hover,
+.swiper-buttons-tab-overflow .swiper-slide .btn:hover {
+  color: var(--text-color);
+  background-color: var(--accent-10);
+}
+.swiper-buttons-tab .swiper-slide .btn:is(:focus-visible, :active, .active),
+.swiper-buttons-tab-overflow .swiper-slide .btn:is(:focus-visible, :active, .active) {
   background-color: #e4e8f5;
   border: 1px solid var(--accent);
   color: var(--accent);

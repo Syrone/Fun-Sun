@@ -152,6 +152,10 @@
 			text-align: left;
 		}
 	}
+
+	.today-time {
+		display: none;
+	}
 }
 
 .table-filter {
@@ -170,20 +174,6 @@
 	&>.btn,
 	time {
 		flex-shrink: 0;
-	}
-
-	time {
-		display: block;
-		font-size: calc(var(--font-size--sm) + .125rem);
-		color: var(--text-color);
-		margin-inline-start: auto;
-
-		&>span {
-			display: inline-block;
-			font-size: var(--font-size--tiny);
-			color: var(--text-color--light);
-			margin-inline-end: .375rem;
-		}
 	}
 
 	.swiper-buttons {

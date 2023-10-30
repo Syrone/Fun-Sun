@@ -99,6 +99,10 @@
 							--size: 1rem;
 						}
 
+						.btn-table-text {
+							width: max-content;
+						}
+
 						.text-truncate {
 							max-width: 160px;
 						}
@@ -558,7 +562,7 @@
 
 	.page-filter {
 
-		&>*:not(.dropdown-calendar, .dropdown-filter) {
+		&>*:not(.dropdown-calendar, .dropdown-filter, .btn-reset, .today-time) {
 			display: none;
 		}
 
@@ -572,6 +576,17 @@
 
 		.btn-calendar {
 			text-align: center;
+		}
+
+		&.with-reset {
+
+			.dropdown-filter {
+				order: -2;
+			}
+
+			.btn-reset {
+				order: -1;
+			}
 		}
 	}
 
@@ -701,7 +716,8 @@
 		}
 	}
 
-	.table-items-v2 {
+	.table-items-v2,
+	.table-items-v3 {
 
 		tbody {
 
@@ -738,7 +754,8 @@
 			}
 
 			.cell-button,
-			.counter {
+			.counter,
+			.last-date {
 				display: flex;
 				align-items: center;
 				justify-content: space-between;
@@ -759,8 +776,31 @@
 					margin: 0;
 					padding: 0;
 
+					.btn-table-text {
+						width: max-content;
+					}
+
 					.icon {
 						--size: 1rem;
+					}
+				}
+
+				&>.btn-calendar {
+					gap: .675rem;
+
+					.icon {
+						--size: 1.125rem;
+					}
+				}
+			}
+
+			.last-date {
+
+				time {
+					max-width: max-content;
+
+					.icon {
+						display: inline-block;
 					}
 				}
 			}
@@ -1082,6 +1122,10 @@
 				}
 			}
 		}
+
+		.today-time {
+			display: none;
+		}
 	}
 
 	/** (End) Header Page **/
@@ -1120,6 +1164,29 @@
 	}
 
 	//** (End) Dropdowns **//
+
+	/** (Start) Wrapper Table **/
+	.page-filter {
+
+		&.with-reset {
+
+			&>*:not(.btn-reset) {
+				flex-basis: calc(50% - 0.375rem);
+			}
+
+			.btn-reset {
+				flex-basis: 100%;
+				order: 1;
+			}
+		}
+		
+		.today-time {
+			display: block;
+			margin-inline: auto;
+			text-align: center;
+		}
+	}
+	/** (Start) Wrapper Table **/
 
 	/** (Start) Wrapper MyData **/
 	.wrapper-mydata {
