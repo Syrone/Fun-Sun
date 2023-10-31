@@ -84,14 +84,16 @@ document.addEventListener('DOMContentLoaded', () => {
 		const scrollThreshold = 2;
 		let isScrollingDown
 
+		const parentElement = tableElement.closest('.table-wrapper'); 
+
 		if (scrollTop > scrollThreshold && !isScrollingDown) {
-			tableElement.classList.add('scroll');
+			parentElement.classList.add('scroll');
 			isScrollingDown = true;
 		} else if (scrollTop <= scrollThreshold && isScrollingDown) {
-			tableElement.classList.remove('scroll');
+			parentElement.classList.remove('scroll');
 			isScrollingDown = false;
 		} else if (scrollTop === 0) {
-			tableElement.classList.remove('scroll');
+			parentElement.classList.remove('scroll');
 			isScrollingDown = false;
 		}
 

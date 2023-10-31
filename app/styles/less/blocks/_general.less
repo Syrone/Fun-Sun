@@ -1390,19 +1390,14 @@ textarea {
 	padding: .125rem 0 .125rem .3rem;
 	transition: padding .25s ease-in-out;
 	position: relative;
+
+	&.scroll {
+		padding-block-start: .5rem;
+	}
 }
 
 .table-responsive {
 	padding-inline: 0.2rem 0.125rem;
-}
-
-.table-fullscreen,
-.tab-table-fullscreen {
-	transition: margin .25s ease-in-out;
-
-	&.scroll {
-		margin-block-start: .325rem;
-	}
 }
 
 .table {
@@ -1426,7 +1421,7 @@ textarea {
 	}
 
 	thead {
-		top: 0;
+		top:0;
 
 		th {
 			font-size: var(--font-size--tiny);
