@@ -271,12 +271,11 @@
 	/** (End) Card **/
 
 	/** (Start) Header Menu **/
-	.header .navbar-collapse {
-		flex: 100%;
-	}
+	.header-admin {
 
-	.header-admin .navbar-collapse {
-		flex: unset;
+		.navbar-collapse {
+			flex: unset;
+		}
 	}
 
 	/** (End) Header Menu **/
@@ -1481,6 +1480,22 @@
 	}
 
 	/** (End) Wrapper Table **/
+
+		/** (Start) Wrapper MyData **/
+		.wrapper-mydata {
+			padding: 1rem;
+	
+			.form-buttons {
+				flex-direction: column-reverse;
+
+				&>* {
+					width: 100%;
+					flex-basis: 100%;
+				}
+			}
+		}
+	
+		/** (End) Wrapper MyData **/
 
 	/** (Start) Wrapper Graph **/
 	.wrapper-graph {

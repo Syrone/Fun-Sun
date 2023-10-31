@@ -181,6 +181,12 @@
 .wrapper-mydata form > .row {
   row-gap: 2.25rem;
 }
+.wrapper-mydata .form-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+}
 /** (End) Wrapper MyData **/
 /** (Start) Wrapper Graph **/
 .wrapper-graph .graph-box {

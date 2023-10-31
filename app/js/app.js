@@ -163,16 +163,18 @@ document.addEventListener('DOMContentLoaded', () => {
 	const showBackdropBtn = document.querySelector('.btn-backdrop');
 	let backdrop = null;
 
-	showBackdropBtn.addEventListener('click', function () {
-		if (backdrop) {
-			backdrop.remove();
-			backdrop = null;
-		} else {
-			backdrop = document.createElement('div');
-			backdrop.classList.add('modal-backdrop');
-			document.querySelector('.header').appendChild(backdrop);
-		}
-	});
+	if (showBackdropBtn) {
+		showBackdropBtn.addEventListener('click', function () {
+			if (backdrop) {
+				backdrop.remove();
+				backdrop = null;
+			} else {
+				backdrop = document.createElement('div');
+				backdrop.classList.add('modal-backdrop');
+				document.querySelector('.header').appendChild(backdrop);
+			}
+		});
+	}
 
 	document.addEventListener('click', function (event) {
 		const backdropModal = document.querySelector(".modal-backdrop");

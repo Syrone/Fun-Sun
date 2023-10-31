@@ -328,7 +328,7 @@ form .btn-search,
 }
 .form-control:focus,
 .form-select:focus {
-  border-color: var(--accent);
+  border-color: var(--text-form);
   box-shadow: none;
 }
 .form-control option:disabled,

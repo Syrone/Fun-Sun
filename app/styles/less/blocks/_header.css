@@ -13,8 +13,7 @@
   border-bottom: 1px solid var(--border-color);
 }
 .header .icon-hint {
-  width: 1.875rem;
-  height: 1.875rem;
+  --size: 1.875rem;
 }
 .header .navbar-brand {
   max-width: 165px;
@@ -23,18 +22,14 @@
 .header .navbar-brand img {
   width: 100%;
 }
-.header-logo {
-  display: flex;
-  align-items: center;
-}
-.header .navbar-light .navbar-toggler.collapsed {
-  color: var(--text-color);
-}
 .header .navbar-light .navbar-toggler {
   color: var(--accent);
   border: none;
   box-shadow: none;
   padding: 0.5rem;
+}
+.header .navbar-light .navbar-toggler.collapsed {
+  color: var(--text-color);
 }
 .header .navbar-light .navbar-toggler:is(:hover, :focus-visible, :active, .active) {
   color: var(--accent);
@@ -45,8 +40,7 @@
 .header .navbar-nav {
   gap: 0.75rem;
 }
-.header .navbar-nav .nav-item:is(:hover, :focus-within) .icon svg,
-.header .navbar-nav .nav-item.active .icon svg {
+.header .navbar-nav .nav-item:is(:hover, :focus-within, .active) .icon svg {
   fill: var(--accent);
 }
 .header .navbar-nav .nav-item.active .nav-link {
@@ -70,8 +64,10 @@
 }
 .header .navbar-nav .nav-link .icon {
   --size: 1.375rem;
-  width: var(--size);
-  height: var(--size);
+}
+.header-logo {
+  display: flex;
+  align-items: center;
 }
 .header-admin .navbar-collapse {
   gap: 1.5rem;

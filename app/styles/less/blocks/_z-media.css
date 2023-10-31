@@ -199,9 +199,6 @@
   }
   /** (End) Card **/
   /** (Start) Header Menu **/
-  .header .navbar-collapse {
-    flex: 100%;
-  }
   .header-admin .navbar-collapse {
     flex: unset;
   }
@@ -954,6 +951,18 @@
     text-align: left;
   }
   /** (End) Wrapper Table **/
+  /** (Start) Wrapper MyData **/
+  .wrapper-mydata {
+    padding: 1rem;
+  }
+  .wrapper-mydata .form-buttons {
+    flex-direction: column-reverse;
+  }
+  .wrapper-mydata .form-buttons > * {
+    width: 100%;
+    flex-basis: 100%;
+  }
+  /** (End) Wrapper MyData **/
   /** (Start) Wrapper Graph **/
   .wrapper-graph .graph--info {
     flex-direction: column;
