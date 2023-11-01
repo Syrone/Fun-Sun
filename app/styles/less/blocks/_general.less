@@ -1421,7 +1421,7 @@ textarea {
 	}
 
 	thead {
-		top:0;
+		top: 0;
 
 		th {
 			font-size: var(--font-size--tiny);
@@ -1435,6 +1435,17 @@ textarea {
 			.btn {
 				line-height: inherit;
 			}
+		}
+
+		&::after {
+			content: '';
+			height: .75rem;
+			top: -.375rem;
+			right: 0;
+			left: 0;
+			position: absolute;
+			background-color: var(--gray-color--light);
+			z-index: -1;
 		}
 	}
 
