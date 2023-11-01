@@ -903,6 +903,43 @@
 
 /** (End) Custom Counter **/
 
+/** (Start) Switch Tables **/
+.switch-tables {
+	max-width: max-content;
+	background-color: var(--gray-color--light);
+	border-radius: .5rem;
+	padding-inline: .5rem;
+
+	.form-check {
+
+		&.checked {
+			background-color: transparent;
+		}
+	}
+}
+
+.switch-tables-wrapper {
+	display: grid;
+	gap: 1.25rem;
+
+	&.is-one-coll,
+	&.is-two-coll {
+
+		.table-wrapper {
+			grid-column: unset;
+		}
+	}
+
+	&.is-one-coll {
+		grid-template-columns: repeat(1, 1fr);
+	}
+
+	&.is-two-coll {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+/** (End) Switch Tables **/
+
 /** (Start) Vanilla Calendar **/
 [data-calendar-theme=light] {
 	&.vanilla-calendar {

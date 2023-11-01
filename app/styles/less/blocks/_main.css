@@ -691,6 +691,31 @@
   color: var(--accent);
 }
 /** (End) Custom Counter **/
+/** (Start) Switch Tables **/
+.switch-tables {
+  max-width: max-content;
+  background-color: var(--gray-color--light);
+  border-radius: 0.5rem;
+  padding-inline: 0.5rem;
+}
+.switch-tables .form-check.checked {
+  background-color: transparent;
+}
+.switch-tables-wrapper {
+  display: grid;
+  gap: 1.25rem;
+}
+.switch-tables-wrapper.is-one-coll .table-wrapper,
+.switch-tables-wrapper.is-two-coll .table-wrapper {
+  grid-column: unset;
+}
+.switch-tables-wrapper.is-one-coll {
+  grid-template-columns: repeat(1, 1fr);
+}
+.switch-tables-wrapper.is-two-coll {
+  grid-template-columns: repeat(2, 1fr);
+}
+/** (End) Switch Tables **/
 /** (Start) Vanilla Calendar **/
 [data-calendar-theme=light].vanilla-calendar button:focus-visible {
   border-radius: 50%;

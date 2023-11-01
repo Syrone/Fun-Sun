@@ -592,6 +592,7 @@
 	/** (End) Wrapper Table **/
 
 	//** (Start) Table **//
+
 	.table-items,
 	.table-items-xxl {
 		margin-inline: -1rem;
@@ -625,6 +626,7 @@
 			display: grid;
 			grid-template-columns: repeat(3, 1fr);
 			gap: .375rem;
+			transform: translateY(0);
 
 			th,
 			td {
@@ -853,6 +855,11 @@
 		}
 	}
 
+	.table-collapse--input {
+		margin-inline: 0;
+		padding: 0.125rem 0 0.125rem 0.3rem;
+	}
+
 	//** (End) Table **//
 
 	/** (Start) Wrapper Graph **/
@@ -886,6 +893,15 @@
 	}
 
 	/** (End) Wrapper Graph **/
+
+	/** (Start) Switch Tables **/
+	.switch-tables-wrapper {
+
+		&.is-two-coll {
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+	/** (End) Switch Tables **/
 }
 
 @media (max-width: 768px) {

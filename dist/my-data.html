@@ -414,6 +414,56 @@
   </div>
 </div>
 
+<div class="modal fade" id="addedUserToolsModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <form class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addedUserToolsTitle">Добавление инструмента</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <div class="wrapper-check">
+          <div class="form-check">
+            <input class="form-check-input is-radio" type="radio" value="" name="canceledCheck" id="addedUserTools1">
+            <label class="form-check-label" for="addedUserTools1">
+              B2B
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input is-radio" type="radio" value="" name="canceledCheck" id="addedUserTools2">
+            <label class="form-check-label" for="addedUserTools2">
+              B2C
+            </label>
+          </div>
+        </div>
+
+        <div class="form-floating">
+          <input type="text" class="form-control" id="floatingUserInput1" placeholder="Название города">
+          <label for="floatingUserInput1">Название категории</label>
+        </div>
+
+        <select class="form-select" aria-label="Default select example">
+          <option selected disabled>Категория</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+
+        <textarea class="form-control" placeholder="Описание" rows="1"></textarea>
+      </div>
+      <div class="modal-footer is-overflow">
+        <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
+        <button type="submit" class="btn btn-primary btn-lg">
+          Отправить на согласование
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
 <div class="modal fade" id="editedToolsModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <form class="modal-content">
@@ -1126,7 +1176,7 @@
 	<script src="libs/chartjs/chart.umd.js"></script>
 	<script src="libs/chartjs/chartjs-adapter-date-fns.js"></script>
 	<script src="libs/vanilla-calendar/vanilla-calendar.min.js"></script>
-	<script src="js/app.min.js"></script>
+	<script src="js/app.min.js" defer></script>
 
 </body>
 </html>

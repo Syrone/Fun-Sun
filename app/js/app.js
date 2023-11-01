@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		const scrollThreshold = 2;
 		let isScrollingDown
 
-		const parentElement = tableElement.closest('.table-wrapper'); 
+		const parentElement = tableElement.closest('.table-wrapper');
 
 		if (scrollTop > scrollThreshold && !isScrollingDown) {
 			parentElement.classList.add('scroll');
@@ -955,6 +955,64 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	});
 	//** (End) For Tables Collapse **//
+
+	//** (Start) For Switch Tables **//
+	function handleSwitchTable() {
+		const switchTables = document.querySelectorAll('.switch-tables input[type="checkbox"]');
+		const switchTablesWrapper = document.querySelector('.switch-tables-wrapper');
+		
+		const updateClasses = () => {
+			const checkedCount = document.querySelectorAll('.switch-tables input[type="checkbox"]:checked');
+			const checkedCountData = checkedCount.length;
+
+			if (checkedCountData === 1) {
+				switchTablesWrapper.classList.add('is-one-coll');
+				switchTablesWrapper.classList.remove('is-two-coll');
+			} else if (checkedCountData > 1) {
+				switchTablesWrapper.classList.add('is-two-coll');
+				switchTablesWrapper.classList.remove('is-one-coll');
+			} else {
+				switchTablesWrapper.classList.remove('is-one-coll');
+				switchTablesWrapper.classList.remove('is-two-coll');
+			}
+		};
+
+		const updateTables = (checkbox) => {
+			const switchTableId = checkbox.id;
+			const switchTableBlock = document.querySelector(`[data-switch-table="${switchTableId}"]`);
+
+			if (checkbox.checked) {
+				switchTableBlock.classList.remove('d-none');
+			} else {
+				const otherCheckedCount = document.querySelectorAll('.switch-tables input[type="checkbox"]:checked:not(#'+switchTableId+')');
+				if (otherCheckedCount.length > 0) {
+					switchTableBlock.classList.add('d-none');
+				} else {
+					checkbox.checked = true;
+				}
+			}
+		};
+
+		switchTables.forEach((checkbox) => {
+			checkbox.addEventListener('change', () => {
+				updateClasses();
+				updateTables(checkbox);
+			});
+		});
+
+		updateClasses();
+		updateTables(switchTables[0]);
+	}
+
+	const switchTables = document.querySelectorAll('.switch-tables input[type="checkbox"]');
+	const switchTablesWrapper = document.querySelector('.switch-tables-wrapper');
+
+	if (switchTables && switchTablesWrapper) {
+		handleSwitchTable()
+
+		document.addEventListener('load', handleSwitchTable);
+	}
+	//** (End) For Switch Tables **//
 
 	//** (Start) For Tables Buttons **//
 	const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
