@@ -1044,7 +1044,7 @@ textarea.form-control:is(:focus) {
 .table thead::after,
 .table tfoot::after {
   content: '';
-  height: 100%;
+  height: 0.75rem;
   right: 0;
   left: 0;
   position: absolute;
