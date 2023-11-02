@@ -1391,16 +1391,33 @@ textarea {
 	padding: .125rem 0 .125rem .3rem;
 	transition: padding .25s ease-in-out;
 	position: relative;
+	z-index: 10;
 
 	&.scroll {
 		padding-block-start: .5rem;
+	}
 
-		.table {
+	&::after,
+	&::before {
+		content: '';
+		height: .375rem;
+		background-color: var(--gray-color--light);
+		right: .5rem;
+		left: .5rem;
+		position: absolute;
+		z-index: 1;
+	}
 
-			tbody {
-				transform: translateY(0);
-			}
-		}
+	&::after {
+		top: 0;
+		border-top-left-radius: .5rem;
+		border-top-right-radius: .5rem;
+	}
+
+	&::before {
+		bottom: 0;
+		border-bottom-left-radius: .5rem;
+		border-bottom-right-radius: .5rem;
 	}
 }
 
@@ -1426,16 +1443,6 @@ textarea {
 		position: sticky;
 		left: 0;
 		z-index: 10;
-
-		&::after {
-			content: '';
-			height: .75rem;
-			right: 0;
-			left: 0;
-			position: absolute;
-			background-color: var(--gray-color--light);
-			z-index: -1;
-		}
 	}
 
 	thead {
@@ -1454,14 +1461,9 @@ textarea {
 				line-height: inherit;
 			}
 		}
-
-		&::after {
-			top: -.375rem;
-		}
 	}
 
 	tbody {
-		transform: translateY(-.375rem);
 
 		tr {
 			border-width: 0;
@@ -1556,7 +1558,7 @@ textarea {
 	}
 
 	tfoot {
-		bottom: -.25rem;
+		bottom: 0;
 
 		tr {
 
@@ -1572,10 +1574,6 @@ textarea {
 					border-inline-end: 1px solid var(--accent);
 				}
 			}
-		}
-
-		&::after {
-			bottom: -.375rem;
 		}
 	}
 

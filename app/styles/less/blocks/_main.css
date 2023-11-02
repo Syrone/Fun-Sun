@@ -574,7 +574,7 @@
   margin-block-end: 1rem;
 }
 .wrapper-graph .graph--mini-table .table-wrapper {
-  padding: 1px 0.25rem 0.5rem 0.5rem;
+  padding: 1px 0 0.5rem 0.5rem;
 }
 .wrapper-graph .graph--mini-table .table-wrapper.scroll {
   padding-block-start: 0.5rem;
