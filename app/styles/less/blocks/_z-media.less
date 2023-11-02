@@ -347,6 +347,24 @@
 	}
 
 	/** (End) Wrapper Table **/
+
+	/** (Start) Article **/
+	.article {
+
+		h1 {
+			font-size: calc(var(--font-size--lg) + .125rem);
+		}
+
+		h2 {
+			font-size: var(--font-size--lg);
+		}
+
+		h3 {
+			font-size: var(--font-size--md);
+		}
+	}
+
+	/** (End) Article **/
 }
 
 @media (max-width: 1200px) {
@@ -939,6 +957,7 @@
 			grid-template-columns: repeat(1, 1fr);
 		}
 	}
+
 	/** (End) Switch Tables **/
 }
 
@@ -1261,13 +1280,14 @@
 				order: 1;
 			}
 		}
-		
+
 		.today-time {
 			display: block;
 			margin-inline: auto;
 			text-align: center;
 		}
 	}
+
 	/** (Start) Wrapper Table **/
 
 	/** (Start) Wrapper MyData **/
@@ -1363,6 +1383,29 @@
 
 	/** (End) Wrapper Graph **/
 
+	/** (Start) Article **/
+	.article {
+
+		h1 {
+			font-size: var(--font-size--lg);
+		}
+
+		h2 {
+			font-size: var(--font-size--md);
+		}
+
+		h3 {
+			font-size: calc(var(--font-size--sm) + .125rem);
+		}
+	}
+
+	/** (End) Article **/
+
+	/** (Start) Figure **/
+	.figure-caption {
+		font-size: var(--font-size--tiny);
+	}
+	/** (End) Figure **/
 }
 
 @media (max-width: 576px) {
@@ -1399,7 +1442,7 @@
 
 				&:first-child {
 					position: static;
-				} 
+				}
 			}
 
 			.type {
@@ -1568,21 +1611,21 @@
 
 	/** (End) Wrapper Table **/
 
-		/** (Start) Wrapper MyData **/
-		.wrapper-mydata {
-			padding: 1rem;
-	
-			.form-buttons {
-				flex-direction: column-reverse;
+	/** (Start) Wrapper MyData **/
+	.wrapper-mydata {
+		padding: 1rem;
 
-				&>* {
-					width: 100%;
-					flex-basis: 100%;
-				}
+		.form-buttons {
+			flex-direction: column-reverse;
+
+			&>* {
+				width: 100%;
+				flex-basis: 100%;
 			}
 		}
-	
-		/** (End) Wrapper MyData **/
+	}
+
+	/** (End) Wrapper MyData **/
 
 	/** (Start) Wrapper Graph **/
 	.wrapper-graph {

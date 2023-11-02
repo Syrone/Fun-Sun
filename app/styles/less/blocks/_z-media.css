@@ -262,6 +262,17 @@
     order: 1;
   }
   /** (End) Wrapper Table **/
+  /** (Start) Article **/
+  .article h1 {
+    font-size: calc(var(--font-size--lg) + 0.125rem);
+  }
+  .article h2 {
+    font-size: var(--font-size--lg);
+  }
+  .article h3 {
+    font-size: var(--font-size--md);
+  }
+  /** (End) Article **/
 }
 @media (max-width: 1200px) {
   .icon-data,
@@ -929,6 +940,22 @@
     padding: 1.25rem 1rem;
   }
   /** (End) Wrapper Graph **/
+  /** (Start) Article **/
+  .article h1 {
+    font-size: var(--font-size--lg);
+  }
+  .article h2 {
+    font-size: var(--font-size--md);
+  }
+  .article h3 {
+    font-size: calc(var(--font-size--sm) + 0.125rem);
+  }
+  /** (End) Article **/
+  /** (Start) Figure **/
+  .figure-caption {
+    font-size: var(--font-size--tiny);
+  }
+  /** (End) Figure **/
 }
 @media (max-width: 576px) {
   .table-items .table-responsive {
