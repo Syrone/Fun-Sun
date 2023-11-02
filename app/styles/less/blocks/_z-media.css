@@ -20,6 +20,12 @@
   .table-items-xxl {
     padding: 0.875rem;
   }
+  .table-items-xxl::after {
+    all: unset;
+  }
+  .table-items-xxl.scroll {
+    padding-block-start: 0.875rem;
+  }
   .table-items-xxl .table-responsive {
     padding: 0.125rem;
   }
@@ -412,15 +418,25 @@
     order: -1;
   }
   /** (End) Wrapper Table **/
+  .table-wrapper .table-responsive {
+    max-height: 800px;
+  }
   .table-items,
   .table-items-xxl {
     margin-inline: -1rem;
   }
+  .table-items .table-responsive,
+  .table-items-xxl .table-responsive {
+    max-height: 1100px;
+  }
   .table-items {
     padding: 0.875rem;
   }
+  .table-items::after {
+    all: unset;
+  }
   .table-items .table-responsive {
-    max-height: 794px;
+    max-height: 800px;
     padding-top: 0.125rem;
   }
   .table-items .table {
@@ -513,6 +529,11 @@
   }
   .table-items-xxl tbody {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .table-items-v2::after,
+  .table-items-v3::after,
+  .table-items-v4::after {
+    all: unset;
   }
   .table-items-v2 tbody tr > *,
   .table-items-v3 tbody tr > *,
@@ -624,6 +645,9 @@
     width: 100%;
     margin-inline: auto;
     padding: 0.125rem 0 0.125rem 0.3rem;
+  }
+  .table-collapse--date::before {
+    all: unset;
   }
   .table-collapse--date .table {
     width: 940px;
@@ -742,6 +766,19 @@
   }
   .table-items-xxl tbody {
     grid-template-columns: repeat(1, 1fr);
+  }
+  .table-collapse--input .table thead .wrapper-search {
+    max-width: 180px;
+    right: 0;
+  }
+  .table-collapse--input .table thead .wrapper-search .btn[type="submit"] {
+    display: flex;
+  }
+  .table-collapse--input .table thead .wrapper-search .btn[type="button"] {
+    display: none;
+  }
+  .table-collapse--input .table thead .wrapper-search .form-control {
+    display: block;
   }
   /** (Start) Card **/
   .card-footer {
@@ -905,6 +942,9 @@
     padding-inline-end: 0.5rem;
   }
   .table-collapse thead th {
+    position: static;
+  }
+  .table-collapse thead th:first-child {
     position: static;
   }
   .table-collapse thead .type > span {

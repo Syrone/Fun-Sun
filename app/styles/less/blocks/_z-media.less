@@ -27,6 +27,14 @@
 	.table-items-xxl {
 		padding: .875rem;
 
+		&::after {
+			all: unset;
+		}
+
+		&.scroll {
+			padding-block-start: .875rem;
+		}
+
 		.table-responsive {
 			padding: .125rem;
 
@@ -599,17 +607,31 @@
 	/** (End) Wrapper Table **/
 
 	//** (Start) Table **//
+	.table-wrapper {
+
+		.table-responsive {
+			max-height: 800px;
+		}
+	}
 
 	.table-items,
 	.table-items-xxl {
 		margin-inline: -1rem;
+
+		.table-responsive {
+			max-height: 1100px;
+		}
 	}
 
 	.table-items {
 		padding: .875rem;
 
+		&::after {
+			all: unset;
+		}
+
 		.table-responsive {
-			max-height: 794px;
+			max-height: 800px;
 			padding-top: .125rem;
 		}
 
@@ -728,6 +750,10 @@
 	.table-items-v3,
 	.table-items-v4 {
 
+		&::after {
+			all: unset;
+		}
+
 		tbody {
 
 			tr {
@@ -833,6 +859,10 @@
 		width: 100%;
 		margin-inline: auto;
 		padding: 0.125rem 0 0.125rem 0.3rem;
+
+		&::before {
+			all: unset;
+		}
 
 		.table {
 			width: 940px;
@@ -1063,6 +1093,35 @@
 
 		tbody {
 			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+
+	.table-collapse--input {
+
+		.table {
+
+			thead {
+
+				.wrapper-search {
+					max-width: 180px;
+					right: 0;
+
+					.btn {
+
+						&[type="submit"] {
+							display: flex;
+						}
+
+						&[type="button"] {
+							display: none;
+						}
+					}
+
+					.form-control {
+						display: block;
+					}
+				}
+			}
 		}
 	}
 
@@ -1337,6 +1396,10 @@
 
 			th {
 				position: static;
+
+				&:first-child {
+					position: static;
+				} 
 			}
 
 			.type {
