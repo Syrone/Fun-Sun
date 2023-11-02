@@ -1045,7 +1045,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			<div class="vanilla-calendar-header">
 					<div class="vanilla-calendar-top">
 							<div class="vanilla-calendar-tabs">
-									<button class="btn btn-calendar-tab btn-calendar-default">Дата</button>
+									<button class="btn btn-calendar-tab btn-calendar-default is-active">Дата</button>
 									<button class="btn btn-calendar-tab btn-calendar-multiple">Диапазон</button>
 							</div>
 
@@ -1081,7 +1081,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			<div class="vanilla-calendar-top">
 				<div class="vanilla-calendar-tabs">
 					<button class="btn btn-calendar-tab btn-calendar-default">Дата</button>
-					<button class="btn btn-calendar-tab btn-calendar-multiple">Диапазон</button>
+					<button class="btn btn-calendar-tab btn-calendar-multiple is-active">Диапазон</button>
 				</div>
 
 				<span class="vanilla-calendar-top__selected_date"></span>

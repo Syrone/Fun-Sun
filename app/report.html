@@ -1,252 +1,9 @@
-
-<!DOCTYPE html>
-<html>
-
-<head>
-
-	<meta charset="utf-8">
-	<!-- <base href="/"> -->
-
-	<title>Fun&Sun Mediaplan</title>
-	<meta name="description" content="">
-
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<link rel="icon" href="images/favicon.png">
-	<meta property="og:image" content="images/dist/preview.jpg">
-	
-	<link rel="stylesheet" href="libs/bootstrap/bootstrap.min.css">
-	<link rel="stylesheet" href="libs/swiperjs/swiper-bundle.min.css">
-	<link rel="stylesheet" href="libs/vanilla-calendar/vanilla-calendar.min.css">
-	<link rel="stylesheet" href="libs/vanilla-calendar/light.min.css">
-	<link rel="stylesheet" href="libs/vanilla-calendar/dark.min.css">
-	<link rel="stylesheet" href="css/app.min.css">
-
-</head>
-
-<body>
+<!--#set var="title" value="Fun&Sun Mediaplan" -->
+<!--#include virtual="/parts/head.html" -->
 
 <div class="page">
 
-	<header class="header header-admin">
-
-	<nav class="navbar navbar-expand-lg navbar-light" aria-label="header menu">
-		<div class="container">
-			<div class="header-logo">
-				<a class="navbar-brand" href="#">
-					<img src="./images/dist/icon/logo.svg" alt="logo">
-				</a>
-
-				<button type="button" class="btn btn-hint p-0" data-bs-tooltip="tooltip" data-bs-placement="right"
-					title="Вопрос-ответ">
-					<span class="icon icon-hint">
-						<svg xmlns="http://www.w3.org/2000/svg">
-							<path
-								d="M13.231 15.974v-.614a2.9 2.9 0 0 1 .158-.996c.105-.294.274-.57.507-.83.232-.266.54-.537.92-.814a7.73 7.73 0 0 0 .823-.655 2.05 2.05 0 0 0 .456-.573c.1-.194.15-.413.15-.656 0-.36-.133-.634-.399-.822-.265-.188-.636-.282-1.112-.282-.476 0-.95.075-1.42.224-.464.15-.938.346-1.419.59l-.905-1.818a8.561 8.561 0 0 1 1.801-.748 7.39 7.39 0 0 1 2.125-.29c1.185 0 2.1.285 2.748.855.653.564.98 1.284.98 2.158 0 .465-.075.869-.225 1.212a2.95 2.95 0 0 1-.664.946 9.778 9.778 0 0 1-1.104.913 8.571 8.571 0 0 0-.763.615 1.432 1.432 0 0 0-.365.498 1.67 1.67 0 0 0-.092.59v.497h-2.2Zm-.265 2.839c0-.52.14-.885.423-1.096.288-.21.634-.315 1.038-.315.393 0 .73.105 1.013.315.287.21.431.576.431 1.096 0 .498-.144.858-.431 1.08a1.6 1.6 0 0 1-1.013.331c-.404 0-.75-.11-1.038-.332-.282-.221-.423-.581-.423-1.079Z" />
-							<rect x="1.3" y=".5" width="27" height="27" rx="13.5" />
-						</svg>
-					</span>
-				</button>
-			</div>
-
-			<button class="navbar-toggler btn-menu btn-backdrop collapsed" type="button" data-bs-toggle="collapse"
-				data-bs-target="#headerMenu" aria-controls="headerMenu" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="icon icon-menu">
-					<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-						<path
-							d="M5 12a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm2-.06c0-.52.42-.94.94-.94h12.12c.52 0 .94.42.94.94v.12c0 .52-.42.94-.94.94H7.94a.94.94 0 0 1-.94-.94v-.12Zm-4 5c0-.52.42-.94.94-.94h16.12c.52 0 .94.42.94.94v.12c0 .52-.42.94-.94.94H3.94a.94.94 0 0 1-.94-.94v-.12Zm0-10c0-.52.42-.94.94-.94h16.12c.52 0 .94.42.94.94v.12c0 .52-.42.94-.94.94H3.94A.94.94 0 0 1 3 7.06v-.12Z" />
-					</svg>
-				</span>
-
-				<span class="icon icon-close">
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-						<path d="M18 6L6 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-						<path d="M6 6L18 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-					</svg>
-				</span>
-			</button>
-
-			<div class="navbar-collapse collapse" id="headerMenu">
-				<ul class="navbar-nav me-auto">
-					<li class="nav-item current-page">
-						<a class="nav-link" href="./analytics-admin.html">
-							<span class="icon icon-analytics">
-								<svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
-									<path
-										d="M19.214 5.547c-.046.905-.907 1.245-1.575.632a51.314 51.314 0 0 1-1.1-1.043 591.42 591.42 0 0 0-4.3 3.954 1.157 1.157 0 0 1-1.66-.106 105.639 105.639 0 0 0-2.482-2.887 40.644 40.644 0 0 0-4.536 3.88 1.146 1.146 0 1 1-1.62-1.62C3.671 6.625 5.572 5 7.61 3.633l.003-.002a1.146 1.146 0 0 1 1.447.143c.887.887 1.689 1.863 2.5 2.82a588.86 588.86 0 0 1 3.357-3.082c-.37-.381-.676-.707-.93-.983-.613-.668-.272-1.53.634-1.575 1.155-.058 2.342-.093 3.483.12.515.097.892.474.988.988.213 1.142.18 2.329.12 3.485Z" />
-									<path
-										d="M2.392 21.069c-.766-.02-1.347-.48-1.41-1.245a24.274 24.274 0 0 1-.065-1.949c0-.861.027-1.49.065-1.949.063-.764.643-1.226 1.41-1.245a53.456 53.456 0 0 1 2.55 0c.766.02 1.347.48 1.41 1.245.038.458.065 1.088.065 1.949s-.027 1.49-.065 1.949c-.063.764-.644 1.225-1.41 1.245-.336.009-.755.014-1.275.014-.52 0-.94-.005-1.275-.014Zm14.883-.005c-.893-.035-1.52-.663-1.577-1.555-.06-.925-.114-2.428-.114-4.842 0-2.415.054-3.917.114-4.842.057-.893.684-1.52 1.577-1.556a26.93 26.93 0 0 1 1.059-.019c.413 0 .763.007 1.058.019.893.035 1.52.663 1.578 1.556.06.925.114 2.427.114 4.842 0 2.414-.054 3.917-.114 4.842-.058.892-.685 1.52-1.578 1.555-.295.012-.645.02-1.058.02-.414 0-.764-.008-1.059-.02Zm-7.396.004c-.856-.026-1.48-.588-1.542-1.442-.048-.672-.087-1.665-.087-3.126 0-1.46.039-2.454.087-3.126.062-.854.686-1.416 1.542-1.442.308-.01.678-.015 1.121-.015.444 0 .814.006 1.122.015.856.026 1.48.588 1.541 1.442.049.672.087 1.665.087 3.126 0 1.46-.038 2.454-.087 3.126-.061.854-.685 1.416-1.541 1.442-.308.01-.678.015-1.122.015-.443 0-.813-.006-1.121-.015Z"
-										opacity=".32" />
-								</svg>
-							</span>
-							Аналитика
-						</a>
-					</li>
-					<li class="nav-item current-page">
-						<a class="nav-link" href="./data-admin.html">
-							<span class="icon icon-data">
-								<svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
-									<path opacity=".32" fill-rule="evenodd" clip-rule="evenodd"
-										d="M19.169 7.542c-1.32.332-2.878.354-4.224-.058a1.851 1.851 0 0 1-1.205-1.18c-.478-1.403-.596-3.12-.245-4.441A99.591 99.591 0 0 0 11 1.833c-3.194 0-5.097.126-6.176.242-.799.087-1.415.628-1.565 1.417C3.027 4.722 2.75 7.02 2.75 11s.277 6.279.51 7.508c.15.79.765 1.33 1.564 1.417 1.079.116 2.982.242 6.176.242s5.097-.126 6.176-.242c.799-.086 1.415-.627 1.565-1.417.232-1.23.509-3.527.509-7.508 0-1.334-.031-2.48-.081-3.458Z" />
-									<path
-										d="M19.17 7.541c-1.32.332-2.879.354-4.225-.057a1.851 1.851 0 0 1-1.204-1.18c-.479-1.403-.597-3.12-.245-4.442 0 0 1.122.43 3.184 2.492 2.063 2.063 2.49 3.187 2.49 3.187Z" />
-								</svg>
-							</span>
-							Сводные данные
-						</a>
-					</li>
-					<li class="nav-item current-page">
-						<a class="nav-link" href="./frequency-admin.html">
-							<span class="icon icon-calendar">
-								<svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
-									<path fill-rule="evenodd" clip-rule="evenodd"
-										d="M2.107 7.104a5.272 5.272 0 0 1 5.226-4.583h7.334a5.272 5.272 0 0 1 5.226 4.583H2.107Zm13.018-5.958a.687.687 0 0 0-.688.688v2.75a.688.688 0 0 0 1.376 0v-2.75a.687.687 0 0 0-.688-.688Zm-8.25 0a.688.688 0 0 0-.688.688v2.75a.688.688 0 0 0 1.375 0v-2.75a.687.687 0 0 0-.687-.688Z" />
-									<path opacity=".3" fill-rule="evenodd" clip-rule="evenodd"
-										d="M2.063 8.48v6.645a5.27 5.27 0 0 0 5.27 5.271h7.334a5.27 5.27 0 0 0 5.27-5.27V8.478H2.063Zm3.895 3.666a.688.688 0 0 1 0-1.375h.917a.687.687 0 1 1 0 1.375h-.917Zm3.896-.687c0 .38.308.687.688.687h.916a.687.687 0 1 0 0-1.375h-.916a.688.688 0 0 0-.688.688Zm4.584 0c0 .38.307.687.687.687h.917a.687.687 0 1 0 0-1.375h-.917a.687.687 0 0 0-.688.688ZM5.27 15.125c0 .38.308.688.687.688h.917a.687.687 0 1 0 0-1.375h-.917a.688.688 0 0 0-.687.687Zm4.583 0c0 .38.308.688.688.688h.916a.687.687 0 1 0 0-1.375h-.916a.688.688 0 0 0-.688.687Zm4.584 0c0 .38.307.688.687.688h.917a.687.687 0 1 0 0-1.375h-.917a.687.687 0 0 0-.688.687Z" />
-								</svg>
-							</span>
-							Периодичность
-						</a>
-					</li>
-					<li class="nav-item current-page">
-						<a class="nav-link" href="./products-admin.html">
-							<span class="icon icon-products">
-								<svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
-									<path
-										d="M13.402 1.775a4.9 4.9 0 0 0-4.803 0L3.064 4.884c-1.337.75-1.337 2.683 0 3.434l5.533 3.108a4.9 4.9 0 0 0 4.803 0l5.534-3.108c1.337-.751 1.337-2.683 0-3.434l-5.533-3.11Z" />
-									<path opacity=".3"
-										d="M2.727 14.059c-.987.861-.875 2.514.338 3.196l5.533 3.108a4.9 4.9 0 0 0 4.803 0l5.534-3.108c1.213-.682 1.325-2.335.338-3.196l-5.198 2.92a6.275 6.275 0 0 1-6.15 0l-5.198-2.92Z" />
-									<path opacity=".3"
-										d="M2.727 9.625c-.987.862-.875 2.515.338 3.196l5.533 3.109a4.9 4.9 0 0 0 4.803 0l5.534-3.11c1.213-.68 1.325-2.333.338-3.195l-5.198 2.92a6.275 6.275 0 0 1-6.15 0l-5.198-2.92Z" />
-								</svg>
-							</span>
-							Продукты
-						</a>
-					</li>
-					<li class="nav-item current-page">
-						<a class="nav-link" href="./tools-admin.html">
-							<span class="icon icon-tools">
-								<svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
-									<path opacity=".32"
-										d="M19.416 15.556c-.26.6-.879.944-1.533.944H13.58a2.83 2.83 0 0 0-.545-2.845 83.18 83.18 0 0 0 .449-5.162c.042-.731-.854-.976-1.177-.32a82.148 82.148 0 0 0-2.148 4.698 2.775 2.775 0 0 0-1.816 1.94 2.83 2.83 0 0 0 .075 1.689H4.117c-.655 0-1.273-.343-1.533-.944a9.167 9.167 0 1 1 16.832 0Z" />
-									<path
-										d="M13.485 8.493c.042-.731-.854-.976-1.176-.32a82.05 82.05 0 0 0-2.148 4.698 2.774 2.774 0 0 0-1.817 1.94c-.393 1.492.478 3.026 1.944 3.426 1.467.4 2.975-.486 3.368-1.978a2.83 2.83 0 0 0-.62-2.604c.224-1.822.364-3.688.449-5.162Z" />
-								</svg>
-							</span>
-							Инструменты
-						</a>
-					</li>
-					<li class="nav-item current-page d-xxl-block d-lg-none">
-						<a class="nav-link" href="./departure-admin.html">
-							<span class="icon icon-navigation">
-								<svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
-									<path opacity=".3"
-										d="M19.244 4.21a1.767 1.767 0 0 0-.445-1.842L8.174 12.992c.135.134.253.285.347.452l2.838 4.99c.764 1.345 2.76 1.15 3.25-.318L19.243 4.21Z" />
-									<path
-										d="M16.962 1.928a1.767 1.767 0 0 1 1.842.445L8.179 12.998a2.063 2.063 0 0 0-.452-.348l-4.99-2.837c-1.344-.765-1.149-2.76.319-3.25L16.96 1.928Z" />
-								</svg>
-							</span>
-							Города вылета
-						</a>
-					</li>
-					<li class="nav-item current-page active d-xxl-block d-lg-none">
-						<a class="nav-link" href="./users-admin.html">
-							<span class="icon icon-users">
-								<svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
-									<path fill-rule="evenodd" clip-rule="evenodd"
-										d="m18.615 17.343.15.02.25.035c1.092.154 2.069-.678 2.069-1.761v-.827c0-.775-.496-1.466-1.239-1.726a11.48 11.48 0 0 0-2.638-.588 3.651 3.651 0 0 1 1.512 2.958v1.027c0 .298-.036.586-.104.862Zm-3.782-5.947c.372.154.78.238 1.209.238 1.724 0 3.122-1.373 3.122-3.067 0-1.694-1.398-3.067-3.122-3.067-.051 0-.102.001-.152.004.313.667.488 1.413.488 2.2a5.167 5.167 0 0 1-1.545 3.692ZM3.735 17.343l-.15.02-.25.035c-1.092.154-2.069-.678-2.069-1.761v-.827c0-.775.496-1.466 1.238-1.726a11.481 11.481 0 0 1 2.639-.588 3.651 3.651 0 0 0-1.512 2.958v1.027c0 .298.036.586.104.862Zm3.782-5.947a3.16 3.16 0 0 1-1.21.238c-1.724 0-3.122-1.373-3.122-3.067 0-1.694 1.398-3.067 3.123-3.067.05 0 .102.001.152.004a5.163 5.163 0 0 0-.489 2.2c0 1.445.592 2.752 1.546 3.692Z" />
-									<path opacity=".3" fill-rule="evenodd" clip-rule="evenodd"
-										d="M6.557 13.312a13.79 13.79 0 0 1 9.277 0 2.276 2.276 0 0 1 1.51 2.143v1.026a2.21 2.21 0 0 1-2.522 2.188l-.306-.044a23.482 23.482 0 0 0-6.641 0l-.306.044a2.21 2.21 0 0 1-2.522-2.188v-1.026c0-.962.604-1.82 1.51-2.143Zm8.446-5.608a3.808 3.808 0 1 0-7.616 0 3.808 3.808 0 0 0 7.616 0Z" />
-								</svg>
-							</span>
-							Пользователи
-						</a>
-					</li>
-					<li class="nav-item current-page d-xxl-block d-lg-none">
-						<a class="nav-link" href="./my-data-admin.html">
-							<span class="icon icon-mydata">
-								<svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
-									<path opacity=".32"
-										d="M2.09 18.02c.082.787.598 1.41 1.372 1.574 1.221.26 3.524.573 7.538.573 4.013 0 6.316-.313 7.538-.573.773-.164 1.29-.787 1.37-1.575.121-1.166.258-3.31.258-7.019 0-3.71-.137-5.852-.257-7.02-.081-.786-.598-1.41-1.371-1.574-1.222-.26-3.525-.573-7.538-.573-4.014 0-6.317.313-7.538.573-.774.165-1.29.788-1.371 1.575-.12 1.167-.258 3.31-.258 7.02 0 3.709.137 5.851.258 7.019Z" />
-									<path
-										d="M12.776 12.701A3.819 3.819 0 0 0 11 5.5a3.82 3.82 0 0 0-1.777 7.201c-1.626.62-2.868 2.066-3.253 3.848-.053.246.083.5.331.544.892.162 2.368.324 4.7.324 2.333 0 3.809-.163 4.7-.324.248-.045.383-.297.33-.543-.384-1.782-1.627-3.229-3.254-3.849Z" />
-								</svg>
-							</span>
-							Мои данные
-						</a>
-					</li>
-				</ul>
-
-				<div class="dropdown header-dropdown d-xxl-none d-lg-block d-none">
-					<button class="btn btn-menu dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
-						aria-expanded="false">
-						<span class="icon icon-menu">
-							<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-								<path
-									d="M5 12a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm2-.06c0-.52.42-.94.94-.94h12.12c.52 0 .94.42.94.94v.12c0 .52-.42.94-.94.94H7.94a.94.94 0 0 1-.94-.94v-.12Zm-4 5c0-.52.42-.94.94-.94h16.12c.52 0 .94.42.94.94v.12c0 .52-.42.94-.94.94H3.94a.94.94 0 0 1-.94-.94v-.12Zm0-10c0-.52.42-.94.94-.94h16.12c.52 0 .94.42.94.94v.12c0 .52-.42.94-.94.94H3.94A.94.94 0 0 1 3 7.06v-.12Z" />
-							</svg>
-						</span>
-
-						<span class="icon icon-close">
-							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-								<path d="M18 6L6 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-								<path d="M6 6L18 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-							</svg>
-						</span>
-					</button>
-					<ul class="dropdown-menu dropdown-menu-end triangle" aria-labelledby="dropdownMenuButton">
-						<span class="icon icon-triangle">
-							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 8">
-								<path fill-rule="evenodd" clip-rule="evenodd"
-									d="M18 8L10.591 0.653454C9.71231 -0.217818 8.28769 -0.217818 7.40901 0.653454L0 8H18Z"></path>
-							</svg>
-						</span>
-						<li>
-							<a class="dropdown-item current-page" href="./my-data-admin.html">
-								<span class="icon icon-mydata">
-									<svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
-										<path opacity=".32"
-											d="M2.09 18.02c.082.787.598 1.41 1.372 1.574 1.221.26 3.524.573 7.538.573 4.013 0 6.316-.313 7.538-.573.773-.164 1.29-.787 1.37-1.575.121-1.166.258-3.31.258-7.019 0-3.71-.137-5.852-.257-7.02-.081-.786-.598-1.41-1.371-1.574-1.222-.26-3.525-.573-7.538-.573-4.014 0-6.317.313-7.538.573-.774.165-1.29.788-1.371 1.575-.12 1.167-.258 3.31-.258 7.02 0 3.709.137 5.851.258 7.019Z" />
-										<path
-											d="M12.776 12.701A3.819 3.819 0 0 0 11 5.5a3.82 3.82 0 0 0-1.777 7.201c-1.626.62-2.868 2.066-3.253 3.848-.053.246.083.5.331.544.892.162 2.368.324 4.7.324 2.333 0 3.809-.163 4.7-.324.248-.045.383-.297.33-.543-.384-1.782-1.627-3.229-3.254-3.849Z" />
-									</svg>
-								</span>
-								Мои данные
-							</a>
-						</li>
-						<li>
-							<a class="dropdown-item current-page" href="./departure-admin.html">
-								<span class="icon icon-navigation">
-									<svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
-										<path opacity=".3"
-											d="M19.244 4.21a1.767 1.767 0 0 0-.445-1.842L8.174 12.992c.135.134.253.285.347.452l2.838 4.99c.764 1.345 2.76 1.15 3.25-.318L19.243 4.21Z" />
-										<path
-											d="M16.962 1.928a1.767 1.767 0 0 1 1.842.445L8.179 12.998a2.063 2.063 0 0 0-.452-.348l-4.99-2.837c-1.344-.765-1.149-2.76.319-3.25L16.96 1.928Z" />
-									</svg>
-								</span>
-								Города вылета
-							</a>
-						</li>
-						<li>
-							<a class="dropdown-item current-page" href="./users-admin.html">
-								<span class="icon icon-users">
-									<svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
-										<path fill-rule="evenodd" clip-rule="evenodd"
-											d="m18.615 17.343.15.02.25.035c1.092.154 2.069-.678 2.069-1.761v-.827c0-.775-.496-1.466-1.239-1.726a11.48 11.48 0 0 0-2.638-.588 3.651 3.651 0 0 1 1.512 2.958v1.027c0 .298-.036.586-.104.862Zm-3.782-5.947c.372.154.78.238 1.209.238 1.724 0 3.122-1.373 3.122-3.067 0-1.694-1.398-3.067-3.122-3.067-.051 0-.102.001-.152.004.313.667.488 1.413.488 2.2a5.167 5.167 0 0 1-1.545 3.692ZM3.735 17.343l-.15.02-.25.035c-1.092.154-2.069-.678-2.069-1.761v-.827c0-.775.496-1.466 1.238-1.726a11.481 11.481 0 0 1 2.639-.588 3.651 3.651 0 0 0-1.512 2.958v1.027c0 .298.036.586.104.862Zm3.782-5.947a3.16 3.16 0 0 1-1.21.238c-1.724 0-3.122-1.373-3.122-3.067 0-1.694 1.398-3.067 3.123-3.067.05 0 .102.001.152.004a5.163 5.163 0 0 0-.489 2.2c0 1.445.592 2.752 1.546 3.692Z" />
-										<path opacity=".3" fill-rule="evenodd" clip-rule="evenodd"
-											d="M6.557 13.312a13.79 13.79 0 0 1 9.277 0 2.276 2.276 0 0 1 1.51 2.143v1.026a2.21 2.21 0 0 1-2.522 2.188l-.306-.044a23.482 23.482 0 0 0-6.641 0l-.306.044a2.21 2.21 0 0 1-2.522-2.188v-1.026c0-.962.604-1.82 1.51-2.143Zm8.446-5.608a3.808 3.808 0 1 0-7.616 0 3.808 3.808 0 0 0 7.616 0Z" />
-									</svg>
-								</span>
-								Пользователи
-							</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</nav>
-
-</header>
+	<!--#include virtual="/parts/header.html" -->
 
 	<main class="main">
 
@@ -254,7 +11,7 @@
 			<div class="container">
 
 				<div class="header-page is-three">
-					<h1 class="h2">Сводные данные</h1>
+					<h1 class="h2">Заполнить отчёт</h1>
 
 					<button class="btn btn-primary" type="button">
 						<span class="icon icon-plus">
@@ -266,44 +23,7 @@
 						Новая запись
 					</button>
 
-					<div class="header-page-end">
-						<div class="btn-group btn-group--custom" role="group" aria-label="">
-							<a download="#" href="#" class="btn btn-outline-light btn-download">
-								Скачать
-								<span class="icon icon-xlsx">
-									<svg viewBox="0 0 25 24" xmlns="http://www.w3.org/2000/svg">
-										<path class="file" fill-rule="evenodd" clip-rule="evenodd"
-											d="M6.645 0h8.032l6.797 7.095v13.778A3.121 3.121 0 0 1 18.356 24H6.645a3.127 3.127 0 0 1-3.119-3.127V3.118A3.125 3.125 0 0 1 6.645 0Z" />
-										<path class="background" opacity=".4" fill-rule="evenodd" clip-rule="evenodd"
-											d="M14.668 0v7.034h6.806L14.668 0Z" />
-										<path class="letter"
-											d="M8.738 15.697a.2.2 0 0 1-.164.314h-.865a.2.2 0 0 1-.17-.094l-.617-.99a.2.2 0 0 0-.34 0l-.61.99a.2.2 0 0 1-.17.094h-.849a.2.2 0 0 1-.167-.309l1.17-1.806a.2.2 0 0 0 .001-.216l-1.089-1.705a.2.2 0 0 1 .169-.308h.821a.2.2 0 0 1 .173.099l.55.943a.2.2 0 0 0 .348-.003l.526-.937a.2.2 0 0 1 .174-.102h.864a.2.2 0 0 1 .17.306l-1.117 1.796a.2.2 0 0 0 .006.22l1.186 1.708Zm.909.314a.2.2 0 0 1-.2-.2v-3.944c0-.11.09-.2.2-.2h.773c.11 0 .2.09.2.2v2.996c0 .11.09.2.2.2h1.273c.11 0 .2.09.2.2v.548a.2.2 0 0 1-.2.2H9.647Zm6.183-1.319c0 .236-.06.46-.179.671-.119.21-.304.38-.556.511-.25.131-.572.196-.968.196-.198 0-.373-.008-.523-.026a2.375 2.375 0 0 1-.702-.195.194.194 0 0 1-.115-.179v-.594c0-.149.157-.246.295-.19.139.055.278.102.418.139.24.061.456.092.65.092a.82.82 0 0 0 .286-.042.354.354 0 0 0 .166-.113.282.282 0 0 0 .054-.17.254.254 0 0 0-.08-.19.931.931 0 0 0-.25-.166 13.502 13.502 0 0 0-.455-.214 4.679 4.679 0 0 1-.437-.231 1.56 1.56 0 0 1-.332-.27 1.104 1.104 0 0 1-.211-.36 1.42 1.42 0 0 1-.075-.485c0-.28.069-.513.205-.701.139-.19.331-.333.577-.428.247-.095.533-.143.855-.143.284 0 .538.032.764.096.157.043.302.09.436.143.1.039.145.152.106.251l-.212.533a.208.208 0 0 1-.27.113 3.48 3.48 0 0 0-.357-.12 1.835 1.835 0 0 0-.502-.076.687.687 0 0 0-.25.038.31.31 0 0 0-.142.098.24.24 0 0 0-.045.143c0 .067.026.127.077.181.054.053.142.112.265.175.125.062.294.142.508.241.212.095.392.198.54.31.15.108.262.24.34.394.079.153.118.342.118.568Zm4.366 1.005a.2.2 0 0 1-.164.314h-.865a.2.2 0 0 1-.17-.094l-.617-.99a.2.2 0 0 0-.34 0l-.61.99a.2.2 0 0 1-.17.094h-.849a.2.2 0 0 1-.168-.309l1.171-1.806a.2.2 0 0 0 .001-.216l-1.09-1.705a.2.2 0 0 1 .17-.308h.821a.2.2 0 0 1 .173.099l.55.943a.2.2 0 0 0 .347-.003l.527-.937a.2.2 0 0 1 .174-.102h.863a.2.2 0 0 1 .17.306l-1.116 1.796a.2.2 0 0 0 .005.22l1.187 1.708Z" />
-									</svg>
-								</span>
-							</a>
-							<a download="#" href="#" class="btn btn-outline-light btn-download">
-								Скачать
-								<span class="icon icon-csv">
-									<svg viewBox="0 0 25 24" xmlns="http://www.w3.org/2000/svg">
-										<path class="file" fill-rule="evenodd" clip-rule="evenodd"
-											d="M6.645 0h8.032l6.797 7.095v13.778A3.121 3.121 0 0 1 18.356 24H6.645a3.127 3.127 0 0 1-3.119-3.127V3.118A3.125 3.125 0 0 1 6.645 0Z" />
-										<path class="background" opacity=".4" fill-rule="evenodd" clip-rule="evenodd"
-											d="M14.668 0v7.034h6.806L14.668 0Z" />
-										<path class="letter"
-											d="M8.55 15.942c-.412 0-.77-.073-1.074-.22a1.584 1.584 0 0 1-.708-.682c-.165-.309-.247-.704-.247-1.185 0-.494.092-.897.276-1.21a1.7 1.7 0 0 1 .765-.694c.324-.149.69-.223 1.1-.223a2.943 2.943 0 0 1 1.165.232.19.19 0 0 1 .1.248l-.269.674a.207.207 0 0 1-.269.113 3.506 3.506 0 0 0-.278-.096 1.478 1.478 0 0 0-.45-.068.643.643 0 0 0-.373.111.716.716 0 0 0-.252.338 1.53 1.53 0 0 0-.09.568c0 .234.03.423.09.567a.65.65 0 0 0 .255.313c.11.064.236.097.378.097.203 0 .406-.032.607-.094.089-.028.176-.061.26-.098.144-.064.318.035.318.191v.65a.187.187 0 0 1-.092.165 2.26 2.26 0 0 1-1.212.303Zm5.137-1.322c0 .259-.057.487-.172.686-.115.199-.3.354-.554.467-.251.113-.583.169-.995.169-.29 0-.55-.016-.78-.047a3.109 3.109 0 0 1-.562-.133.193.193 0 0 1-.13-.185v-.674c0-.146.15-.244.288-.194a3.5 3.5 0 0 0 .495.137c.266.05.475.076.628.076a.87.87 0 0 0 .345-.05c.074-.037.112-.09.112-.159 0-.06-.026-.11-.076-.15a1.034 1.034 0 0 0-.262-.148c-.125-.055-.3-.13-.528-.223a2.739 2.739 0 0 1-.564-.305 1.072 1.072 0 0 1-.334-.395 1.287 1.287 0 0 1-.112-.564c0-.398.154-.697.46-.898.307-.201.713-.302 1.218-.302.268 0 .52.03.758.09.18.043.365.103.555.179.101.04.147.157.104.257l-.227.536a.208.208 0 0 1-.268.108 3.91 3.91 0 0 0-.423-.139 2.02 2.02 0 0 0-.492-.083.605.605 0 0 0-.255.043c-.06.03-.09.071-.09.126 0 .05.02.095.061.133a.956.956 0 0 0 .241.133c.117.05.289.121.514.212.237.096.432.199.585.309.156.108.27.24.345.395.077.156.115.353.115.593Zm1.988 1.25a.2.2 0 0 1-.187-.129l-1.4-3.67a.2.2 0 0 1 .188-.271H15.3a.2.2 0 0 1 .192.145l.649 2.262c.007.021.019.076.036.165a1.2 1.2 0 0 1 .028.235c0 .007.006.013.013.013a.013.013 0 0 0 .012-.013c.001-.077.01-.15.026-.22.016-.075.03-.132.04-.173l.678-2.271a.2.2 0 0 1 .192-.143h1.023a.2.2 0 0 1 .187.271l-1.4 3.67a.2.2 0 0 1-.186.129h-1.115Z" />
-									</svg>
-								</span>
-							</a>
-							<a download="#" href="#" class="btn btn-download is-phone">
-								<span class="icon icon-download">
-									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-										<path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-										<path d="M7 10L12 15L17 10" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-										<path d="M12 15V3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-									</svg>
-								</span>
-							</a>
-						</div>
+					<div class="">
 						<form>
 							<button class="btn btn-search" type="submit">
 								<span class="icon icon-search">
@@ -1868,30 +1588,12 @@
 						</div>
 					</div>
 
-					<div class="table-wrapper without-tfoot table-items-xxl table-items-v2">
+					<div class="table-wrapper without-tfoot table-items-xxl table-items-v4">
 						<div class="table-responsive table-fullscreen">
 							<table class="table table-bordered">
 								<thead>
 									<tr>
-										<th scope="col">
-											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableHeader1"
-												data-bs-toggle="dropdown" aria-expanded="false"
-												data-bs-offset="0,16">
-												Отдел
-												<span class="icon icon-arrow">
-													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
-														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
-															stroke-linejoin="round" />
-													</svg>
-												</span>
-											</button>
-											<ul class="dropdown-menu" aria-labelledby="dropdownTableHeader1">
-												<li><a class="dropdown-item" href="#">Action</a></li>
-												<li><a class="dropdown-item" href="#">Another action</a></li>
-												<li><a class="dropdown-item" href="#">Something else here</a></li>
-											</ul>
-										</th>
-										<th scope="col">
+										<th class="cell-5" scope="col">
 											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableHeader2"
 												data-bs-auto-close="outside" data-bs-toggle="dropdown" aria-expanded="false"
 												data-bs-offset="0,16">
@@ -2027,7 +1729,7 @@
 												</ul>
 											</div>
 										</th>
-										<th scope="col">
+										<th class="cell-5" scope="col">
 											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableHeader3"
 												data-bs-toggle="dropdown" aria-expanded="false"
 												data-bs-offset="0,16">
@@ -2045,7 +1747,7 @@
 												<li><a class="dropdown-item" href="#">Something else here</a></li>
 											</ul>
 										</th>
-										<th scope="col">
+										<th class="cell-5" scope="col">
 											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableHeader4"
 												data-bs-toggle="dropdown" aria-expanded="false"
 												data-bs-offset="0,16">
@@ -2067,7 +1769,7 @@
 											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableHeader5"
 												data-bs-toggle="dropdown" aria-expanded="false"
 												data-bs-offset="0,16">
-												Продукт
+												Продукт / Тема
 												<span class="icon icon-arrow">
 													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
 														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
@@ -2081,25 +1783,7 @@
 												<li><a class="dropdown-item" href="#">Something else here</a></li>
 											</ul>
 										</th>
-										<th scope="col">
-											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableHeader6"
-												data-bs-toggle="dropdown" aria-expanded="false"
-												data-bs-offset="0,16">
-												Тема
-												<span class="icon icon-arrow">
-													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
-														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
-															stroke-linejoin="round" />
-													</svg>
-												</span>
-											</button>
-											<ul class="dropdown-menu" aria-labelledby="dropdownTableHeader6">
-												<li><a class="dropdown-item" href="#">Action</a></li>
-												<li><a class="dropdown-item" href="#">Another action</a></li>
-												<li><a class="dropdown-item" href="#">Something else here</a></li>
-											</ul>
-										</th>
-										<th scope="col">
+										<th class="cell-10" scope="col">
 											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableHeader7"
 												data-bs-toggle="dropdown" aria-expanded="false"
 												data-bs-offset="0,16">
@@ -2117,7 +1801,7 @@
 												<li><a class="dropdown-item" href="#">Something else here</a></li>
 											</ul>
 										</th>
-										<th scope="col">
+										<th class="cell-10" scope="col">
 											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableHeader8"
 												data-bs-toggle="dropdown" aria-expanded="false"
 												data-bs-offset="0,16">
@@ -2135,7 +1819,7 @@
 												<li><a class="dropdown-item" href="#">Something else here</a></li>
 											</ul>
 										</th>
-										<th scope="col">
+										<th class="cell-10" scope="col">
 											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableHeader9"
 												data-bs-toggle="dropdown" aria-expanded="false"
 												data-bs-offset="0,16">
@@ -2153,7 +1837,7 @@
 												<li><a class="dropdown-item" href="#">Something else here</a></li>
 											</ul>
 										</th>
-										<th scope="col">
+										<th class="cell-10" scope="col">
 											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableHeader10"
 												data-bs-toggle="dropdown" aria-expanded="false"
 												data-bs-offset="0,16">
@@ -2171,7 +1855,7 @@
 												<li><a class="dropdown-item" href="#">Something else here</a></li>
 											</ul>
 										</th>
-										<th scope="col">
+										<th class="cell-5" scope="col">
 											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableHeader11"
 												data-bs-toggle="dropdown" aria-expanded="false"
 												data-bs-offset="0,16">
@@ -2189,7 +1873,7 @@
 												<li><a class="dropdown-item" href="#">Something else here</a></li>
 											</ul>
 										</th>
-										<th scope="col">
+										<th class="cell-5" scope="col">
 											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableHeader12"
 												data-bs-toggle="dropdown" aria-expanded="false"
 												data-bs-offset="0,16">
@@ -2215,28 +1899,6 @@
 										<th class="id" scope="row">
 											Отчет 356А5
 										</th>
-										<td class="cell-button">
-											<span class="suptotal">Отдел</span>
-											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableBody1-1"
-												data-bs-toggle="dropdown" data-bs-offset="0,6" aria-expanded="false">
-												<div class="btn-table-text">
-													<span class="text-truncate">
-														Operational Marketing
-													</span>
-												</div>
-												<span class="icon icon-arrow">
-													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
-														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
-															stroke-linejoin="round" />
-													</svg>
-												</span>
-											</button>
-											<ul class="dropdown-menu" aria-labelledby="dropdownTableBody1-1">
-												<li><a class="dropdown-item" href="#">Action</a></li>
-												<li><a class="dropdown-item" href="#">Another action</a></li>
-												<li><a class="dropdown-item" href="#">Something else here</a></li>
-											</ul>
-										</td>
 										<td class="cell-button">
 											<span class="suptotal">Тип</span>
 											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableBody1-2"
@@ -2292,8 +1954,8 @@
 											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableBody1-4"
 												data-bs-toggle="dropdown" data-bs-offset="0,6" aria-expanded="false">
 												<div class="btn-table-text">
-													<span class="text-truncate">
-														Анонс мероприятия
+													<span class="row-2-truncate">
+														Продукт и тема
 													</span>
 												</div>
 												<span class="icon icon-arrow">
@@ -2304,28 +1966,6 @@
 												</span>
 											</button>
 											<ul class="dropdown-menu" aria-labelledby="dropdownTableBody1-4">
-												<li><a class="dropdown-item" href="#">Action</a></li>
-												<li><a class="dropdown-item" href="#">Another action</a></li>
-												<li><a class="dropdown-item" href="#">Something else here</a></li>
-											</ul>
-										</td>
-										<td class="cell-button">
-											<span class="suptotal">Тема</span>
-											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableBody1-5"
-												data-bs-toggle="dropdown" data-bs-offset="0,6" aria-expanded="false">
-												<div class="btn-table-text">
-													<span class="text-truncate">
-														Направление
-													</span>
-												</div>
-												<span class="icon icon-arrow">
-													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
-														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
-															stroke-linejoin="round" />
-													</svg>
-												</span>
-											</button>
-											<ul class="dropdown-menu" aria-labelledby="dropdownTableBody1-5">
 												<li><a class="dropdown-item" href="#">Action</a></li>
 												<li><a class="dropdown-item" href="#">Another action</a></li>
 												<li><a class="dropdown-item" href="#">Something else here</a></li>
@@ -2514,28 +2154,6 @@
 											Отчет 356А5
 										</th>
 										<td class="cell-button">
-											<span class="suptotal">Отдел</span>
-											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableBody2-1"
-												data-bs-toggle="dropdown" data-bs-offset="0,6" aria-expanded="false">
-												<div class="btn-table-text">
-													<span class="text-truncate">
-														Operational Marketing
-													</span>
-												</div>
-												<span class="icon icon-arrow">
-													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
-														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
-															stroke-linejoin="round" />
-													</svg>
-												</span>
-											</button>
-											<ul class="dropdown-menu" aria-labelledby="dropdownTableBody2-1">
-												<li><a class="dropdown-item" href="#">Action</a></li>
-												<li><a class="dropdown-item" href="#">Another action</a></li>
-												<li><a class="dropdown-item" href="#">Something else here</a></li>
-											</ul>
-										</td>
-										<td class="cell-button">
 											<span class="suptotal">Тип</span>
 											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableBody2-2"
 												data-bs-toggle="dropdown" data-bs-offset="0,6" aria-expanded="false">
@@ -2590,8 +2208,8 @@
 											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableBody2-4"
 												data-bs-toggle="dropdown" data-bs-offset="0,6" aria-expanded="false">
 												<div class="btn-table-text">
-													<span class="text-truncate">
-														Анонс мероприятия
+													<span class="row-2-truncate">
+														Доп. услуги / Анонс мероприятия / РИТ / Тема / Тема /Тема
 													</span>
 												</div>
 												<span class="icon icon-arrow">
@@ -2602,28 +2220,6 @@
 												</span>
 											</button>
 											<ul class="dropdown-menu" aria-labelledby="dropdownTableBody2-4">
-												<li><a class="dropdown-item" href="#">Action</a></li>
-												<li><a class="dropdown-item" href="#">Another action</a></li>
-												<li><a class="dropdown-item" href="#">Something else here</a></li>
-											</ul>
-										</td>
-										<td class="cell-button">
-											<span class="suptotal">Тема</span>
-											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableBody2-5"
-												data-bs-toggle="dropdown" data-bs-offset="0,6" aria-expanded="false">
-												<div class="btn-table-text">
-													<span class="text-truncate">
-														Направление
-													</span>
-												</div>
-												<span class="icon icon-arrow">
-													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
-														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
-															stroke-linejoin="round" />
-													</svg>
-												</span>
-											</button>
-											<ul class="dropdown-menu" aria-labelledby="dropdownTableBody2-5">
 												<li><a class="dropdown-item" href="#">Action</a></li>
 												<li><a class="dropdown-item" href="#">Another action</a></li>
 												<li><a class="dropdown-item" href="#">Something else here</a></li>
@@ -2812,28 +2408,6 @@
 											Отчет 356А5
 										</th>
 										<td class="cell-button">
-											<span class="suptotal">Отдел</span>
-											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableBody3-1"
-												data-bs-toggle="dropdown" data-bs-offset="0,6" aria-expanded="false">
-												<div class="btn-table-text">
-													<span class="text-truncate">
-														Operational Marketing
-													</span>
-												</div>
-												<span class="icon icon-arrow">
-													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
-														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
-															stroke-linejoin="round" />
-													</svg>
-												</span>
-											</button>
-											<ul class="dropdown-menu" aria-labelledby="dropdownTableBody3-1">
-												<li><a class="dropdown-item" href="#">Action</a></li>
-												<li><a class="dropdown-item" href="#">Another action</a></li>
-												<li><a class="dropdown-item" href="#">Something else here</a></li>
-											</ul>
-										</td>
-										<td class="cell-button">
 											<span class="suptotal">Тип</span>
 											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableBody3-2"
 												data-bs-toggle="dropdown" data-bs-offset="0,6" aria-expanded="false">
@@ -2888,7 +2462,7 @@
 											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableBody3-4"
 												data-bs-toggle="dropdown" data-bs-offset="0,6" aria-expanded="false">
 												<div class="btn-table-text">
-													<span class="text-truncate">
+													<span class="row-2-truncate">
 														Анонс мероприятия
 													</span>
 												</div>
@@ -2900,28 +2474,6 @@
 												</span>
 											</button>
 											<ul class="dropdown-menu" aria-labelledby="dropdownTableBody3-4">
-												<li><a class="dropdown-item" href="#">Action</a></li>
-												<li><a class="dropdown-item" href="#">Another action</a></li>
-												<li><a class="dropdown-item" href="#">Something else here</a></li>
-											</ul>
-										</td>
-										<td class="cell-button">
-											<span class="suptotal">Тема</span>
-											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableBody3-5"
-												data-bs-toggle="dropdown" data-bs-offset="0,6" aria-expanded="false">
-												<div class="btn-table-text">
-													<span class="text-truncate">
-														Направление
-													</span>
-												</div>
-												<span class="icon icon-arrow">
-													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
-														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
-															stroke-linejoin="round" />
-													</svg>
-												</span>
-											</button>
-											<ul class="dropdown-menu" aria-labelledby="dropdownTableBody3-5">
 												<li><a class="dropdown-item" href="#">Action</a></li>
 												<li><a class="dropdown-item" href="#">Another action</a></li>
 												<li><a class="dropdown-item" href="#">Something else here</a></li>
@@ -3110,28 +2662,6 @@
 											Отчет 356А5
 										</th>
 										<td class="cell-button">
-											<span class="suptotal">Отдел</span>
-											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableBody4-1"
-												data-bs-toggle="dropdown" data-bs-offset="0,6" aria-expanded="false">
-												<div class="btn-table-text">
-													<span class="text-truncate">
-														Operational Marketing
-													</span>
-												</div>
-												<span class="icon icon-arrow">
-													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
-														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
-															stroke-linejoin="round" />
-													</svg>
-												</span>
-											</button>
-											<ul class="dropdown-menu" aria-labelledby="dropdownTableBody4-1">
-												<li><a class="dropdown-item" href="#">Action</a></li>
-												<li><a class="dropdown-item" href="#">Another action</a></li>
-												<li><a class="dropdown-item" href="#">Something else here</a></li>
-											</ul>
-										</td>
-										<td class="cell-button">
 											<span class="suptotal">Тип</span>
 											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableBody4-2"
 												data-bs-toggle="dropdown" data-bs-offset="0,6" aria-expanded="false">
@@ -3186,7 +2716,7 @@
 											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableBody4-4"
 												data-bs-toggle="dropdown" data-bs-offset="0,6" aria-expanded="false">
 												<div class="btn-table-text">
-													<span class="text-truncate">
+													<span class="row-2-truncate">
 														Анонс мероприятия
 													</span>
 												</div>
@@ -3198,28 +2728,6 @@
 												</span>
 											</button>
 											<ul class="dropdown-menu" aria-labelledby="dropdownTableBody4-4">
-												<li><a class="dropdown-item" href="#">Action</a></li>
-												<li><a class="dropdown-item" href="#">Another action</a></li>
-												<li><a class="dropdown-item" href="#">Something else here</a></li>
-											</ul>
-										</td>
-										<td class="cell-button">
-											<span class="suptotal">Тема</span>
-											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableBody4-5"
-												data-bs-toggle="dropdown" data-bs-offset="0,6" aria-expanded="false">
-												<div class="btn-table-text">
-													<span class="text-truncate">
-														Направление
-													</span>
-												</div>
-												<span class="icon icon-arrow">
-													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
-														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
-															stroke-linejoin="round" />
-													</svg>
-												</span>
-											</button>
-											<ul class="dropdown-menu" aria-labelledby="dropdownTableBody4-5">
 												<li><a class="dropdown-item" href="#">Action</a></li>
 												<li><a class="dropdown-item" href="#">Another action</a></li>
 												<li><a class="dropdown-item" href="#">Something else here</a></li>
@@ -3408,28 +2916,6 @@
 											Отчет 356А5
 										</th>
 										<td class="cell-button">
-											<span class="suptotal">Отдел</span>
-											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableBody5-1"
-												data-bs-toggle="dropdown" data-bs-offset="0,6" aria-expanded="false">
-												<div class="btn-table-text">
-													<span class="text-truncate">
-														Operational Marketing
-													</span>
-												</div>
-												<span class="icon icon-arrow">
-													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
-														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
-															stroke-linejoin="round" />
-													</svg>
-												</span>
-											</button>
-											<ul class="dropdown-menu" aria-labelledby="dropdownTableBody5-1">
-												<li><a class="dropdown-item" href="#">Action</a></li>
-												<li><a class="dropdown-item" href="#">Another action</a></li>
-												<li><a class="dropdown-item" href="#">Something else here</a></li>
-											</ul>
-										</td>
-										<td class="cell-button">
 											<span class="suptotal">Тип</span>
 											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableBody5-2"
 												data-bs-toggle="dropdown" data-bs-offset="0,6" aria-expanded="false">
@@ -3484,8 +2970,8 @@
 											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableBody5-4"
 												data-bs-toggle="dropdown" data-bs-offset="0,6" aria-expanded="false">
 												<div class="btn-table-text">
-													<span class="text-truncate">
-														Анонс мероприятия
+													<span class="row-2-truncate">
+														Продукт и тема
 													</span>
 												</div>
 												<span class="icon icon-arrow">
@@ -3496,28 +2982,6 @@
 												</span>
 											</button>
 											<ul class="dropdown-menu" aria-labelledby="dropdownTableBody5-4">
-												<li><a class="dropdown-item" href="#">Action</a></li>
-												<li><a class="dropdown-item" href="#">Another action</a></li>
-												<li><a class="dropdown-item" href="#">Something else here</a></li>
-											</ul>
-										</td>
-										<td class="cell-button">
-											<span class="suptotal">Тема</span>
-											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableBody5-5"
-												data-bs-toggle="dropdown" data-bs-offset="0,6" aria-expanded="false">
-												<div class="btn-table-text">
-													<span class="text-truncate">
-														Направление
-													</span>
-												</div>
-												<span class="icon icon-arrow">
-													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
-														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
-															stroke-linejoin="round" />
-													</svg>
-												</span>
-											</button>
-											<ul class="dropdown-menu" aria-labelledby="dropdownTableBody5-5">
 												<li><a class="dropdown-item" href="#">Action</a></li>
 												<li><a class="dropdown-item" href="#">Another action</a></li>
 												<li><a class="dropdown-item" href="#">Something else here</a></li>
@@ -3706,28 +3170,6 @@
 											Отчет 356А5
 										</th>
 										<td class="cell-button">
-											<span class="suptotal">Отдел</span>
-											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableBody6-1"
-												data-bs-toggle="dropdown" data-bs-offset="0,6" aria-expanded="false">
-												<div class="btn-table-text">
-													<span class="text-truncate">
-														Operational Marketing
-													</span>
-												</div>
-												<span class="icon icon-arrow">
-													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
-														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
-															stroke-linejoin="round" />
-													</svg>
-												</span>
-											</button>
-											<ul class="dropdown-menu" aria-labelledby="dropdownTableBody6-1">
-												<li><a class="dropdown-item" href="#">Action</a></li>
-												<li><a class="dropdown-item" href="#">Another action</a></li>
-												<li><a class="dropdown-item" href="#">Something else here</a></li>
-											</ul>
-										</td>
-										<td class="cell-button">
 											<span class="suptotal">Тип</span>
 											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableBody6-2"
 												data-bs-toggle="dropdown" data-bs-offset="0,6" aria-expanded="false">
@@ -3782,8 +3224,8 @@
 											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableBody6-4"
 												data-bs-toggle="dropdown" data-bs-offset="0,6" aria-expanded="false">
 												<div class="btn-table-text">
-													<span class="text-truncate">
-														Анонс мероприятия
+													<span class="row-2-truncate">
+														Доп. услуги
 													</span>
 												</div>
 												<span class="icon icon-arrow">
@@ -3794,28 +3236,6 @@
 												</span>
 											</button>
 											<ul class="dropdown-menu" aria-labelledby="dropdownTableBody6-4">
-												<li><a class="dropdown-item" href="#">Action</a></li>
-												<li><a class="dropdown-item" href="#">Another action</a></li>
-												<li><a class="dropdown-item" href="#">Something else here</a></li>
-											</ul>
-										</td>
-										<td class="cell-button">
-											<span class="suptotal">Тема</span>
-											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableBody6-5"
-												data-bs-toggle="dropdown" data-bs-offset="0,6" aria-expanded="false">
-												<div class="btn-table-text">
-													<span class="text-truncate">
-														Направление
-													</span>
-												</div>
-												<span class="icon icon-arrow">
-													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
-														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
-															stroke-linejoin="round" />
-													</svg>
-												</span>
-											</button>
-											<ul class="dropdown-menu" aria-labelledby="dropdownTableBody6-5">
 												<li><a class="dropdown-item" href="#">Action</a></li>
 												<li><a class="dropdown-item" href="#">Another action</a></li>
 												<li><a class="dropdown-item" href="#">Something else here</a></li>
@@ -4004,28 +3424,6 @@
 											Отчет 356А5
 										</th>
 										<td class="cell-button">
-											<span class="suptotal">Отдел</span>
-											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableBody7-1"
-												data-bs-toggle="dropdown" data-bs-offset="0,6" aria-expanded="false">
-												<div class="btn-table-text">
-													<span class="text-truncate">
-														Operational Marketing
-													</span>
-												</div>
-												<span class="icon icon-arrow">
-													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
-														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
-															stroke-linejoin="round" />
-													</svg>
-												</span>
-											</button>
-											<ul class="dropdown-menu" aria-labelledby="dropdownTableBody7-1">
-												<li><a class="dropdown-item" href="#">Action</a></li>
-												<li><a class="dropdown-item" href="#">Another action</a></li>
-												<li><a class="dropdown-item" href="#">Something else here</a></li>
-											</ul>
-										</td>
-										<td class="cell-button">
 											<span class="suptotal">Тип</span>
 											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableBody7-2"
 												data-bs-toggle="dropdown" data-bs-offset="0,6" aria-expanded="false">
@@ -4080,7 +3478,7 @@
 											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableBody7-4"
 												data-bs-toggle="dropdown" data-bs-offset="0,6" aria-expanded="false">
 												<div class="btn-table-text">
-													<span class="text-truncate">
+													<span class="row-2-truncate">
 														Анонс мероприятия
 													</span>
 												</div>
@@ -4092,28 +3490,6 @@
 												</span>
 											</button>
 											<ul class="dropdown-menu" aria-labelledby="dropdownTableBody7-4">
-												<li><a class="dropdown-item" href="#">Action</a></li>
-												<li><a class="dropdown-item" href="#">Another action</a></li>
-												<li><a class="dropdown-item" href="#">Something else here</a></li>
-											</ul>
-										</td>
-										<td class="cell-button">
-											<span class="suptotal">Тема</span>
-											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableBody7-5"
-												data-bs-toggle="dropdown" data-bs-offset="0,6" aria-expanded="false">
-												<div class="btn-table-text">
-													<span class="text-truncate">
-														Направление
-													</span>
-												</div>
-												<span class="icon icon-arrow">
-													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
-														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
-															stroke-linejoin="round" />
-													</svg>
-												</span>
-											</button>
-											<ul class="dropdown-menu" aria-labelledby="dropdownTableBody7-5">
 												<li><a class="dropdown-item" href="#">Action</a></li>
 												<li><a class="dropdown-item" href="#">Another action</a></li>
 												<li><a class="dropdown-item" href="#">Something else here</a></li>
@@ -4302,28 +3678,6 @@
 											Отчет 356А5
 										</th>
 										<td class="cell-button">
-											<span class="suptotal">Отдел</span>
-											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableBody8-1"
-												data-bs-toggle="dropdown" data-bs-offset="0,6" aria-expanded="false">
-												<div class="btn-table-text">
-													<span class="text-truncate">
-														Operational Marketing
-													</span>
-												</div>
-												<span class="icon icon-arrow">
-													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
-														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
-															stroke-linejoin="round" />
-													</svg>
-												</span>
-											</button>
-											<ul class="dropdown-menu" aria-labelledby="dropdownTableBody8-1">
-												<li><a class="dropdown-item" href="#">Action</a></li>
-												<li><a class="dropdown-item" href="#">Another action</a></li>
-												<li><a class="dropdown-item" href="#">Something else here</a></li>
-											</ul>
-										</td>
-										<td class="cell-button">
 											<span class="suptotal">Тип</span>
 											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableBody8-2"
 												data-bs-toggle="dropdown" data-bs-offset="0,6" aria-expanded="false">
@@ -4378,8 +3732,8 @@
 											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableBody8-4"
 												data-bs-toggle="dropdown" data-bs-offset="0,6" aria-expanded="false">
 												<div class="btn-table-text">
-													<span class="text-truncate">
-														Анонс мероприятия
+													<span class="row-2-truncate">
+														РИТ
 													</span>
 												</div>
 												<span class="icon icon-arrow">
@@ -4390,28 +3744,6 @@
 												</span>
 											</button>
 											<ul class="dropdown-menu" aria-labelledby="dropdownTableBody8-4">
-												<li><a class="dropdown-item" href="#">Action</a></li>
-												<li><a class="dropdown-item" href="#">Another action</a></li>
-												<li><a class="dropdown-item" href="#">Something else here</a></li>
-											</ul>
-										</td>
-										<td class="cell-button">
-											<span class="suptotal">Тема</span>
-											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableBody8-5"
-												data-bs-toggle="dropdown" data-bs-offset="0,6" aria-expanded="false">
-												<div class="btn-table-text">
-													<span class="text-truncate">
-														Направление
-													</span>
-												</div>
-												<span class="icon icon-arrow">
-													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
-														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
-															stroke-linejoin="round" />
-													</svg>
-												</span>
-											</button>
-											<ul class="dropdown-menu" aria-labelledby="dropdownTableBody8-5">
 												<li><a class="dropdown-item" href="#">Action</a></li>
 												<li><a class="dropdown-item" href="#">Another action</a></li>
 												<li><a class="dropdown-item" href="#">Something else here</a></li>
@@ -4600,28 +3932,6 @@
 											Отчет 356А5
 										</th>
 										<td class="cell-button">
-											<span class="suptotal">Отдел</span>
-											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableBody9-1"
-												data-bs-toggle="dropdown" data-bs-offset="0,6" aria-expanded="false">
-												<div class="btn-table-text">
-													<span class="text-truncate">
-														Operational Marketing
-													</span>
-												</div>
-												<span class="icon icon-arrow">
-													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
-														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
-															stroke-linejoin="round" />
-													</svg>
-												</span>
-											</button>
-											<ul class="dropdown-menu" aria-labelledby="dropdownTableBody9-1">
-												<li><a class="dropdown-item" href="#">Action</a></li>
-												<li><a class="dropdown-item" href="#">Another action</a></li>
-												<li><a class="dropdown-item" href="#">Something else here</a></li>
-											</ul>
-										</td>
-										<td class="cell-button">
 											<span class="suptotal">Тип</span>
 											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableBody9-2"
 												data-bs-toggle="dropdown" data-bs-offset="0,6" aria-expanded="false">
@@ -4676,8 +3986,8 @@
 											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableBody9-4"
 												data-bs-toggle="dropdown" data-bs-offset="0,6" aria-expanded="false">
 												<div class="btn-table-text">
-													<span class="text-truncate">
-														Анонс мероприятия
+													<span class="row-2-truncate">
+														Продукт и тема
 													</span>
 												</div>
 												<span class="icon icon-arrow">
@@ -4688,28 +3998,6 @@
 												</span>
 											</button>
 											<ul class="dropdown-menu" aria-labelledby="dropdownTableBody9-4">
-												<li><a class="dropdown-item" href="#">Action</a></li>
-												<li><a class="dropdown-item" href="#">Another action</a></li>
-												<li><a class="dropdown-item" href="#">Something else here</a></li>
-											</ul>
-										</td>
-										<td class="cell-button">
-											<span class="suptotal">Тема</span>
-											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableBody9-5"
-												data-bs-toggle="dropdown" data-bs-offset="0,6" aria-expanded="false">
-												<div class="btn-table-text">
-													<span class="text-truncate">
-														Направление
-													</span>
-												</div>
-												<span class="icon icon-arrow">
-													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
-														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
-															stroke-linejoin="round" />
-													</svg>
-												</span>
-											</button>
-											<ul class="dropdown-menu" aria-labelledby="dropdownTableBody9-5">
 												<li><a class="dropdown-item" href="#">Action</a></li>
 												<li><a class="dropdown-item" href="#">Another action</a></li>
 												<li><a class="dropdown-item" href="#">Something else here</a></li>
@@ -4898,28 +4186,6 @@
 											Отчет 356А5
 										</th>
 										<td class="cell-button">
-											<span class="suptotal">Отдел</span>
-											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableBody10-1"
-												data-bs-toggle="dropdown" data-bs-offset="0,6" aria-expanded="false">
-												<div class="btn-table-text">
-													<span class="text-truncate">
-														Operational Marketing
-													</span>
-												</div>
-												<span class="icon icon-arrow">
-													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
-														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
-															stroke-linejoin="round" />
-													</svg>
-												</span>
-											</button>
-											<ul class="dropdown-menu" aria-labelledby="dropdownTableBody10-1">
-												<li><a class="dropdown-item" href="#">Action</a></li>
-												<li><a class="dropdown-item" href="#">Another action</a></li>
-												<li><a class="dropdown-item" href="#">Something else here</a></li>
-											</ul>
-										</td>
-										<td class="cell-button">
 											<span class="suptotal">Тип</span>
 											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableBody10-2"
 												data-bs-toggle="dropdown" data-bs-offset="0,6" aria-expanded="false">
@@ -4974,8 +4240,8 @@
 											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableBody10-4"
 												data-bs-toggle="dropdown" data-bs-offset="0,6" aria-expanded="false">
 												<div class="btn-table-text">
-													<span class="text-truncate">
-														Анонс мероприятия
+													<span class="row-2-truncate">
+														Анонс и мероприятия
 													</span>
 												</div>
 												<span class="icon icon-arrow">
@@ -4986,28 +4252,6 @@
 												</span>
 											</button>
 											<ul class="dropdown-menu" aria-labelledby="dropdownTableBody10-4">
-												<li><a class="dropdown-item" href="#">Action</a></li>
-												<li><a class="dropdown-item" href="#">Another action</a></li>
-												<li><a class="dropdown-item" href="#">Something else here</a></li>
-											</ul>
-										</td>
-										<td class="cell-button">
-											<span class="suptotal">Тема</span>
-											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableBody10-5"
-												data-bs-toggle="dropdown" data-bs-offset="0,6" aria-expanded="false">
-												<div class="btn-table-text">
-													<span class="text-truncate">
-														Направление
-													</span>
-												</div>
-												<span class="icon icon-arrow">
-													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
-														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
-															stroke-linejoin="round" />
-													</svg>
-												</span>
-											</button>
-											<ul class="dropdown-menu" aria-labelledby="dropdownTableBody10-5">
 												<li><a class="dropdown-item" href="#">Action</a></li>
 												<li><a class="dropdown-item" href="#">Another action</a></li>
 												<li><a class="dropdown-item" href="#">Something else here</a></li>
@@ -5196,28 +4440,6 @@
 											Отчет 356А5
 										</th>
 										<td class="cell-button">
-											<span class="suptotal">Отдел</span>
-											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableBody11-1"
-												data-bs-toggle="dropdown" data-bs-offset="0,6" aria-expanded="false">
-												<div class="btn-table-text">
-													<span class="text-truncate">
-														Operational Marketing
-													</span>
-												</div>
-												<span class="icon icon-arrow">
-													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
-														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
-															stroke-linejoin="round" />
-													</svg>
-												</span>
-											</button>
-											<ul class="dropdown-menu" aria-labelledby="dropdownTableBody11-1">
-												<li><a class="dropdown-item" href="#">Action</a></li>
-												<li><a class="dropdown-item" href="#">Another action</a></li>
-												<li><a class="dropdown-item" href="#">Something else here</a></li>
-											</ul>
-										</td>
-										<td class="cell-button">
 											<span class="suptotal">Тип</span>
 											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableBody11-2"
 												data-bs-toggle="dropdown" data-bs-offset="0,6" aria-expanded="false">
@@ -5272,8 +4494,8 @@
 											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableBody11-4"
 												data-bs-toggle="dropdown" data-bs-offset="0,6" aria-expanded="false">
 												<div class="btn-table-text">
-													<span class="text-truncate">
-														Анонс мероприятия
+													<span class="row-2-truncate">
+														Анонс и мероприятия
 													</span>
 												</div>
 												<span class="icon icon-arrow">
@@ -5284,28 +4506,6 @@
 												</span>
 											</button>
 											<ul class="dropdown-menu" aria-labelledby="dropdownTableBody11-4">
-												<li><a class="dropdown-item" href="#">Action</a></li>
-												<li><a class="dropdown-item" href="#">Another action</a></li>
-												<li><a class="dropdown-item" href="#">Something else here</a></li>
-											</ul>
-										</td>
-										<td class="cell-button">
-											<span class="suptotal">Тема</span>
-											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableBody11-5"
-												data-bs-toggle="dropdown" data-bs-offset="0,6" aria-expanded="false">
-												<div class="btn-table-text">
-													<span class="text-truncate">
-														Направление
-													</span>
-												</div>
-												<span class="icon icon-arrow">
-													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
-														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
-															stroke-linejoin="round" />
-													</svg>
-												</span>
-											</button>
-											<ul class="dropdown-menu" aria-labelledby="dropdownTableBody11-5">
 												<li><a class="dropdown-item" href="#">Action</a></li>
 												<li><a class="dropdown-item" href="#">Another action</a></li>
 												<li><a class="dropdown-item" href="#">Something else here</a></li>
@@ -5494,28 +4694,6 @@
 											Отчет 356А5
 										</th>
 										<td class="cell-button">
-											<span class="suptotal">Отдел</span>
-											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableBody12-1"
-												data-bs-toggle="dropdown" data-bs-offset="0,6" aria-expanded="false">
-												<div class="btn-table-text">
-													<span class="text-truncate">
-														Operational Marketing
-													</span>
-												</div>
-												<span class="icon icon-arrow">
-													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
-														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
-															stroke-linejoin="round" />
-													</svg>
-												</span>
-											</button>
-											<ul class="dropdown-menu" aria-labelledby="dropdownTableBody12-1">
-												<li><a class="dropdown-item" href="#">Action</a></li>
-												<li><a class="dropdown-item" href="#">Another action</a></li>
-												<li><a class="dropdown-item" href="#">Something else here</a></li>
-											</ul>
-										</td>
-										<td class="cell-button">
 											<span class="suptotal">Тип</span>
 											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableBody12-2"
 												data-bs-toggle="dropdown" data-bs-offset="0,6" aria-expanded="false">
@@ -5570,8 +4748,8 @@
 											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableBody12-4"
 												data-bs-toggle="dropdown" data-bs-offset="0,6" aria-expanded="false">
 												<div class="btn-table-text">
-													<span class="text-truncate">
-														Анонс мероприятия
+													<span class="row-2-truncate">
+														Анонс и мероприятия
 													</span>
 												</div>
 												<span class="icon icon-arrow">
@@ -5582,28 +4760,6 @@
 												</span>
 											</button>
 											<ul class="dropdown-menu" aria-labelledby="dropdownTableBody12-4">
-												<li><a class="dropdown-item" href="#">Action</a></li>
-												<li><a class="dropdown-item" href="#">Another action</a></li>
-												<li><a class="dropdown-item" href="#">Something else here</a></li>
-											</ul>
-										</td>
-										<td class="cell-button">
-											<span class="suptotal">Тема</span>
-											<button class="btn btn-table dropdown-toggle" type="button" id="dropdownTableBody12-5"
-												data-bs-toggle="dropdown" data-bs-offset="0,6" aria-expanded="false">
-												<div class="btn-table-text">
-													<span class="text-truncate">
-														Направление
-													</span>
-												</div>
-												<span class="icon icon-arrow">
-													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14">
-														<path d="M3.90039 6.25L7.40039 9.75L10.9004 6.25" stroke-width="1.5" stroke-linecap="round"
-															stroke-linejoin="round" />
-													</svg>
-												</span>
-											</button>
-											<ul class="dropdown-menu" aria-labelledby="dropdownTableBody12-5">
 												<li><a class="dropdown-item" href="#">Action</a></li>
 												<li><a class="dropdown-item" href="#">Another action</a></li>
 												<li><a class="dropdown-item" href="#">Something else here</a></li>
@@ -5837,867 +4993,10 @@
 
 	</main>
 
-	<footer class="footer">
-	
-</footer>
+	<!--#include virtual="/parts/footer.html" -->
 
-	<div class="modal fade" id="addedTownModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <form class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="addedTownTitle">Добавить город</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="form-floating">
-          <input type="text" class="form-control" id="floatingInput1" placeholder="Название города">
-          <label for="floatingInput1">Название города</label>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
-        <button type="submit" class="btn btn-primary btn-lg">Сохранить</button>
-      </div>
-    </form>
-  </div>
-</div>
-
-<div class="modal fade" id="changedTownModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <form class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="changedTownTitle">Изменить город</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="form-floating">
-          <input type="text" class="form-control" id="floatingInput1" value="Москва" placeholder="Название города">
-          <label for="floatingInput1">Название города</label>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
-        <button type="submit" class="btn btn-primary btn-lg">Сохранить</button>
-      </div>
-    </form>
-  </div>
-</div>
-
-<div class="modal fade" id="addedToolsModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <form class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="addedToolsTitle">Добавление инструмента</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-
-        </button>
-      </div>
-      <div class="modal-body">
-
-        <div class="wrapper-check">
-          <div class="form-check">
-            <input class="form-check-input is-radio" type="radio" value="" name="canceledCheck" id="addedTools1">
-            <label class="form-check-label" for="addedTools1">
-              B2B
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input is-radio" type="radio" value="" name="canceledCheck" id="addedTools2">
-            <label class="form-check-label" for="addedTools2">
-              B2C
-            </label>
-          </div>
-        </div>
-
-        <div class="form-floating">
-          <input type="text" class="form-control" id="floatingInput1" placeholder="Название города">
-          <label for="floatingInput1">Название категории</label>
-        </div>
-
-        <select class="form-select" aria-label="Default select example">
-          <option selected disabled>Категория</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
-      </div>
-      <div class="modal-footer is-overflow">
-        <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
-        <button type="submit" class="btn btn-primary btn-lg">
-          Добавить инструмент
-        </button>
-      </div>
-    </form>
-  </div>
-</div>
-
-<div class="modal fade" id="addedUserToolsModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <form class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="addedUserToolsTitle">Добавление инструмента</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-
-        </button>
-      </div>
-      <div class="modal-body">
-
-        <div class="wrapper-check">
-          <div class="form-check">
-            <input class="form-check-input is-radio" type="radio" value="" name="canceledCheck" id="addedUserTools1">
-            <label class="form-check-label" for="addedUserTools1">
-              B2B
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input is-radio" type="radio" value="" name="canceledCheck" id="addedUserTools2">
-            <label class="form-check-label" for="addedUserTools2">
-              B2C
-            </label>
-          </div>
-        </div>
-
-        <div class="form-floating">
-          <input type="text" class="form-control" id="floatingUserInput1" placeholder="Название города">
-          <label for="floatingUserInput1">Название категории</label>
-        </div>
-
-        <select class="form-select" aria-label="Default select example">
-          <option selected disabled>Категория</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
-
-        <textarea class="form-control" placeholder="Описание" rows="1"></textarea>
-      </div>
-      <div class="modal-footer is-overflow">
-        <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
-        <button type="submit" class="btn btn-primary btn-lg">
-          Отправить на согласование
-        </button>
-      </div>
-    </form>
-  </div>
-</div>
-
-<div class="modal fade" id="editedToolsModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <form class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="editedToolsTitle">Редактирование инструмента</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-
-        </button>
-      </div>
-      <div class="modal-body">
-
-        <div class="wrapper-check">
-          <div class="form-check">
-            <input class="form-check-input is-radio" type="radio" value="" name="canceledCheck" id="editedTools1">
-            <label class="form-check-label" for="editedTools1">
-              B2B
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input is-radio" type="radio" value="" name="canceledCheck" id="editedTools2">
-            <label class="form-check-label" for="editedTools2">
-              B2C
-            </label>
-          </div>
-        </div>
-
-        <div class="form-floating">
-          <input type="text" class="form-control" id="floatingInput1" placeholder="Название города">
-          <label for="floatingInput1">Название категории</label>
-        </div>
-
-        <select class="form-select" aria-label="Default select example">
-          <option selected disabled>Категория</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
-      </div>
-      <div class="modal-footer is-overflow">
-        <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
-        <button type="submit" class="btn btn-primary btn-lg">
-          Добавить категорию
-        </button>
-      </div>
-    </form>
-  </div>
-</div>
-
-<div class="modal fade" id="canceledToolsModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <form class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="canceledToolsTitle">Отклонение инструмента</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-
-        </button>
-      </div>
-      <div class="modal-body">
-        <textarea class="form-control" placeholder="Причина отклонения" rows="1"></textarea>
-
-        <div class="wrapper-check">
-          <div class="form-check">
-            <input class="form-check-input is-radio" type="radio" value="" name="canceledCheck" id="canceledTools1">
-            <label class="form-check-label" for="canceledTools1">
-              B2B
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input is-radio" type="radio" value="" name="canceledCheck" id="canceledTools2">
-            <label class="form-check-label" for="canceledTools2">
-              B2C
-            </label>
-          </div>
-        </div>
-
-        <select class="form-select" aria-label="Default select example">
-          <option selected disabled>Выбрать категорию</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
-
-        <select class="form-select" aria-label="Default select example">
-          <option selected disabled>Вариант замены предложенного инструмента</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
-        <button type="submit" class="btn btn-primary btn-lg">Отправить</button>
-      </div>
-    </form>
-  </div>
-</div>
-
-<div class="modal fade" id="addedCategoryModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <form class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="addedCategoryTitle">Добавление категории</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-
-        </button>
-      </div>
-      <div class="modal-body">
-
-        <div class="wrapper-check">
-          <div class="form-check">
-            <input class="form-check-input is-radio" type="radio" value="" name="canceledCheck" id="addedCategory1">
-            <label class="form-check-label" for="addedCategory1">
-              B2B
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input is-radio" type="radio" value="" name="canceledCheck" id="addedCategory2">
-            <label class="form-check-label" for="addedCategory2">
-              B2C
-            </label>
-          </div>
-        </div>
-
-        <div class="form-floating">
-          <input type="text" class="form-control" id="floatingInput1" placeholder="Название города">
-          <label for="floatingInput1">Название категории</label>
-        </div>
-      </div>
-      <div class="modal-footer is-overflow">
-        <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
-        <button type="submit" class="btn btn-primary btn-lg">
-          Добавить категорию
-        </button>
-      </div>
-    </form>
-  </div>
-</div>
-
-<div class="modal fade" id="addedProductModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <form class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="addedProductTitle">Добавление продукта</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-
-        </button>
-      </div>
-      <div class="modal-body">
-
-        <div class="wrapper-check">
-          <div class="form-check">
-            <input class="form-check-input is-radio" type="radio" value="" name="canceledCheck" id="addedProduct1">
-            <label class="form-check-label" for="addedProduct1">
-              B2B
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input is-radio" type="radio" value="" name="canceledCheck" id="addedProduct2">
-            <label class="form-check-label" for="addedProduct2">
-              B2C
-            </label>
-          </div>
-        </div>
-
-        <input type="text" class="form-control" placeholder="Название продукта продвижения">
-
-        <select class="form-select" aria-label="Default select example">
-          <option selected disabled>Выбрать категорию</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
-
-        <textarea class="form-control" placeholder="Описание" rows="1"></textarea>
-      </div>
-      <div class="modal-footer is-overflow">
-        <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
-        <button type="submit" class="btn btn-primary btn-lg">
-          Добавить новый продукт
-        </button>
-      </div>
-    </form>
-  </div>
-</div>
-
-<div class="modal fade" id="addedHotelModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <form class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="addedHotelTitle">Добавление отеля</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-
-        </button>
-      </div>
-      <div class="modal-body">
-
-        <input type="text" class="form-control" placeholder="Наименование отеля">
-
-        <select class="form-select" aria-label="Default select example">
-          <option selected disabled>Выберите регион</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
-
-        <select class="form-select" aria-label="Default select example">
-          <option selected disabled>Выберить страну</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
-
-      </div>
-      <div class="modal-footer is-overflow">
-        <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
-        <button type="submit" class="btn btn-primary btn-lg">
-          Добавить новый отель
-        </button>
-      </div>
-    </form>
-  </div>
-</div>
-
-<div class="modal fade" id="addedRegionModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <form class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="addedRegionTitle">Добавление региона</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-
-        </button>
-      </div>
-      <div class="modal-body">
-
-        <input type="text" class="form-control" placeholder="Наименование региона">
-
-        <select class="form-select" aria-label="Default select example">
-          <option selected disabled>Выбрать страну</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
-
-      </div>
-      <div class="modal-footer is-overflow">
-        <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
-        <button type="submit" class="btn btn-primary btn-lg">
-          Добавить новый регион
-        </button>
-      </div>
-    </form>
-  </div>
-</div>
-
-<div class="modal fade" id="addedCountryModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <form class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="addedCountryTitle">Добавление страны</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-
-        </button>
-      </div>
-      <div class="modal-body">
-
-        <input type="text" class="form-control" placeholder="Название страны">
-
-      </div>
-      <div class="modal-footer is-overflow">
-        <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
-        <button type="submit" class="btn btn-primary btn-lg">
-          Добавить новую страну
-        </button>
-      </div>
-    </form>
-  </div>
-</div>
-
-<div class="modal modal-collapse fade" id="bindHotelModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <form class="modal-content">
-      <div class="modal-content-wrapper">
-        <div class="modal-header">
-          <h5 class="modal-title" id="bindHotelTitle">Привязать отель</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-
-          </button>
-        </div>
-        <div class="modal-body">
-
-          <div class="wrapper-search">
-            <button class="btn btn-search" type="submit">
-              <span class="icon icon-search">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M17.31 15.9L20.71 19.29C20.8993 19.4778 21.0058 19.7334 21.0058 20C21.0058 20.2666 20.8993 20.5222 20.71 20.71C20.5222 20.8993 20.2666 21.0058 20 21.0058C19.7334 21.0058 19.4778 20.8993 19.29 20.71L15.9 17.31C14.5025 18.407 12.7767 19.0022 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11C19.0022 12.7767 18.407 14.5025 17.31 15.9ZM11 5C7.68629 5 5 7.68629 5 11C5 14.3137 7.68629 17 11 17C14.3137 17 17 14.3137 17 11C17 7.68629 14.3137 5 11 5Z">
-                  </path>
-                </svg>
-              </span>
-            </button>
-            <input class="form-control" type="search" placeholder="Поиск" aria-label="Search">
-          </div>
-
-          <div>
-            <button class="btn btn-collapse" type="button" data-bs-toggle="collapse" data-bs-target="#collapseModal1"
-              aria-expanded="true" aria-controls="collapseModal1">
-              <span class="icon icon-arrow">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-                  <path d="M6 12L10 8L6 4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </span>
-              Россия
-            </button>
-
-            <div class="collapse show" id="collapseModal1">
-              <button class="btn btn-collapse btn-collapse-nested" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapseModalNested1" aria-expanded="true" aria-controls="collapseModalNested1">
-                <span class="icon icon-arrow">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-                    <path d="M6 12L10 8L6 4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </span>
-                Московская область
-              </button>
-
-              <div class="collapse collapse-nested show" id="collapseModalNested1">
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel1">
-                  <label class="form-check-label" for="collapseModalHostel1">
-                    Отель
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel2">
-                  <label class="form-check-label" for="collapseModalHostel2">
-                    Отель
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel3">
-                  <label class="form-check-label" for="collapseModalHostel3">
-                    Отель
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel4">
-                  <label class="form-check-label" for="collapseModalHostel4">
-                    Отель
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel5">
-                  <label class="form-check-label" for="collapseModalHostel5">
-                    Отель
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel6">
-                  <label class="form-check-label" for="collapseModalHostel6">
-                    Отель
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel7">
-                  <label class="form-check-label" for="collapseModalHostel7">
-                    Отель
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel8">
-                  <label class="form-check-label" for="collapseModalHostel8">
-                    Отель
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel9">
-                  <label class="form-check-label" for="collapseModalHostel9">
-                    Отель
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel10">
-                  <label class="form-check-label" for="collapseModalHostel10">
-                    Отель
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel11">
-                  <label class="form-check-label" for="collapseModalHostel11">
-                    Отель
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel12">
-                  <label class="form-check-label" for="collapseModalHostel12">
-                    Отель
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel13">
-                  <label class="form-check-label" for="collapseModalHostel13">
-                    Отель
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel14">
-                  <label class="form-check-label" for="collapseModalHostel14">
-                    Отель
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel15">
-                  <label class="form-check-label" for="collapseModalHostel15">
-                    Отель
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-        <div class="modal-footer is-overflow">
-          <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
-          <button type="submit" class="btn btn-primary btn-lg">
-            Привязать отель
-          </button>
-        </div>
-      </div>
-    </form>
-  </div>
-</div>
-
-<div class="modal modal-collapse fade" id="bindRegionModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <form class="modal-content">
-      <div class="modal-content-wrapper">
-        <div class="modal-header">
-          <h5 class="modal-title" id="bindRegionTitle">Привязать регион</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-
-          </button>
-        </div>
-        <div class="modal-body">
-
-          <div class="wrapper-search">
-            <button class="btn btn-search" type="submit">
-              <span class="icon icon-search">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M17.31 15.9L20.71 19.29C20.8993 19.4778 21.0058 19.7334 21.0058 20C21.0058 20.2666 20.8993 20.5222 20.71 20.71C20.5222 20.8993 20.2666 21.0058 20 21.0058C19.7334 21.0058 19.4778 20.8993 19.29 20.71L15.9 17.31C14.5025 18.407 12.7767 19.0022 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11C19.0022 12.7767 18.407 14.5025 17.31 15.9ZM11 5C7.68629 5 5 7.68629 5 11C5 14.3137 7.68629 17 11 17C14.3137 17 17 14.3137 17 11C17 7.68629 14.3137 5 11 5Z">
-                  </path>
-                </svg>
-              </span>
-            </button>
-            <input class="form-control" type="search" placeholder="Поиск" aria-label="Search">
-          </div>
-
-          <div>
-            <button class="btn btn-collapse" type="button" data-bs-toggle="collapse" data-bs-target="#collapseModal2"
-              aria-expanded="true" aria-controls="collapseModal2">
-              <span class="icon icon-arrow">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-                  <path d="M6 12L10 8L6 4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </span>
-              Россия
-            </button>
-
-            <div class="collapse show" id="collapseModal2">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="collapseModalRegion1">
-                <label class="form-check-label" for="collapseModalRegion1">
-                  Регион
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="collapseModalRegion2">
-                <label class="form-check-label" for="collapseModalRegion2">
-                  Регион
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="collapseModalRegion3">
-                <label class="form-check-label" for="collapseModalRegion3">
-                  Регион
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="collapseModalRegion4">
-                <label class="form-check-label" for="collapseModalRegion4">
-                  Регион
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="collapseModalRegion5">
-                <label class="form-check-label" for="collapseModalRegion5">
-                  Регион
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="collapseModalRegion6">
-                <label class="form-check-label" for="collapseModalRegion6">
-                  Регион
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="collapseModalRegion7">
-                <label class="form-check-label" for="collapseModalRegion7">
-                  Регион
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="collapseModalRegion8">
-                <label class="form-check-label" for="collapseModalRegion8">
-                  Регион
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="collapseModalRegion9">
-                <label class="form-check-label" for="collapseModalRegion9">
-                  Регион
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="collapseModalRegion10">
-                <label class="form-check-label" for="collapseModalRegion10">
-                  Регион
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="collapseModalRegion11">
-                <label class="form-check-label" for="collapseModalRegion11">
-                  Регион
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="collapseModalRegion12">
-                <label class="form-check-label" for="collapseModalRegion12">
-                  Регион
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="collapseModalRegion13">
-                <label class="form-check-label" for="collapseModalRegion13">
-                  Регион
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="collapseModalRegion14">
-                <label class="form-check-label" for="collapseModalRegion14">
-                  Регион
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="collapseModalRegion15">
-                <label class="form-check-label" for="collapseModalRegion15">
-                  Регион
-                </label>
-              </div>
-            </div>
-          </div>
-
-        </div>
-        <div class="modal-footer is-overflow">
-          <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
-          <button type="submit" class="btn btn-primary btn-lg">
-            Привязать отель
-          </button>
-        </div>
-      </div>
-    </form>
-  </div>
-</div>
-
-<div class="modal modal-collapse fade" id="bindCountryModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <form class="modal-content">
-      <div class="modal-content-wrapper">
-        <div class="modal-header">
-          <h5 class="modal-title" id="bindCountryTitle">Привязать страну</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-
-          </button>
-        </div>
-        <div class="modal-body">
-
-          <div class="wrapper-search">
-            <button class="btn btn-search" type="submit">
-              <span class="icon icon-search">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M17.31 15.9L20.71 19.29C20.8993 19.4778 21.0058 19.7334 21.0058 20C21.0058 20.2666 20.8993 20.5222 20.71 20.71C20.5222 20.8993 20.2666 21.0058 20 21.0058C19.7334 21.0058 19.4778 20.8993 19.29 20.71L15.9 17.31C14.5025 18.407 12.7767 19.0022 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11C19.0022 12.7767 18.407 14.5025 17.31 15.9ZM11 5C7.68629 5 5 7.68629 5 11C5 14.3137 7.68629 17 11 17C14.3137 17 17 14.3137 17 11C17 7.68629 14.3137 5 11 5Z">
-                  </path>
-                </svg>
-              </span>
-            </button>
-            <input class="form-control" type="search" placeholder="Поиск" aria-label="Search">
-          </div>
-
-          <div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="collapseModalCountry1">
-              <label class="form-check-label" for="collapseModalCountry1">
-                Россия
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="collapseModalCountry2">
-              <label class="form-check-label" for="collapseModalCountry2">
-                Грузия
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="collapseModalCountry3">
-              <label class="form-check-label" for="collapseModalCountry3">
-                Отель
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="collapseModalCountry4">
-              <label class="form-check-label" for="collapseModalCountry4">
-                Португалия
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="collapseModalCountry5">
-              <label class="form-check-label" for="collapseModalCountry5">
-                Италия
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="collapseModalCountry6">
-              <label class="form-check-label" for="collapseModalCountry6">
-                Испания
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="collapseModalCountry7">
-              <label class="form-check-label" for="collapseModalCountry7">
-                Монако
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="collapseModalCountry8">
-              <label class="form-check-label" for="collapseModalCountry8">
-                Венгрия
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="collapseModalCountry9">
-              <label class="form-check-label" for="collapseModalCountry9">
-                Россия
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="collapseModalCountry10">
-              <label class="form-check-label" for="collapseModalCountry10">
-                Грузия
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel11">
-              <label class="form-check-label" for="collapseModalHostel11">
-                Португалия
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel12">
-              <label class="form-check-label" for="collapseModalHostel12">
-                Италия
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel13">
-              <label class="form-check-label" for="collapseModalHostel13">
-                Испания
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel14">
-              <label class="form-check-label" for="collapseModalHostel14">
-                Монако
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel15">
-              <label class="form-check-label" for="collapseModalHostel15">
-                Венгрия
-              </label>
-            </div>
-          </div>
-        </div>
-
-        <div class="modal-footer is-overflow">
-          <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
-          <button type="submit" class="btn btn-primary btn-lg">
-            Привязать отель
-          </button>
-        </div>
-      </div>
-    </form>
-  </div>
-</div>
+	<!--#include virtual="/parts/popups.html" -->
 
 </div>
 
-	
-	<script src="libs/bootstrap/bootstrap.bundle.min.js"></script>
-	<script src="libs/swiperjs/swiper-bundle.min.js"></script>
-	<script src="libs/chartjs/chart.umd.js"></script>
-	<script src="libs/chartjs/chartjs-adapter-date-fns.js"></script>
-	<script src="libs/vanilla-calendar/vanilla-calendar.min.js"></script>
-	<script src="js/app.min.js" defer></script>
-
-</body>
-</html>
+<!--#include virtual="/parts/scripts.html" -->

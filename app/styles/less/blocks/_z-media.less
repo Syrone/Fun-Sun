@@ -35,7 +35,8 @@
 			}
 		}
 
-		&.table-items-v2 {
+		&.table-items-v2,
+		&.table-items-v4 {
 
 			tbody {
 
@@ -106,13 +107,19 @@
 						.text-truncate {
 							max-width: 160px;
 						}
+
+						.row-2-truncate {
+							width: 100%;
+							max-width: 160px;
+						}
 					}
 				}
 
 				.cell-check {
 
 					.form-check {
-						padding: 0;
+						margin-inline: 0 -.5rem;
+						margin-block: -.5rem;
 					}
 				}
 
@@ -718,7 +725,8 @@
 	}
 
 	.table-items-v2,
-	.table-items-v3 {
+	.table-items-v3,
+	.table-items-v4 {
 
 		tbody {
 

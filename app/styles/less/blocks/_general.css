@@ -1081,6 +1081,12 @@ textarea.form-control:is(:focus) {
 .table thead th .btn {
   line-height: inherit;
 }
+.table thead .cell-5:not(:last-child) {
+  width: 5%;
+}
+.table thead .cell-10:not(:last-child) {
+  width: 10%;
+}
 .table tbody tr {
   border-width: 0;
 }
@@ -1125,14 +1131,33 @@ textarea.form-control:is(:focus) {
   max-width: 90px;
   margin-inline: auto;
 }
+.table tbody .cell-button > .btn .row-2-truncate {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  white-space: wrap;
+  text-align: left;
+  width: 240px;
+  margin: -0.75rem auto;
+}
 .table tbody .cell-check {
   padding: 0;
 }
 .table tbody .cell-check .form-check {
+  max-width: max-content;
   justify-content: center;
+  margin-inline: auto;
+  border-radius: 50%;
 }
-.table tbody .cell-check .form-check:is(:hover, :focus, :active, .checked) {
+.table tbody .cell-check .form-check.checked {
   background-color: transparent;
+}
+.table tbody .cell-check .form-check:is(:hover, :focus) .form-check-input {
+  background-color: var(--gray-color--light);
+}
+.table tbody .cell-check .form-check:is(:hover, :focus) .form-check-input:checked {
+  background-color: var(--accent);
 }
 .table tbody .cell-check .form-check-input {
   width: 1.25rem;
@@ -1550,11 +1575,13 @@ textarea.form-control:is(:focus) {
   display: none;
 }
 .table-items-v2 tbody .id,
-.table-items-v3 tbody .id {
+.table-items-v3 tbody .id,
+.table-items-v4 tbody .id {
   display: none;
 }
 .table-items-v2 tbody tr > *:not(.id):first-of-type,
-.table-items-v3 tbody tr > *:not(.id):first-of-type {
+.table-items-v3 tbody tr > *:not(.id):first-of-type,
+.table-items-v4 tbody tr > *:not(.id):first-of-type {
   border-bottom-left-radius: 0.5rem;
   border-top-left-radius: 0.5rem;
 }

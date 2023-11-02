@@ -1476,6 +1476,20 @@ textarea {
 				line-height: inherit;
 			}
 		}
+
+		.cell-5 {
+
+			&:not(:last-child) {
+				width: 5%;
+			}
+		}
+
+		.cell-10 {
+
+			&:not(:last-child) {
+				width: 10%;
+			}
+		}
 	}
 
 	tbody {
@@ -1531,6 +1545,18 @@ textarea {
 					max-width: 90px;
 					margin-inline: auto;
 				}
+
+				.row-2-truncate {
+					display: -webkit-box;
+					-webkit-line-clamp: 2;
+					-webkit-box-orient: vertical;
+					overflow: hidden;
+					white-space: wrap;
+					text-align: left;
+
+					width: 240px;
+					margin: -.75rem auto;
+				}
 			}
 		}
 
@@ -1538,10 +1564,24 @@ textarea {
 			padding: 0;
 
 			.form-check {
+				max-width: max-content;
 				justify-content: center;
+				margin-inline: auto;
+				border-radius: 50%;
 
-				&:is(:hover, :focus, :active, .checked) {
+				&.checked {
 					background-color: transparent;
+				}
+
+				&:is(:hover, :focus) {
+
+					.form-check-input {
+						background-color: var(--gray-color--light);
+
+						&:checked {
+							background-color: var(--accent);
+						}
+					}
 				}
 
 				&-input {
@@ -1995,7 +2035,7 @@ textarea {
 						justify-content: space-between;
 
 						&[aria-expanded="false"] {
-							
+
 							.icon-arrow {
 								transform: rotateX(180deg);
 							}
@@ -2168,7 +2208,8 @@ textarea {
 }
 
 .table-items-v2,
-.table-items-v3 {
+.table-items-v3,
+.table-items-v4 {
 
 	tbody {
 
