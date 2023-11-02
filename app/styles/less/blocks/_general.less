@@ -1400,10 +1400,10 @@ textarea {
 	&::after,
 	&::before {
 		content: '';
-		height: .375rem;
+		height: 1.5rem;
 		background-color: var(--gray-color--light);
 		right: .5rem;
-		left: .5rem;
+		left: .45rem;
 		position: absolute;
 		z-index: 1;
 	}
@@ -1418,6 +1418,21 @@ textarea {
 		bottom: 0;
 		border-bottom-left-radius: .5rem;
 		border-bottom-right-radius: .5rem;
+	}
+
+	&.without-thead {
+
+		&::after,
+		&::before {
+			height: 0.375rem;
+		}
+	}
+
+	&.without-tfoot {
+
+		&::before {
+			height: 0.375rem;
+		}
 	}
 }
 
@@ -2026,13 +2041,6 @@ textarea {
 			}
 		}
 
-	}
-
-	&.without-thead {
-
-		tbody {
-			transform: translateY(0);
-		}
 	}
 
 	&>:not(:last-child) {

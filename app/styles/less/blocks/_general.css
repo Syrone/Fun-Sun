@@ -1020,10 +1020,10 @@ textarea.form-control:is(:focus) {
 .table-wrapper::after,
 .table-wrapper::before {
   content: '';
-  height: 0.375rem;
+  height: 1.5rem;
   background-color: var(--gray-color--light);
   right: 0.5rem;
-  left: 0.5rem;
+  left: 0.45rem;
   position: absolute;
   z-index: 1;
 }
@@ -1036,6 +1036,13 @@ textarea.form-control:is(:focus) {
   bottom: 0;
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
+}
+.table-wrapper.without-thead::after,
+.table-wrapper.without-thead::before {
+  height: 0.375rem;
+}
+.table-wrapper.without-tfoot::before {
+  height: 0.375rem;
 }
 .table-responsive {
   padding-inline: 0.2rem 0.125rem;
@@ -1470,9 +1477,6 @@ textarea.form-control:is(:focus) {
 .table-collapse--input .table.nested .form-check:is(:hover, :focus, :active) .form-check-input,
 .table-collapse--input .table.nested .form-check.checked .form-check-input {
   border-color: var(--accent);
-}
-.table.without-thead tbody {
-  transform: translateY(0);
 }
 .table > :not(:last-child) > :last-child > * {
   border-block-end: none;
