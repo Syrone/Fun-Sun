@@ -1,31 +1,31 @@
 let preprocessor = 'less', // Preprocessor (sass, less, styl); 'sass' also work with the Scss syntax in blocks/ folder.
-		fileswatch   = 'html,htm,txt,json,md,woff2' // List of files extensions for watching & hard reload
+	fileswatch = 'html,htm,txt,json,md,woff2' // List of files extensions for watching & hard reload
 
 import pkg from 'gulp'
 const { gulp, src, dest, parallel, series, watch } = pkg
 
-import browserSync   from 'browser-sync'
-import bssi          from 'browsersync-ssi'
-import ssi           from 'ssi'
+import browserSync from 'browser-sync'
+import bssi from 'browsersync-ssi'
+import ssi from 'ssi'
 import webpackStream from 'webpack-stream'
-import webpack       from 'webpack'
-import TerserPlugin  from 'terser-webpack-plugin'
-import gulpSass      from 'gulp-sass'
-import dartSass      from 'sass'
-import sassglob      from 'gulp-sass-glob'
-const  sass          = gulpSass(dartSass)
-import less          from 'gulp-less'
-import lessglob      from 'gulp-less-glob'
-import styl          from 'gulp-stylus'
-import stylglob      from 'gulp-noop'
-import postCss       from 'gulp-postcss'
-import cssnano       from 'cssnano'
-import autoprefixer  from 'autoprefixer'
-import imagemin      from 'gulp-imagemin'
-import changed       from 'gulp-changed'
-import concat        from 'gulp-concat'
-import rsync         from 'gulp-rsync'
-import {deleteAsync} from 'del'
+import webpack from 'webpack'
+import TerserPlugin from 'terser-webpack-plugin'
+import gulpSass from 'gulp-sass'
+import dartSass from 'sass'
+import sassglob from 'gulp-sass-glob'
+const sass = gulpSass(dartSass)
+import less from 'gulp-less'
+import lessglob from 'gulp-less-glob'
+import styl from 'gulp-stylus'
+import stylglob from 'gulp-noop'
+import postCss from 'gulp-postcss'
+import cssnano from 'cssnano'
+import autoprefixer from 'autoprefixer'
+import imagemin from 'gulp-imagemin'
+import changed from 'gulp-changed'
+import concat from 'gulp-concat'
+import rsync from 'gulp-rsync'
+import { deleteAsync } from 'del'
 
 function browsersync() {
 	browserSync.init({
@@ -45,8 +45,15 @@ function scripts() {
 		.pipe(webpackStream({
 			mode: 'production',
 			performance: { hints: false },
+      entry: {
+        app: './app/js/app.js',
+        init: './app/js/init-chart.js',
+      },
+			output: {
+				filename: '[name].min.js'
+			},
 			plugins: [
-				new webpack.ProvidePlugin({ $: 'jquery', jQuery: 'jquery', 'window.jQuery': 'jquery' }), // jQuery (npm i jquery)
+				new webpack.ProvidePlugin({ $: 'jquery', jQuery: 'jquery', 'window.jQuery': 'jquery' }),
 			],
 			module: {
 				rules: [
@@ -75,7 +82,6 @@ function scripts() {
 		}, webpack)).on('error', (err) => {
 			this.emit('end')
 		})
-		.pipe(concat('app.min.js'))
 		.pipe(dest('app/js'))
 		.pipe(browserSync.stream())
 }
@@ -109,7 +115,7 @@ function buildcopy() {
 		'app/fonts/**/*',
 		'app/libs/**/*'
 	], { base: 'app/' })
-	.pipe(dest('dist'))
+		.pipe(dest('dist'))
 }
 
 async function buildhtml() {
@@ -130,7 +136,7 @@ function deploy() {
 			destination: 'yousite/public_html/',
 			clean: true, // Mirror copy with file deletion
 			include: [/* '*.htaccess' */], // Included files to deploy,
-			exclude: [ '**/Thumbs.db', '**/*.DS_Store' ],
+			exclude: ['**/Thumbs.db', '**/*.DS_Store'],
 			recursive: true,
 			archive: true,
 			silent: false,
