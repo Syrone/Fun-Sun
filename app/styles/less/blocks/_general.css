@@ -36,15 +36,18 @@
 }
 /** (Start) Scroll **/
 ::-webkit-scrollbar {
-  width: 0.375rem;
-  height: 0.375rem;
+  width: var(--scroll-width);
+  height: var(--scroll-height);
 }
 ::-webkit-scrollbar-track {
   background-color: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  border-radius: 0.75rem;
-  background-color: #CACFDB;
+  border-radius: var(--scroll-radius);
+  background-color: var(--scroll-background);
+}
+[data-scroll-check] {
+  transition: padding 0.25s ease-in-out;
 }
 /** (End) Scroll **/
 h1,

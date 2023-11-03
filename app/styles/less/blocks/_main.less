@@ -62,7 +62,10 @@
 
 	.table-responsive {
 		border-radius: .625rem;
-		scrollbar-gutter: stable;
+
+		&[data-scroll-check="false"] {
+			padding-inline-end: .5rem;
+		}
 	}
 
 	.table {
@@ -697,7 +700,10 @@
 				padding-inline-end: .875rem;
 				overflow-y: auto;
 				overflow-x: auto;
-				scrollbar-gutter: stable;
+		
+				&[data-scroll-check="false"] {
+					padding-inline-end: 1.25rem;
+				}
 
 				&-v2 {
 					max-height: 220px;

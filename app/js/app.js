@@ -159,6 +159,47 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 	/** (End) Адаптивная высота таблицы **/
 
+	/** (Start) Проверка наличия Scroll **/
+	const elementsScroll = document.querySelectorAll('[data-scroll-check]');
+
+	function elementsHandleScroll() {
+		if (elementsScroll.length > 0) {
+			elementsScroll.forEach(element => {
+				const hasVerticalScrollbar = element.scrollHeight > element.clientHeight;
+				element.setAttribute('data-scroll-check', hasVerticalScrollbar);
+			});
+		}
+	}
+
+	if (navLinksTable.length > 0) {
+		navLinksTable.forEach(function (navLinkTable) {
+			navLinkTable.addEventListener('hidden.bs.tab', function () {
+				elementsHandleScroll();
+			});
+
+			navLinkTable.addEventListener('shown.bs.tab', function () {
+				navLinkTable.addEventListener('transitionend', function () {
+					elementsHandleScroll();
+				});
+			});
+		});
+	}
+
+	if (elementsScroll.length > 0) {
+		const observerElementsHeight = new MutationObserver(() => {
+			elementsHandleScroll();
+		});
+
+		elementsScroll.forEach(element => {
+			observerElementsHeight.observe(element, { attributes: true, attributeFilter: ['class'], subtree: true });
+		});
+
+		elementsHandleScroll()
+		document.addEventListener('resize', elementsHandleScroll)
+		document.addEventListener('load', elementsHandleScroll)
+	}
+	/** (End) Проверка наличия Scroll **/
+
 	//** (Start) Backdrop for Header Menu Mobile **/
 	const showBackdropBtn = document.querySelector('.btn-backdrop');
 	let backdrop = null;

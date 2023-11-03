@@ -50,7 +50,9 @@
 }
 .wrapper-table .table-responsive {
   border-radius: 0.625rem;
-  scrollbar-gutter: stable;
+}
+.wrapper-table .table-responsive[data-scroll-check="false"] {
+  padding-inline-end: 0.5rem;
 }
 .wrapper-table .table {
   margin-block: 0;
@@ -549,7 +551,9 @@
   padding-inline-end: 0.875rem;
   overflow-y: auto;
   overflow-x: auto;
-  scrollbar-gutter: stable;
+}
+.wrapper-graph .graph--progress .wrapper-progress .progress-items[data-scroll-check="false"] {
+  padding-inline-end: 1.25rem;
 }
 .wrapper-graph .graph--progress .wrapper-progress .progress-items-v2 {
   max-height: 220px;

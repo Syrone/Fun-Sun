@@ -45,8 +45,8 @@
 
 /** (Start) Scroll **/
 ::-webkit-scrollbar {
-	width: .375rem;
-	height: .375rem;
+	width: var(--scroll-width);
+	height: var(--scroll-height);
 }
 
 ::-webkit-scrollbar-track {
@@ -54,10 +54,13 @@
 }
 
 ::-webkit-scrollbar-thumb {
-	border-radius: .75rem;
-	background-color: #CACFDB;
+	border-radius: var(--scroll-radius);
+	background-color: var(--scroll-background);
 }
 
+[data-scroll-check] {
+	transition: padding .25s ease-in-out;
+}
 /** (End) Scroll **/
 
 //** (Start) Titles **//
