@@ -328,6 +328,103 @@ document.addEventListener('DOMContentLoaded', () => {
 		return gradientSegment
 	}
 
+	const getOrCreateTooltip = (chart) => {
+		const container = chart.canvas.parentNode;
+		let tooltipEl = container.querySelector('.tooltip-canvas');
+
+		if (!tooltipEl) {
+			tooltipEl = document.createElement('div');
+			tooltipEl.classList.add('tooltip-canvas');
+			const tooltipUl = document.createElement('ul');
+			tooltipUl.classList.add('tooltip-list', 'list-group');
+			tooltipEl.appendChild(tooltipUl);
+
+			container.appendChild(tooltipEl);
+		}
+
+		return tooltipEl;
+	};
+	const externalTooltipHandler = (context) => {
+		const { chart, tooltip } = context
+		const tooltipEl = getOrCreateTooltip(chart)
+
+		if (tooltip.opacity === 0) {
+			tooltipEl.style.opacity = 0
+			return
+		}
+
+		if (tooltip.dataPoints.length > 0) {
+			const label = tooltip.dataPoints[0].dataset.label
+			const labelData = tooltip.dataPoints[0].dataset.label[tooltip.dataPoints[0].dataIndex]
+			const data = tooltip.dataPoints[0].dataset.data[tooltip.dataPoints[0].dataIndex]
+			const date = new Date(tooltip.dataPoints[0].chart.data.labels[tooltip.dataPoints[0].dataIndex])
+			const formatterDate = date.toLocaleString('ru-RU', {
+				year: 'numeric',
+				month: 'long',
+				day: 'numeric',
+			}).replace(' г.', '');
+			const tooltipUl = tooltipEl.querySelector('ul')
+			const tooltipLi = document.createElement('li')
+			tooltipLi.classList.add('list-group-item')
+			const tooltipTitleSpan = document.createElement('span')
+			const tooltipDateSpan = document.createElement('date')
+			const tooltipDate = document.createTextNode(formatterDate)
+			let tooltipTitle
+			if (Array.isArray(label)) {
+				tooltipTitle = document.createTextNode(data + ' ' + labelData)
+			} else {
+				tooltipTitle = document.createTextNode(data + ' ' + label)
+			}
+			tooltipTitleSpan.classList.add('title')
+			tooltipDateSpan.classList.add('date')
+			tooltipUl.appendChild(tooltipLi)
+			tooltipLi.appendChild(tooltipTitleSpan)
+			tooltipLi.appendChild(tooltipDateSpan)
+			tooltipTitleSpan.appendChild(tooltipTitle)
+			tooltipDateSpan.appendChild(tooltipDate)
+
+			while (tooltipUl.firstChild) {
+				tooltipUl.firstChild.remove()
+			}
+
+			tooltipUl.appendChild(tooltipLi)
+			tooltipEl.style.opacity = 1
+		}
+
+		const { offsetLeft: positionX, offsetTop: positionY } = chart.canvas;
+		const tooltipWidth = tooltipEl.offsetWidth;
+		const tooltipHeight = tooltipEl.offsetHeight;
+		const containerHeight = chart.height;
+
+		// Учитываем смещение прокрутки
+		const container = chart.canvas.parentNode.parentNode;
+		const containerWidth = chart.canvas.parentNode.parentNode.offsetWidth;
+		const scrollLeft = container.scrollLeft;
+
+		let tooltipLeft = positionX + tooltip.caretX - (tooltipWidth / 2);
+		let tooltipTop = positionY + tooltip.caretY - tooltipHeight - 20;
+
+		if (tooltip.caretX - (tooltipWidth / 2) < scrollLeft) {
+			tooltipLeft = scrollLeft;
+			tooltipEl.classList.add('overflow-start')
+		} else if (tooltip.caretX + (tooltipWidth / 2) > containerWidth + scrollLeft) {
+			tooltipLeft = containerWidth - tooltipWidth + scrollLeft;
+			tooltipEl.classList.add('overflow-end')
+		} else {
+			tooltipEl.classList.remove('overflow-start')
+			tooltipEl.classList.remove('overflow-end')
+		}
+
+		if (tooltipTop < 0) {
+			tooltipTop = 0;
+		} else if (tooltipTop + tooltipHeight > containerHeight) {
+			tooltipTop = containerHeight - tooltipHeight;
+		}
+
+		tooltipEl.style.left = tooltipLeft + "px";
+		tooltipEl.style.top = tooltipTop + "px";
+	}
+
 	const doughnetBackground = {
 		beforeDatasetsDraw(chart) {
 			const { ctx, data } = chart;
@@ -414,6 +511,9 @@ document.addEventListener('DOMContentLoaded', () => {
 				plugins: {
 					legend: {
 						display: false
+					},
+					tooltip: {
+						enabled: false,
 					}
 				}
 			}
@@ -448,6 +548,9 @@ document.addEventListener('DOMContentLoaded', () => {
 				plugins: {
 					legend: {
 						display: false
+					},
+					tooltip: {
+						enabled: false,
 					}
 				}
 			}
@@ -455,9 +558,14 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	if (canvasTypePromotion) {
+		const dates = [
+			new Date('2022-01-01'),
+		];
+
 		const graphTypePromotion = new Chart(canvasTypePromotion, {
 			type: 'doughnut',
 			data: {
+				labels: dates,
 				datasets: [
 					{
 						label: 'B2B',
@@ -479,10 +587,17 @@ document.addEventListener('DOMContentLoaded', () => {
 				borderWidth: 0,
 				borderRadius: 16,
 				cutout: 85,
+				layout: {
+					padding: 2,
+				},
 				plugins: {
 					legend: {
 						display: false
 					},
+					tooltip: {
+						enabled: false,
+						external: externalTooltipHandler,
+					}
 				},
 			},
 			plugins: [doughnutLabel, doughnetBackground, doughnetGradient]
@@ -490,9 +605,15 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	if (canvasAttribution) {
+		const dates = [
+			new Date('2022-01-01'),
+			new Date('2022-02-01'),
+		];
+
 		const graphAttribution = new Chart(canvasAttribution, {
 			type: 'doughnut',
 			data: {
+				labels: dates,
 				datasets: [
 					{
 						label: 'Есть',
@@ -522,10 +643,17 @@ document.addEventListener('DOMContentLoaded', () => {
 				borderWidth: 0,
 				borderRadius: 16,
 				cutout: 85,
+				layout: {
+					padding: 2,
+				},
 				plugins: {
 					legend: {
 						display: false
 					},
+					tooltip: {
+						enabled: false,
+						external: externalTooltipHandler,
+					}
 				},
 			},
 			plugins: [doughnutLabel, doughnetBackground, doughnetGradient]
@@ -533,15 +661,18 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	if (canvasStatus) {
+		const dates = [
+			new Date('2022-01-01'),
+			new Date('2022-02-01'),
+		];
+
 		const graphStatus = new Chart(canvasStatus, {
 			type: 'doughnut',
 			data: {
-				labels: [
-					'Выполнено',
-					'Запланировано'
-				],
+				labels: dates,
 				datasets: [
 					{
+						label: ['Заплонированных', 'Выполненных'],
 						data: [8500, 2489],
 						backgroundColor: (context) => {
 							const chart = context.chart;
@@ -564,6 +695,10 @@ document.addEventListener('DOMContentLoaded', () => {
 					legend: {
 						display: false
 					},
+					tooltip: {
+						enabled: false,
+						external: externalTooltipHandler,
+					}
 				},
 			},
 			plugins: [doughnutLabel]
@@ -571,19 +706,29 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	if (canvasMarketingDivision) {
+		const dates = [
+			new Date('2022-01-01'),
+			new Date('2022-02-01'),
+			new Date('2022-03-01'),
+			new Date('2022-04-01'),
+			new Date('2022-05-01'),
+			new Date('2022-06-01'),
+		];
+
 		const graphMarketingDivision = new Chart(canvasMarketingDivision, {
 			type: 'doughnut',
 			data: {
-				labels: [
-					'Operational Marketing',
-					'Advertising',
-					'E-Commerce',
-					'SMM B2C',
-					'Franchising',
-					'ЗТА'
-				],
+				labels: dates,
 				datasets: [
 					{
+						label: [
+							'Operational Marketing',
+							'Advertising',
+							'E-Commerce',
+							'SMM B2C',
+							'Franchising',
+							'ЗТА'
+						],
 						data: [6989, 6989, 2000, 2989, 2989, 2989],
 						backgroundColor: [
 							colors.accent,
@@ -606,6 +751,10 @@ document.addEventListener('DOMContentLoaded', () => {
 					legend: {
 						display: false
 					},
+					tooltip: {
+						enabled: false,
+						external: externalTooltipHandler,
+					}
 				},
 			},
 			plugins: [doughnutLabel]
@@ -688,94 +837,6 @@ document.addEventListener('DOMContentLoaded', () => {
 			mirroredContext.drawImage(tempCanvas, 0, 0);
 
 			return mirroredContext.createPattern(mirroredCanvas, 'repeat');
-		}
-
-		const getOrCreateTooltip = (chart) => {
-			let tooltipEl = chart.canvas.parentNode.querySelector('div')
-			if (!tooltipEl) {
-				tooltipEl = document.createElement('div');
-				tooltipEl.classList.add('tooltip-canvas');
-				const tooltipUl = document.createElement('ul');
-				tooltipUl.classList.add('tooltip-list', 'list-group');
-				tooltipEl.appendChild(tooltipUl);
-
-				chart.canvas.parentNode.appendChild(tooltipEl);
-			}
-			return tooltipEl
-		}
-		const externalTooltipHandler = (context) => {
-			const { chart, tooltip } = context
-			const tooltipEl = getOrCreateTooltip(chart)
-
-			if (tooltip.opacity === 0) {
-				tooltipEl.style.opacity = 0
-				return
-			}
-
-			if (tooltip.dataPoints.length > 0) {
-				const label = tooltip.dataPoints[0].dataset.label
-				const data = tooltip.dataPoints[0].dataset.data[tooltip.dataPoints[0].dataIndex]
-				const date = new Date(tooltip.dataPoints[0].chart.data.labels[tooltip.dataPoints[0].dataIndex])
-				const formatterDate = date.toLocaleString('ru-RU', {
-					year: 'numeric',
-					month: 'long',
-					day: 'numeric',
-				}).replace(' г.', '');
-				const tooltipUl = tooltipEl.querySelector('ul')
-				const tooltipLi = document.createElement('li')
-				tooltipLi.classList.add('list-group-item')
-				const tooltipTitleSpan = document.createElement('span')
-				const tooltipDateSpan = document.createElement('date')
-				const tooltipTitle = document.createTextNode(data + ' ' + label)
-				const tooltipDate = document.createTextNode(formatterDate)
-				tooltipTitleSpan.classList.add('title')
-				tooltipDateSpan.classList.add('date')
-				tooltipUl.appendChild(tooltipLi)
-				tooltipLi.appendChild(tooltipTitleSpan)
-				tooltipLi.appendChild(tooltipDateSpan)
-				tooltipTitleSpan.appendChild(tooltipTitle)
-				tooltipDateSpan.appendChild(tooltipDate)
-
-				while (tooltipUl.firstChild) {
-					tooltipUl.firstChild.remove()
-				}
-
-				tooltipUl.appendChild(tooltipLi)
-				tooltipEl.style.opacity = 1
-			}
-
-			const { offsetLeft: positionX, offsetTop: positionY } = chart.canvas;
-			const tooltipWidth = tooltipEl.offsetWidth;
-			const tooltipHeight = tooltipEl.offsetHeight;
-			const containerHeight = chart.height;
-
-			// Учитываем смещение прокрутки
-			const container = chart.canvas.parentNode.parentNode;
-			const containerWidth = chart.canvas.parentNode.parentNode.offsetWidth;
-			const scrollLeft = container.scrollLeft;
-
-			let tooltipLeft = positionX + tooltip.caretX - (tooltipWidth / 2);
-			let tooltipTop = positionY + tooltip.caretY - tooltipHeight - 20;
-
-			if (tooltip.caretX - (tooltipWidth / 2) < scrollLeft) {
-				tooltipLeft = scrollLeft;
-				tooltipEl.classList.add('overflow-start')
-			} else if (tooltip.caretX + (tooltipWidth / 2) > containerWidth + scrollLeft) {
-				tooltipLeft = containerWidth - tooltipWidth + scrollLeft;
-				tooltipEl.classList.add('overflow-end')
-			} else {
-				tooltipEl.classList.remove('overflow-start')
-				tooltipEl.classList.remove('overflow-end')
-			}
-
-			if (tooltipTop < 0) {
-				tooltipTop = 0;
-			} else if (tooltipTop + tooltipHeight > containerHeight) {
-				tooltipTop = containerHeight - tooltipHeight;
-			}
-
-			tooltipEl.style.left = tooltipLeft + "px";
-			tooltipEl.style.top = tooltipTop + "px";
 		}
 
 		const graphQuantityByMonth = new Chart(canvasQuantityByMonth, {
@@ -960,7 +1021,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	function handleSwitchTable() {
 		const switchTables = document.querySelectorAll('.switch-tables input[type="checkbox"]');
 		const switchTablesWrapper = document.querySelector('.switch-tables-wrapper');
-		
+
 		const updateClasses = () => {
 			const checkedCount = document.querySelectorAll('.switch-tables input[type="checkbox"]:checked');
 			const checkedCountData = checkedCount.length;
@@ -984,7 +1045,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			if (checkbox.checked) {
 				switchTableBlock.classList.remove('d-none');
 			} else {
-				const otherCheckedCount = document.querySelectorAll('.switch-tables input[type="checkbox"]:checked:not(#'+switchTableId+')');
+				const otherCheckedCount = document.querySelectorAll('.switch-tables input[type="checkbox"]:checked:not(#' + switchTableId + ')');
 				if (otherCheckedCount.length > 0) {
 					switchTableBlock.classList.add('d-none');
 				} else {
