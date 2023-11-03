@@ -613,18 +613,44 @@ textarea {
 }
 
 .btn-hint {
-	&:is(:hover, :focus, :active, .active) {
+	padding: 0;
+
+	.icon {
+		flex-shrink: 0;
+		border: 1px solid var(--gray-color);
+		border-radius: 50%;
+
+		path {
+			transform: translateX(-1px);
+		}
+	}
+
+	&:is(:hover, :focus, :active) {
 		.icon {
+			border-color: var(--accent);
+
 			svg {
 				fill: var(--accent);
 
 				path {
 					opacity: 1;
 				}
+			}
+		}
+	}
 
-				rect {
-					stroke: var(--accent);
-				}
+	&.active {
+
+		.icon {
+			border-color: var(--accent);
+			background-color: var(--accent);
+			
+			svg {
+				fill: var(--text-light);
+			}
+
+			path {
+				opacity: 1;
 			}
 		}
 	}

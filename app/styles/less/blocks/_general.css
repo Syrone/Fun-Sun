@@ -444,14 +444,35 @@ textarea.form-control:is(:focus) {
   background-color: var(--third);
   border-color: var(--third);
 }
-.btn-hint:is(:hover, :focus, :active, .active) .icon svg {
+.btn-hint {
+  padding: 0;
+}
+.btn-hint .icon {
+  flex-shrink: 0;
+  border: 1px solid var(--gray-color);
+  border-radius: 50%;
+}
+.btn-hint .icon path {
+  transform: translateX(-1px);
+}
+.btn-hint:is(:hover, :focus, :active) .icon {
+  border-color: var(--accent);
+}
+.btn-hint:is(:hover, :focus, :active) .icon svg {
   fill: var(--accent);
 }
-.btn-hint:is(:hover, :focus, :active, .active) .icon svg path {
+.btn-hint:is(:hover, :focus, :active) .icon svg path {
   opacity: 1;
 }
-.btn-hint:is(:hover, :focus, :active, .active) .icon svg rect {
-  stroke: var(--accent);
+.btn-hint.active .icon {
+  border-color: var(--accent);
+  background-color: var(--accent);
+}
+.btn-hint.active .icon svg {
+  fill: var(--text-light);
+}
+.btn-hint.active .icon path {
+  opacity: 1;
 }
 .btn-group {
   display: flex;
