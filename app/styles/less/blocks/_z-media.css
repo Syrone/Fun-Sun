@@ -275,6 +275,9 @@
   /** (End) Article **/
 }
 @media (max-width: 1200px) {
+  .main {
+    margin-block-start: 3.375rem;
+  }
   .icon-data,
   .icon-calendar,
   .icon-products,

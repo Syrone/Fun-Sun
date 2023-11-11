@@ -1,6 +1,10 @@
 /** (Start) Header Menu **/
 .header {
-  position: relative;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1050;
 }
 .header .modal-backdrop {
   height: 100%;
@@ -21,6 +25,9 @@
 }
 .header .navbar-brand img {
   width: 100%;
+}
+.header .navbar-light {
+  background-color: var(--background);
 }
 .header .navbar-light .navbar-toggler {
   color: var(--accent);

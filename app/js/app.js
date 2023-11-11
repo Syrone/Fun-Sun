@@ -12,6 +12,30 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	})
 
+	/** (Start) Checked all input checkbox **/
+	const handleCheckboxes = document.querySelectorAll('input[data-handle-checkbox]');
+
+	if (handleCheckboxes.length > 0) {
+		handleCheckboxes.forEach(checkbox => {
+			const targetBlock = document.querySelector(`[data-target-checkbox="${checkbox.getAttribute('data-handle-checkbox')}"]`);
+	
+			checkbox.addEventListener('change', () => {
+				if (checkbox.checked) {
+					const targetCheckboxes = targetBlock.querySelectorAll('input[type="checkbox"]');
+					targetCheckboxes.forEach(targetCheckbox => {
+						targetCheckbox.checked = true;
+					});
+				} else {
+					const targetCheckboxes = targetBlock.querySelectorAll('input[type="checkbox"]');
+					targetCheckboxes.forEach(targetCheckbox => {
+						targetCheckbox.checked = false;
+					});
+				}
+			});
+		});
+	}
+	/** (End) Checked all input checkbox **/
+
 	/** (Start) Адаптивная высота таблицы **/
 	const tableElements = document.querySelectorAll('.table-fullscreen');
 	const tabTableElements = document.querySelectorAll('.tab-table-fullscreen');
