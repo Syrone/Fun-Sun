@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	if (handleCheckboxes.length > 0) {
 		handleCheckboxes.forEach(checkbox => {
 			const targetBlock = document.querySelector(`[data-target-checkbox="${checkbox.getAttribute('data-handle-checkbox')}"]`);
-	
+
 			checkbox.addEventListener('change', () => {
 				if (checkbox.checked) {
 					const targetCheckboxes = targetBlock.querySelectorAll('input[type="checkbox"]');
@@ -35,6 +35,27 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	}
 	/** (End) Checked all input checkbox **/
+
+	/** (Start) Show/hide Password **/
+	const passwordWrappers = document.querySelectorAll('[data-input-password]');
+
+	passwordWrappers.forEach(wrapper => {
+		const passwordInput = wrapper.querySelector('input[type="password"]');
+		const showPasswordButton = wrapper.querySelector('button.icon-password');
+
+		showPasswordButton.addEventListener('click', () => {
+			const isActive = showPasswordButton.classList.contains('is-active');
+
+			if (isActive) {
+				showPasswordButton.classList.remove('is-active');
+				passwordInput.type = 'password';
+			} else {
+				showPasswordButton.classList.add('is-active');
+				passwordInput.type = 'text';
+			}
+		});
+	});
+	/** (End) Show/Hide Password **/
 
 	/** (Start) Адаптивная высота таблицы **/
 	const tableElements = document.querySelectorAll('.table-fullscreen');
@@ -245,7 +266,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		const backdropModal = document.querySelector(".modal-backdrop");
 		let backdrop = null;
 
-		// Проверяем, был ли клик по backdrop
 		if (event.target === backdropModal) {
 			backdropModal.remove();
 			backdrop = null;
@@ -254,13 +274,13 @@ document.addEventListener('DOMContentLoaded', () => {
 		const navbar = document.getElementById("headerMenu");
 		const target = event.target;
 
-		// Проверяем, является ли кликнутый элемент частью меню
-		const isNavbar = navbar.contains(target);
+		if (navbar) {
+			const isNavbar = navbar.contains(target);
 
-		// Если кликнули вне меню и меню открыто, закрываем его
-		if (!isNavbar && navbar.classList.contains("show")) {
-			const toggle = document.querySelector("[data-bs-toggle='collapse']");
-			toggle.click();
+			if (!isNavbar && navbar.classList.contains("show")) {
+				const toggle = document.querySelector("[data-bs-toggle='collapse']");
+				toggle.click();
+			}
 		}
 	});
 	//** (End) Backdrop for Header Menu Mobile **/

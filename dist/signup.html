@@ -1,0 +1,1125 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8">
+	<!-- <base href="/"> -->
+
+	<title>Fun&Sun Mediaplan</title>
+	<meta name="description" content="">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="icon" href="images/favicon.png">
+	<meta property="og:image" content="images/dist/preview.jpg">
+	
+	<link rel="stylesheet" href="libs/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="libs/swiperjs/swiper-bundle.min.css">
+	<link rel="stylesheet" href="libs/vanilla-calendar/vanilla-calendar.min.css">
+	<link rel="stylesheet" href="libs/vanilla-calendar/light.min.css">
+	<link rel="stylesheet" href="libs/vanilla-calendar/dark.min.css">
+	<link rel="stylesheet" href="css/app.min.css">
+
+</head>
+
+<body>
+
+<div class="page">
+
+	<header class="header">
+
+	<nav class="navbar navbar-expand-lg navbar-light" aria-label="header menu">
+		<div class="container">
+			<div class="header-logo">
+				<a class="navbar-brand" href="#">
+					<img src="./images/dist/icon/logo.svg" alt="logo">
+				</a>
+
+				<a href="./helper.html" class="btn btn-hint" data-bs-tooltip="tooltip" data-bs-placement="right"
+					title="Вопрос-ответ">
+					<span class="icon icon-hint">
+						<svg xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M13.231 15.974v-.614a2.9 2.9 0 0 1 .158-.996c.105-.294.274-.57.507-.83.232-.266.54-.537.92-.814a7.73 7.73 0 0 0 .823-.655 2.05 2.05 0 0 0 .456-.573c.1-.194.15-.413.15-.656 0-.36-.133-.634-.399-.822-.265-.188-.636-.282-1.112-.282-.476 0-.95.075-1.42.224-.464.15-.938.346-1.419.59l-.905-1.818a8.561 8.561 0 0 1 1.801-.748 7.39 7.39 0 0 1 2.125-.29c1.185 0 2.1.285 2.748.855.653.564.98 1.284.98 2.158 0 .465-.075.869-.225 1.212a2.95 2.95 0 0 1-.664.946 9.778 9.778 0 0 1-1.104.913 8.571 8.571 0 0 0-.763.615 1.432 1.432 0 0 0-.365.498 1.67 1.67 0 0 0-.092.59v.497h-2.2Zm-.265 2.839c0-.52.14-.885.423-1.096.288-.21.634-.315 1.038-.315.393 0 .73.105 1.013.315.287.21.431.576.431 1.096 0 .498-.144.858-.431 1.08a1.6 1.6 0 0 1-1.013.331c-.404 0-.75-.11-1.038-.332-.282-.221-.423-.581-.423-1.079Z" />
+						</svg>
+					</span>
+				</a>
+			</div>
+
+			<button class="navbar-toggler btn-menu btn-backdrop collapsed" type="button" data-bs-toggle="collapse"
+				data-bs-target="#headerMenu" aria-controls="headerMenu" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="icon icon-menu">
+					<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+						<path
+							d="M5 12a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm2-.06c0-.52.42-.94.94-.94h12.12c.52 0 .94.42.94.94v.12c0 .52-.42.94-.94.94H7.94a.94.94 0 0 1-.94-.94v-.12Zm-4 5c0-.52.42-.94.94-.94h16.12c.52 0 .94.42.94.94v.12c0 .52-.42.94-.94.94H3.94a.94.94 0 0 1-.94-.94v-.12Zm0-10c0-.52.42-.94.94-.94h16.12c.52 0 .94.42.94.94v.12c0 .52-.42.94-.94.94H3.94A.94.94 0 0 1 3 7.06v-.12Z" />
+					</svg>
+				</span>
+
+				<span class="icon icon-close">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+						<path d="M18 6L6 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+						<path d="M6 6L18 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+				</span>
+			</button>
+
+			<div class="navbar-collapse collapse" id="headerMenu">
+				<ul class="navbar-nav me-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="./tools.html">
+							<span class="icon icon-tools">
+								<svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+									<path opacity=".32"
+										d="M19.416 15.556c-.26.6-.879.944-1.533.944H13.58a2.83 2.83 0 0 0-.545-2.845 83.18 83.18 0 0 0 .449-5.162c.042-.731-.854-.976-1.177-.32a82.148 82.148 0 0 0-2.148 4.698 2.775 2.775 0 0 0-1.816 1.94 2.83 2.83 0 0 0 .075 1.689H4.117c-.655 0-1.273-.343-1.533-.944a9.167 9.167 0 1 1 16.832 0Z" />
+									<path
+										d="M13.485 8.493c.042-.731-.854-.976-1.176-.32a82.05 82.05 0 0 0-2.148 4.698 2.774 2.774 0 0 0-1.817 1.94c-.393 1.492.478 3.026 1.944 3.426 1.467.4 2.975-.486 3.368-1.978a2.83 2.83 0 0 0-.62-2.604c.224-1.822.364-3.688.449-5.162Z" />
+								</svg>
+							</span>
+							Инструменты
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="./report.html">
+							<span class="icon icon-report">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22">
+									<path opacity="0.32" fill-rule="evenodd" clip-rule="evenodd"
+										d="M19.1688 7.54138C17.849 7.87335 16.2908 7.8954 14.9449 7.48423C14.3759 7.31038 13.9322 6.86712 13.7402 6.30402C13.2618 4.90122 13.1436 3.18416 13.4952 1.86249C12.7672 1.84421 11.9394 1.83334 11 1.83334C7.8061 1.83334 5.90283 1.95877 4.82428 2.07515C4.02523 2.16137 3.4091 2.70259 3.25949 3.49221C3.0266 4.72135 2.75 7.01916 2.75 11C2.75 14.9809 3.0266 17.2787 3.25949 18.5078C3.4091 19.2974 4.02523 19.8386 4.82428 19.9249C5.90283 20.0412 7.8061 20.1667 11 20.1667C14.1939 20.1667 16.0972 20.0412 17.1757 19.9249C17.9748 19.8386 18.5909 19.2974 18.7405 18.5078C18.9734 17.2787 19.25 14.9809 19.25 11C19.25 9.6658 19.2189 8.52061 19.1688 7.54138ZM7.33333 11.9167C6.82706 11.9167 6.41667 11.5063 6.41667 11C6.41667 10.4937 6.82706 10.0833 7.33333 10.0833H11C11.5063 10.0833 11.9167 10.4937 11.9167 11C11.9167 11.5063 11.5063 11.9167 11 11.9167H7.33333ZM7.33333 16.0417C6.82706 16.0417 6.41667 15.6313 6.41667 15.125C6.41667 14.6187 6.82706 14.2083 7.33333 14.2083H13.75C14.2563 14.2083 14.6667 14.6187 14.6667 15.125C14.6667 15.6313 14.2563 16.0417 13.75 16.0417H7.33333Z"
+										/>
+									<path
+										d="M6.41699 15.125C6.41699 15.6313 6.82738 16.0417 7.33366 16.0417H13.7503C14.2566 16.0417 14.667 15.6313 14.667 15.125C14.667 14.6187 14.2566 14.2083 13.7503 14.2083H7.33366C6.82738 14.2083 6.41699 14.6187 6.41699 15.125Z"
+										/>
+									<path
+										d="M6.41699 11C6.41699 11.5063 6.82738 11.9167 7.33366 11.9167H11.0003C11.5066 11.9167 11.917 11.5063 11.917 11C11.917 10.4937 11.5066 10.0833 11.0003 10.0833H7.33366C6.82738 10.0833 6.41699 10.4937 6.41699 11Z"
+										/>
+									<path
+										d="M19.1692 7.54137C17.8494 7.87334 16.2911 7.89539 14.9452 7.48421C14.3762 7.31037 13.9326 6.86711 13.7405 6.30401C13.2621 4.90119 13.1439 3.1841 13.4955 1.86243C13.4955 1.86243 14.6176 2.29161 16.6801 4.35411C18.7426 6.41662 19.1692 7.54137 19.1692 7.54137Z"
+										/>
+								</svg>
+							</span>
+							Заполнить отчёт
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="./data.html">
+							<span class="icon icon-data">
+								<svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+									<path opacity=".32" fill-rule="evenodd" clip-rule="evenodd"
+										d="M19.169 7.542c-1.32.332-2.878.354-4.224-.058a1.851 1.851 0 0 1-1.205-1.18c-.478-1.403-.596-3.12-.245-4.441A99.591 99.591 0 0 0 11 1.833c-3.194 0-5.097.126-6.176.242-.799.087-1.415.628-1.565 1.417C3.027 4.722 2.75 7.02 2.75 11s.277 6.279.51 7.508c.15.79.765 1.33 1.564 1.417 1.079.116 2.982.242 6.176.242s5.097-.126 6.176-.242c.799-.086 1.415-.627 1.565-1.417.232-1.23.509-3.527.509-7.508 0-1.334-.031-2.48-.081-3.458Z" />
+									<path
+										d="M19.17 7.541c-1.32.332-2.879.354-4.225-.057a1.851 1.851 0 0 1-1.204-1.18c-.479-1.403-.597-3.12-.245-4.442 0 0 1.122.43 3.184 2.492 2.063 2.063 2.49 3.187 2.49 3.187Z" />
+								</svg>
+							</span>
+							Сводные данные отдела
+						</a>
+					</li>
+					<li class="nav-item active">
+						<a class="nav-link" href="./index.html">
+							<span class="icon icon-analytics">
+								<svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M19.214 5.547c-.046.905-.907 1.245-1.575.632a51.314 51.314 0 0 1-1.1-1.043 591.42 591.42 0 0 0-4.3 3.954 1.157 1.157 0 0 1-1.66-.106 105.639 105.639 0 0 0-2.482-2.887 40.644 40.644 0 0 0-4.536 3.88 1.146 1.146 0 1 1-1.62-1.62C3.671 6.625 5.572 5 7.61 3.633l.003-.002a1.146 1.146 0 0 1 1.447.143c.887.887 1.689 1.863 2.5 2.82a588.86 588.86 0 0 1 3.357-3.082c-.37-.381-.676-.707-.93-.983-.613-.668-.272-1.53.634-1.575 1.155-.058 2.342-.093 3.483.12.515.097.892.474.988.988.213 1.142.18 2.329.12 3.485Z" />
+									<path
+										d="M2.392 21.069c-.766-.02-1.347-.48-1.41-1.245a24.274 24.274 0 0 1-.065-1.949c0-.861.027-1.49.065-1.949.063-.764.643-1.226 1.41-1.245a53.456 53.456 0 0 1 2.55 0c.766.02 1.347.48 1.41 1.245.038.458.065 1.088.065 1.949s-.027 1.49-.065 1.949c-.063.764-.644 1.225-1.41 1.245-.336.009-.755.014-1.275.014-.52 0-.94-.005-1.275-.014Zm14.883-.005c-.893-.035-1.52-.663-1.577-1.555-.06-.925-.114-2.428-.114-4.842 0-2.415.054-3.917.114-4.842.057-.893.684-1.52 1.577-1.556a26.93 26.93 0 0 1 1.059-.019c.413 0 .763.007 1.058.019.893.035 1.52.663 1.578 1.556.06.925.114 2.427.114 4.842 0 2.414-.054 3.917-.114 4.842-.058.892-.685 1.52-1.578 1.555-.295.012-.645.02-1.058.02-.414 0-.764-.008-1.059-.02Zm-7.396.004c-.856-.026-1.48-.588-1.542-1.442-.048-.672-.087-1.665-.087-3.126 0-1.46.039-2.454.087-3.126.062-.854.686-1.416 1.542-1.442.308-.01.678-.015 1.121-.015.444 0 .814.006 1.122.015.856.026 1.48.588 1.541 1.442.049.672.087 1.665.087 3.126 0 1.46-.038 2.454-.087 3.126-.061.854-.685 1.416-1.541 1.442-.308.01-.678.015-1.122.015-.443 0-.813-.006-1.121-.015Z"
+										opacity=".32" />
+								</svg>
+							</span>
+							Аналитика
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="./my-data.html">
+							<span class="icon icon-mydata">
+								<svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+									<path opacity=".32"
+										d="M2.09 18.02c.082.787.598 1.41 1.372 1.574 1.221.26 3.524.573 7.538.573 4.013 0 6.316-.313 7.538-.573.773-.164 1.29-.787 1.37-1.575.121-1.166.258-3.31.258-7.019 0-3.71-.137-5.852-.257-7.02-.081-.786-.598-1.41-1.371-1.574-1.222-.26-3.525-.573-7.538-.573-4.014 0-6.317.313-7.538.573-.774.165-1.29.788-1.371 1.575-.12 1.167-.258 3.31-.258 7.02 0 3.709.137 5.851.258 7.019Z" />
+									<path
+										d="M12.776 12.701A3.819 3.819 0 0 0 11 5.5a3.82 3.82 0 0 0-1.777 7.201c-1.626.62-2.868 2.066-3.253 3.848-.053.246.083.5.331.544.892.162 2.368.324 4.7.324 2.333 0 3.809-.163 4.7-.324.248-.045.383-.297.33-.543-.384-1.782-1.627-3.229-3.254-3.849Z" />
+								</svg>
+							</span>
+							Мои данные
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+</header>
+
+	<main class="main">
+
+		<section>
+			<div class="container">
+
+				<div class="header-page">
+					<h1 class="h2">Регистрация</h1>
+				</div>
+
+				<div class="wrapper-mydata">
+					<form>
+						<div class="row">
+							<div class="col-xl-6">
+								<div class="form-floating">
+									<input type="text" class="form-control" id="floatingInput1" placeholder="name@example.com">
+									<label for="floatingInput1">Имя</label>
+								</div>
+							</div>
+							<div class="col-xl-6">
+								<div class="form-floating">
+									<input type="text" class="form-control" id="floatingInput2" placeholder="name@example.com">
+									<label for="floatingInput2">Фамилия</label>
+								</div>
+							</div>
+							<div class="col-xl-6">
+								<div class="form-floating">
+									<input type="text" class="form-control" id="floatingInput3" placeholder="name@example.com">
+									<label for="floatingInput3">Отчество</label>
+								</div>
+							</div>
+							<div class="col-xl-6">
+								<div class="form-floating">
+									<input type="email" class="form-control" id="floatingInput1" placeholder="name@example.com">
+									<label for="floatingInput1">Email</label>
+								</div>
+							</div>
+							<div class="col-xl-6">
+								<div class="form-floating">
+									<select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+										<option selected>3TA</option>
+										<option value="1">One</option>
+										<option value="2">Two</option>
+										<option value="3">Three</option>
+									</select>
+									<label for="floatingSelect">Отдел</label>
+								</div>
+							</div>
+							<div class="col-xl-6">
+								<div class="form-floating">
+									<input type="email" class="form-control" id="floatingInput1" placeholder="name@example.com">
+									<label for="floatingInput1">Руководитель</label>
+								</div>
+							</div>
+							<div class="col-xl-6">
+								<div class="form-floating" data-input-password>
+									<input type="password" class="form-control" id="floatingInput1" placeholder="name@example.com">
+									<label for="floatingInput1">Пароль</label>
+									<button type="button" class="icon icon-password btn">
+										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+											<path
+												d="M13.5001 11.9999C13.5001 12.8283 12.8285 13.4999 12.0001 13.4999C11.1716 13.4999 10.5001 12.8283 10.5001 11.9999C10.5001 11.1714 11.1716 10.4999 12.0001 10.4999C12.8285 10.4999 13.5001 11.1714 13.5001 11.9999Z"
+												 />
+											<path fill-rule="evenodd" clip-rule="evenodd"
+												d="M11.7301 4.99987C17.7101 4.81987 21.2301 10.3899 21.8701 11.4999C22.0487 11.8093 22.0487 12.1905 21.8701 12.4999C21.0101 13.9999 17.8001 18.8599 12.2701 18.9999H12.0201C6.13007 18.9999 2.76007 13.5899 2.13007 12.4999C1.95144 12.1905 1.95144 11.8093 2.13007 11.4999C3.00007 9.99987 6.20007 5.13987 11.7301 4.99987ZM8.50007 11.9999C8.50007 13.9329 10.0671 15.4999 12.0001 15.4999C13.9331 15.4999 15.5001 13.9329 15.5001 11.9999C15.5001 10.0669 13.9331 8.49987 12.0001 8.49987C10.0671 8.49987 8.50007 10.0669 8.50007 11.9999Z"
+												 />
+										</svg>
+									</button>
+								</div>
+							</div>
+							<div class="col-xl-6">
+								<div class="form-floating" data-input-password>
+									<input type="password" class="form-control" id="floatingInput1" placeholder="name@example.com">
+									<label for="floatingInput1">Пароль</label>
+									<button type="button" class="icon icon-password btn">
+										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+											<path
+												d="M13.5001 11.9999C13.5001 12.8283 12.8285 13.4999 12.0001 13.4999C11.1716 13.4999 10.5001 12.8283 10.5001 11.9999C10.5001 11.1714 11.1716 10.4999 12.0001 10.4999C12.8285 10.4999 13.5001 11.1714 13.5001 11.9999Z"
+												 />
+											<path fill-rule="evenodd" clip-rule="evenodd"
+												d="M11.7301 4.99987C17.7101 4.81987 21.2301 10.3899 21.8701 11.4999C22.0487 11.8093 22.0487 12.1905 21.8701 12.4999C21.0101 13.9999 17.8001 18.8599 12.2701 18.9999H12.0201C6.13007 18.9999 2.76007 13.5899 2.13007 12.4999C1.95144 12.1905 1.95144 11.8093 2.13007 11.4999C3.00007 9.99987 6.20007 5.13987 11.7301 4.99987ZM8.50007 11.9999C8.50007 13.9329 10.0671 15.4999 12.0001 15.4999C13.9331 15.4999 15.5001 13.9329 15.5001 11.9999C15.5001 10.0669 13.9331 8.49987 12.0001 8.49987C10.0671 8.49987 8.50007 10.0669 8.50007 11.9999Z"
+												 />
+										</svg>
+									</button>
+								</div>
+							</div>
+							<div class="col-12">
+								<div class="form-floating">
+									<input type="email" class="form-control" id="floatingInput1" placeholder="name@example.com">
+									<label for="floatingInput1">Должность</label>
+								</div>
+							</div>
+							<div class="col-12">
+								<div class="form-buttons">
+									<button type="button" class="btn btn-outline-light btn-lg">Отмена</button>
+									<button type="submit" class="btn btn-primary btn-lg">Зарегестрироваться</button>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+
+			</div>
+		</section>
+
+	</main>
+
+	<footer class="footer">
+	
+</footer>
+
+	<div class="modal fade" id="addedTownModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <form class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addedTownTitle">Добавить город</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-floating">
+          <input type="text" class="form-control" id="floatingInput1" placeholder="Название города">
+          <label for="floatingInput1">Название города</label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
+        <button type="submit" class="btn btn-primary btn-lg">Сохранить</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="modal fade" id="changedTownModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <form class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="changedTownTitle">Изменить город</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-floating">
+          <input type="text" class="form-control" id="floatingInput1" value="Москва" placeholder="Название города">
+          <label for="floatingInput1">Название города</label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
+        <button type="submit" class="btn btn-primary btn-lg">Сохранить</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="modal fade" id="addedToolsModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <form class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addedToolsTitle">Добавление инструмента</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <div class="wrapper-check">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="addedTools1">
+            <label class="form-check-label" for="addedTools1">
+              B2B
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="addedTools2">
+            <label class="form-check-label" for="addedTools2">
+              B2C
+            </label>
+          </div>
+        </div>
+
+        <div class="form-floating">
+          <input type="text" class="form-control" id="floatingInput1" placeholder="Название города">
+          <label for="floatingInput1">Название инструмента</label>
+        </div>
+
+        <select class="form-select" aria-label="Default select example">
+          <option selected disabled>Категория</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+      </div>
+      <div class="modal-footer is-overflow">
+        <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
+        <button type="submit" class="btn btn-primary btn-lg">
+          Добавить инструмент
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="modal fade" id="addedUserToolsModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <form class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addedUserToolsTitle">Добавление инструмента</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <div class="wrapper-check">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="addedUserTools1">
+            <label class="form-check-label" for="addedUserTools1">
+              B2B
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="addedUserTools2">
+            <label class="form-check-label" for="addedUserTools2">
+              B2C
+            </label>
+          </div>
+        </div>
+
+        <div class="form-floating">
+          <input type="text" class="form-control" id="floatingUserInput1" placeholder="Название города">
+          <label for="floatingUserInput1">Название инструмента</label>
+        </div>
+
+        <select class="form-select" aria-label="Default select example">
+          <option selected disabled>Категория</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+
+        <textarea class="form-control" placeholder="Описание" rows="1"></textarea>
+      </div>
+      <div class="modal-footer is-overflow">
+        <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
+        <button type="submit" class="btn btn-primary btn-lg">
+          Отправить на согласование
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="modal fade" id="editedToolsModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <form class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editedToolsTitle">Редактирование инструмента</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <div class="wrapper-check">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="editedTools1">
+            <label class="form-check-label" for="editedTools1">
+              B2B
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="editedTools2">
+            <label class="form-check-label" for="editedTools2">
+              B2C
+            </label>
+          </div>
+        </div>
+
+        <div class="form-floating">
+          <input type="text" class="form-control" id="floatingInput1" placeholder="Название города">
+          <label for="floatingInput1">Название инструмента</label>
+        </div>
+
+        <select class="form-select" aria-label="Default select example">
+          <option selected disabled>Категория</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+      </div>
+      <div class="modal-footer is-overflow">
+        <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
+        <button type="submit" class="btn btn-primary btn-lg">
+          Добавить инструмент
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="modal fade" id="canceledToolsModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <form class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="canceledToolsTitle">Отклонение инструмента</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+
+        </button>
+      </div>
+      <div class="modal-body">
+        <textarea class="form-control" placeholder="Причина отклонения" rows="1"></textarea>
+
+        <p>
+          Вы можете предложите другой инструмент из имеющегося списка или создать новый:
+        </p>
+
+        <div class="wrapper-check">
+          <div class="form-check">
+            <input class="form-check-input is-radio" type="radio" value="" name="canceledCheck" id="canceledTools1">
+            <label class="form-check-label" for="canceledTools1">
+              B2B
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input is-radio" type="radio" value="" name="canceledCheck" id="canceledTools2">
+            <label class="form-check-label" for="canceledTools2">
+              B2C
+            </label>
+          </div>
+        </div>
+
+        <select class="form-select" aria-label="Default select example">
+          <option selected disabled>Выбрать категорию</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+
+        <select class="form-select" aria-label="Default select example">
+          <option selected disabled>Вариант замены предложенного инструмента</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
+        <button type="submit" class="btn btn-primary btn-lg">Отправить</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="modal fade" id="addedCategoryModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <form class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addedCategoryTitle">Добавление категории</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <div class="wrapper-check">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="addedCategory1">
+            <label class="form-check-label" for="addedCategory1">
+              B2B
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="addedCategory2">
+            <label class="form-check-label" for="addedCategory2">
+              B2C
+            </label>
+          </div>
+        </div>
+
+        <div class="form-floating">
+          <input type="text" class="form-control" id="floatingInput1" placeholder="Название города">
+          <label for="floatingInput1">Название категории</label>
+        </div>
+      </div>
+      <div class="modal-footer is-overflow">
+        <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
+        <button type="submit" class="btn btn-primary btn-lg">
+          Добавить категорию
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="modal fade" id="addedProductModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <form class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addedProductTitle">Добавление продукта</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <div class="wrapper-check">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="addedProduct1">
+            <label class="form-check-label" for="addedProduct1">
+              B2B
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="addedProduct2">
+            <label class="form-check-label" for="addedProduct2">
+              B2C
+            </label>
+          </div>
+        </div>
+
+        <input type="text" class="form-control" placeholder="Название продукта продвижения">
+
+        <select class="form-select" aria-label="Default select example">
+          <option selected disabled>Выбрать категорию</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+
+        <textarea class="form-control" placeholder="Описание" rows="1"></textarea>
+      </div>
+      <div class="modal-footer is-overflow">
+        <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
+        <button type="submit" class="btn btn-primary btn-lg">
+          Добавить новый продукт
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="modal fade" id="addedHotelModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <form class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addedHotelTitle">Добавление отеля</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <input type="text" class="form-control" placeholder="Наименование отеля">
+
+        <select class="form-select" aria-label="Default select example">
+          <option selected disabled>Выберите регион</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+
+        <select class="form-select" aria-label="Default select example">
+          <option selected disabled>Выберить страну</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+
+      </div>
+      <div class="modal-footer is-overflow">
+        <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
+        <button type="submit" class="btn btn-primary btn-lg">
+          Добавить новый отель
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="modal fade" id="addedRegionModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <form class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addedRegionTitle">Добавление региона</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <input type="text" class="form-control" placeholder="Наименование региона">
+
+        <select class="form-select" aria-label="Default select example">
+          <option selected disabled>Выбрать страну</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+
+      </div>
+      <div class="modal-footer is-overflow">
+        <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
+        <button type="submit" class="btn btn-primary btn-lg">
+          Добавить новый регион
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="modal fade" id="addedCountryModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <form class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addedCountryTitle">Добавление страны</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <input type="text" class="form-control" placeholder="Название страны">
+
+      </div>
+      <div class="modal-footer is-overflow">
+        <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
+        <button type="submit" class="btn btn-primary btn-lg">
+          Добавить новую страну
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="modal modal-collapse fade" id="bindHotelModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <form class="modal-content">
+      <div class="modal-content-wrapper">
+        <div class="modal-header">
+          <h5 class="modal-title" id="bindHotelTitle">Привязать отель</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+
+          </button>
+        </div>
+        <div class="modal-body">
+
+          <div class="wrapper-search">
+            <button class="btn btn-search" type="submit">
+              <span class="icon icon-search">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M17.31 15.9L20.71 19.29C20.8993 19.4778 21.0058 19.7334 21.0058 20C21.0058 20.2666 20.8993 20.5222 20.71 20.71C20.5222 20.8993 20.2666 21.0058 20 21.0058C19.7334 21.0058 19.4778 20.8993 19.29 20.71L15.9 17.31C14.5025 18.407 12.7767 19.0022 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11C19.0022 12.7767 18.407 14.5025 17.31 15.9ZM11 5C7.68629 5 5 7.68629 5 11C5 14.3137 7.68629 17 11 17C14.3137 17 17 14.3137 17 11C17 7.68629 14.3137 5 11 5Z">
+                  </path>
+                </svg>
+              </span>
+            </button>
+            <input class="form-control" type="search" placeholder="Поиск" aria-label="Search">
+          </div>
+
+          <div>
+            <button class="btn btn-collapse" type="button" data-bs-toggle="collapse" data-bs-target="#collapseModal1"
+              aria-expanded="true" aria-controls="collapseModal1">
+              <span class="icon icon-arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                  <path d="M6 12L10 8L6 4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span>
+              Россия
+            </button>
+
+            <div class="collapse show" id="collapseModal1">
+              <button class="btn btn-collapse btn-collapse-nested" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseModalNested1" aria-expanded="true" aria-controls="collapseModalNested1">
+                <span class="icon icon-arrow">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                    <path d="M6 12L10 8L6 4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+                Московская область
+              </button>
+
+              <div class="collapse collapse-nested show" id="collapseModalNested1">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel1">
+                  <label class="form-check-label" for="collapseModalHostel1">
+                    Отель
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel2">
+                  <label class="form-check-label" for="collapseModalHostel2">
+                    Отель
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel3">
+                  <label class="form-check-label" for="collapseModalHostel3">
+                    Отель
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel4">
+                  <label class="form-check-label" for="collapseModalHostel4">
+                    Отель
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel5">
+                  <label class="form-check-label" for="collapseModalHostel5">
+                    Отель
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel6">
+                  <label class="form-check-label" for="collapseModalHostel6">
+                    Отель
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel7">
+                  <label class="form-check-label" for="collapseModalHostel7">
+                    Отель
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel8">
+                  <label class="form-check-label" for="collapseModalHostel8">
+                    Отель
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel9">
+                  <label class="form-check-label" for="collapseModalHostel9">
+                    Отель
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel10">
+                  <label class="form-check-label" for="collapseModalHostel10">
+                    Отель
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel11">
+                  <label class="form-check-label" for="collapseModalHostel11">
+                    Отель
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel12">
+                  <label class="form-check-label" for="collapseModalHostel12">
+                    Отель
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel13">
+                  <label class="form-check-label" for="collapseModalHostel13">
+                    Отель
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel14">
+                  <label class="form-check-label" for="collapseModalHostel14">
+                    Отель
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel15">
+                  <label class="form-check-label" for="collapseModalHostel15">
+                    Отель
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="modal-footer is-overflow">
+          <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
+          <button type="submit" class="btn btn-primary btn-lg">
+            Привязать отель
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="modal modal-collapse fade" id="bindRegionModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <form class="modal-content">
+      <div class="modal-content-wrapper">
+        <div class="modal-header">
+          <h5 class="modal-title" id="bindRegionTitle">Привязать регион</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+
+          </button>
+        </div>
+        <div class="modal-body">
+
+          <div class="wrapper-search">
+            <button class="btn btn-search" type="submit">
+              <span class="icon icon-search">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M17.31 15.9L20.71 19.29C20.8993 19.4778 21.0058 19.7334 21.0058 20C21.0058 20.2666 20.8993 20.5222 20.71 20.71C20.5222 20.8993 20.2666 21.0058 20 21.0058C19.7334 21.0058 19.4778 20.8993 19.29 20.71L15.9 17.31C14.5025 18.407 12.7767 19.0022 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11C19.0022 12.7767 18.407 14.5025 17.31 15.9ZM11 5C7.68629 5 5 7.68629 5 11C5 14.3137 7.68629 17 11 17C14.3137 17 17 14.3137 17 11C17 7.68629 14.3137 5 11 5Z">
+                  </path>
+                </svg>
+              </span>
+            </button>
+            <input class="form-control" type="search" placeholder="Поиск" aria-label="Search">
+          </div>
+
+          <div>
+            <button class="btn btn-collapse" type="button" data-bs-toggle="collapse" data-bs-target="#collapseModal2"
+              aria-expanded="true" aria-controls="collapseModal2">
+              <span class="icon icon-arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                  <path d="M6 12L10 8L6 4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span>
+              Россия
+            </button>
+
+            <div class="collapse show" id="collapseModal2">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="collapseModalRegion1">
+                <label class="form-check-label" for="collapseModalRegion1">
+                  Регион
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="collapseModalRegion2">
+                <label class="form-check-label" for="collapseModalRegion2">
+                  Регион
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="collapseModalRegion3">
+                <label class="form-check-label" for="collapseModalRegion3">
+                  Регион
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="collapseModalRegion4">
+                <label class="form-check-label" for="collapseModalRegion4">
+                  Регион
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="collapseModalRegion5">
+                <label class="form-check-label" for="collapseModalRegion5">
+                  Регион
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="collapseModalRegion6">
+                <label class="form-check-label" for="collapseModalRegion6">
+                  Регион
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="collapseModalRegion7">
+                <label class="form-check-label" for="collapseModalRegion7">
+                  Регион
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="collapseModalRegion8">
+                <label class="form-check-label" for="collapseModalRegion8">
+                  Регион
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="collapseModalRegion9">
+                <label class="form-check-label" for="collapseModalRegion9">
+                  Регион
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="collapseModalRegion10">
+                <label class="form-check-label" for="collapseModalRegion10">
+                  Регион
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="collapseModalRegion11">
+                <label class="form-check-label" for="collapseModalRegion11">
+                  Регион
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="collapseModalRegion12">
+                <label class="form-check-label" for="collapseModalRegion12">
+                  Регион
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="collapseModalRegion13">
+                <label class="form-check-label" for="collapseModalRegion13">
+                  Регион
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="collapseModalRegion14">
+                <label class="form-check-label" for="collapseModalRegion14">
+                  Регион
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="collapseModalRegion15">
+                <label class="form-check-label" for="collapseModalRegion15">
+                  Регион
+                </label>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="modal-footer is-overflow">
+          <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
+          <button type="submit" class="btn btn-primary btn-lg">
+            Привязать отель
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="modal modal-collapse fade" id="bindCountryModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <form class="modal-content">
+      <div class="modal-content-wrapper">
+        <div class="modal-header">
+          <h5 class="modal-title" id="bindCountryTitle">Привязать страну</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+
+          </button>
+        </div>
+        <div class="modal-body">
+
+          <div class="wrapper-search">
+            <button class="btn btn-search" type="submit">
+              <span class="icon icon-search">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M17.31 15.9L20.71 19.29C20.8993 19.4778 21.0058 19.7334 21.0058 20C21.0058 20.2666 20.8993 20.5222 20.71 20.71C20.5222 20.8993 20.2666 21.0058 20 21.0058C19.7334 21.0058 19.4778 20.8993 19.29 20.71L15.9 17.31C14.5025 18.407 12.7767 19.0022 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11C19.0022 12.7767 18.407 14.5025 17.31 15.9ZM11 5C7.68629 5 5 7.68629 5 11C5 14.3137 7.68629 17 11 17C14.3137 17 17 14.3137 17 11C17 7.68629 14.3137 5 11 5Z">
+                  </path>
+                </svg>
+              </span>
+            </button>
+            <input class="form-control" type="search" placeholder="Поиск" aria-label="Search">
+          </div>
+
+          <div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="collapseModalCountry1">
+              <label class="form-check-label" for="collapseModalCountry1">
+                Россия
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="collapseModalCountry2">
+              <label class="form-check-label" for="collapseModalCountry2">
+                Грузия
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="collapseModalCountry3">
+              <label class="form-check-label" for="collapseModalCountry3">
+                Отель
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="collapseModalCountry4">
+              <label class="form-check-label" for="collapseModalCountry4">
+                Португалия
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="collapseModalCountry5">
+              <label class="form-check-label" for="collapseModalCountry5">
+                Италия
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="collapseModalCountry6">
+              <label class="form-check-label" for="collapseModalCountry6">
+                Испания
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="collapseModalCountry7">
+              <label class="form-check-label" for="collapseModalCountry7">
+                Монако
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="collapseModalCountry8">
+              <label class="form-check-label" for="collapseModalCountry8">
+                Венгрия
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="collapseModalCountry9">
+              <label class="form-check-label" for="collapseModalCountry9">
+                Россия
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="collapseModalCountry10">
+              <label class="form-check-label" for="collapseModalCountry10">
+                Грузия
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel11">
+              <label class="form-check-label" for="collapseModalHostel11">
+                Португалия
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel12">
+              <label class="form-check-label" for="collapseModalHostel12">
+                Италия
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel13">
+              <label class="form-check-label" for="collapseModalHostel13">
+                Испания
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel14">
+              <label class="form-check-label" for="collapseModalHostel14">
+                Монако
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="collapseModalHostel15">
+              <label class="form-check-label" for="collapseModalHostel15">
+                Венгрия
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer is-overflow">
+          <button type="button" class="btn btn-outline-light btn-lg" data-bs-dismiss="modal">Отмена</button>
+          <button type="submit" class="btn btn-primary btn-lg">
+            Привязать отель
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+</div>
+
+	
+	<script src="libs/bootstrap/bootstrap.bundle.min.js"></script>
+	<script src="libs/swiperjs/swiper-bundle.min.js"></script>
+	<script src="libs/chartjs/chart.umd.min.js"></script>
+	<script src="libs/chartjs/chartjs-adapter-date-fns.js"></script>
+	<script src="libs/vanilla-calendar/vanilla-calendar.min.js"></script>
+	<script src="js/init.min.js"></script>
+	<script src="js/app.min.js"></script>
+
+</body>
+</html>

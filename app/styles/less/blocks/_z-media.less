@@ -365,6 +365,16 @@
 	}
 
 	/** (End) Article **/
+
+	/** (Start) Form SignIn/SignUp **/
+	.form-sign {
+
+		h1 {
+			font-size: var(--font-size--xl);
+		}
+	}
+
+	/** (End) Form SignIn/SignUp **/
 }
 
 @media (max-width: 1200px) {
@@ -1409,7 +1419,23 @@
 	.figure-caption {
 		font-size: var(--font-size--tiny);
 	}
+
 	/** (End) Figure **/
+
+	/** (Start) Form SignIn/SignUp **/
+	.form-sign {
+		gap: 1.5rem;
+
+		h1 {
+			font-size: 1.25rem;
+		}
+	}
+
+	.form-sign-wrapper {
+		gap: 2rem;
+	}
+
+	/** (End) Form SignIn/SignUp **/
 }
 
 @media (max-width: 576px) {
@@ -1664,6 +1690,19 @@
 	}
 
 	/** (End) Wrapper Graph **/
+
+	/** (Start) Form SignIn/SignUp **/
+	.form-sign {
+
+		.form-buttons {
+			flex-direction: column-reverse;
+
+			&>*{
+				width: 100%;
+			}
+		}
+	}
+	/** (End) Form SignIn/SignUp **/
 
 	/** (Start) Vanilla Calendar **/
 	.vanilla-calendar--multiple {

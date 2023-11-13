@@ -388,6 +388,23 @@ form,
 
 .form-floating {
 
+	&>.icon-password {
+		--size: 2.5rem;
+		min-height: unset;
+		border: none;
+		padding: 0.5rem;
+		cursor: pointer;
+		position: absolute;
+		top: 50%;
+		right: 0;
+		z-index: 1;
+		transform: translateY(-50%);
+
+		&:is(:hover, :focus-visible, :active, .is-active) {
+			color: var(--accent);
+		}
+	}
+
 	&>.form-control,
 	&>.form-select {
 		height: 3.5rem;

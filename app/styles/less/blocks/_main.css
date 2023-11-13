@@ -183,7 +183,7 @@
 .wrapper-mydata form > .row {
   row-gap: 2.25rem;
 }
-.wrapper-mydata .form-buttons {
+.form-buttons {
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -822,6 +822,32 @@
   text-align: center;
 }
 /** (End) Figure **/
+/** (Start) SignIn/ SignUp **/
+.container--form {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form-sign {
+  width: 100%;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.875rem;
+}
+.form-sign h1 {
+  margin: 0;
+}
+.form-sign-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: var(--box-shadow-2);
+}
+/** (End) SignIn/ SignUp **/
 /** (Start) Vanilla Calendar **/
 [data-calendar-theme=light].vanilla-calendar button:focus-visible {
   border-radius: 50%;
