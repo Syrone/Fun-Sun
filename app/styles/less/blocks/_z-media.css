@@ -436,6 +436,9 @@
   .page-filter.with-reset .btn-reset {
     order: -1;
   }
+  .table-filter-inner {
+    display: none;
+  }
   /** (End) Wrapper Table **/
   .table-wrapper .table-responsive {
     max-height: 800px;
@@ -812,6 +815,12 @@
     margin-inline-start: unset;
   }
   /** (End) Card **/
+  .modal-fullscreen .modal-header {
+    padding-block-end: 0.5rem;
+  }
+  .modal-fullscreen .modal-body > .row.gy-4 {
+    --bs-gutter-y: 1.25rem;
+  }
   .modal-header,
   .modal-body,
   .modal-footer {
@@ -1011,6 +1020,10 @@
   .modal-dialog {
     margin: 1rem;
   }
+  .modal-fullscreen {
+    margin: 0;
+    padding: 1rem;
+  }
   .modal-footer {
     padding-block-start: 1.375rem;
   }
@@ -1037,6 +1050,9 @@
   /** (Start) Wrapper Table **/
   .wrapper-table.without-filter .wrapper-pagination {
     grid-row: 1;
+  }
+  .wrapper-table.with-4items .wrapper-pagination {
+    grid-row: 3;
   }
   .wrapper-table .tab-pane .wrapper-pagination,
   .wrapper-table .tab-pane .wrapper-navigation {

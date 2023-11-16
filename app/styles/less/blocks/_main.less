@@ -169,6 +169,23 @@
 	}
 }
 
+.table-filter-inner {
+	--gap: .75rem;
+	display: flex;
+	gap: var(--gap);
+
+	&>* {
+		flex: 1;
+		flex-basis: calc(25% - var(--gap));
+
+		&>.dropdown-toggle {
+			width: 100%;
+			justify-content: space-between;
+			text-align: start;
+		}
+	}
+}
+
 .table-buttons {
 	display: flex;
 	align-items: center;
